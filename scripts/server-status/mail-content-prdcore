@@ -1,0 +1,5 @@
+检查时间：2019-11-24 04:30:01
+执行服务器：prdcore
+
+服务器【prdcore】：
+  • 命令（ssh root@prdcore df）执行错误：ssh_exchange_identification: Connection closed by remote host  

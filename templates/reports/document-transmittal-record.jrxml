@@ -1,0 +1,940 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="document-transmittal-record" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="515" leftMargin="40" rightMargin="40" topMargin="40" bottomMargin="20" isFloatColumnFooter="true" uuid="391f00de-043b-4f01-868b-18622f998e60">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="274"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="717"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="469"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="521"/>
+	<property name="com.jaspersoft.studio.unit." value="mm"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="mm"/>
+	<style name="default-text" isDefault="true" isBlankWhenNull="true" fontName="微软雅黑" fontSize="9"/>
+	<parameter name="ASSETS_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["/var/www/ose/resources/templates/reports/assets"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="REPORT_ID" class="java.lang.String">
+		<defaultValueExpression><![CDATA["0000000000000000"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="projectName" class="java.lang.String"/>
+	<parameter name="reportNo" class="java.lang.String"/>
+	<parameter name="partName" class="java.lang.String"/>
+	<parameter name="date" class="java.util.Date"/>
+	<parameter name="projectNo" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="transmittalNo" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="discipline" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="department" class="java.lang.String"/>
+	<parameter name="CLIENT_LOGO_DIR" class="java.lang.String"/>
+	<parameter name="CONTRACTOR_LOGO_DIR" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="documentNo" class="java.lang.String"/>
+	<field name="documentDesc" class="java.lang.String"/>
+	<field name="revision" class="java.lang.String"/>
+	<field name="remark" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="494">
+			<staticText>
+				<reportElement x="0" y="-20" width="180" height="20" uuid="c644680c-679d-4795-9915-97f9f56c7afb"/>
+				<textElement verticalAlignment="Bottom"/>
+				<text><![CDATA[WNT-MSQHSE-31423-17 Rev.1]]></text>
+			</staticText>
+			<subreport isUsingCache="true" runToBottom="false" overflowType="NoStretch">
+				<reportElement x="0" y="0" width="515" height="50" uuid="5de73805-024e-4991-91e1-ed12e7160896">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<subreportParameter name="ASSETS_DIR">
+					<subreportParameterExpression><![CDATA[$P{ASSETS_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="REPORT_ID">
+					<subreportParameterExpression><![CDATA[$P{REPORT_ID}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="REPORT_NAME">
+					<subreportParameterExpression><![CDATA["文 件 传 送 单 （内 部）\nDocument Transmittal Record (Internal)"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="CONTRACTOR_LOGO_DIR">
+					<subreportParameterExpression><![CDATA[$P{CONTRACTOR_LOGO_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="CLIENT_LOGO_DIR">
+					<subreportParameterExpression><![CDATA[$P{CLIENT_LOGO_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportExpression><![CDATA[$P{ASSETS_DIR} + "/subreports/header.jasper"]]></subreportExpression>
+			</subreport>
+			<frame>
+				<reportElement x="0" y="50" width="515" height="444" uuid="c78b0c7f-7383-43d8-b9b9-8b5a400d7fd4"/>
+				<frame>
+					<reportElement x="0" y="0" width="515" height="24" uuid="17a2f1e2-c40c-4247-a6b8-ae82b9f69bbe"/>
+					<box>
+						<pen lineWidth="0.5"/>
+					</box>
+					<staticText>
+						<reportElement x="0" y="0" width="80" height="24" uuid="0af2e9a8-80ce-4b0e-9591-d95eed4bff36">
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						</reportElement>
+						<box leftPadding="2">
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement verticalAlignment="Middle"/>
+						<text><![CDATA[项目名称
+Project Name:]]></text>
+					</staticText>
+					<textField>
+						<reportElement x="80" y="0" width="178" height="24" uuid="4d63408e-769a-48e2-ac1b-8fd7911fb523">
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						</reportElement>
+						<box leftPadding="2">
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle"/>
+						<textFieldExpression><![CDATA[$P{projectName}]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="258" y="0" width="80" height="24" uuid="3d34bb31-2a3e-4b88-82e0-104db22e1fb4"/>
+						<box leftPadding="2">
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement verticalAlignment="Middle"/>
+						<text><![CDATA[传送单编号
+Transmittal No.]]></text>
+					</staticText>
+					<textField>
+						<reportElement x="338" y="0" width="177" height="24" uuid="44b37800-346d-45d3-aac1-7cb9dea5aefe">
+							<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						</reportElement>
+						<box leftPadding="2">
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle"/>
+						<textFieldExpression><![CDATA[$P{transmittalNo}]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement x="0" y="24" width="515" height="24" uuid="9ebedc93-5566-4a0b-971a-332297464ed0"/>
+					<box>
+						<pen lineWidth="0.5"/>
+					</box>
+					<frame>
+						<reportElement x="0" y="0" width="515" height="24" uuid="11efef6e-7f6e-40cd-aa20-720b21d3374a"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<staticText>
+							<reportElement x="0" y="0" width="80" height="24" uuid="6a572df7-113b-42b5-98a3-4c0617da9dd2">
+								<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+								<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+							</reportElement>
+							<box leftPadding="2">
+								<pen lineWidth="0.5"/>
+							</box>
+							<textElement verticalAlignment="Middle"/>
+							<text><![CDATA[项目号
+Project No:]]></text>
+						</staticText>
+						<textField>
+							<reportElement x="80" y="0" width="178" height="24" uuid="2a999a67-687d-4e02-b889-98975038b091">
+								<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+								<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+								<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+							</reportElement>
+							<box leftPadding="2">
+								<pen lineWidth="0.5"/>
+							</box>
+							<textElement textAlignment="Left" verticalAlignment="Middle"/>
+							<textFieldExpression><![CDATA[$P{projectNo}]]></textFieldExpression>
+						</textField>
+						<staticText>
+							<reportElement x="258" y="0" width="80" height="24" uuid="591f6754-2173-4a68-b46f-1c8973e0cdcf"/>
+							<box leftPadding="2">
+								<pen lineWidth="0.5"/>
+							</box>
+							<textElement verticalAlignment="Middle"/>
+							<text><![CDATA[发放日期
+Issue Date]]></text>
+						</staticText>
+						<textField pattern="yyyy-MM-dd">
+							<reportElement x="338" y="0" width="177" height="24" uuid="b0a31f8f-71d8-48f9-991f-0da575451ee7">
+								<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+								<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+							</reportElement>
+							<box leftPadding="2">
+								<pen lineWidth="0.5"/>
+							</box>
+							<textElement textAlignment="Left" verticalAlignment="Middle"/>
+							<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
+						</textField>
+					</frame>
+				</frame>
+				<frame>
+					<reportElement x="50" y="72" width="465" height="24" uuid="d8dcf591-1ee2-4bc4-b72a-ce3c59540a77"/>
+					<box>
+						<pen lineWidth="0.5"/>
+					</box>
+					<staticText>
+						<reportElement x="0" y="0" width="208" height="24" uuid="9f96de36-ed4e-4157-8cab-c81451ffab7a"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle"/>
+						<text><![CDATA[部门
+Department]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="208" y="0" width="188" height="24" uuid="3ca4b488-412a-4901-9c2a-bbd62be49023"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle"/>
+						<text><![CDATA[签收人/日期
+Signature/Date]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="396" y="0" width="69" height="24" uuid="13a95e0f-a7d4-4fcc-85a4-13c57a7c761e"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle"/>
+						<text><![CDATA[份数
+Qty]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="0" y="48" width="515" height="24" uuid="34211aca-9008-40ae-8640-2107063845d5"/>
+					<box>
+						<pen lineWidth="0.5"/>
+					</box>
+					<textField>
+						<reportElement x="80" y="0" width="178" height="24" uuid="398bbce3-e7e5-4dc8-8f5d-2c7e4f6cd9cc">
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						</reportElement>
+						<box leftPadding="2">
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle"/>
+						<textFieldExpression><![CDATA[$P{department}]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="258" y="0" width="80" height="24" uuid="9cdc3919-4863-45fb-85f5-441451e1b1ed"/>
+						<box leftPadding="2">
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement verticalAlignment="Middle"/>
+						<text><![CDATA[所属专业：
+Discipline]]></text>
+					</staticText>
+					<textField>
+						<reportElement x="338" y="0" width="177" height="24" uuid="40a3dd25-cd0a-4d86-91d9-f3958b3ae131">
+							<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						</reportElement>
+						<box leftPadding="2">
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle"/>
+						<textFieldExpression><![CDATA[$P{discipline}]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="0" y="0" width="80" height="24" uuid="50905c51-147f-4552-8abd-dc6888206e89">
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						</reportElement>
+						<box leftPadding="2">
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement verticalAlignment="Middle"/>
+						<text><![CDATA[发放部门：
+Issue Dept.]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="108" y="96" width="407" height="24" uuid="56480469-fd06-48c1-b8c3-a8ef4913e72d"/>
+					<box>
+						<pen lineWidth="0.5"/>
+					</box>
+					<staticText>
+						<reportElement x="0" y="0" width="150" height="24" uuid="d4be3f2c-a7c1-4360-9c75-924b056d8144"/>
+						<box leftPadding="2">
+							<pen lineWidth="0.5"/>
+						</box>
+						<text><![CDATA[结构部
+Structure Dept.]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="150" y="0" width="188" height="24" uuid="508fc2c5-2bd6-42d7-9787-3870f9b86faf"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<text><![CDATA[]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="338" y="0" width="69" height="24" uuid="ace73f1b-c7b0-4dd1-b20f-c778bfce9715"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<text><![CDATA[]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="108" y="120" width="407" height="24" uuid="bfeea59b-c652-4b54-bd05-f6d5d7e0fc09">
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5"/>
+					</box>
+					<staticText>
+						<reportElement x="0" y="0" width="150" height="24" uuid="bd2ea4a4-81d2-4333-800d-d841f223b662"/>
+						<box leftPadding="2">
+							<pen lineWidth="0.5"/>
+						</box>
+						<text><![CDATA[机管部
+Mech & Piping Dept.]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="150" y="0" width="188" height="24" uuid="80552d8a-a6f4-42f8-93d7-a60d71fc6081"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<text><![CDATA[]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="338" y="0" width="69" height="24" uuid="e52d51b9-257d-4675-9460-6250d587047d"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<text><![CDATA[]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="108" y="144" width="407" height="24" uuid="9032fd9a-1087-4ffb-ade8-7651781bcb83"/>
+					<box>
+						<pen lineWidth="0.5"/>
+					</box>
+					<staticText>
+						<reportElement x="0" y="0" width="150" height="24" uuid="e68e5085-25d5-42fb-b0a8-9234fba0ad77"/>
+						<box leftPadding="2">
+							<pen lineWidth="0.5"/>
+						</box>
+						<text><![CDATA[电仪部
+E&I Dept.]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="150" y="0" width="188" height="24" uuid="ea045588-3bf3-41ee-bcbc-17747fa7994c"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<text><![CDATA[]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="338" y="0" width="69" height="24" uuid="68dacb30-6138-44aa-b304-c31567acda54"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<text><![CDATA[]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="108" y="168" width="407" height="24" uuid="bc373f3a-9dcf-44fa-ad6d-630c944067f8"/>
+					<box>
+						<pen lineWidth="0.5"/>
+					</box>
+					<staticText>
+						<reportElement x="0" y="0" width="150" height="24" uuid="60c1fc09-f76f-480d-a87e-b18e2ba2423e"/>
+						<box leftPadding="2">
+							<pen lineWidth="0.5"/>
+						</box>
+						<text><![CDATA[涂装部
+Painting Dept.]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="150" y="0" width="188" height="24" uuid="045ee3dd-ed0a-48c7-b0c8-1ab9481a0414"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<text><![CDATA[]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="338" y="0" width="69" height="24" uuid="fee0bdbe-5580-4aa7-9d57-e8d2b5169a2b"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<text><![CDATA[]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="50" y="240" width="465" height="24" uuid="bd0fe705-b251-4fdc-936b-8d0e24a2c4d9"/>
+					<box>
+						<pen lineWidth="0.5"/>
+					</box>
+					<staticText>
+						<reportElement x="0" y="0" width="208" height="24" uuid="049f4fe8-ece2-46e3-a383-19d126ceaf00"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle"/>
+						<text><![CDATA[建造管理部
+Construction Management Dept.]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="208" y="0" width="188" height="24" uuid="d829b3c6-a29a-4544-8eae-b0d470eba165"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle"/>
+						<text><![CDATA[]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="396" y="0" width="69" height="24" uuid="84dbc893-fc8d-4aff-a181-401f8a35c93a"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle"/>
+						<text><![CDATA[]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="50" y="216" width="465" height="24" uuid="a3c9e632-aba2-4216-90ea-8626850a7bf9"/>
+					<box>
+						<pen lineWidth="0.5"/>
+					</box>
+					<frame>
+						<reportElement x="0" y="0" width="465" height="24" uuid="61bdd8fb-d662-4e5d-9822-fd4eddbe24e4"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<staticText>
+							<reportElement x="0" y="0" width="208" height="24" uuid="11393b54-be9f-448d-88d0-70d2651c9116"/>
+							<box>
+								<pen lineWidth="0.5"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle"/>
+							<text><![CDATA[项目部
+Project Dept.]]></text>
+						</staticText>
+						<staticText>
+							<reportElement x="208" y="0" width="188" height="24" uuid="3fc7a898-80f8-4320-941f-37b13e4c2cf3"/>
+							<box>
+								<pen lineWidth="0.5"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle"/>
+							<text><![CDATA[]]></text>
+						</staticText>
+						<staticText>
+							<reportElement x="396" y="0" width="69" height="24" uuid="17120edb-b543-4f10-83d3-c10691eee63d"/>
+							<box>
+								<pen lineWidth="0.5"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle"/>
+							<text><![CDATA[]]></text>
+						</staticText>
+					</frame>
+				</frame>
+				<frame>
+					<reportElement x="50" y="192" width="465" height="24" uuid="06a7a7c3-8da7-451d-9921-13e1cf1d8123"/>
+					<box>
+						<pen lineWidth="0.5"/>
+					</box>
+					<staticText>
+						<reportElement x="0" y="0" width="208" height="24" uuid="1d6e0399-e1f6-40e5-93c8-f74a51db09fd"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle"/>
+						<text><![CDATA[海工设计中心（资料室）
+Offshore Design Center (Reference Room)]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="208" y="0" width="188" height="24" uuid="15f3142f-3fa1-4f99-aea6-044c0f27ac5f"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle"/>
+						<text><![CDATA[]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="396" y="0" width="69" height="24" uuid="06b0bf3c-42b9-402a-9325-6c61da3ba9b2"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle"/>
+						<text><![CDATA[]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="50" y="264" width="465" height="24" uuid="b141db25-aa25-41c8-9afa-8754526b7065"/>
+					<box>
+						<pen lineWidth="0.5"/>
+					</box>
+					<staticText>
+						<reportElement x="0" y="0" width="208" height="24" uuid="b223781e-30b6-4b60-aeb9-2efa5b39c18c"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle"/>
+						<text><![CDATA[项目管理部
+Project Management Dept.]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="208" y="0" width="188" height="24" uuid="2329c7b8-048c-45bb-a596-3eddc05bc211"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle"/>
+						<text><![CDATA[]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="396" y="0" width="69" height="24" uuid="2ca68c3a-d03d-4022-aaa9-77cd9d2e6eb9"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle"/>
+						<text><![CDATA[]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="50" y="288" width="465" height="24" uuid="1a083c23-eec3-4324-93d5-7efdc80a5c20"/>
+					<box>
+						<pen lineWidth="0.5"/>
+					</box>
+					<staticText>
+						<reportElement x="0" y="0" width="208" height="24" uuid="590c5a8b-873c-4658-8b7f-95b6bd80d26e"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle"/>
+						<text><![CDATA[质量部
+QA/QC Dept]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="208" y="0" width="188" height="24" uuid="55f79db2-d2cb-44d6-a9f8-ca00e182456b"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle"/>
+						<text><![CDATA[]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="396" y="0" width="69" height="24" uuid="9018886d-09df-4f49-a27f-14340bdce09b"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle"/>
+						<text><![CDATA[]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="50" y="312" width="465" height="24" uuid="03b7ce19-13a9-4ebb-9e5b-ecea00e5a8c3"/>
+					<box>
+						<pen lineWidth="0.5"/>
+					</box>
+					<staticText>
+						<reportElement x="0" y="0" width="208" height="24" uuid="d3b7fe84-4295-4f67-9245-2caed5792f89"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle"/>
+						<text><![CDATA[采购部
+Procurement Dept.]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="208" y="0" width="188" height="24" uuid="06941ef3-0f39-4c22-8127-b49414a3a0d6"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle"/>
+						<text><![CDATA[]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="396" y="0" width="69" height="24" uuid="18636d5d-9cb5-4cf9-b7af-4c6e0775814e"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle"/>
+						<text><![CDATA[]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="50" y="336" width="465" height="24" uuid="282c8a1f-b135-43a2-8f57-1a7165111916"/>
+					<box>
+						<pen lineWidth="0.5"/>
+					</box>
+					<staticText>
+						<reportElement x="0" y="0" width="208" height="24" uuid="b293955a-45ae-447a-ba36-97395cf6cd3f"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle"/>
+						<text><![CDATA[设备管理部
+Facility Dept.]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="208" y="0" width="188" height="24" uuid="12ef6e1b-625f-4582-89bb-edbb902ebc0a"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle"/>
+						<text><![CDATA[]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="396" y="0" width="69" height="24" uuid="597f6b2a-debb-4aa3-b85a-ad8f740e35f0"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle"/>
+						<text><![CDATA[]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="50" y="384" width="465" height="24" uuid="1a914331-5997-4d26-b0cb-dc487132af47"/>
+					<box>
+						<pen lineWidth="0.5"/>
+					</box>
+					<staticText>
+						<reportElement x="0" y="0" width="208" height="24" uuid="10d666b9-63a0-4496-820a-4ea17ffd52c6"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle"/>
+						<text><![CDATA[船东
+OWNER]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="208" y="0" width="188" height="24" uuid="5a4cef19-43a7-4529-ad7d-b3946f346361"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle"/>
+						<text><![CDATA[]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="396" y="0" width="69" height="24" uuid="642e034b-2147-4f9d-ae79-4b65d5b88b40"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle"/>
+						<text><![CDATA[]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="50" y="360" width="465" height="24" uuid="8cc27461-aee7-43cb-a279-51799a4fd833"/>
+					<box>
+						<pen lineWidth="0.5"/>
+					</box>
+					<staticText>
+						<reportElement x="0" y="0" width="208" height="24" uuid="488321cd-c049-4769-b0f9-4d93116d157e"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle"/>
+						<text><![CDATA[HSE]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="208" y="0" width="188" height="24" uuid="b72171a6-cab7-4d2e-a620-df7265d39720"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle"/>
+						<text><![CDATA[]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="396" y="0" width="69" height="24" uuid="c3b1a5cd-1a99-472e-bed3-7eda174d152d"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle"/>
+						<text><![CDATA[]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="50" y="408" width="465" height="24" uuid="bf02254e-d29c-446c-93db-06de89ebbcc0"/>
+					<box>
+						<pen lineWidth="0.5"/>
+					</box>
+					<staticText>
+						<reportElement x="0" y="0" width="208" height="24" uuid="d797567a-0011-447d-b4f1-6432154274df"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle"/>
+						<text><![CDATA[船检
+CLASS]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="208" y="0" width="188" height="24" uuid="a9ec7104-59ab-4649-81be-7b3cd223714d"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle"/>
+						<text><![CDATA[]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="396" y="0" width="69" height="24" uuid="c30ea58c-acd7-4f38-9b23-2860a32d4d22"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle"/>
+						<text><![CDATA[]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="0" y="432" width="515" height="12" uuid="b115f77b-5a8e-450c-91cf-d65daec1e8cc"/>
+					<box>
+						<pen lineWidth="0.5"/>
+					</box>
+				</frame>
+				<frame>
+					<reportElement x="0" y="72" width="50" height="360" uuid="08511f40-552b-4cad-aed1-67ba05e71df4"/>
+					<box>
+						<pen lineWidth="0.5"/>
+					</box>
+					<staticText>
+						<reportElement x="0" y="0" width="50" height="360" uuid="0099ff2e-1c11-4513-8276-a790e07c43bb"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None">
+							<font size="12"/>
+						</textElement>
+						<text><![CDATA[接
+收
+部
+门
+
+TO]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="50" y="96" width="58" height="96" uuid="56f3dccc-5b89-4ad3-966f-54522ce01086"/>
+					<box>
+						<pen lineWidth="0.5"/>
+					</box>
+					<staticText>
+						<reportElement x="0" y="0" width="58" height="96" uuid="4faa40ee-04a7-49b2-9db4-afe90f34777a"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle"/>
+						<text><![CDATA[建造部
+Const. Dept.]]></text>
+					</staticText>
+				</frame>
+			</frame>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="24">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="515" height="24" backcolor="#DFDFDF" uuid="1ea17e0b-6393-474f-b6dd-9526d329b83b"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<staticText>
+					<reportElement x="0" y="0" width="35" height="24" uuid="e70a4369-ffa1-4e02-ba94-842ae09863b4">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<box leftPadding="4" rightPadding="4">
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<text><![CDATA[序号
+No.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="35" y="0" width="200" height="24" uuid="a911ea78-65bc-4e74-8807-d512fd9fa69e">
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="4" rightPadding="4">
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<text><![CDATA[文件编号
+Document No]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="235" y="0" width="200" height="24" uuid="bb760191-4a0e-47e9-bcb3-81ffbeaa8a55">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="4" rightPadding="4">
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<text><![CDATA[文件名称
+Document Description]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="435" y="0" width="40" height="24" uuid="0b6975c4-4db6-4021-ac87-cc2d0948cc80">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="4" rightPadding="4">
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<text><![CDATA[版本
+Rev]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="475" y="0" width="40" height="24" uuid="73856a7f-33a8-4cea-83b5-bd1c5393a3c1">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2" rightPadding="2">
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<text><![CDATA[备注
+Remark]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="12" splitType="Prevent">
+			<frame>
+				<reportElement isPrintRepeatedValues="false" x="0" y="0" width="515" height="12" uuid="2327ca80-3a44-44ee-8c53-c2ec11604308"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textField isStretchWithOverflow="true">
+					<reportElement stretchType="ContainerHeight" x="0" y="0" width="35" height="12" uuid="475220fc-45a8-44cf-afa3-090390dfb0d7">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="4" rightPadding="4">
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$V{REPORT_COUNT}.toString( )]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement stretchType="ContainerHeight" x="35" y="0" width="200" height="12" uuid="229a0c96-3ce2-4bec-8933-0556c586f250">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<box leftPadding="4" rightPadding="4">
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{documentNo}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement stretchType="ContainerHeight" x="235" y="0" width="200" height="12" uuid="ec8c4cf0-d335-49f0-a7ee-59ea1d2b00bb"/>
+					<box leftPadding="4" rightPadding="4">
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{documentDesc}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement stretchType="ContainerHeight" x="435" y="0" width="40" height="12" uuid="665d846f-a198-495f-bf1d-683760925fc4">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2" rightPadding="2">
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{revision}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement stretchType="ContainerHeight" x="475" y="0" width="40" height="12" uuid="23ed648d-179a-44a9-aaa2-8f31b03b163a"/>
+					<box leftPadding="2" rightPadding="2">
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{remark}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="24" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<textField>
+				<reportElement x="290" y="0" width="100" height="24" uuid="67c74501-6a5e-42d1-b923-67cd42cd6f85">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["第 " + $V{PAGE_NUMBER} + " 页"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="400" y="0" width="100" height="24" uuid="96cdff8f-1d0b-4a4d-9290-e01c5bfdf3fa">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["共 " + $V{PAGE_NUMBER} + " 页"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="110" height="30" uuid="1fd6b473-04ff-4b16-a652-5082c7f80a07">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[发放人：
+Issued by (DCC)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="255" y="0" width="110" height="30" uuid="2825c492-15fa-4697-a4b3-554ec88c8b9a">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[签发人：
+Approved by (PJE)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="290" y="30" width="100" height="24" uuid="1bb2a8f3-d71f-4c92-ad66-685752e23f93">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["第 " + $V{PAGE_NUMBER} + " 页"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="400" y="30" width="100" height="24" uuid="b3e97f9a-08ad-4e9b-a4ec-ba8e25d19cce">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["共 " + $V{PAGE_NUMBER} + " 页"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="110" y="0" width="145" height="30" uuid="3618a4c7-f720-44bc-8a05-94ab9e5ee185"/>
+				<box>
+					<pen lineWidth="0.0"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="365" y="0" width="150" height="30" uuid="e88768a2-e175-4ebe-bf7d-8b441e6ed98f"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+		</band>
+	</lastPageFooter>
+</jasperReport>

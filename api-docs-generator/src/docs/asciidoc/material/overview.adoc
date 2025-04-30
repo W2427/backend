@@ -1,0 +1,37 @@
+= 材料管理系统
+
+
+[[_overview]]
+== 概览
+提供建造材料的管理服务。
+
+
+=== 版本信息
+[%hardbreaks]
+__版本__ : v0.0.1
+
+
+=== URI scheme
+[%hardbreaks]
+__域名__ : mtl.ose.com
+__基础路径__ : /
+
+
+=== 标签
+
+* bom-controller : SPM BOM 查询接口
+* demo-controller : Demo
+* issue-receipt-controller : SPM 出库单 查询接口
+* m-companies-controller : SPM施工单位查询接口
+* m-location-controller : SPM库位查询接口
+* m-site-matl-status-controller : SPM材料状态查询接口
+* m-ware-house-controller : SPM仓库查询接口
+* po-controller : SPM 合同(PO) 查询接口
+* receive-receipt-controller : SPM 入库单 查询接口
+* req-controller : SPM 请购单(REQ) 查询接口
+* spm-match-ln-node-controller : SPM 请购单(REQ) 查询接口
+* spm-material-requisition-controller : 领料单接口
+* spm-release-note-controller : SPM 放行单 接口
+
+
+

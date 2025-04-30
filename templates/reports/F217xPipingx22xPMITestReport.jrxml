@@ -1,0 +1,1552 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.10.0.final using JasperReports Library version 6.10.0-unknown  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="F217xPipingx22xPMITestReport" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="83ffd3eb-0b73-43ea-8a5b-ebd61d46d9b9">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="ASSETS_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["/var/www/ose/templates/reports/assets"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="reportNo" class="java.lang.String"/>
+	<parameter name="seriesNo" class="java.lang.String"/>
+	<parameter name="REPORT_ID" class="java.lang.String">
+		<defaultValueExpression><![CDATA["0000000000000000"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="CopyOFParameter_1" class="java.lang.String"/>
+	<parameter name="serizsNo" class="java.lang.String"/>
+	<parameter name="date" class="java.util.Date"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="drawingNo" class="java.lang.String"/>
+	<field name="jointNo" class="java.lang.String"/>
+	<field name="heatNumber" class="java.lang.String"/>
+	<field name="materialDescription" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="220" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<frame>
+				<reportElement x="25" y="0" width="760" height="220" uuid="ad5ed1b4-5aca-4ee4-b56b-da32c88009e8">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<staticText>
+					<reportElement x="0" y="0" width="180" height="45" uuid="1088aac5-2498-4972-897a-5caa3944cd59">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="180" y="0" width="380" height="45" uuid="5c542fc5-449c-4d49-a975-bdf05b14ec3b">
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑" size="12"/>
+					</textElement>
+					<text><![CDATA[POSITIVE MATERIAL IDENTIFICATION REPORT/
+ОТЧЕТ ПО ПОДТВЕРЖДЕНИЮ МАРКИ МАТЕРИАЛА]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="560" y="0" width="200" height="69" uuid="89427ff1-7123-4ec2-bbd1-e014ec6afaec">
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<image>
+					<reportElement x="11" y="4" width="68" height="40" uuid="9415e84c-c359-48b1-bc42-8e134d72b4ea"/>
+					<imageExpression><![CDATA[$P{ASSETS_DIR} + "/images/logos/LNG.png"]]></imageExpression>
+				</image>
+				<image>
+					<reportElement x="89" y="4" width="88" height="39" uuid="b2569928-2452-49d1-9c30-3ca047f54bf3">
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<imageExpression><![CDATA[$P{ASSETS_DIR} + "/images/logos/NOVARCTIC.png"]]></imageExpression>
+				</image>
+				<image>
+					<reportElement x="571" y="9" width="103" height="52" uuid="f681f543-ebbc-4e47-a8fb-41977738c078">
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<imageExpression><![CDATA[$P{ASSETS_DIR} + "/images/logos/OSELOG.png"]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement x="0" y="45" width="560" height="24" uuid="bc9c279d-67d0-473c-a6c3-c5b1af3d5d65"/>
+					<box>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="45" width="120" height="24" uuid="8543569a-949d-4c1c-8bde-0586218d773d">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑" size="9"/>
+					</textElement>
+					<text><![CDATA[PROCEDURE NUMBER/ НОМЕР ПРОЦЕДУРЫ：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="270" y="45" width="115" height="23" uuid="2407abcf-2362-4782-915c-63c10770a1ae"/>
+					<box>
+						<leftPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑" size="9"/>
+					</textElement>
+					<text><![CDATA[REPORT NO/№ ОТЧЕТА：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="69" width="760" height="30" uuid="230b9ba1-3781-4b6b-a508-9c5d405e6ab1"/>
+					<box>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement>
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="120" y="70" width="240" height="28" uuid="eff9262b-2470-4275-91ec-35a27734ec9f">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
+					<box>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑" size="9"/>
+					</textElement>
+					<text><![CDATA[ ARCTIC LNG 2 / АРКТИК СПГ 2]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="360" y="70" width="200" height="28" uuid="9ed92496-6ee2-4e43-984d-e1034079379a">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑" size="9"/>
+					</textElement>
+					<text><![CDATA[DATE/Дата：]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="0" y="99" width="180" height="30" uuid="89bee6a0-997d-4f1c-ac99-e1b5a1f4a12e">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<staticText>
+						<reportElement x="0" y="1" width="180" height="28" uuid="d34a0d6c-c878-434c-ae63-71637e703137"/>
+						<textElement textAlignment="Center">
+							<font fontName="微软雅黑" size="9"/>
+						</textElement>
+						<text><![CDATA[REFERENCE STANDARD/
+ССЫЛОЧНЫЙ СТАНДАРТ]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="180" y="99" width="180" height="30" uuid="ad32988c-a529-40cd-bc39-367f500767a2">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+				</frame>
+				<frame>
+					<reportElement x="360" y="99" width="200" height="30" uuid="65073250-1f05-4588-906f-b25294f00546">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<staticText>
+						<reportElement x="1" y="1" width="199" height="28" uuid="f5e06dc8-ba0d-4069-9e9d-0f0537bf32a3"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="微软雅黑" size="9"/>
+						</textElement>
+						<text><![CDATA[PMI EQUIPMENT/Оборудование]]></text>
+					</staticText>
+				</frame>
+				<staticText>
+					<reportElement x="560" y="99" width="200" height="30" uuid="3a5141b2-b26d-4cba-a69d-449fd8bab991">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="129" width="180" height="26" uuid="21f3ec01-19d2-4e42-afa0-4f98ad583195">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[EQUIPMENT / SPOOL/
+ОБОРУДОВАНИЕ/СЕКЦИЯ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="180" y="129" width="180" height="26" uuid="113fb6a6-7d8b-4a84-beb4-2f9420c69e3c">
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center">
+						<font fontName="微软雅黑" size="9"/>
+					</textElement>
+					<text><![CDATA[ ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="360" y="129" width="235" height="26" uuid="9ac5201b-1e68-453c-a467-c0951664cae4">
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center">
+						<font fontName="微软雅黑" size="9"/>
+					</textElement>
+					<text><![CDATA[CHEMICAL ELEMENT CONTENTS/
+СОДЕРЖАНИЕ ХИМИЧЕСКИХ ЭЛЕМЕНТОВ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="595" y="129" width="165" height="26" uuid="c598e5a7-61fd-488d-b704-943d0cc28199"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center">
+						<font fontName="微软雅黑" size="9"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="155" width="180" height="22" uuid="9bedcf8e-df54-469d-bae6-ad437521ffcc">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[GRADE/МАРКА]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="180" y="155" width="210" height="22" uuid="d39189db-a384-4ef6-97eb-022aa56b4e4f">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[TYPE OF CHEMICAL ELEMENTS/
+ТИП ХИМИЧЕСКИХ ЭЛЕМЕНТОВ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="390" y="156" width="25" height="21" uuid="37b750c9-657a-4fff-85f3-85f821e3ce08">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[Cr]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="415" y="156" width="30" height="21" uuid="8c0be5a0-6a21-4f82-968a-d269015f7294">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[Mo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="445" y="156" width="30" height="21" uuid="7c2116fb-97cc-4895-af00-8275fddd268e">
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[Mn]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="505" y="156" width="30" height="21" uuid="fe2239bd-9cdb-4d2d-be2e-e32dfaae1625">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[W]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="475" y="156" width="30" height="21" uuid="8f24489c-79dc-4c4b-a9f8-85ff390e2a3f">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[Ni]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="535" y="156" width="30" height="21" uuid="51f957ef-2ad0-467c-bf09-8c47d379a187">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[Ti]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="565" y="156" width="30" height="21" uuid="6cce8d8d-15ff-47a2-983a-c6556a45e583">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[V]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="595" y="156" width="30" height="21" uuid="a4fc47f0-f8f7-4729-8a55-681370dd9f01">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[Nb]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="654" y="156" width="46" height="21" uuid="5cd2c36f-ab8b-4dd6-b7ca-24ea343bfc7c">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑" size="7"/>
+					</textElement>
+					<text><![CDATA[Other/Прочее]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="625" y="156" width="30" height="21" uuid="dd059426-7150-4547-9c39-452bf37ab62a">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[Cu]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="700" y="156" width="60" height="21" uuid="82b429ff-0b81-433f-b585-7d4d1bd84f2e"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="177" width="180" height="44" uuid="b5d7fc78-c95d-4da6-9d9d-f2424abbbbc0">
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<box>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="390" y="177" width="25" height="22" uuid="da5b0592-1d52-419d-9347-8bca7762fcf8">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="415" y="177" width="30" height="22" uuid="459366f5-c186-4de1-844c-61eb4db8e713">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="445" y="177" width="30" height="22" uuid="a149ad38-07cf-4c2f-ab0a-c28f7695c6ab">
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="475" y="177" width="30" height="22" uuid="65ada3fe-2117-4680-9995-5db8cf72b176">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="505" y="177" width="30" height="22" uuid="5fc4677b-1599-4fb1-bbb6-7da378a8a4f1">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="536" y="177" width="29" height="22" uuid="64a86df1-f97b-42e5-a209-9340d784d9f5">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="565" y="177" width="30" height="22" uuid="8cd5a675-3af1-4f3d-811e-66ee2f33aa32">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="595" y="177" width="30" height="22" uuid="7b3595cf-7251-4f19-afde-081903d8a4d0">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="625" y="177" width="30" height="22" uuid="e4b715d8-bc98-475c-b5a1-bcaa8946f9ac">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="655" y="177" width="45" height="22" uuid="e7e150e3-c075-4f09-a0b8-ee693ca2547b">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="180" y="177" width="80" height="44" uuid="884667e9-4aae-401f-b74b-27c9bfa3dff7">
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<box>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[RANGE/
+ДИАПАЗОН]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="260" y="177" width="130" height="22" uuid="1ad7ccb0-c553-4deb-9c80-30030ef17be9">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑" size="8"/>
+					</textElement>
+					<text><![CDATA[Maximum/
+Максимум]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="700" y="177" width="60" height="22" uuid="70b235ef-9637-4e56-888f-1219309b37eb"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="700" y="199" width="60" height="22" uuid="fac4f144-db5d-4b22-af6f-f341fd86af02"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="260" y="199" width="130" height="22" uuid="81f34ea3-5311-4792-bf1a-d71b1fbd9dae">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑" size="8"/>
+					</textElement>
+					<text><![CDATA[Maximum/
+Максимум]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="390" y="199" width="25" height="22" uuid="b2ea9a48-f668-469a-9b51-cc54d39524f1">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="415" y="199" width="30" height="22" uuid="f8be2c0a-0254-49b3-ac95-b7a5ff29bdcd">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="445" y="199" width="30" height="22" uuid="1c633359-8f06-45fd-89b3-be2ecd702a4e">
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="475" y="199" width="30" height="22" uuid="540b9777-82c7-4f5a-9e35-3104370f1e29">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="505" y="199" width="30" height="22" uuid="0da40592-1821-4578-97a6-598530db53ca">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="535" y="199" width="30" height="22" uuid="4344d870-0100-48c1-973e-cb41c1cad081">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="565" y="199" width="30" height="22" uuid="504ecb60-ccd1-413c-9f66-f4ccd6e568b9">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="595" y="199" width="30" height="22" uuid="b4c84dca-f3e2-4f01-9b98-795c6669276a">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="625" y="199" width="30" height="22" uuid="1bb2d51a-c9af-4c47-ab19-6a415988a775">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="655" y="199" width="45" height="22" uuid="ccc6df72-e96e-47a8-a4b5-994753b3fee2">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="385" y="47" width="173" height="21" uuid="ac582c8a-8f09-43c9-bed7-faa60fc116a9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑" size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{reportNo}]]></textFieldExpression>
+				</textField>
+				<componentElement>
+					<reportElement x="688" y="20" width="58" height="46" uuid="5bd55eed-2f5c-4d5b-b450-b1d77964d709">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<jr:QRCode xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+						<jr:codeExpression><![CDATA[$P{REPORT_ID}]]></jr:codeExpression>
+					</jr:QRCode>
+				</componentElement>
+				<textField>
+					<reportElement x="687" y="2" width="59" height="17" uuid="5e90813d-6ed3-4a84-a006-5e69fa893729"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑" size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{seriesNo}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="69" width="120" height="30" uuid="2a22247e-b48b-4a83-b550-296beadfd25d">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+					<text><![CDATA[PROJECT NAME/
+НАЗВАНИЕ ПРОЕКТА：]]></text>
+				</staticText>
+				<textField pattern="yyyy-MM-dd">
+					<reportElement x="585" y="73" width="138" height="22" uuid="0aa1e5cd-193a-4703-a66c-d7952c92c197">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="41" splitType="Stretch">
+			<frame>
+				<reportElement x="25" y="0" width="760" height="41" uuid="cb9ac94f-b150-4f0e-9efe-45945dbe7472"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<staticText>
+					<reportElement x="49" y="0" width="81" height="41" uuid="3fa804ea-ea10-484b-a152-df0ae1e65b65"/>
+					<box>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑" size="7"/>
+					</textElement>
+					<text><![CDATA[DRAWING NUMBER/
+НОМЕР ЧЕРТЕЖА]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="130" y="0" width="90" height="41" uuid="071416b8-a147-42c7-81f3-527d505dd450"/>
+					<box>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑" size="7"/>
+					</textElement>
+					<text><![CDATA[JOINT NO./
+№ СОЕДИНЕНИЯ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="300" y="0" width="90" height="41" uuid="3d7548ff-313a-4869-9a63-0b9dea7ae2fd"/>
+					<box>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑" size="7"/>
+					</textElement>
+					<text><![CDATA[MATERIAL DESCRIPTION/
+ОПИСАНИЕ МАТЕРИАЛА]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="220" y="0" width="78" height="41" uuid="7bd3a8a8-cdc7-4701-ad66-5126c4038ac2"/>
+					<box>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑" size="7"/>
+					</textElement>
+					<text><![CDATA[HEAT NUMBER/
+НОМЕР ПЛАВКИ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="390" y="0" width="310" height="41" uuid="1a6d21f3-775c-4adf-8d73-047213eaff60"/>
+					<box>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑" size="7"/>
+					</textElement>
+					<text><![CDATA[ANALYSIS DETAILS/
+ПОДРОБНАЯ ИНФОРМАЦИЯ ОБ АНАЛИЗЕ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="700" y="0" width="60" height="41" uuid="c4bcada7-76df-40f1-8f23-75b75c9af46d"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑" size="7"/>
+					</textElement>
+					<text><![CDATA[Match / Not Match/
+Соответствует/не соответствует]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="0" width="49" height="40" uuid="56a0165a-503c-4074-bf38-cae276611579">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<box>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑" size="9"/>
+					</textElement>
+					<text><![CDATA[NO/№ п/п
+]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Prevent">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="ContainerHeight" x="74" y="0" width="81" height="24" uuid="e22f092a-4710-461b-95a5-663ac02a8e54">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{drawingNo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="ContainerHeight" x="155" y="0" width="90" height="24" uuid="db2bb020-6ff4-44e9-9f26-47a25791fd8d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{jointNo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="ContainerHeight" x="245" y="0" width="78" height="24" uuid="72441b78-a546-4740-8e5f-627e5a550860">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{heatNumber}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="ContainerHeight" x="323" y="0" width="92" height="24" uuid="8c7977ea-0e0a-45e9-b150-b1685e13c232">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{materialDescription}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="ContainerHeight" x="680" y="0" width="45" height="24" uuid="b1d46392-6a95-4023-aff1-a7491ec765e8">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="ContainerHeight" x="725" y="0" width="60" height="24" uuid="352f02ac-3d94-4f3a-ad6c-b7fcbdcd0ec7">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="25" y="0" width="49" height="24" uuid="831ba121-0459-4d0a-a90c-f5040035ae95">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}.toString( )]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="ContainerHeight" x="561" y="0" width="28" height="24" uuid="83082ecf-9ec3-4c45-93be-983cd18b2a7e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="8"/>
+				</textElement>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="ContainerHeight" x="470" y="0" width="30" height="24" uuid="f7e971a4-0b7a-44ee-8476-49f471874f95">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="8"/>
+				</textElement>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="ContainerHeight" x="530" y="0" width="31" height="24" uuid="3ffe4cd4-1f01-463e-95ea-1d6ecc794598">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="8"/>
+				</textElement>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="ContainerHeight" x="650" y="0" width="29" height="24" uuid="df4e3a69-7b16-4cc3-b0f2-fbbd6920050b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="8"/>
+				</textElement>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="ContainerHeight" x="620" y="0" width="30" height="24" uuid="cbf383a2-95ae-4850-b7cd-654c338008d8">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="8"/>
+				</textElement>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="ContainerHeight" x="500" y="0" width="30" height="24" uuid="707562cc-6cfc-4932-a22e-5ecc98af26fc">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="8"/>
+				</textElement>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="ContainerHeight" x="589" y="0" width="31" height="24" uuid="3ad13466-290d-4ca3-a885-f310de71b257">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="8"/>
+				</textElement>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="ContainerHeight" x="440" y="0" width="30" height="24" uuid="313c094b-cebc-4e0a-baab-4ac32f820e27">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="8"/>
+				</textElement>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="ContainerHeight" x="415" y="0" width="25" height="24" uuid="8c189270-559d-4e0d-a449-a157ec3c49db">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="8"/>
+				</textElement>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="187" splitType="Stretch">
+			<frame>
+				<reportElement x="25" y="0" width="760" height="162" uuid="93b0c78b-c0d8-44dc-8d83-c56772c7e5f2">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<staticText>
+					<reportElement x="0" y="0" width="760" height="30" uuid="6996c58b-5ea4-4e9b-b98c-e68abea62b03"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[Cr : Chromium/хром, Mo : Molybdenum/молибден, Mn : Manganese/марганец, Ni : Nickel/никель, W : Tungsten/вольфрам, Ti : Titanium/титан, V : Vanadium/ванадий, Nb : Niobium/ниобий, Cu : Copper/медь]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="31" width="270" height="39" uuid="ebaf2c0e-5aa3-4e22-8c64-596251c74329"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[Remarks/
+Примечания:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="270" y="30" width="490" height="28" uuid="1a560baa-e97c-482c-84a0-e4acb79ff1c9"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center">
+						<font fontName="微软雅黑" size="9"/>
+					</textElement>
+					<text><![CDATA[According to Standard Deviations on Each Chemical Element Results of the Analysis are/
+Заключение по результатам анализа с учетом стандартного отклонения для каждого химического элемента:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="270" y="58" width="250" height="12" uuid="b474933b-8776-41ac-b480-a7afc8436709"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑" size="7"/>
+					</textElement>
+					<text><![CDATA[CONFIRM/ПРИНЯТО]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="520" y="58" width="240" height="12" uuid="2b35bb7e-c43b-4f68-a7c9-86a049df43e2"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑" size="7"/>
+					</textElement>
+					<text><![CDATA[NOT CONFIRM/НЕ ПРИНЯТО]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="70" width="120" height="31" uuid="e5973299-917a-4b32-bf9f-95878d60cb63"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement>
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="120" y="70" width="150" height="31" uuid="b690109c-fff9-4d71-a3f5-95dad7788de0"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[SUB CONTRACTOR/
+СУБПОДРЯДЧИК]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="270" y="70" width="250" height="31" uuid="1678ed28-7bf2-448d-b6bf-1dcff2fbc61e"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[CONTRACTOR/
+ПОДРЯДЧИК]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="520" y="70" width="240" height="31" uuid="14d8ea8d-dc6e-4d76-9d41-e7ef16888d64"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[COMPANY/
+КОМПАНИЯ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="101" width="120" height="32" uuid="36a18d7c-1a20-44a9-9523-b19ddbb1c711"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[NAME/
+Ф.И.О.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="520" y="101" width="240" height="32" uuid="4233a1a5-3388-4c8f-8c48-731f52d13a3d"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement>
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="270" y="101" width="250" height="32" uuid="fc359a32-4574-482b-a769-386d922fc585"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement>
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="120" y="101" width="150" height="32" uuid="0b033719-173e-46d9-b54c-421bda4666de"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement>
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="133" width="120" height="29" uuid="8556acc9-8b24-420e-a88c-1c5e0638306f"/>
+					<box>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[SIGNATURE/
+ПОДПИСЬ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="120" y="133" width="150" height="29" uuid="4df3da28-8c53-45a1-809b-80fd5ed02ebe"/>
+					<box>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement>
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="271" y="133" width="248" height="28" uuid="bbfc3b23-05eb-41df-bf72-dd57ae6a888e"/>
+					<textElement>
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="520" y="133" width="240" height="29" uuid="865a2014-72b3-490f-872c-8f6ef79cec9e"/>
+					<box>
+						<leftPen lineWidth="0.5"/>
+					</box>
+					<textElement>
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="520" y="162" width="240" height="24" uuid="4188bd64-f571-4602-81ec-5c574b3db3e8"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[ ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="270" y="162" width="250" height="24" uuid="33fcddef-3c58-43cc-8714-e145ea55df75"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[ ]]></text>
+				</staticText>
+			</frame>
+			<staticText>
+				<reportElement x="25" y="162" width="120" height="24" uuid="1c2f14c4-e382-4670-a71b-22e2d1f82955"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<text><![CDATA[DATE/
+ДАТА]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="145" y="162" width="150" height="24" uuid="b1f3d065-3636-464f-b29e-39ee1f0f2d1e"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<text><![CDATA[ ]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="40" splitType="Stretch">
+			<textField>
+				<reportElement x="570" y="5" width="100" height="30" uuid="25b20e58-727d-4aa7-b6b5-7e2f6c284f56">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["第 " + $V{PAGE_NUMBER} + " 页"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="680" y="5" width="100" height="30" uuid="c3e63ffd-87cc-4802-b82e-a85d277eea82">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["共 " + $V{PAGE_NUMBER} + " 页"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="35">
+			<textField>
+				<reportElement x="570" y="5" width="100" height="24" uuid="11b50409-a550-4720-8efb-7fc55ca1eaa2">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["第 " + $V{PAGE_NUMBER} + " 页"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="680" y="5" width="100" height="24" uuid="0c289093-a742-4e96-b9f3-23be520c5306">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["共 " + $V{PAGE_NUMBER} + " 页"]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+</jasperReport>

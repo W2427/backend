@@ -1,0 +1,820 @@
+
+[[_definitions]]
+== 定义
+
+[[_bizcodedto]]
+=== BizCodeDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**code** +
+__可选__|业务代码|string
+|**name** +
+__可选__|名称|string
+|===
+
+
+[[_fielderror]]
+=== FieldError
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**message** +
+__可选__|错误描述|string
+|**name** +
+__可选__|发生错误的字段|string
+|**type** +
+__可选__|错误类型|string
+|===
+
+
+[[_99bb1bc01aa333e8b427e03782a647da]]
+=== JsonListResponseBody«BizCodeDTO»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_bizcodedto,BizCodeDTO>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_75a292e67dc90be865de60aa5bcdbbe6]]
+=== JsonListResponseBody«NotificationBatchSummary»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_notificationbatchsummary,NotificationBatchSummary>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_f8bf1e2c1ef363f1720cce395040f81e]]
+=== JsonListResponseBody«NotificationConfigurationBasic»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_notificationconfigurationbasic,NotificationConfigurationBasic>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_4c77c3646759cf891ab7ccdb054f830f]]
+=== JsonListResponseBody«NotificationTemplateBasic»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_notificationtemplatebasic,NotificationTemplateBasic>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_27a2fd3f0aedcb47eed4cef86f854e95]]
+=== JsonListResponseBody«UserNotification»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_usernotification,UserNotification>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_4e5e3bd43208b290d7b34cc22829179b]]
+=== JsonObjectResponseBody«NotificationBatch»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_notificationbatch,NotificationBatch>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_57f27a13703d64f6ab75c9a7c745b406]]
+=== JsonObjectResponseBody«NotificationConfigurationBasic»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_notificationconfigurationbasic,NotificationConfigurationBasic>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_0fd08077792316d97a549d404c332444]]
+=== JsonObjectResponseBody«NotificationConfiguration»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_notificationconfiguration,NotificationConfiguration>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_15e20183cd10f4393ba98f81c02d16a9]]
+=== JsonObjectResponseBody«NotificationTemplate»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_notificationtemplate,NotificationTemplate>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_03589b6237da1c74c1f3d762ed51ed95]]
+=== JsonObjectResponseBody«Notification»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_notification,Notification>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_jsonresponsebody]]
+=== JsonResponseBody
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_jsonresponseerror]]
+=== JsonResponseError
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**code** +
+__可选__|错误代码|string
+|**errors** +
+__可选__|错误列表|< <<_jsonresponseerror,JsonResponseError>> > array
+|**fields** +
+__可选__|发生校验错误的字段的列表|< <<_fielderror,FieldError>> > array
+|**message** +
+__可选__|错误消息|string
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|===
+
+
+[[_meta]]
+=== Meta
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**count** +
+__可选__|数据总数|integer (int64)
+|**hasNextPage** +
+__可选__|是否存在下一页|boolean
+|**hasPreviousPage** +
+__可选__|是否存在上一页|boolean
+|**isFirstPage** +
+__可选__||boolean
+|**isLastPage** +
+__可选__||boolean
+|**pageNo** +
+__可选__|当前页号|integer (int32)
+|**pageSize** +
+__可选__|分页大小|integer (int32)
+|**pages** +
+__可选__|数据总页数|integer (int32)
+|===
+
+
+[[_notification]]
+=== Notification
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**content** +
+__可选__|内容|string
+|**contentType** +
+__可选__|消息内容类型|enum (TEXT, HTML)
+|**id** +
+__可选__|实体 ID|string
+|**orgId** +
+__可选__|组织 ID|string
+|**projectId** +
+__可选__|项目 ID|string
+|**sentAt** +
+__可选__|通知时间|string
+|**title** +
+__可选__|标题|string
+|===
+
+
+[[_notificationbatch]]
+=== NotificationBatch
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**announcement** +
+__可选__|是否为公告|boolean
+|**createdAt** +
+__可选__|创建时间|string
+|**createdBy** +
+__可选__|创建者 ID|string
+|**creatorName** +
+__可选__|创建者姓名|string
+|**id** +
+__可选__|实体 ID|string
+|**orgId** +
+__可选__|组织 ID|string
+|**parameterJSON** +
+__可选__|参数数据（JSON）|string
+|**parameterType** +
+__可选__|参数类型|string
+|**projectId** +
+__可选__|项目 ID|string
+|**template** +
+__可选__||<<_notificationtemplate,NotificationTemplate>>
+|**templateId** +
+__可选__|模版 ID|string
+|**totalCount** +
+__可选__|发送件数|integer (int32)
+|**type** +
+__可选__|通知类型|enum (MATERIAL_PURCHASE_REQUISITION_STATE_CHANGE, MATERIAL_CONTRACT_STATE_CHANGE, MATERIAL_DELIVERY_WORKFLOW_FINISH, MATERIAL_STOCKING_WORKFLOW_FINISH, DRAWING_CONFIGURATION_DETAILS, DRAWING_REVIEW_WORKFLOW_STATE_CHANGE, DRAWING_MODIFYING_WORKFLOW_STATE_CHANGE, ISSUE_STATUS_CHANGE, ISSUE_RESOLVER_CHANGE, ISSUE_CONTENT_UPDATE, CONSTRUCTION_EXTERNAL_INSPECTION, CONSTRUCTION_INTERNAL_INSPECTION, REPORT_DAILY, REPORT_WEEKLY, SYSTEM_SERVICE_ACTIVITY, SYSTEM_TUTORIAL, MESSAGE_INTERNAL)
+|===
+
+
+[[_notificationbatchsummary]]
+=== NotificationBatchSummary
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**announcement** +
+__可选__|是否为公告|boolean
+|**createdAt** +
+__可选__|创建时间|string
+|**createdBy** +
+__可选__|创建者 ID|string
+|**creatorName** +
+__可选__|创建者姓名|string
+|**emailFailedCount** +
+__可选__|发送失败电子邮件数|integer (int64)
+|**emailPendingCount** +
+__可选__|待发送电子邮件数|integer (int64)
+|**emailSendingCount** +
+__可选__|发送中电子邮件数|integer (int64)
+|**emailSentCount** +
+__可选__|已发送电子邮件数|integer (int64)
+|**id** +
+__可选__|实体 ID|string
+|**orgId** +
+__可选__|组织 ID|string
+|**projectId** +
+__可选__|项目 ID|string
+|**smsFailedCount** +
+__可选__|发送失败短信数|integer (int64)
+|**smsPendingCount** +
+__可选__|待发送短信数|integer (int64)
+|**smsSendingCount** +
+__可选__|发送中短信数|integer (int64)
+|**smsSentCount** +
+__可选__|已发送短信数|integer (int64)
+|**totalCount** +
+__可选__|发送总件数|integer (int32)
+|**type** +
+__可选__|通知类型|enum (MATERIAL_PURCHASE_REQUISITION_STATE_CHANGE, MATERIAL_CONTRACT_STATE_CHANGE, MATERIAL_DELIVERY_WORKFLOW_FINISH, MATERIAL_STOCKING_WORKFLOW_FINISH, DRAWING_CONFIGURATION_DETAILS, DRAWING_REVIEW_WORKFLOW_STATE_CHANGE, DRAWING_MODIFYING_WORKFLOW_STATE_CHANGE, ISSUE_STATUS_CHANGE, ISSUE_RESOLVER_CHANGE, ISSUE_CONTENT_UPDATE, CONSTRUCTION_EXTERNAL_INSPECTION, CONSTRUCTION_INTERNAL_INSPECTION, REPORT_DAILY, REPORT_WEEKLY, SYSTEM_SERVICE_ACTIVITY, SYSTEM_TUTORIAL, MESSAGE_INTERNAL)
+|===
+
+
+[[_notificationconfiguration]]
+=== NotificationConfiguration
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**announcement** +
+__可选__|是否为公告|boolean
+|**createdAt** +
+__可选__|创建时间|string
+|**createdBy** +
+__可选__|创建者信息|<<_referencedata,ReferenceData>>
+|**deleted** +
+__可选__|是否已被删除|boolean
+|**deletedAt** +
+__可选__|删除时间|string
+|**deletedBy** +
+__可选__|删除者信息|<<_referencedata,ReferenceData>>
+|**id** +
+__可选__|实体 ID|string
+|**lastModifiedAt** +
+__可选__|最后更新时间|string
+|**lastModifiedBy** +
+__可选__|最后更新者信息|<<_referencedata,ReferenceData>>
+|**memberPrivilegeSet** +
+__可选__||< string > array
+|**memberPrivileges** +
+__可选__|向工作组发送通知时规定的成员的权限集合，成员需至少拥有一项指定的权限|string
+|**orgId** +
+__可选__|组织 ID|string
+|**projectId** +
+__可选__|项目 ID|string
+|**remarks** +
+__可选__|备注|string
+|**sendEmail** +
+__可选__|是否发送电子邮件|boolean
+|**sendMessage** +
+__可选__|是否发送系统内部消息|boolean
+|**sendSMS** +
+__可选__|是否发送手机短信|boolean
+|**status** +
+__可选__|数据实体状态|enum (ACTIVE, DISABLED, DELETED, REJECTED, APPROVED, PENDING, FINISHED, CLOSED)
+|**template** +
+__可选__||<<_notificationtemplate,NotificationTemplate>>
+|**templateId** +
+__可选__|消息模板 ID|string
+|**type** +
+__可选__|通知类型|enum (MATERIAL_PURCHASE_REQUISITION_STATE_CHANGE, MATERIAL_CONTRACT_STATE_CHANGE, MATERIAL_DELIVERY_WORKFLOW_FINISH, MATERIAL_STOCKING_WORKFLOW_FINISH, DRAWING_CONFIGURATION_DETAILS, DRAWING_REVIEW_WORKFLOW_STATE_CHANGE, DRAWING_MODIFYING_WORKFLOW_STATE_CHANGE, ISSUE_STATUS_CHANGE, ISSUE_RESOLVER_CHANGE, ISSUE_CONTENT_UPDATE, CONSTRUCTION_EXTERNAL_INSPECTION, CONSTRUCTION_INTERNAL_INSPECTION, REPORT_DAILY, REPORT_WEEKLY, SYSTEM_SERVICE_ACTIVITY, SYSTEM_TUTORIAL, MESSAGE_INTERNAL)
+|**version** +
+__可选__|更新版本（手动乐观锁）|integer (int64)
+|===
+
+
+[[_notificationconfigurationbasic]]
+=== NotificationConfigurationBasic
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**announcement** +
+__可选__|是否为公告|boolean
+|**createdAt** +
+__可选__|创建时间|string
+|**createdBy** +
+__可选__|创建者信息|<<_referencedata,ReferenceData>>
+|**deleted** +
+__可选__|是否已被删除|boolean
+|**deletedAt** +
+__可选__|删除时间|string
+|**deletedBy** +
+__可选__|删除者信息|<<_referencedata,ReferenceData>>
+|**id** +
+__可选__|实体 ID|string
+|**lastModifiedAt** +
+__可选__|最后更新时间|string
+|**lastModifiedBy** +
+__可选__|最后更新者信息|<<_referencedata,ReferenceData>>
+|**memberPrivilegeSet** +
+__可选__||< string > array
+|**memberPrivileges** +
+__可选__|向工作组发送通知时规定的成员的权限集合，成员需至少拥有一项指定的权限|string
+|**orgId** +
+__可选__|组织 ID|string
+|**projectId** +
+__可选__|项目 ID|string
+|**remarks** +
+__可选__|备注|string
+|**sendEmail** +
+__可选__|是否发送电子邮件|boolean
+|**sendMessage** +
+__可选__|是否发送系统内部消息|boolean
+|**sendSMS** +
+__可选__|是否发送手机短信|boolean
+|**status** +
+__可选__|数据实体状态|enum (ACTIVE, DISABLED, DELETED, REJECTED, APPROVED, PENDING, FINISHED, CLOSED)
+|**template** +
+__可选__||<<_referencedata,ReferenceData>>
+|**type** +
+__可选__|通知类型|enum (MATERIAL_PURCHASE_REQUISITION_STATE_CHANGE, MATERIAL_CONTRACT_STATE_CHANGE, MATERIAL_DELIVERY_WORKFLOW_FINISH, MATERIAL_STOCKING_WORKFLOW_FINISH, DRAWING_CONFIGURATION_DETAILS, DRAWING_REVIEW_WORKFLOW_STATE_CHANGE, DRAWING_MODIFYING_WORKFLOW_STATE_CHANGE, ISSUE_STATUS_CHANGE, ISSUE_RESOLVER_CHANGE, ISSUE_CONTENT_UPDATE, CONSTRUCTION_EXTERNAL_INSPECTION, CONSTRUCTION_INTERNAL_INSPECTION, REPORT_DAILY, REPORT_WEEKLY, SYSTEM_SERVICE_ACTIVITY, SYSTEM_TUTORIAL, MESSAGE_INTERNAL)
+|**version** +
+__可选__|更新版本（手动乐观锁）|integer (int64)
+|===
+
+
+[[_notificationconfigurationpatchdto]]
+=== NotificationConfigurationPatchDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**announcement** +
+__可选__|是否为公告，若为公告将无法在模版中通过 <code>RECEIVER</code> 参数引用发送目标用户的信息|boolean
+|**memberPrivileges** +
+__可选__|向工作组发送通知时规定的成员的权限集合，成员需至少拥有一项指定的权限|< string > array
+|**remarks** +
+__可选__|备注|string
+|**sendEmail** +
+__可选__|是否发送电子邮件|boolean
+|**sendMessage** +
+__可选__|是否发送系统内部消息|boolean
+|**sendSMS** +
+__可选__|是否发送手机短信|boolean
+|**templateId** +
+__可选__|消息模板 ID|string
+|===
+
+
+[[_notificationconfigurationpostdto]]
+=== NotificationConfigurationPostDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**announcement** +
+__可选__|是否为公告，若为公告将无法在模版中通过 <code>RECEIVER</code> 参数引用发送目标用户的信息|boolean
+|**memberPrivileges** +
+__可选__|向工作组发送通知时规定的成员的权限集合，成员需至少拥有一项指定的权限|< string > array
+|**remarks** +
+__可选__|备注|string
+|**sendEmail** +
+__可选__|是否发送电子邮件|boolean
+|**sendMessage** +
+__可选__|是否发送系统内部消息|boolean
+|**sendSMS** +
+__可选__|是否发送手机短信|boolean
+|**templateId** +
+__可选__|消息模板 ID|string
+|===
+
+
+[[_notificationpostdto]]
+=== NotificationPostDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**parameters** +
+__可选__|消息参数|object
+|**teams** +
+__可选__|接收工作组列表|< <<_teamreceiverdto,TeamReceiverDTO>> > array
+|**users** +
+__可选__|接收者列表|< <<_userreceiverdto,UserReceiverDTO>> > array
+|===
+
+
+[[_notificationtemplate]]
+=== NotificationTemplate
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**content** +
+__可选__|消息模板（富文本）|string
+|**contentType** +
+__可选__|消息内容类型|enum (TEXT, HTML)
+|**createdAt** +
+__可选__|创建时间|string
+|**createdBy** +
+__可选__|创建者信息|<<_referencedata,ReferenceData>>
+|**deleted** +
+__可选__|是否已被删除|boolean
+|**deletedAt** +
+__可选__|删除时间|string
+|**deletedBy** +
+__可选__|删除者信息|<<_referencedata,ReferenceData>>
+|**disabled** +
+__可选__|是否已停用|boolean
+|**hash** +
+__可选__|摘要（md5(组织 ID + 标题 + 消息模版)）|string
+|**id** +
+__可选__|实体 ID|string
+|**lastModifiedAt** +
+__可选__|最后更新时间|string
+|**lastModifiedBy** +
+__可选__|最后更新者信息|<<_referencedata,ReferenceData>>
+|**name** +
+__可选__|模版名称|string
+|**orgId** +
+__可选__|组织 ID|string
+|**remarks** +
+__可选__|备注|string
+|**status** +
+__可选__|数据实体状态|enum (ACTIVE, DISABLED, DELETED, REJECTED, APPROVED, PENDING, FINISHED, CLOSED)
+|**tagList** +
+__可选__|标签列表|< string > array
+|**text** +
+__可选__|消息模板（纯文本）|string
+|**title** +
+__可选__|标题|string
+|**version** +
+__可选__|更新版本（手动乐观锁）|integer (int64)
+|===
+
+
+[[_notificationtemplatebasic]]
+=== NotificationTemplateBasic
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**contentType** +
+__可选__|消息内容类型|enum (TEXT, HTML)
+|**createdAt** +
+__可选__|创建时间|string
+|**createdBy** +
+__可选__|创建者信息|<<_referencedata,ReferenceData>>
+|**deleted** +
+__可选__|是否已被删除|boolean
+|**deletedAt** +
+__可选__|删除时间|string
+|**deletedBy** +
+__可选__|删除者信息|<<_referencedata,ReferenceData>>
+|**disabled** +
+__可选__|是否已停用|boolean
+|**id** +
+__可选__|实体 ID|string
+|**lastModifiedAt** +
+__可选__|最后更新时间|string
+|**lastModifiedBy** +
+__可选__|最后更新者信息|<<_referencedata,ReferenceData>>
+|**name** +
+__可选__|模版名称|string
+|**orgId** +
+__可选__|组织 ID|string
+|**status** +
+__可选__|数据实体状态|enum (ACTIVE, DISABLED, DELETED, REJECTED, APPROVED, PENDING, FINISHED, CLOSED)
+|**tagList** +
+__可选__|标签列表|< string > array
+|**title** +
+__可选__|标题|string
+|**version** +
+__可选__|更新版本（手动乐观锁）|integer (int64)
+|===
+
+
+[[_notificationtemplatepatchdto]]
+=== NotificationTemplatePatchDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**content** +
+__可选__|内容模版|string
+|**contentType** +
+__可选__|消息内容类型|enum (TEXT, HTML)
+|**name** +
+__可选__|模版名称|string
+|**remarks** +
+__可选__|备注|string
+|**tagList** +
+__可选__|标签列表|< string > array
+|**text** +
+__可选__|短信内容模版|string
+|**title** +
+__可选__|标题|string
+|===
+
+
+[[_notificationtemplatepostdto]]
+=== NotificationTemplatePostDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**content** +
+__可选__|内容模版|string
+|**contentType** +
+__可选__|消息内容类型|enum (TEXT, HTML)
+|**name** +
+__可选__|模版名称|string
+|**remarks** +
+__可选__|备注|string
+|**tagList** +
+__可选__|标签列表|< string > array
+|**text** +
+__可选__|短信内容模版|string
+|**title** +
+__可选__|标题|string
+|===
+
+
+[[_referencedata]]
+=== ReferenceData
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**$ref** +
+__可选__|引用目标数据实体 ID|string
+|===
+
+
+[[_teamreceiverdto]]
+=== TeamReceiverDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**memberPrivileges** +
+__可选__|用户在工作组所拥有的权限|< string > array
+|**sendEmail** +
+__可选__|是否发送电子邮件（覆盖默认配置）|boolean
+|**sendMessage** +
+__可选__|是否发送内部消息（覆盖默认配置）|boolean
+|**sendMobile** +
+__可选__|是否发送短信（覆盖默认配置）|boolean
+|**teamId** +
+__可选__|工作组 ID|string
+|===
+
+
+[[_usernotification]]
+=== UserNotification
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**createdBy** +
+__可选__|发送者 ID|string
+|**creatorName** +
+__可选__|发送者姓名|string
+|**emailSentAt** +
+__可选__|邮件发送时间|string
+|**id** +
+__可选__|实体 ID|string
+|**orgId** +
+__可选__|组织 ID|string
+|**projectId** +
+__可选__|项目 ID|string
+|**read** +
+__可选__|是否已读|boolean
+|**sentAt** +
+__可选__|发送时间|string
+|**smsSentAt** +
+__可选__|短信发送时间|string
+|**title** +
+__可选__|标题|string
+|**type** +
+__可选__|通知类型|enum (MATERIAL_PURCHASE_REQUISITION_STATE_CHANGE, MATERIAL_CONTRACT_STATE_CHANGE, MATERIAL_DELIVERY_WORKFLOW_FINISH, MATERIAL_STOCKING_WORKFLOW_FINISH, DRAWING_CONFIGURATION_DETAILS, DRAWING_REVIEW_WORKFLOW_STATE_CHANGE, DRAWING_MODIFYING_WORKFLOW_STATE_CHANGE, ISSUE_STATUS_CHANGE, ISSUE_RESOLVER_CHANGE, ISSUE_CONTENT_UPDATE, CONSTRUCTION_EXTERNAL_INSPECTION, CONSTRUCTION_INTERNAL_INSPECTION, REPORT_DAILY, REPORT_WEEKLY, SYSTEM_SERVICE_ACTIVITY, SYSTEM_TUTORIAL, MESSAGE_INTERNAL)
+|**userId** +
+__可选__|接收者 ID|string
+|===
+
+
+[[_userreceiverdto]]
+=== UserReceiverDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**email** +
+__可选__|电子邮箱地址（用于替代用户的默认电子邮箱地址）|string
+|**mobile** +
+__可选__|手机号码（用于替代用户默认的手机号码）|string
+|**sendEmail** +
+__可选__|是否发送电子邮件（覆盖默认配置）|boolean
+|**sendMessage** +
+__可选__|是否发送内部消息（覆盖默认配置）|boolean
+|**sendMobile** +
+__可选__|是否发送短信（覆盖默认配置）|boolean
+|**userId** +
+__可选__|通知对象用户 ID|string
+|===
+
+
+

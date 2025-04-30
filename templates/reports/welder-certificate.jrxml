@@ -1,0 +1,1460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="welder-certificate" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="527" leftMargin="34" rightMargin="34" topMargin="34" bottomMargin="34" isFloatColumnFooter="true" uuid="406ff0ce-687d-4718-943b-bb8169907a5b">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="mm"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="mm"/>
+	<subDataset name="Dataset1" uuid="c5973c57-486b-4c92-8eb6-3dac5b0c32e3">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
+	<parameter name="actualBacking" class="java.lang.Boolean"/>
+	<parameter name="actualBaseMetal" class="java.lang.String"/>
+	<parameter name="actualBaseMetalAlias" class="java.lang.String"/>
+	<parameter name="diaFilletChecked" class="java.lang.Boolean">
+		<defaultValueExpression><![CDATA[false]]></defaultValueExpression>
+	</parameter>
+	<parameter name="diaGrooveChecked" class="java.lang.Boolean">
+		<defaultValueExpression><![CDATA[false]]></defaultValueExpression>
+	</parameter>
+	<parameter name="actualElectrode" class="java.lang.String"/>
+	<parameter name="actualFillerMetalClass" class="java.lang.String"/>
+	<parameter name="actualFillerMetalFNo" class="java.lang.String"/>
+	<parameter name="actualFillerMetalSpecNo" class="java.lang.String"/>
+	<parameter name="actualPolarity" class="java.lang.String"/>
+	<parameter name="actualPosition" class="java.lang.String"/>
+	<parameter name="actualProcess" class="java.lang.String"/>
+	<parameter name="thicknessFilletChecked" class="java.lang.Boolean">
+		<defaultValueExpression><![CDATA[false]]></defaultValueExpression>
+	</parameter>
+	<parameter name="thicknessGrooveChecked" class="java.lang.Boolean">
+		<defaultValueExpression><![CDATA[false]]></defaultValueExpression>
+	</parameter>
+	<parameter name="thicknessPipeChecked" class="java.lang.Boolean">
+		<defaultValueExpression><![CDATA[false]]></defaultValueExpression>
+	</parameter>
+	<parameter name="thicknessPlateChecked" class="java.lang.Boolean">
+		<defaultValueExpression><![CDATA[false]]></defaultValueExpression>
+	</parameter>
+	<parameter name="actualGasOrFluxType" class="java.lang.String"/>
+	<parameter name="planBacking" class="java.lang.Boolean"/>
+	<parameter name="planBaseMetal" class="java.lang.String"/>
+	<parameter name="planDia" class="java.lang.String"/>
+	<parameter name="actualDia" class="java.lang.String"/>
+	<parameter name="planElectrode" class="java.lang.String"/>
+	<parameter name="planFillerMetalClass" class="java.lang.String"/>
+	<parameter name="planFillerMetalFNo" class="java.lang.String"/>
+	<parameter name="planFillerMetalSpecNo" class="java.lang.String"/>
+	<parameter name="planPolarity" class="java.lang.String"/>
+	<parameter name="planPosition" class="java.lang.String"/>
+	<parameter name="planProcess" class="java.lang.String"/>
+	<parameter name="planThickness" class="java.lang.String"/>
+	<parameter name="actualThickness" class="java.lang.String"/>
+	<parameter name="prepareBy" class="java.lang.String"/>
+	<parameter name="prepareDate" class="java.util.Date"/>
+	<parameter name="radioReportNo" class="java.lang.String"/>
+	<parameter name="radioReportResult" class="java.lang.String"/>
+	<parameter name="reviewBy" class="java.lang.String"/>
+	<parameter name="reviewDate" class="java.util.Date"/>
+	<parameter name="testDate" class="java.util.Date"/>
+	<parameter name="visualAcceptable" class="java.lang.Boolean"/>
+	<parameter name="welderType" class="java.lang.String"/>
+	<parameter name="appearance" class="java.lang.String"/>
+	<parameter name="approvedBy" class="java.lang.String"/>
+	<parameter name="approvedDate" class="java.util.Date"/>
+	<parameter name="filletSize" class="java.lang.String"/>
+	<parameter name="filletTestDate" class="java.util.Date"/>
+	<parameter name="filletTestNo" class="java.lang.String"/>
+	<parameter name="fractureTest" class="java.lang.String"/>
+	<parameter name="inspector" class="java.lang.String"/>
+	<parameter name="macroetch" class="java.lang.String"/>
+	<parameter name="manufacturer" class="java.lang.String"/>
+	<parameter name="organization" class="java.lang.String"/>
+	<parameter name="wpsNo" class="java.lang.String"/>
+	<parameter name="name" class="java.lang.String"/>
+	<parameter name="idCard" class="java.lang.String"/>
+	<parameter name="welderNo" class="java.lang.String"/>
+	<parameter name="photo" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="115" y="2" width="294" height="26" uuid="cf38609e-016c-453f-9284-2b8894b1ad37"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="16"/>
+				</textElement>
+				<text><![CDATA[WELDER QUALIFICATION CERTIFICATE]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="639" splitType="Stretch">
+			<frame>
+				<reportElement positionType="Float" stretchType="ContainerHeight" x="15" y="0" width="495" height="125" uuid="9c9ca263-6a6b-4067-ae4e-3cdeba1e34d6"/>
+				<frame>
+					<reportElement positionType="Float" stretchType="ContainerHeight" x="0" y="0" width="190" height="30" uuid="f60a26c0-7d76-4605-8d9a-827e1e051fe9"/>
+					<staticText>
+						<reportElement x="0" y="0" width="85" height="30" uuid="62b0febc-8576-42d4-9485-c43c3cbde4e5"/>
+						<box leftPadding="6"/>
+						<textElement verticalAlignment="Bottom">
+							<font fontName="微软雅黑" size="10"/>
+						</textElement>
+						<text><![CDATA[Type of Welder
+焊工类型]]></text>
+					</staticText>
+					<textField isBlankWhenNull="true">
+						<reportElement x="85" y="0" width="105" height="30" uuid="a381b4a1-d45a-402f-94ac-613531dd12f9"/>
+						<box bottomPadding="0" rightPadding="0">
+							<bottomPen lineWidth="1.0"/>
+						</box>
+						<textElement verticalAlignment="Bottom">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{welderType}]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" stretchType="ContainerHeight" x="0" y="30" width="190" height="30" uuid="1729a6ad-2efa-4bc0-89b4-b6638f9f0927"/>
+					<staticText>
+						<reportElement x="0" y="0" width="85" height="30" uuid="0f009191-8981-43dd-8b9a-c8a9c785c786"/>
+						<box leftPadding="6"/>
+						<textElement verticalAlignment="Bottom">
+							<font fontName="微软雅黑" size="10"/>
+						</textElement>
+						<text><![CDATA[Name
+姓名]]></text>
+					</staticText>
+					<textField isBlankWhenNull="true">
+						<reportElement x="85" y="0" width="105" height="30" uuid="da39bba3-74a4-4407-b9af-7045b2986931"/>
+						<box rightPadding="0">
+							<bottomPen lineWidth="1.0"/>
+						</box>
+						<textElement verticalAlignment="Bottom">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{name}]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" stretchType="ContainerHeight" x="0" y="60" width="190" height="30" uuid="b8c4991c-2449-4079-b9f6-753d64292c95"/>
+					<staticText>
+						<reportElement x="0" y="0" width="85" height="30" uuid="358e206a-f51f-4882-b9ac-3ec5fe96cbdc"/>
+						<box leftPadding="6"/>
+						<textElement verticalAlignment="Bottom">
+							<font fontName="微软雅黑" size="10"/>
+						</textElement>
+						<text><![CDATA[WPS No.
+焊接工艺规程号]]></text>
+					</staticText>
+					<textField isBlankWhenNull="true">
+						<reportElement x="85" y="0" width="105" height="30" uuid="1ab1298c-d616-4b7a-ab29-7092d26d392f"/>
+						<box rightPadding="0">
+							<bottomPen lineWidth="1.0"/>
+						</box>
+						<textElement verticalAlignment="Bottom">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{wpsNo}]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" stretchType="ContainerHeight" x="0" y="90" width="400" height="30" uuid="7d857598-7c21-4870-b108-dcefc214b983"/>
+					<staticText>
+						<reportElement x="0" y="0" width="150" height="30" uuid="69509b07-bb27-406a-a585-6c8a66a2136a"/>
+						<box leftPadding="6"/>
+						<textElement verticalAlignment="Bottom">
+							<font fontName="微软雅黑" size="10"/>
+						</textElement>
+						<text><![CDATA[Manufacturer or Contractor
+制造商或承包商]]></text>
+					</staticText>
+					<textField isBlankWhenNull="true">
+						<reportElement x="150" y="0" width="250" height="30" uuid="fc2f9242-cd6e-4e47-9a37-1249fc8a2a53"/>
+						<box leftPadding="8">
+							<bottomPen lineWidth="1.0"/>
+						</box>
+						<textElement verticalAlignment="Bottom">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{manufacturer}]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" stretchType="ContainerHeight" x="190" y="0" width="210" height="30" uuid="3abf62b8-66a3-442b-8889-8e1343331409"/>
+					<staticText>
+						<reportElement x="0" y="0" width="100" height="30" uuid="75479bcd-5c66-480d-9ef5-d3f2621e6ef0"/>
+						<box leftPadding="8" rightPadding="0"/>
+						<textElement verticalAlignment="Bottom">
+							<font fontName="微软雅黑" size="10"/>
+						</textElement>
+						<text><![CDATA[Welder No.
+焊工编号]]></text>
+					</staticText>
+					<textField isBlankWhenNull="true">
+						<reportElement x="100" y="0" width="110" height="30" uuid="42a1f529-817c-45d8-89ca-c3bd3094a4b5"/>
+						<box>
+							<bottomPen lineWidth="1.0"/>
+						</box>
+						<textElement verticalAlignment="Bottom">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{welderNo}]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" stretchType="ContainerHeight" x="190" y="30" width="210" height="30" uuid="9ef36c7c-9048-4440-b82a-9864a0899561"/>
+					<staticText>
+						<reportElement x="0" y="0" width="100" height="30" uuid="c9be42a1-ec6d-4f52-a3f6-2ebf56628c87"/>
+						<box leftPadding="8" rightPadding="0"/>
+						<textElement verticalAlignment="Bottom">
+							<font fontName="微软雅黑" size="10"/>
+						</textElement>
+						<text><![CDATA[Identification No.
+身份证]]></text>
+					</staticText>
+					<textField isBlankWhenNull="true">
+						<reportElement x="100" y="0" width="110" height="30" uuid="4827e49c-2d0c-4f09-9ae2-94deec111889"/>
+						<box>
+							<bottomPen lineWidth="1.0"/>
+						</box>
+						<textElement verticalAlignment="Bottom">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{idCard}]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" stretchType="ContainerHeight" x="190" y="60" width="210" height="30" uuid="b9cfb099-f89f-4d91-a48d-d5b16e1ad9cf"/>
+					<staticText>
+						<reportElement x="0" y="0" width="100" height="30" uuid="1ea22c2d-fcd0-46b4-b7e2-c931963cd885"/>
+						<box leftPadding="8" rightPadding="0"/>
+						<textElement verticalAlignment="Bottom">
+							<font fontName="微软雅黑" size="10"/>
+						</textElement>
+						<text><![CDATA[Test Date
+日期]]></text>
+					</staticText>
+					<textField pattern="yyyy-MM-dd" isBlankWhenNull="true">
+						<reportElement x="100" y="0" width="110" height="30" uuid="55bdcfec-9d58-418a-b840-a960e9782c32"/>
+						<box>
+							<bottomPen lineWidth="1.0"/>
+						</box>
+						<textElement verticalAlignment="Bottom">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{testDate}]]></textFieldExpression>
+					</textField>
+				</frame>
+				<image>
+					<reportElement x="403" y="2" width="90" height="120" uuid="95b05c23-c2cf-4bc6-83a2-b4e812dd2ea2">
+						<printWhenExpression><![CDATA[$P{photo} != null]]></printWhenExpression>
+					</reportElement>
+				</image>
+			</frame>
+			<frame>
+				<reportElement x="8" y="128" width="511" height="510" uuid="d6920cfc-191b-400f-81c2-0d1b58da2cf7"/>
+				<frame>
+					<reportElement x="0" y="0" width="511" height="30" uuid="592bbc9b-cedc-4dbb-9185-be946b5ace29"/>
+					<box leftPadding="0">
+						<topPen lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<staticText>
+						<reportElement x="0" y="0" width="220" height="30" uuid="4fe11790-a120-4338-be32-fec2c98128f9"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="微软雅黑" size="10" isBold="true"/>
+						</textElement>
+						<text><![CDATA[Variables 
+变素]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="220" y="0" width="150" height="30" uuid="365368fb-421c-4f3c-9e3d-a88935fb6984"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="微软雅黑" size="10" isBold="true"/>
+						</textElement>
+						<text><![CDATA[Actual Qual Value
+用于评定的记录实际值]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="370" y="0" width="140" height="30" uuid="d4b11ef7-6628-4929-baa8-f2a2fabfcb8e"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="微软雅黑" size="10" isBold="true"/>
+						</textElement>
+						<text><![CDATA[Qualification Range
+评定范围]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="0" y="30" width="511" height="20" uuid="9150703f-f3f3-439e-b2ab-99ec0d77c124"/>
+					<box leftPadding="0">
+						<topPen lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<staticText>
+						<reportElement x="0" y="0" width="220" height="20" uuid="18241f94-93bd-418b-99da-ebbab95d9654"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="微软雅黑" size="10" isBold="false"/>
+						</textElement>
+						<text><![CDATA[Process/Type 焊接方法/类型]]></text>
+					</staticText>
+					<textField isBlankWhenNull="true">
+						<reportElement x="220" y="0" width="150" height="20" uuid="a5997fd9-d145-4425-8ef5-13207d7d4599"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{actualProcess}]]></textFieldExpression>
+					</textField>
+					<textField isBlankWhenNull="true">
+						<reportElement x="370" y="0" width="140" height="20" uuid="1db6d96d-0c88-4fb4-9cb6-e6195803f781"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{planProcess}]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement x="0" y="50" width="511" height="20" uuid="501eda22-baba-4f79-8cc7-4bccd290ff9f"/>
+					<box leftPadding="0">
+						<topPen lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<staticText>
+						<reportElement x="0" y="0" width="220" height="20" uuid="c41180ff-4599-420a-991f-d746d51b8286"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="微软雅黑" size="10" isBold="false"/>
+						</textElement>
+						<text><![CDATA[Electrode (single or multiple)  焊条(单或多)]]></text>
+					</staticText>
+					<textField isBlankWhenNull="true">
+						<reportElement x="220" y="0" width="150" height="20" uuid="7756b625-1199-4b06-a44d-b54bd86d7c2f"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{actualElectrode}]]></textFieldExpression>
+					</textField>
+					<textField isBlankWhenNull="true">
+						<reportElement x="370" y="0" width="140" height="20" uuid="c6fe787f-cafa-4bd3-a0de-818e3ce9144a"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{planElectrode}]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement x="0" y="70" width="511" height="20" uuid="e504c6de-f39b-439d-88ca-7945e3d5a576"/>
+					<box leftPadding="0">
+						<topPen lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<staticText>
+						<reportElement x="0" y="0" width="220" height="20" uuid="4650e88c-c5c3-45ee-becd-791fc24855e6"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="微软雅黑" size="10" isBold="false"/>
+						</textElement>
+						<text><![CDATA[Current/Polarity 焊接电流极性]]></text>
+					</staticText>
+					<textField isBlankWhenNull="true">
+						<reportElement x="220" y="0" width="150" height="20" uuid="88b9256a-0365-4552-922a-225fe52da6ac"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{actualPolarity}]]></textFieldExpression>
+					</textField>
+					<textField isBlankWhenNull="true">
+						<reportElement x="370" y="0" width="140" height="20" uuid="1035c372-67f9-494c-be01-67591c1b67bd"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{planPolarity}]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement x="0" y="90" width="511" height="20" uuid="e66ad560-741d-4d0f-a643-1374b8adac92"/>
+					<box leftPadding="0">
+						<topPen lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<staticText>
+						<reportElement x="0" y="0" width="220" height="20" uuid="b309ea47-6dcb-4171-a047-9550569c1f73"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="微软雅黑" size="10" isBold="false"/>
+						</textElement>
+						<text><![CDATA[Welding Position 焊接位置]]></text>
+					</staticText>
+					<textField isBlankWhenNull="true">
+						<reportElement x="220" y="0" width="150" height="20" uuid="5b8861d9-c3c7-4217-b66f-a360f4e6a1ec"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{actualPosition}]]></textFieldExpression>
+					</textField>
+					<textField isBlankWhenNull="true">
+						<reportElement x="370" y="0" width="140" height="20" uuid="42984160-a509-4392-bd5e-1376a9021750"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{planPosition}]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement x="0" y="110" width="511" height="20" uuid="f2c6c48f-41ba-43fd-bd22-617047882bfc"/>
+					<box leftPadding="0">
+						<topPen lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<staticText>
+						<reportElement x="0" y="0" width="220" height="20" uuid="91dd86be-5ead-42f5-8da1-4d90183be2c1"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="微软雅黑" size="10" isBold="false"/>
+						</textElement>
+						<text><![CDATA[Backing (YES or NO)  背面处理(有或无)]]></text>
+					</staticText>
+					<textField isBlankWhenNull="true">
+						<reportElement x="220" y="0" width="150" height="20" uuid="bd73470e-a9b5-49ff-980e-80d5f0835ff0"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{actualBacking} ? "Yes" :  "No"]]></textFieldExpression>
+					</textField>
+					<textField isBlankWhenNull="true">
+						<reportElement x="370" y="0" width="140" height="20" uuid="77682698-7587-4b9a-8b52-7ee49380f3f4"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{planBacking} ? "Yes" :  "No"]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement x="0" y="130" width="511" height="20" uuid="b9aa5646-fbdf-45a5-83c2-15b28da01de8"/>
+					<box leftPadding="0"/>
+					<staticText>
+						<reportElement x="0" y="0" width="220" height="20" uuid="4dfb3662-40bb-4fab-b055-e8484ec046bc"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="微软雅黑" size="10" isBold="false"/>
+						</textElement>
+						<text><![CDATA[Base Metal / Spec.  母材]]></text>
+					</staticText>
+					<textField isBlankWhenNull="true">
+						<reportElement x="220" y="0" width="150" height="20" uuid="9a50b376-c3ae-47ed-be34-a840ae17bda8"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{actualBaseMetal}]]></textFieldExpression>
+					</textField>
+					<textField isBlankWhenNull="true">
+						<reportElement x="370" y="0" width="140" height="20" uuid="8453b54e-2b08-4a3b-bc3a-ee3e38a598d3"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{planBaseMetal}]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement x="0" y="150" width="511" height="59" uuid="3c603a29-d121-4b0b-ba80-624c11311392"/>
+					<box leftPadding="0"/>
+					<staticText>
+						<reportElement x="0" y="0" width="100" height="60" uuid="8a7c994c-75a4-44b4-9356-2473642f002f"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="微软雅黑" size="10" isBold="false"/>
+						</textElement>
+						<text><![CDATA[Thickness of 
+deposited weld:
+熔覆焊厚度]]></text>
+					</staticText>
+					<frame>
+						<reportElement x="100" y="0" width="120" height="15" uuid="4bf95673-f036-453a-b2fe-b5656ce284f5"/>
+						<box>
+							<bottomPen lineWidth="1.0"/>
+						</box>
+						<staticText>
+							<reportElement x="22" y="0" width="88" height="15" uuid="0a7a5e27-e3a0-4a9b-967a-e21d34150d01"/>
+							<textElement verticalAlignment="Middle">
+								<font fontName="微软雅黑" size="10"/>
+							</textElement>
+							<text><![CDATA[Plate 板材]]></text>
+						</staticText>
+						<textField isBlankWhenNull="true">
+							<reportElement x="7" y="3" width="10" height="10" uuid="e4b996ab-1d05-42d2-9457-ea3114093423"/>
+							<box leftPadding="0">
+								<pen lineWidth="0.75"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="微软雅黑" size="7"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$P{thicknessPlateChecked}  ? " " :  "X"]]></textFieldExpression>
+						</textField>
+					</frame>
+					<frame>
+						<reportElement x="100" y="15" width="120" height="15" uuid="1efff2dc-ff96-4fe7-b99f-a92c2db4bd25"/>
+						<box>
+							<bottomPen lineWidth="1.0"/>
+						</box>
+						<staticText>
+							<reportElement x="22" y="0" width="88" height="15" uuid="bd6830a3-980b-4173-bfb6-ce6dfa138bd4"/>
+							<textElement verticalAlignment="Middle">
+								<font fontName="微软雅黑" size="10"/>
+							</textElement>
+							<text><![CDATA[Pipe/tube 管子]]></text>
+						</staticText>
+						<textField isBlankWhenNull="true">
+							<reportElement x="7" y="3" width="10" height="10" uuid="c0df41ce-726d-4023-b4d3-b17d495b681d"/>
+							<box leftPadding="0">
+								<pen lineWidth="0.75"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="微软雅黑" size="7"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$P{thicknessPipeChecked} ? " " :  "X"]]></textFieldExpression>
+						</textField>
+					</frame>
+					<frame>
+						<reportElement x="100" y="30" width="120" height="15" uuid="3618d8c2-71b3-460b-862e-4efc08e329eb"/>
+						<box>
+							<bottomPen lineWidth="1.0"/>
+						</box>
+						<staticText>
+							<reportElement x="22" y="0" width="88" height="15" uuid="a6a2a9a1-3c68-4d20-9aac-2629a867107f"/>
+							<textElement verticalAlignment="Middle">
+								<font fontName="微软雅黑" size="10"/>
+							</textElement>
+							<text><![CDATA[Groove 坡口]]></text>
+						</staticText>
+						<textField isBlankWhenNull="true">
+							<reportElement x="7" y="3" width="10" height="10" uuid="627c530c-5812-4708-ae16-ff36e0ed8d47"/>
+							<box leftPadding="0">
+								<pen lineWidth="0.75"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="微软雅黑" size="7"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$P{thicknessGrooveChecked} ? " " :  "X"]]></textFieldExpression>
+						</textField>
+					</frame>
+					<frame>
+						<reportElement x="100" y="45" width="120" height="15" uuid="e033e98a-ded4-45db-9986-f4dd98a434b4"/>
+						<staticText>
+							<reportElement x="22" y="0" width="88" height="15" uuid="d07cb678-8d76-4fe3-b1af-e80b8aaa76d7"/>
+							<textElement verticalAlignment="Middle">
+								<font fontName="微软雅黑" size="10"/>
+							</textElement>
+							<text><![CDATA[Fillet 角焊缝]]></text>
+						</staticText>
+						<textField isBlankWhenNull="true">
+							<reportElement x="7" y="3" width="10" height="10" uuid="47d20916-b9f9-44ac-a450-b9fb51ab8203"/>
+							<box leftPadding="0">
+								<pen lineWidth="0.75"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="微软雅黑" size="7"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$P{thicknessFilletChecked} ? " " :  "X"]]></textFieldExpression>
+						</textField>
+					</frame>
+					<textField isBlankWhenNull="true">
+						<reportElement x="220" y="0" width="150" height="60" uuid="925dd8d0-133b-40f0-a90b-eb746d690c1d"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{actualThickness}]]></textFieldExpression>
+					</textField>
+					<textField isBlankWhenNull="true">
+						<reportElement x="370" y="0" width="140" height="60" uuid="5f8ace71-f2dd-4936-8c8c-6383ca199d09"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{planThickness}]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement x="0" y="210" width="511" height="30" uuid="ad0c960e-1b36-4da8-bb3b-899d4db873f8"/>
+					<box leftPadding="0"/>
+					<staticText>
+						<reportElement x="0" y="0" width="100" height="30" uuid="a5fec824-5b7f-4ee8-b7ee-0a6e95e353aa"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="微软雅黑" size="10" isBold="false"/>
+						</textElement>
+						<text><![CDATA[Diameter: (Pipe)
+直径（圆管）]]></text>
+					</staticText>
+					<frame>
+						<reportElement x="100" y="0" width="120" height="15" uuid="0bd1c5cf-567d-4ed7-b0a6-cfd50d6cec65"/>
+						<box>
+							<topPen lineWidth="1.0"/>
+							<bottomPen lineWidth="1.0"/>
+						</box>
+						<textField isBlankWhenNull="true">
+							<reportElement x="7" y="3" width="10" height="10" uuid="f58de279-35b1-4e6f-889e-fdf3e5ac18a1"/>
+							<box leftPadding="0">
+								<pen lineWidth="0.75"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="微软雅黑" size="7"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$P{diaFilletChecked} ? " " :  "X"]]></textFieldExpression>
+						</textField>
+						<staticText>
+							<reportElement x="22" y="0" width="88" height="15" uuid="472b2f26-a2ad-4d10-a73f-b4ad8f22b915"/>
+							<textElement verticalAlignment="Middle">
+								<font fontName="微软雅黑" size="10"/>
+							</textElement>
+							<text><![CDATA[Fillet 角焊缝]]></text>
+						</staticText>
+					</frame>
+					<frame>
+						<reportElement x="100" y="15" width="120" height="15" uuid="d76f983a-f60d-4179-8d5e-746ca1764572"/>
+						<textField isBlankWhenNull="true">
+							<reportElement x="7" y="3" width="10" height="10" uuid="99b9b832-f6b5-49ff-8f2b-d66651021395"/>
+							<box leftPadding="0">
+								<pen lineWidth="0.75"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="微软雅黑" size="7"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$P{diaGrooveChecked} ? " " :  "X"]]></textFieldExpression>
+						</textField>
+						<staticText>
+							<reportElement x="22" y="0" width="88" height="15" uuid="51e4d267-6bc8-4490-a8a9-d6944f841169"/>
+							<textElement verticalAlignment="Middle">
+								<font fontName="微软雅黑" size="10"/>
+							</textElement>
+							<text><![CDATA[Groove 坡口]]></text>
+						</staticText>
+					</frame>
+					<textField isBlankWhenNull="true">
+						<reportElement x="220" y="0" width="150" height="30" uuid="f03c5f31-1d5a-485c-baf3-e62bdb66b555"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{actualDia}]]></textFieldExpression>
+					</textField>
+					<textField isBlankWhenNull="true">
+						<reportElement x="370" y="0" width="140" height="30" uuid="bcd7d7bf-32b4-48bb-9090-eec96757a466"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{planDia}]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement x="0" y="240" width="511" height="80" uuid="2d37b087-1ce8-4908-bcae-ff95aafd3ac6"/>
+					<box leftPadding="0"/>
+					<staticText>
+						<reportElement x="0" y="0" width="100" height="60" uuid="5f4b9146-8e76-4076-afcb-70d71a255b0e"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="微软雅黑" size="10" isBold="false"/>
+						</textElement>
+						<text><![CDATA[Filler Metal
+填充金属]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="100" y="0" width="120" height="20" uuid="a1bce044-c618-4617-a82e-608795dad71d"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0"/>
+							<leftPen lineWidth="1.0"/>
+							<bottomPen lineWidth="1.0"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<text><![CDATA[Spec. No. 规格号]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="100" y="20" width="120" height="20" uuid="8189014d-f2a4-4b9c-9fd4-3a3417fe3ecc"/>
+						<box leftPadding="6">
+							<leftPen lineWidth="1.0"/>
+							<bottomPen lineWidth="1.0"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<text><![CDATA[Class 等级]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="100" y="40" width="120" height="20" uuid="0ccef5b5-9ea5-49d7-b444-f012cc00e0e0"/>
+						<box leftPadding="6">
+							<leftPen lineWidth="1.0"/>
+							<bottomPen lineWidth="1.0"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<text><![CDATA[F-No. 焊条分类组别号]]></text>
+					</staticText>
+					<textField isBlankWhenNull="true">
+						<reportElement x="220" y="0" width="150" height="20" uuid="4b63409f-722c-45dd-9b73-c11f26dc68b8"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{actualFillerMetalSpecNo}]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="0" y="60" width="220" height="20" uuid="2acbf04f-2e16-491b-8c87-eeac922289f3"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<text><![CDATA[Gas/Flux Type气体/焊剂类型]]></text>
+					</staticText>
+					<textField isBlankWhenNull="true">
+						<reportElement x="220" y="20" width="150" height="20" uuid="3e0cc498-3e6f-4a9b-a425-b65292a5f5b3"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{actualFillerMetalClass}]]></textFieldExpression>
+					</textField>
+					<textField isBlankWhenNull="true">
+						<reportElement x="220" y="40" width="150" height="20" uuid="07e918d2-4097-4f35-be63-79b403357bdc"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{actualFillerMetalFNo}]]></textFieldExpression>
+					</textField>
+					<textField isBlankWhenNull="true">
+						<reportElement x="220" y="60" width="150" height="20" uuid="5aa18dfa-4ce2-4a3d-a19c-f0c48c20962b"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{actualGasOrFluxType}]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="370" y="0" width="140" height="80" uuid="ccc422b2-c5de-4627-a0c0-8fd693fe6688"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<text><![CDATA[Per WPS
+按照焊接工艺说明]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="0" y="320" width="510" height="20" uuid="13c10c80-0687-45ee-b826-8980507b7a7f"/>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<staticText>
+						<reportElement x="1" y="1" width="219" height="20" uuid="0431711d-527a-4b51-9293-6c67734d1c86"/>
+						<textElement textAlignment="Right" verticalAlignment="Middle">
+							<font fontName="微软雅黑" isBold="true"/>
+						</textElement>
+						<text><![CDATA[VISUAL INSPECTION 目检]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="220" y="0" width="180" height="20" uuid="9804fca0-af53-4a04-b8db-a2f11d16abf4"/>
+						<box leftPadding="10"/>
+						<textElement verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<text><![CDATA[Acceptable YES or NO 合格(是或否)]]></text>
+					</staticText>
+					<textField isBlankWhenNull="true">
+						<reportElement x="400" y="0" width="60" height="17" uuid="d610c4cd-cd15-4db6-a780-9e65036aed4c"/>
+						<box leftPadding="5">
+							<bottomPen lineWidth="1.0"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{visualAcceptable} ? "Yes" :  "No"]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement x="0" y="340" width="511" height="60" uuid="7006a543-db1c-4e5f-ac43-232de9b6668b"/>
+					<staticText>
+						<reportElement x="0" y="0" width="510" height="20" uuid="07c65d9c-ed36-404e-8807-e7c1727625f5"/>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="微软雅黑" isBold="true"/>
+						</textElement>
+						<text><![CDATA[RADIOGRAPHIC 射线照射检验]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="0" y="20" width="265" height="20" uuid="9e64d583-dfd0-4ab5-9e44-017ee317ebfa"/>
+						<box>
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<text><![CDATA[Report. No. 报告编号]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="265" y="20" width="245" height="20" uuid="242ca9d2-330c-47b8-af9c-d118bf1dc407"/>
+						<box>
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<text><![CDATA[ Result 结果]]></text>
+					</staticText>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="40" width="265" height="20" uuid="f7e78cab-d82c-4294-8bef-79234646b041"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{radioReportNo}]]></textFieldExpression>
+					</textField>
+					<textField isBlankWhenNull="true">
+						<reportElement x="265" y="40" width="245" height="20" uuid="5086ead4-e12b-46d8-a66c-57538a5d7627"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{radioReportResult}]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement x="0" y="400" width="511" height="110" uuid="be219ed8-a591-4c39-8fe8-3c768eba7da4"/>
+					<staticText>
+						<reportElement x="0" y="0" width="510" height="20" uuid="40ad7efd-9fea-46a4-be7a-a25117db4599"/>
+						<box>
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="微软雅黑" isBold="true"/>
+						</textElement>
+						<text><![CDATA[Fillet Test Results 角焊缝测试结果]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="0" y="20" width="160" height="20" uuid="aeb3398a-2e44-4c96-a1b8-0ce60f445ef4"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<text><![CDATA[Appearance 外观]]></text>
+					</staticText>
+					<textField isBlankWhenNull="true">
+						<reportElement x="160" y="20" width="105" height="20" uuid="aad506d1-493d-4f37-86c0-f03f574899b3"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{appearance}]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="0" y="40" width="160" height="30" uuid="a0b9e48e-e7d3-4430-b1a3-2be4d4af050a"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<text><![CDATA[Fracture Test Root Penetration
+断裂试验根部熔透]]></text>
+					</staticText>
+					<textField isBlankWhenNull="true">
+						<reportElement x="160" y="40" width="105" height="30" uuid="17fe8670-988e-4812-8c0d-4780d547c61a"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{fractureTest}]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="0" y="70" width="160" height="20" uuid="a510739a-2178-4c85-a298-7502dc909654"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<text><![CDATA[Inspected by 检验员]]></text>
+					</staticText>
+					<textField isBlankWhenNull="true">
+						<reportElement x="160" y="70" width="105" height="20" uuid="281aac36-fd92-4617-a09b-1e64cd3220be"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{inspector}]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="0" y="90" width="160" height="20" uuid="086fb2a2-e281-4ea2-a584-a2cd6628d5e4"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<text><![CDATA[Organization 部门]]></text>
+					</staticText>
+					<textField isBlankWhenNull="true">
+						<reportElement x="160" y="90" width="105" height="20" uuid="016ab797-768b-43a9-91a5-be5991ae12e8"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{organization}]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="265" y="20" width="140" height="20" uuid="b7631c7f-a27e-41fb-a95f-bd6bc2993630"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<text><![CDATA[Fillet Size 角焊缝尺寸]]></text>
+					</staticText>
+					<textField isBlankWhenNull="true">
+						<reportElement x="405" y="20" width="105" height="20" uuid="a2762326-c886-42de-91c4-56a01f718682"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{filletSize}]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="265" y="40" width="140" height="30" uuid="c596204a-19fe-43f9-a1fb-929fada3c0eb"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<text><![CDATA[Macroetch
+宏观腐蚀]]></text>
+					</staticText>
+					<textField isBlankWhenNull="true">
+						<reportElement x="405" y="40" width="105" height="30" uuid="61ad783b-d235-4770-aa93-2c5349679a00"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{macroetch}]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="265" y="70" width="140" height="20" uuid="c9e2b9b3-a893-4683-a839-6509d46ca65d"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<text><![CDATA[Test Number 试验号]]></text>
+					</staticText>
+					<textField isBlankWhenNull="true">
+						<reportElement x="405" y="70" width="105" height="20" uuid="ba4d249c-ad52-4229-9cc2-52e2947b835c"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{filletTestNo}]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="265" y="90" width="140" height="20" uuid="e29ab84a-6816-43a2-aac2-c7b6a71fd205"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<text><![CDATA[Date 日期]]></text>
+					</staticText>
+					<textField pattern="yyyy-MM-dd" isBlankWhenNull="true">
+						<reportElement x="405" y="90" width="105" height="20" uuid="c27934d8-7df5-4a2e-9309-1b4009c48fff"/>
+						<box leftPadding="6">
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{filletTestDate}]]></textFieldExpression>
+					</textField>
+				</frame>
+			</frame>
+		</band>
+	</detail>
+	<summary>
+		<band height="100">
+			<frame>
+				<reportElement x="8" y="0" width="510" height="100" uuid="3675b9aa-91ab-4b73-bcb8-4eced3bac841"/>
+				<staticText>
+					<reportElement x="0" y="0" width="510" height="40" uuid="61f9f5ab-2955-4b9e-9bfa-337d3ba23ba7"/>
+					<box leftPadding="6" rightPadding="6"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[We, the undersigned, certify that the statements in this record are correct and that the test welds were prepared, welded, and tested in conformance with the requirements of Section 3of ASME IX, (2010)
+我们签字人，证明本记录所载正确无误，试验焊缝的制备、焊接和试验符合ASME IX(2010年版)第三章要求。]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="40" width="135" height="20" uuid="b9293406-0be3-49c4-bf23-686505046f7e"/>
+					<box leftPadding="6">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[Prepare by]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="60" width="135" height="20" uuid="e2866398-5d1d-4406-bd08-aadc6fd27fb0"/>
+					<box leftPadding="6">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[Review by]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="80" width="135" height="20" uuid="9fcf5df1-4494-48d2-abfd-01d026058f72"/>
+					<box leftPadding="6">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[Approved by]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="135" y="40" width="155" height="20" uuid="3e4e9278-d576-4799-9c5d-5dd3b73a2a6c"/>
+					<box leftPadding="6">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{prepareBy}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="135" y="60" width="155" height="20" uuid="653695ad-3773-49c9-8e85-cf9ab5905262"/>
+					<box leftPadding="6">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{reviewBy}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="135" y="80" width="155" height="20" uuid="cf27c0d3-ba2c-497b-af2a-8a2784c135d0"/>
+					<box leftPadding="6">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{approvedBy}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="290" y="40" width="85" height="20" uuid="5b620933-f10f-452e-a8ea-621151a6e3b9"/>
+					<box leftPadding="6">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[Date]]></text>
+				</staticText>
+				<textField pattern="yyyy-MM-dd" isBlankWhenNull="true">
+					<reportElement x="375" y="40" width="135" height="20" uuid="5ffbf43e-e84d-4c7a-9f28-c30aa254d39d"/>
+					<box leftPadding="6">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{prepareDate}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="290" y="60" width="85" height="20" uuid="aef615b9-2aba-46aa-91df-4fe132da6025"/>
+					<box leftPadding="6">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[Date]]></text>
+				</staticText>
+				<textField pattern="yyyy-MM-dd" isBlankWhenNull="true">
+					<reportElement x="375" y="60" width="135" height="20" uuid="1e9bba3e-5e99-4a40-a05d-df2d23528463"/>
+					<box leftPadding="6">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{reviewDate}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="290" y="80" width="85" height="20" uuid="31edeedb-69da-4b26-afa0-64a966f152ad"/>
+					<box leftPadding="6">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[Date]]></text>
+				</staticText>
+				<textField pattern="yyyy-MM-dd" isBlankWhenNull="true">
+					<reportElement x="375" y="80" width="135" height="20" uuid="23ed67b7-fa1b-4a20-9c47-9aff8b3ecb68"/>
+					<box leftPadding="6">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{approvedDate}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</summary>
+</jasperReport>

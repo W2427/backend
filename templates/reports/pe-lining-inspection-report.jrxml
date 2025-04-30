@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pe-lining-inspection-report" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="NoDataSection" columnWidth="762" leftMargin="40" rightMargin="40" topMargin="40" bottomMargin="20" isFloatColumnFooter="true" uuid="391f00de-043b-4f01-868b-18622f998e60">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="274"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="717"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="469"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="521"/>
+	<style name="default-text" isDefault="true" isBlankWhenNull="true" fontName="微软雅黑" fontSize="9"/>
+	<parameter name="ASSETS_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["/var/www/ose/resources/templates/reports/assets"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="REPORT_ID" class="java.lang.String">
+		<defaultValueExpression><![CDATA["0000000000000000"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="projectName" class="java.lang.String"/>
+	<parameter name="reportNo" class="java.lang.String"/>
+	<parameter name="partName" class="java.lang.String"/>
+	<parameter name="date" class="java.sql.Date"/>
+	<parameter name="projectNo" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="transmittalNo" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="discipline" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="department" class="java.lang.String"/>
+	<parameter name="drawingNo" class="java.lang.String"/>
+	<parameter name="material" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="acceptCriteria" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="surfacePrep" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="workPieceTemp" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="removeMethod" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="examinationScale" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="penetrationMedium" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="intermediateCleaning" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="developer" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="penetrationTime" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="displayTime" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="sensitivityBlock" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="testInstrumentType" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="method" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="mtdOfParAppl" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="contrast" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="liftingForce" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="wetParticles" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="magnezingTime" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="detectionScale" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="moduleName" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="instrumentType" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="sfd" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="filmType" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="xTubeVoltage" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="sourceType" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="sourceSize" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="exposureTime" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="xTubeCurrent" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="radioTechnique" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="developCondition" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="intensifyScreen" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="noFilmInHolder" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="beamAngle" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="couplant" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="referenceSensitivity" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="testSensitivity" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="ndtDrawing" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="probeType" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="beamIndex" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="CLIENT_LOGO_DIR" class="java.lang.String"/>
+	<parameter name="CONTRACTOR_LOGO_DIR" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+  `no`, `pieceNo`, `areaNo`, `shopField`, `weldNo`, `size`, `componentType`, `heatBatchNo`
+ FROM
+   `ose_test`.`pipeline_fit_up_report`]]>
+	</queryString>
+	<field name="lineNo" class="java.lang.String"/>
+	<field name="drawingNo" class="java.lang.String"/>
+	<field name="remark" class="java.lang.String"/>
+	<pageHeader>
+		<band height="62">
+			<staticText>
+				<reportElement x="0" y="-20" width="180" height="20" uuid="c644680c-679d-4795-9915-97f9f56c7afb"/>
+				<textElement verticalAlignment="Bottom"/>
+				<text><![CDATA[WNT-MS/QHSE-305109]]></text>
+			</staticText>
+			<subreport isUsingCache="true" runToBottom="false" overflowType="NoStretch">
+				<reportElement x="0" y="0" width="762" height="50" uuid="02ce560a-02f7-4625-82ef-4882db025b0e">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<subreportParameter name="ASSETS_DIR">
+					<subreportParameterExpression><![CDATA[$P{ASSETS_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="REPORT_ID">
+					<subreportParameterExpression><![CDATA[$P{REPORT_ID}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="REPORT_NAME">
+					<subreportParameterExpression><![CDATA["镀  塑  检  验  报  告\nPE LINING  INSPECTION  REPORT"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="CLIENT_LOGO_DIR">
+					<subreportParameterExpression><![CDATA[$P{CLIENT_LOGO_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="CONTRACTOR_LOGO_DIR">
+					<subreportParameterExpression><![CDATA[$P{CONTRACTOR_LOGO_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportExpression><![CDATA[$P{ASSETS_DIR} + "/subreports/header-landscape.jasper"]]></subreportExpression>
+			</subreport>
+			<textField>
+				<reportElement x="585" y="50" width="175" height="12" uuid="6055ce81-3057-4b78-9aca-5fdffa17645e"/>
+				<textFieldExpression><![CDATA[$P{reportNo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="505" y="50" width="80" height="12" uuid="e2d1730d-4ec2-41e2-8405-b6792a32d9ae"/>
+				<text><![CDATA[Report No 报告号:]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="24">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="762" height="24" backcolor="#DFDFDF" uuid="3368273a-a096-4328-94b3-c4679db641be"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<staticText>
+					<reportElement x="0" y="0" width="42" height="24" uuid="b19b020f-39f1-4f10-a7d4-eacd643e384d"/>
+					<box leftPadding="4">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Right"/>
+					<text><![CDATA[序号
+NO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="42" y="0" width="288" height="24" uuid="84fddecf-ae81-45de-bb8c-06353d4210f4"/>
+					<box leftPadding="4">
+						<pen lineWidth="0.5"/>
+					</box>
+					<text><![CDATA[管线号
+LINE NO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="330" y="0" width="288" height="24" uuid="01d0f098-6393-4390-a91b-b9728bc67230"/>
+					<box leftPadding="4">
+						<pen lineWidth="0.5"/>
+					</box>
+					<text><![CDATA[图纸号
+DRAWING NO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="618" y="0" width="144" height="24" uuid="98b3bac3-2ffd-4bc0-bce5-e9e2388807f3"/>
+					<box leftPadding="4">
+						<pen lineWidth="0.5"/>
+					</box>
+					<text><![CDATA[备注
+REMARK]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16">
+			<property name="com.jaspersoft.studio.layout"/>
+			<frame>
+				<reportElement x="0" y="0" width="762" height="16" uuid="5ad15e22-0fb3-4fee-8667-307301b7df8e"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textField>
+					<reportElement x="0" y="0" width="42" height="16" uuid="9e586ee6-07a7-4f73-8dd2-d7fcab3f4972">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a9822d4b-22da-4fa4-b348-2d9d7c7272ec"/>
+					</reportElement>
+					<box leftPadding="4">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$V{REPORT_COUNT}.toString( )]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="42" y="0" width="288" height="16" uuid="00575e3c-c29c-4cfd-b7c5-2ee7ebf94de5">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a9822d4b-22da-4fa4-b348-2d9d7c7272ec"/>
+					</reportElement>
+					<box leftPadding="4">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textFieldExpression><![CDATA[$F{lineNo}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="330" y="0" width="288" height="16" uuid="0ba7d677-5ba1-45c2-9139-7c4f544cdbb5">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a9822d4b-22da-4fa4-b348-2d9d7c7272ec"/>
+					</reportElement>
+					<box leftPadding="4">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textFieldExpression><![CDATA[$F{drawingNo}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="618" y="0" width="144" height="16" uuid="56d68fae-00f8-4d4c-9b09-930fd27ce103">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a9822d4b-22da-4fa4-b348-2d9d7c7272ec"/>
+					</reportElement>
+					<box leftPadding="4">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textFieldExpression><![CDATA[$F{remark}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="24" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<textField>
+				<reportElement x="550" y="0" width="100" height="24" uuid="67c74501-6a5e-42d1-b923-67cd42cd6f85">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["第 " + $V{PAGE_NUMBER} + " 页"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="660" y="0" width="100" height="24" uuid="96cdff8f-1d0b-4a4d-9290-e01c5bfdf3fa">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["共 " + $V{PAGE_NUMBER} + " 页"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="102" splitType="Stretch">
+			<staticText>
+				<reportElement x="42" y="0" width="180" height="30" uuid="8fa97add-d4a0-4272-9078-db92d41aaa56">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Operator
+操作人员]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="222" y="0" width="180" height="30" uuid="88d2f237-0e17-4314-9c33-d5975a21d9b7">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Inspector
+检验员]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="402" y="0" width="180" height="30" uuid="86e7a089-7a5f-4525-833f-c72b215783fe">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Third Party
+第三方]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="30" width="42" height="24" uuid="c9972585-1f07-4ae5-a72d-5318dd2eb629">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<box leftPadding="4" rightPadding="4">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[签字：
+Sign:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="42" y="30" width="180" height="24" uuid="64b8b5a7-7259-49f0-9cb5-58101dc2a795">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box leftPadding="4" rightPadding="4">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="54" width="42" height="24" uuid="18b90a8a-1921-42cf-8de1-d236a64a18d7">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<box leftPadding="4" rightPadding="4">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[日期：
+Date:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="540" y="78" width="100" height="24" uuid="ab53d060-df3c-4ee6-8037-beaa396fa51c">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["第 " + $V{PAGE_NUMBER} + " 页"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="660" y="78" width="100" height="24" uuid="10ca8f96-4454-4510-8fcd-8734c393bf93">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["共 " + $V{PAGE_NUMBER} + " 页"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="582" y="0" width="180" height="30" uuid="2c6a39e6-5cb9-4537-b46f-eb59ad0e2472">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[CLIENT
+业主]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="222" y="30" width="180" height="24" uuid="f277633c-801f-41ee-92d5-b0286c48694d">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box leftPadding="4" rightPadding="4">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="402" y="30" width="180" height="24" uuid="4d0c8741-5a23-43f4-b53e-49d5daa943da">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box leftPadding="4" rightPadding="4">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="582" y="30" width="180" height="24" uuid="4d5b2683-5633-4c4c-9c21-fbe01bff206e">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box leftPadding="4" rightPadding="4">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="582" y="54" width="180" height="24" uuid="160b0978-52b1-48df-b885-cc691ec670ad">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box leftPadding="4" rightPadding="4">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="402" y="54" width="180" height="24" uuid="21939a42-0a9e-4b3d-badc-7830b958a67b">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box leftPadding="4" rightPadding="4">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="42" y="54" width="180" height="24" uuid="226f93ed-8f56-4f99-bc1f-850a6afe9687">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box leftPadding="4" rightPadding="4">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="222" y="54" width="180" height="24" uuid="aedfb2b1-51cf-4c38-a001-329dd670c82a">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box leftPadding="4" rightPadding="4">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="42" height="30" uuid="a56f3c73-f209-4285-b39b-3182864549e8">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<box leftPadding="4" rightPadding="4">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+		</band>
+	</lastPageFooter>
+</jasperReport>

@@ -1,0 +1,2278 @@
+
+[[_paths]]
+== 路径
+
+[[_authenticateusingpost]]
+=== 用户登录认证
+....
+POST /authorizations
+....
+
+
+==== 说明
+获取访问令牌。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Body**|**credentials** +
+__必填__|credentials|<<_credentialdto,CredentialDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**201**|Created|<<_ad4cb2d6630ab139f9d87ec7f8ff9b51,JsonObjectResponseBody«UserProfile»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* authentication-controller
+
+
+[[_destroyauthorizationusingdelete]]
+=== 用户注销登录
+....
+DELETE /authorizations/{accessToken}
+....
+
+
+==== 说明
+销毁访问令牌。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**accessToken** +
+__可选__|用户访问令牌|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_jsonresponsebody,JsonResponseBody>>
+|**204**|No Content|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|===
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* authentication-controller
+
+
+[[_listusingget]]
+=== 取得业务代码列表
+....
+GET /biz-codes
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Query**|**type** +
+__可选__|业务代码类型|enum (ACCOUNT_TYPE, ORGANIZATION_TYPE, USER_PRIVILEGE, RESOURCE_TYPE, VERIFICATION_PURPOSE)
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_99bb1bc01aa333e8b427e03782a647da,JsonListResponseBody«BizCodeDTO»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* biz-code-controller
+
+
+[[_refreshusingpost]]
+=== 刷新图形验证码
+....
+POST /captcha
+....
+
+
+==== 说明
+生成的验证码针对客户端用户代理软件及远程 IP 地址有效，因此更换浏览器或场所可能会导致验证失败。
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_3c6b9b7ccb7315f82fd52dd96e26b34e,JsonObjectResponseBody«CaptchaData»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* captcha-controller
+
+
+[[_verifyusingpost]]
+=== 校验图形验证码
+....
+POST /captcha/{captchaId}/verify
+....
+
+
+==== 说明
+客户端仅可执行一次校验。<br>若识别错误或图形验证码信息不存在则返回访问令牌无效错误；若已过期则返回访问令牌过期错误；若图形验证码已被校验过则返回访问被拒绝错误。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**captchaId** +
+__可选__|图形验证码 ID|string
+|**Body**|**captchaDTO** +
+__可选__|图形验证码校验数据|<<_captchadto,CaptchaDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_jsonresponsebody,JsonResponseBody>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* captcha-controller
+
+
+[[_checkusingpost]]
+=== 检查用户权限
+....
+POST /check-privilege
+....
+
+
+==== 说明
+检查访问令牌持有者用户是否拥有对指定资源执行指定操作的权限。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Body**|**privilegeCheckDTO** +
+__必填__|privilegeCheckDTO|<<_privilegecheckdto,PrivilegeCheckDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_188887a9b99e37548110a74b0f52f1b6,JsonObjectResponseBody«OperatorDTO»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* privilege-controller
+
+
+[[_getuseravailableprivilegesusingget]]
+=== 取得当前用户在指定组织及其所有下级组织所用有的所有权限
+....
+GET /current-user/orgs/{orgId}/available-privileges
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_980d1a6ce50984b36a7ea878a1670690,JsonObjectResponseBody«UserPrivilegeDTO»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* privilege-controller
+
+
+[[_getuserprivilegesusingget]]
+=== 取得登录用户在指定组织的权限，并根据作用域分组
+....
+GET /current-user/orgs/{orgId}/privileges
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_d19281235916ab624b188bcc9cdfe255,JsonListResponseBody«UserPrivilegeDTO»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* privilege-controller
+
+
+[[_createusingpost]]
+=== 创建部门
+....
+POST /orgs
+....
+
+
+==== 说明
+需要职员用有创建部门的权限
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Body**|**organizationDTO** +
+__可选__|部门信息|<<_organizationdto,OrganizationDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**201**|Created|<<_bae426cd2afc15b0b5538987be0eaf06,JsonObjectResponseBody«Organization»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* organization-controller
+
+
+[[_searchusingget]]
+=== 获取组织列表
+....
+GET /orgs
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|**Query**|**type** +
+__可选__|组织类型|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_cc8013ee6ab84add911137ffd3ff7920,JsonListResponseBody«Organization»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* organization-controller
+
+
+[[_batchgetusingpost]]
+=== 批量取得组织信息（仅供其他服务调用）
+....
+POST /orgs/batch-get
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Body**|**batchGetDTO** +
+__必填__|batchGetDTO|<<_batchgetdto,BatchGetDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_0a37f2751ca620e016c38f0981cb2d89,JsonListResponseBody«OrganizationBasicDTO»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* organization-controller
+
+
+[[_detailsusingget]]
+=== 获取组织详情
+....
+GET /orgs/{orgId}
+....
+
+
+==== 说明
+需要拥有查看部门权限
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Query**|**parentId** +
+__可选__|上级组织 ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_bae426cd2afc15b0b5538987be0eaf06,JsonObjectResponseBody«Organization»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* organization-controller
+
+
+[[_getbyprivilegesusingpost]]
+=== 取得工作组中拥有特定权限的成员列表
+....
+POST /orgs/{orgId}/members-with-privileges
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Body**|**teamPrivileges** +
+__必填__|teamPrivileges|<<_teamprivilegelistdto,TeamPrivilegeListDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_28985d14b30359e3bf5385eb8328531b,JsonListResponseBody«UserBasic»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* user-controller
+
+
+[[_getorgmembersbyprivilegesusingget]]
+=== 获取工作组下的组织成员列表
+....
+GET /orgs/{orgId}/projects/{projectId}/teams/{teamId}/orgs-members
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织ID|string
+|**Path**|**projectId** +
+__可选__|项目ID|string
+|**Path**|**teamId** +
+__可选__|工作组ID|string
+|**Query**|**privileges** +
+__可选__|权限结合|< string > array(multi)
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_cc8013ee6ab84add911137ffd3ff7920,JsonListResponseBody«Organization»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* organization-controller
+
+
+[[_deleteusingdelete]]
+=== 删除部门
+....
+DELETE /orgs/{organizationId}
+....
+
+
+==== 说明
+需要拥有删除部门权限
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**organizationId** +
+__可选__|部门ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_jsonresponsebody,JsonResponseBody>>
+|**204**|No Content|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|===
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* organization-controller
+
+
+[[_updateusingpatch]]
+=== 更新部门
+....
+PATCH /orgs/{organizationId}
+....
+
+
+==== 说明
+需要拥有更新部门的权限
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**organizationId** +
+__可选__|部门ID|string
+|**Body**|**organizationDTO** +
+__可选__|部门待更新数据|<<_organizationdto,OrganizationDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_jsonresponsebody,JsonResponseBody>>
+|**204**|No Content|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* organization-controller
+
+
+[[_hierarchyusingget]]
+=== 获取部门的层级列表
+....
+GET /orgs/{organizationId}/hierarchy
+....
+
+
+==== 说明
+需要拥有查看部门权限
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**organizationId** +
+__可选__|组织ID|string
+|**Query**|**depth** +
+__可选__|深度|integer (int32)
+|**Query**|**name** +
+__可选__|组织名称|string
+|**Query**|**type** +
+__可选__|组织类型|string
+|**Query**|**userId** +
+__可选__|用户ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_7c46e4bd7aa20a86d7b1c4bf1a88f470,JsonObjectResponseBody«OrganizationBasic»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* organization-controller
+
+
+[[_addmembersusingpost]]
+=== 部门添加成员
+....
+POST /orgs/{organizationId}/members
+....
+
+
+==== 说明
+需要有操作部门的权限
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**organizationId** +
+__可选__|部门ID|string
+|**Body**|**addOrganizationMemberDTO** +
+__可选__|成员ID列表|<<_addorganizationmemberdto,AddOrganizationMemberDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_jsonresponsebody,JsonResponseBody>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* organization-controller
+
+
+[[_membersusingget]]
+=== 获取成员列表
+....
+GET /orgs/{organizationId}/members
+....
+
+
+==== 说明
+需要拥有查看组织权限
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**organizationId** +
+__可选__|组织ID|string
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**keyword** +
+__可选__|关键字|string
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_c7b79e7f4fb6a3449ecd12fdca9eb9c1,JsonListResponseBody«UserProfile»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* organization-controller
+
+
+[[_removemembersusingdelete]]
+=== 部门移除成员
+....
+DELETE /orgs/{organizationId}/members/{memberId}
+....
+
+
+==== 说明
+需要有操作部门的权限
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**memberId** +
+__可选__|成员ID|string
+|**Path**|**organizationId** +
+__可选__|部门ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_jsonresponsebody,JsonResponseBody>>
+|**204**|No Content|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* organization-controller
+
+
+[[_getdepartmentsusingget]]
+=== 获取用户组织部门
+....
+GET /orgs/{organizationId}/members/{memberId}/orgs
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**memberId** +
+__可选__|用户 ID|string
+|**Path**|**organizationId** +
+__可选__|组织 ID|string
+|**Query**|**type** +
+__可选__|组织类型|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_9ab879efb239057eeda1743687b59d48,JsonListResponseBody«UserOrganization»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* organization-controller
+
+
+[[_findorgmemberrolesusingget]]
+=== 获取组织用户下的角色列表
+....
+GET /orgs/{organizationId}/members/{memberId}/roles
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**memberId** +
+__可选__|用户ID|string
+|**Path**|**organizationId** +
+__可选__|项目组织ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_4976a975a0e1630b723571ac879a25e1,JsonListResponseBody«Role»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* role-controller
+
+
+[[_createusingpost_1]]
+=== 创建角色
+....
+POST /orgs/{organizationId}/roles
+....
+
+
+==== 说明
+需要有创建角色的权限
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**organizationId** +
+__可选__|组织ID|string
+|**Body**|**roleDTO** +
+__可选__|角色创建信息|<<_roledto,RoleDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**201**|Created|<<_8f9bad9337102f895da948b8d2181092,JsonObjectResponseBody«Role»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* role-controller
+
+
+[[_searchusingget_1]]
+=== 获取角色列表
+....
+GET /orgs/{organizationId}/roles
+....
+
+
+==== 说明
+需要拥有查看角色权限
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**organizationId** +
+__可选__|组织ID|string
+|**Query**|**code** +
+__可选__|角色code|string
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**isTemplate** +
+__可选__|是否为模板|string
+|**Query**|**keyword** +
+__可选__|关键字|string
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|**Query**|**status** +
+__可选__|状态|< enum (ACTIVE, DISABLED, DELETED, REJECTED, APPROVED, PENDING, FINISHED, CLOSED) > array(multi)
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_4976a975a0e1630b723571ac879a25e1,JsonListResponseBody«Role»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* role-controller
+
+
+[[_getusingget]]
+=== 获取角色详情
+....
+GET /orgs/{organizationId}/roles/{roleId}
+....
+
+
+==== 说明
+需要拥有查看角色的权限
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**organizationId** +
+__可选__|组织ID|string
+|**Path**|**roleId** +
+__可选__|角色ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_8f9bad9337102f895da948b8d2181092,JsonObjectResponseBody«Role»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* role-controller
+
+
+[[_updateusingpatch_1]]
+=== 更新角色信息
+....
+PATCH /orgs/{organizationId}/roles/{roleId}
+....
+
+
+==== 说明
+拥有更新角色权限
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**organizationId** +
+__可选__|组织ID|string
+|**Path**|**roleId** +
+__可选__|角色ID|string
+|**Body**|**roleDTO** +
+__必填__|roleDTO|<<_roledto,RoleDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_jsonresponsebody,JsonResponseBody>>
+|**204**|No Content|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* role-controller
+
+
+[[_addmemberusingpost]]
+=== 添加成员
+....
+POST /orgs/{organizationId}/roles/{roleId}/members
+....
+
+
+==== 说明
+需要拥有操作角色权限
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**organizationId** +
+__可选__|组织ID|string
+|**Path**|**roleId** +
+__可选__|角色ID|string
+|**Body**|**addRoleMemberDTO** +
+__可选__|用户ID|<<_addrolememberdto,AddRoleMemberDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_jsonresponsebody,JsonResponseBody>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* role-controller
+
+
+[[_membersusingget_1]]
+=== 获取成员列表
+....
+GET /orgs/{organizationId}/roles/{roleId}/members
+....
+
+
+==== 说明
+需要拥有查看角色权限
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**organizationId** +
+__可选__|组织ID|string
+|**Path**|**roleId** +
+__可选__|角色ID|string
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**keyword** +
+__可选__|关键字|string
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_c7b79e7f4fb6a3449ecd12fdca9eb9c1,JsonListResponseBody«UserProfile»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* role-controller
+
+
+[[_removememberusingdelete]]
+=== 移除角色中的成员
+....
+DELETE /orgs/{organizationId}/roles/{roleId}/members/{memberId}
+....
+
+
+==== 说明
+需要拥有操作角色的权限
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**memberId** +
+__可选__|用户ID|string
+|**Path**|**organizationId** +
+__可选__|组织ID|string
+|**Path**|**roleId** +
+__可选__|角色ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_jsonresponsebody,JsonResponseBody>>
+|**204**|No Content|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* role-controller
+
+
+[[_setuserroleusingpost]]
+=== 更新用户角色
+....
+POST /orgs/{projectOrgId}/members/{memberId}/set-user-roles
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**memberId** +
+__可选__|用户 ID|string
+|**Path**|**projectOrgId** +
+__可选__|项目组织 ID|string
+|**Body**|**setUserRoleDTO** +
+__可选__|角色列表|<<_setuserroledto,SetUserRoleDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_jsonresponsebody,JsonResponseBody>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* role-controller
+
+
+[[_deleteusingdelete_1]]
+=== 删除角色
+....
+DELETE /roles/{roleId}
+....
+
+
+==== 说明
+拥有删除角色权限
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**roleId** +
+__可选__|角色ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_jsonresponsebody,JsonResponseBody>>
+|**204**|No Content|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* role-controller
+
+
+[[_generatetemporaryaccesstokenusingget]]
+=== 生成临时访问令牌
+....
+GET /temporary-access-token
+....
+
+
+==== 说明
+临时访问令牌将通过 <code>X-Temp-Access-Token</code> 响应头返回，临时访问令牌的有效截止时间将通过 <code>X-Temp-Access-Token-Expires-At</code> 响应头返回。在后续请求中通过 <code>access-token</code> 查询参数传递临时访问令牌。
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_jsonresponsebody,JsonResponseBody>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* authentication-controller
+
+
+[[_createusingpost_2]]
+=== 创建用户
+....
+POST /users
+....
+
+
+==== 说明
+创建用户登录账号，需要系统管理员权限。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Body**|**userDTO** +
+__可选__|用户信息|<<_userdto,UserDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**201**|Created|<<_ad4cb2d6630ab139f9d87ec7f8ff9b51,JsonObjectResponseBody«UserProfile»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* user-controller
+
+
+[[_searchusingget_2]]
+=== 查询用户信息
+....
+GET /users
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Query**|**email** +
+__可选__|电子邮箱地址|string
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**keyword** +
+__可选__|关键字|string
+|**Query**|**mobile** +
+__可选__|手机号码|string
+|**Query**|**name** +
+__可选__|姓名|string
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|**Query**|**status** +
+__可选__|用户登录账号状态|< enum (ACTIVE, DISABLED, DELETED, REJECTED, APPROVED, PENDING, FINISHED, CLOSED) > array(multi)
+|**Query**|**type** +
+__可选__|用户类型|< string > array(multi)
+|**Query**|**username** +
+__可选__|登录用户名|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_c7b79e7f4fb6a3449ecd12fdca9eb9c1,JsonListResponseBody«UserProfile»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* user-controller
+
+
+[[_batchgetusingpost_1]]
+=== 批量取得用户信息（仅供其他服务调用）
+....
+POST /users/batch-get
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Body**|**batchGetDTO** +
+__必填__|batchGetDTO|<<_batchgetdto,BatchGetDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_28985d14b30359e3bf5385eb8328531b,JsonListResponseBody«UserBasic»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* user-controller
+
+
+[[_getuserbyusernameusingpost]]
+=== 根据用户名获取用户信息
+....
+POST /users/get-by-username
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Body**|**userNameCriteriaDTO** +
+__必填__|userNameCriteriaDTO|<<_usernamecriteriadto,UserNameCriteriaDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_c7b79e7f4fb6a3449ecd12fdca9eb9c1,JsonListResponseBody«UserProfile»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* user-controller
+
+
+[[_validateaccesstokenusingpost]]
+=== validateAccessToken
+....
+POST /users/is-access-token-valid
+....
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* user-controller
+
+
+[[_resetpasswordusingpost]]
+=== 重置用户登录密码
+....
+POST /users/{account}/reset-password
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**account** +
+__可选__|用户电子邮箱地址或手机号码|string
+|**Body**|**userPasswordResetDTO** +
+__可选__|用户密码重置表单|<<_userpasswordresetdto,UserPasswordResetDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_jsonresponsebody,JsonResponseBody>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* user-controller
+
+
+[[_sendverificationcodeusingpost]]
+=== 获取电子邮件或短信验证码
+....
+POST /users/{account}/verifications
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**account** +
+__可选__|用户电子邮箱地址或手机号码|string
+|**Body**|**userAccountVerificationSendDTO** +
+__可选__|验证码获取请求表单|<<_useraccountverificationsenddto,UserAccountVerificationSendDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_jsonresponsebody,JsonResponseBody>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* user-controller
+
+
+[[_getusingget_1]]
+=== 取得用户详细信息
+....
+GET /users/{userId}
+....
+
+
+==== 说明
+取得当前登录用户信息时将路径参数 <code>userId</code> 设置为 "<code>current</code>"。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**userId** +
+__可选__|用户 ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_ad4cb2d6630ab139f9d87ec7f8ff9b51,JsonObjectResponseBody«UserProfile»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* user-controller
+
+
+[[_deleteusingdelete_2]]
+=== 删除用户登录账号
+....
+DELETE /users/{userId}
+....
+
+
+==== 说明
+需要系统管理员权限。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**userId** +
+__可选__|用户 ID|string
+|**Query**|**version** +
+__可选__|用户数据版本|integer (int64)
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_jsonresponsebody,JsonResponseBody>>
+|**204**|No Content|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|===
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* user-controller
+
+
+[[_updateprofileusingpatch]]
+=== 更新用户信息
+....
+PATCH /users/{userId}
+....
+
+
+==== 说明
+需要拥有更新用户权限
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**userId** +
+__可选__|用户ID|string
+|**Body**|**userProfileDTO** +
+__可选__|更新信息|<<_userprofiledto,UserProfileDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_jsonresponsebody,JsonResponseBody>>
+|**204**|No Content|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* user-controller
+
+
+[[_disableusingpost]]
+=== 停用用户登录账号
+....
+POST /users/{userId}/disable
+....
+
+
+==== 说明
+需要系统管理员权限。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**userId** +
+__可选__|用户 ID|string
+|**Query**|**version** +
+__可选__|用户数据版本|integer (int64)
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_jsonresponsebody,JsonResponseBody>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* user-controller
+
+
+[[_enableusingpost]]
+=== 启用用户登录账号
+....
+POST /users/{userId}/enable
+....
+
+
+==== 说明
+需要系统管理员权限。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**userId** +
+__可选__|用户 ID|string
+|**Query**|**version** +
+__可选__|用户数据版本|integer (int64)
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_jsonresponsebody,JsonResponseBody>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* user-controller
+
+
+[[_switchprojectorgusingpost]]
+=== 切换项目组织列表
+....
+POST /users/{userId}/switch-org
+....
+
+
+==== 说明
+需要拥有更新用户权限
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**userId** +
+__可选__|用户ID|string
+|**Body**|**switchOrgDTO** +
+__可选__|项目组织|<<_switchorgdto,SwitchOrgDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_jsonresponsebody,JsonResponseBody>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* user-controller
+
+
+[[_gettopprojectorgsusingget]]
+=== 用户顶层项目组织列表
+....
+GET /users/{userId}/top-project-orgs
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**userId** +
+__可选__|用户ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_cc8013ee6ab84add911137ffd3ff7920,JsonListResponseBody«Organization»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* user-controller
+
+
+[[_updatepasswordusingpost]]
+=== 修改用户登录密码
+....
+POST /users/{userId}/update-password
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**userId** +
+__可选__|用户 ID|string
+|**Body**|**userPasswordUpdateDTO** +
+__可选__|用户密码修改表单|<<_userpasswordupdatedto,UserPasswordUpdateDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_jsonresponsebody,JsonResponseBody>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* user-controller
+
+
+

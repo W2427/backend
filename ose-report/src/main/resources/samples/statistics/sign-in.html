@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=640,user-scalable=no">
+  <title>Sign In - Statistics Archive Data Demo</title>
+  <link type="text/css" rel="stylesheet" href="common.css">
+  <link type="text/css" rel="stylesheet" href="sign-in.css">
+</head>
+<body>
+<form class="sign-in" method="post" action="/authorizations">
+  <fieldset>
+    <legend>Sign In</legend>
+    <div><input name="username" type="text" placeholder="用户名" autocomplete="off"></div>
+    <div><input name="password" type="password" placeholder="登录密码"></div>
+    <div>
+      <input type="submit" value="登录">
+      <input type="reset" value="重置">
+    </div>
+  </fieldset>
+</form>
+<script type="text/javascript" src="./common.js"></script>
+<script type="text/javascript" src="./sign-in.js"></script>
+</body>
+</html>

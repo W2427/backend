@@ -1,0 +1,5 @@
+检查时间：2019-11-21 12:40:01
+执行服务器：prddata01
+
+服务器【prddata01】：
+  • 命令（ssh root@prddata01 . ~/.bash_profile && node -e "try{console.log(JSON.stringify(fs.statSync('/mnt/mfs/scripts')));}catch(e){console.log(JSON.stringify(e));}"）执行错误：ssh_exchange_identification: Connection closed by remote host  

@@ -1,0 +1,5 @@
+检查时间：2019-12-8 01:20:02
+执行服务器：prdauth
+
+服务器【prdcore】：
+  • 命令（ssh root@prdcore free -b）执行错误：ssh_exchange_identification: Connection closed by remote host  

@@ -1,0 +1,60 @@
+{
+  "thresholds": {
+    "freeMemoryMB": 256.0,
+    "freeMemoryPercent": 5.0,
+    "cpuIdlePercent": 10.0,
+    "freeDiskMB": 512.0,
+    "freeDiskPercent": 5.0
+  },
+  "receivers": [
+    "jinhy@livebridge.com.cn",
+    "fengtieji@hotmail.com",
+    "pangwu@hotmail.com",
+    "zhen.wang2012@hotmail.com",
+    "meily@livebridge.com.cn"
+  ],
+  "user": "root",
+  "servers": [
+    {
+      "host": "prddata01",
+      "services": [
+        {"port": 6300, "desc": "redis-sentinel"},
+        {"port": 6301, "desc": "redis-server"},
+        {"port": 6302, "desc": "redis-server"},
+        {"port": 9300, "desc": "elasticsearch"},
+        {"port": 9421, "desc": "mfsmaster"},
+        {"port": 9422, "desc": "mfschunkserver"},
+        {"port": 33061, "desc": "mysqld"},
+        {"port": 6033, "desc": "proxysql"}
+      ]
+    },
+    {
+      "host": "prddata02",
+      "services": [
+        {"port": 6300, "desc": "redis-sentinel"},
+        {"port": 6301, "desc": "redis-server"},
+        {"port": 6302, "desc": "redis-server"},
+        {"port": 9300, "desc": "elasticsearch"},
+        {"port": 9422, "desc": "mfschunkserver"},
+        {"port": 33061, "desc": "mysqld"},
+        {"port": 6033, "desc": "proxysql"}
+      ]
+    },
+    {
+      "host": "prdauth",
+      "services": []
+    },
+    {
+      "host": "prddoc",
+      "services": [
+        {"port": 6300, "desc": "redis-sentinel"},
+        {"port": 6301, "desc": "redis-server"},
+        {"port": 6302, "desc": "redis-server"}
+      ]
+    },
+    {
+      "host": "prdcore",
+      "services": []
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+DELETE FROM `bpm_process_stage` WHERE `id` LIKE ?;

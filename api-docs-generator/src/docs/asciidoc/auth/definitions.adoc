@@ -1,0 +1,1000 @@
+
+[[_definitions]]
+== 定义
+
+[[_addorganizationmemberdto]]
+=== AddOrganizationMemberDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**memberId** +
+__可选__|用户 ID|string
+|===
+
+
+[[_addrolememberdto]]
+=== AddRoleMemberDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**memberId** +
+__可选__|用户 ID|string
+|===
+
+
+[[_batchgetdto]]
+=== BatchGetDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**entityIDs** +
+__可选__|数据实体 ID 集合|< string > array
+|===
+
+
+[[_bizcodedto]]
+=== BizCodeDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**code** +
+__可选__|业务代码|string
+|**description** +
+__可选__|说明|string
+|**name** +
+__可选__|名称|string
+|===
+
+
+[[_captchadto]]
+=== CaptchaDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**encryptedData** +
+__可选__|内容加密数据|string
+|**text** +
+__可选__|用户识别的文本|string
+|===
+
+
+[[_captchadata]]
+=== CaptchaData
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**encryptedData** +
+__可选__|内容加密数据|string
+|**id** +
+__可选__|实体 ID|string
+|**imageData** +
+__可选__|图像 Base64 字符串|string
+|**validUntil** +
+__可选__|有效截止时间（Unix Epoch 时间，毫秒）|integer (int64)
+|===
+
+
+[[_credentialdto]]
+=== CredentialDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**password** +
+__可选__|登录密码|string
+|**username** +
+__可选__|登录用户名|string
+|===
+
+
+[[_fielderror]]
+=== FieldError
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**message** +
+__可选__|错误描述|string
+|**name** +
+__可选__|发生错误的字段|string
+|**type** +
+__可选__|错误类型|string
+|===
+
+
+[[_99bb1bc01aa333e8b427e03782a647da]]
+=== JsonListResponseBody«BizCodeDTO»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_bizcodedto,BizCodeDTO>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_0a37f2751ca620e016c38f0981cb2d89]]
+=== JsonListResponseBody«OrganizationBasicDTO»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_organizationbasicdto,OrganizationBasicDTO>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_cc8013ee6ab84add911137ffd3ff7920]]
+=== JsonListResponseBody«Organization»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_organization,Organization>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_4976a975a0e1630b723571ac879a25e1]]
+=== JsonListResponseBody«Role»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_role,Role>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_28985d14b30359e3bf5385eb8328531b]]
+=== JsonListResponseBody«UserBasic»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_userbasic,UserBasic>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_9ab879efb239057eeda1743687b59d48]]
+=== JsonListResponseBody«UserOrganization»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_userorganization,UserOrganization>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_d19281235916ab624b188bcc9cdfe255]]
+=== JsonListResponseBody«UserPrivilegeDTO»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_userprivilegedto,UserPrivilegeDTO>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_c7b79e7f4fb6a3449ecd12fdca9eb9c1]]
+=== JsonListResponseBody«UserProfile»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_userprofile,UserProfile>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_3c6b9b7ccb7315f82fd52dd96e26b34e]]
+=== JsonObjectResponseBody«CaptchaData»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_captchadata,CaptchaData>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_188887a9b99e37548110a74b0f52f1b6]]
+=== JsonObjectResponseBody«OperatorDTO»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_operatordto,OperatorDTO>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_7c46e4bd7aa20a86d7b1c4bf1a88f470]]
+=== JsonObjectResponseBody«OrganizationBasic»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_organizationbasic,OrganizationBasic>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_bae426cd2afc15b0b5538987be0eaf06]]
+=== JsonObjectResponseBody«Organization»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_organization,Organization>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_8f9bad9337102f895da948b8d2181092]]
+=== JsonObjectResponseBody«Role»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_role,Role>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_980d1a6ce50984b36a7ea878a1670690]]
+=== JsonObjectResponseBody«UserPrivilegeDTO»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_userprivilegedto,UserPrivilegeDTO>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_ad4cb2d6630ab139f9d87ec7f8ff9b51]]
+=== JsonObjectResponseBody«UserProfile»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_userprofile,UserProfile>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_jsonresponsebody]]
+=== JsonResponseBody
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_jsonresponseerror]]
+=== JsonResponseError
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**code** +
+__可选__|错误代码|string
+|**errors** +
+__可选__|错误列表|< <<_jsonresponseerror,JsonResponseError>> > array
+|**fields** +
+__可选__|发生校验错误的字段的列表|< <<_fielderror,FieldError>> > array
+|**message** +
+__可选__|错误消息|string
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|===
+
+
+[[_meta]]
+=== Meta
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**count** +
+__可选__|数据总数|integer (int64)
+|**hasNextPage** +
+__可选__|是否存在下一页|boolean
+|**hasPreviousPage** +
+__可选__|是否存在上一页|boolean
+|**isFirstPage** +
+__可选__||boolean
+|**isLastPage** +
+__可选__||boolean
+|**pageNo** +
+__可选__|当前页号|integer (int32)
+|**pageSize** +
+__可选__|分页大小|integer (int32)
+|**pages** +
+__可选__|数据总页数|integer (int32)
+|===
+
+
+[[_operatordto]]
+=== OperatorDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**id** +
+__可选__|用户 ID|string
+|**logo** +
+__可选__|头像地址|string
+|**name** +
+__可选__|姓名|string
+|**type** +
+__可选__|用户类型|string
+|===
+
+
+[[_organization]]
+=== Organization
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**children** +
+__可选__|下级组织|string
+|**companyId** +
+__可选__|公司 ID|string
+|**createdAt** +
+__可选__|创建时间|string
+|**createdBy** +
+__可选__|创建者信息|<<_referencedata,ReferenceData>>
+|**default** +
+__可选__||boolean
+|**deleted** +
+__可选__|是否已被删除|boolean
+|**deletedAt** +
+__可选__|删除时间|string
+|**deletedBy** +
+__可选__|删除者信息|<<_referencedata,ReferenceData>>
+|**depth** +
+__可选__|层级深度|integer (int32)
+|**id** +
+__可选__|实体 ID|string
+|**lastModifiedAt** +
+__可选__|最后更新时间|string
+|**lastModifiedBy** +
+__可选__|最后更新者信息|<<_referencedata,ReferenceData>>
+|**members** +
+__可选__||< <<_userbasic,UserBasic>> > array
+|**name** +
+__可选__|名称|string
+|**no** +
+__可选__|编号|string
+|**parentId** +
+__可选__|上级组织 ID|string
+|**path** +
+__可选__|层级路径|string
+|**sort** +
+__可选__|排序顺序|integer (int32)
+|**status** +
+__可选__|数据实体状态|enum (ACTIVE, DISABLED, DELETED, REJECTED, APPROVED, PENDING, FINISHED, CLOSED)
+|**type** +
+__可选__|组织类型|enum (COMPANY, DEPARTMENT, PROJECT)
+|**version** +
+__可选__|更新版本（手动乐观锁）|integer (int64)
+|===
+
+
+[[_organizationbasic]]
+=== OrganizationBasic
+__类型__ : object
+
+
+[[_organizationbasicdto]]
+=== OrganizationBasicDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**id** +
+__可选__|组织 ID|string
+|**name** +
+__可选__|组织名称|string
+|**type** +
+__可选__|组织类型|string
+|===
+
+
+[[_organizationdto]]
+=== OrganizationDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**afterId** +
+__可选__|string
+|**name** +
+__可选__|string
+|**no** +
+__可选__|string
+|**parentId** +
+__可选__|string
+|**status** +
+__可选__|enum (ACTIVE, DISABLED, DELETED, REJECTED, APPROVED, PENDING, FINISHED, CLOSED)
+|**type** +
+__可选__|enum (COMPANY, DEPARTMENT, PROJECT)
+|===
+
+
+[[_privilegecheckdto]]
+=== PrivilegeCheckDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**orgId** +
+__可选__|组织 ID|string
+|**privilegeRequired** +
+__可选__||boolean
+|**privileges** +
+__可选__|权限列表|< enum (none, all, department, role, member, document, project, /entities/read, /entities/import, /drawing-list/piping/read, /iso-entities/read, /spool-entities/read, /pipe-piece-entities/read, /weld-entities/read, /component-entities/read, /qrcodes-baiting/read, /construction-change-apply/read, /weld-test-results/read, /iso-test-results/read, /nps/read, /hour-norm/read, /activities/read, /tasks/read, /scheduled-tasks/read, /ndt-tasks/read, /flaring-inspections/read, /deliveries/read, /cutting/read, /external-inspection-apply/read, /external-inspection-schedule/read, /external-inspection-upload-histories/read, /external-inspection-issues/read, /internal-inspection-issues/read, /welders/read, /subcons/read, /wps/read, /pqrs/read, /wps-positions/read, /wps-processes/read, /wps-bevel-types/read, /wps-joint-types/read, /wps-base-metals/read, /wps-base-metal-groups/read, /wps-filler-metals/read, /bomnodes/read, /requisition/read, /contract/read, /release-permit/read, /material-stocktakes/read, /material-open-boxes/read, /material-receive-receipts/read, /inventory/read, /material-prepares/read, /material-issue-receipts/read, /material-transfers/read, /material-coding-templates/read, /material-requisition/read, /material-return/read, /files/read, /checklists/read, /simulations/read, /wbs/read, /module-process-definitions/read, /members/read, /roles/read, /orgs/read, /entity-types/read, /entity-sub-types/read, /process-stages/read, /process-categories/read, /processes/read, /biz-code-types-read, /biz-code/read, /drawing-list/piping/import, /wbs/import, /experience/read, /notification/read, /working-hour/read, /task-package/read, /work-sites/read, /printers/read, /construction-manager-execute, /qc-manager, /safety-supervisor-execute, /supervisor-execute, /qc-execute, /coordinate-execute, /foreman-execute, /group-leader-execute, /weld-execute, /fitup-execute, /cutting-execute, /bevel-execute, /bend-execute, /ndt-execute, /hd-execute, /pmi-execute, /bevel-ground-execute, /strength-test-execute, /spool-install-execute, /joint-connection-execute, /flange-management-execute, /touchup-execute, /transport-execute, /support-cutting-execute, /support-fabricate-execute, /support-install-execute, /deck-perforation-execute, /pressure-test-execute, /air-blow-execute, /water-flush-execute, /oil-flush-execute, /air-tightness-execute, /shield-install-execute, /check-mc-execute, /box-execute, /pwht-execute, /bpm-task-category-not-found, /ndt-supervisor-execute, /pmi-supervisor-execute, /hd-supervisor-execute, /material-issue-warehouse_operator, /material-issue-controll-execute, /material-requisition-execute, /return-inspection-execute, /return-sacn-execute, /notification-configuration/read, /clean-package-entities/read, /pressure-test-package-entities/read, /sub-system-entities/read, /purchase-manager, /purchase-engineer, /design-manager, /design-supervisor, /drawing-check-execute, /drawing_review_execute, /document-control-execute, /design-engineer, /drawing_approve_execute, /design-document-control-execute, /construction-document-control-execute, /receive-check-execute, /drawing-issue-execute, /spool-release-execute, /data-entry-execute, /painting-supervisor-execute, /document-print-control-execute) > array
+|**required** +
+__可选__|是否必须已完成授权|boolean
+|**resourceId** +
+__可选__|资源 ID|string
+|**resourceType** +
+__可选__|资源类型|enum (NONE, USER, GROUP, DOCUMENT)
+|**type** +
+__可选__|授权类型，默认为【Bearer】|string
+|===
+
+
+[[_referencedata]]
+=== ReferenceData
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**$ref** +
+__可选__|引用目标数据实体 ID|string
+|===
+
+
+[[_role]]
+=== Role
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**code** +
+__可选__|代码|string
+|**createdAt** +
+__可选__|创建时间|string
+|**createdBy** +
+__可选__|创建者信息|<<_referencedata,ReferenceData>>
+|**deleted** +
+__可选__|是否已被删除|boolean
+|**deletedAt** +
+__可选__|删除时间|string
+|**deletedBy** +
+__可选__|删除者信息|<<_referencedata,ReferenceData>>
+|**editable** +
+__可选__||boolean
+|**id** +
+__可选__|实体 ID|string
+|**lastModifiedAt** +
+__可选__|最后更新时间|string
+|**lastModifiedBy** +
+__可选__|最后更新者信息|<<_referencedata,ReferenceData>>
+|**name** +
+__可选__|名称|string
+|**no** +
+__可选__|编号|string
+|**orgPath** +
+__可选__||string
+|**organizationId** +
+__可选__|所属组织 ID|<<_referencedata,ReferenceData>>
+|**privileges** +
+__可选__|权限列表|< string > array
+|**sort** +
+__可选__|排序|integer (int32)
+|**status** +
+__可选__|数据实体状态|enum (ACTIVE, DISABLED, DELETED, REJECTED, APPROVED, PENDING, FINISHED, CLOSED)
+|**template** +
+__可选__||boolean
+|**version** +
+__可选__|更新版本（手动乐观锁）|integer (int64)
+|===
+
+
+[[_roledto]]
+=== RoleDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**afterId** +
+__可选__|排序目标角色ID（top：置顶，ID：排在目标ID后面）|string
+|**name** +
+__可选__|角色名称|string
+|**no** +
+__可选__|角色编号|string
+|**privileges** +
+__可选__|权限|< string > array
+|**template** +
+__可选__|是否为角色模板|boolean
+|===
+
+
+[[_setuserroledto]]
+=== SetUserRoleDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**roles** +
+__可选__|角色ID列表|< string > array
+|===
+
+
+[[_switchorgdto]]
+=== SwitchOrgDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**organizationId** +
+__可选__|项目组织ID|string
+|===
+
+
+[[_teamprivilegedto]]
+=== TeamPrivilegeDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**memberPrivileges** +
+__可选__|权限集合|< string > array
+|**teamId** +
+__可选__|工作组 ID|string
+|===
+
+
+[[_teamprivilegelistdto]]
+=== TeamPrivilegeListDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**teams** +
+__可选__|工作组列表|< <<_teamprivilegedto,TeamPrivilegeDTO>> > array
+|===
+
+
+[[_useraccountverificationsenddto]]
+=== UserAccountVerificationSendDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**captcha** +
+__可选__|图形验证码|<<_captchadto,CaptchaDTO>>
+|**purpose** +
+__可选__|验证码使用目的|enum (SIGN_UP, SIGN_IN, RESET_PASSWORD)
+|===
+
+
+[[_userbasic]]
+=== UserBasic
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**email** +
+__可选__|电子邮箱地址|string
+|**id** +
+__可选__|实体 ID|string
+|**logo** +
+__可选__|头像地址|string
+|**mobile** +
+__可选__|手机号码|string
+|**name** +
+__可选__|姓名|string
+|**type** +
+__可选__|用户类型（system；super；administrator；user）|string
+|===
+
+
+[[_userdto]]
+=== UserDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**email** +
+__可选__|电子邮箱地址|string
+|**logo** +
+__可选__|头像地址|string
+|**mobile** +
+__可选__|手机号码|string
+|**name** +
+__可选__|姓名|string
+|**password** +
+__可选__|登录密码|string
+|**status** +
+__可选__|状态|enum (ACTIVE, DISABLED, DELETED, REJECTED, APPROVED, PENDING, FINISHED, CLOSED)
+|**type** +
+__可选__|用户类型（system；super；administrator；user）|string
+|**username** +
+__可选__|登录用户名|string
+|===
+
+
+[[_usernamecriteriadto]]
+=== UserNameCriteriaDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**userNames** +
+__可选__|用户名|< string > array
+|===
+
+
+[[_userorganization]]
+=== UserOrganization
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**createdAt** +
+__可选__|创建时间|string
+|**createdBy** +
+__可选__|创建者信息|<<_referencedata,ReferenceData>>
+|**default** +
+__可选__||boolean
+|**deleted** +
+__可选__|是否已被删除|boolean
+|**deletedAt** +
+__可选__|删除时间|string
+|**deletedBy** +
+__可选__|删除者信息|<<_referencedata,ReferenceData>>
+|**id** +
+__可选__|实体 ID|string
+|**lastModifiedAt** +
+__可选__|最后更新时间|string
+|**lastModifiedBy** +
+__可选__|最后更新者信息|<<_referencedata,ReferenceData>>
+|**orgPath** +
+__可选__||string
+|**organizationId** +
+__可选__|所属组织|<<_referencedata,ReferenceData>>
+|**organizationType** +
+__可选__|组织类型|enum (COMPANY, DEPARTMENT, PROJECT)
+|**roleIds** +
+__可选__|角色列表|< <<_referencedata,ReferenceData>> > array
+|**status** +
+__可选__|数据实体状态|enum (ACTIVE, DISABLED, DELETED, REJECTED, APPROVED, PENDING, FINISHED, CLOSED)
+|**userId** +
+__可选__|用户|<<_referencedata,ReferenceData>>
+|**version** +
+__可选__|更新版本（手动乐观锁）|integer (int64)
+|===
+
+
+[[_userpasswordresetdto]]
+=== UserPasswordResetDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**password** +
+__可选__|新密码|string
+|**verificationCode** +
+__可选__|电子邮件验证码或短信验证码|string
+|===
+
+
+[[_userpasswordupdatedto]]
+=== UserPasswordUpdateDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**originalPassword** +
+__可选__|原密码|string
+|**password** +
+__可选__|新密码|string
+|===
+
+
+[[_userprivilegedto]]
+=== UserPrivilegeDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**orgId** +
+__可选__|组织 ID|string
+|**privileges** +
+__可选__|权限列表|< string > array
+|===
+
+
+[[_userprofile]]
+=== UserProfile
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**createdAt** +
+__可选__|创建时间|string
+|**createdBy** +
+__可选__|创建者信息|<<_referencedata,ReferenceData>>
+|**deleted** +
+__可选__|是否已被删除|boolean
+|**deletedAt** +
+__可选__|删除时间|string
+|**deletedBy** +
+__可选__|删除者信息|<<_referencedata,ReferenceData>>
+|**email** +
+__可选__|电子邮箱地址|string
+|**id** +
+__可选__|实体 ID|string
+|**lastModifiedAt** +
+__可选__|最后更新时间|string
+|**lastModifiedBy** +
+__可选__|最后更新者信息|<<_referencedata,ReferenceData>>
+|**logo** +
+__可选__|头像地址|string
+|**mobile** +
+__可选__|手机号码|string
+|**name** +
+__可选__|姓名|string
+|**roleIds** +
+__可选__||< <<_referencedata,ReferenceData>> > array
+|**status** +
+__可选__|数据实体状态|enum (ACTIVE, DISABLED, DELETED, REJECTED, APPROVED, PENDING, FINISHED, CLOSED)
+|**type** +
+__可选__|用户类型（system；super；administrator；user）|string
+|**username** +
+__可选__|登录用户名|string
+|**version** +
+__可选__|更新版本（手动乐观锁）|integer (int64)
+|===
+
+
+[[_userprofiledto]]
+=== UserProfileDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**email** +
+__可选__|用户邮箱|string
+|**mobile** +
+__可选__|用户手机号|string
+|**name** +
+__可选__|用户名称|string
+|**type** +
+__可选__|用户类型|string
+|**username** +
+__可选__|用户登录名|string
+|===
+
+
+

@@ -1,0 +1,1550 @@
+
+[[_paths]]
+== 路径
+
+[[_listusingget_4]]
+=== 查询 WBS 实体导入文件
+....
+GET /orgs/{orgId}/entity-import-files
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|所属组织 ID|string
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_721f63edf7c8659e2698b1ee7ae3b12d,JsonListResponseBody«WBSEntitiesES»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* wbs-entity-controller
+
+
+[[_uploadexperienceattachmentusingpost]]
+=== 上传经验教训附件
+....
+POST /orgs/{orgId}/experience-attachments
+....
+
+
+==== 说明
+需要用户在指定组织中拥有操作项目的权限（<code>PROJECT</code>）。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**FormData**|**file** +
+__必填__|file|file
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**201**|Created|<<_889dccdb19320f1871fc372a9ca98349,JsonObjectResponseBody«TemporaryFileDTO»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `multipart/form-data`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* upload-controller
+
+
+[[_searchusingget]]
+=== 查询文件
+....
+GET /orgs/{orgId}/files
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Query**|**bizType** +
+__可选__|文件的业务类型|< enum (PROJECT_MODULE_PROCESS_DEFINITION, PROJECT_HIERARCHY, WBS_ENTITIES, WBS_ENTRIES, PROJECT_DOC, ISSUE_ATTACHMENT, WELDERS, WPS, ISSUE_IMPORT_FILES, EXPERIENCE_ATTACHMENT, WPS_ATTACHMENTS, WPQR_ATTACHMENTS, SUBCON_ATTACHMENTS, NDT_INSPECTOR_CERTIFICATE, RATED_TIME_IMPORT_FILE) > array(multi)
+|**Query**|**category** +
+__可选__|文件类型|< enum (FILE, TEXT, IMAGE, AUDIO, VIDEO, DOCUMENT, WORKBOOK, PRESENTATION, ARCHIVE, HTML, XML, JSON, CSV, PNG, JPEG, BMP, SVG, PDF, WORD, EXCEL, POWERPOINT, PAGES, NUMBERS, KEYNOTE) > array(multi)
+|**Query**|**committedBy** +
+__可选__|提交者 ID|string
+|**Query**|**content** +
+__可选__|内容（全文检索）|string
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**id** +
+__可选__|文件 ID|string
+|**Query**|**keyword** +
+__可选__|关键字|< string > array(multi)
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|**Query**|**tag** +
+__可选__|标签|< string > array(multi)
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_761caf4018ad1b9f3d49ca7bdd487260,JsonListResponseBody«FileBasicViewES»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* file-controller
+
+
+[[_getfileusingget]]
+=== 下载文件
+....
+GET /orgs/{orgId}/files/{fileId}
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**fileId** +
+__可选__|文件 ID|string
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* file-controller
+
+
+[[_getfileinfousingget]]
+=== 取得文档详细信息
+....
+GET /orgs/{orgId}/files/{fileId}/info
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**fileId** +
+__可选__|文件 ID|string
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_c67ac9e13956dae03a8d43e86512babb,JsonObjectResponseBody«FileViewES»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* file-controller
+
+
+[[_getoriginalfileusingget]]
+=== 下载原文件
+....
+GET /orgs/{orgId}/files/{fileId}/original
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**fileId** +
+__可选__|文件 ID|string
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* file-controller
+
+
+[[_getfilethumbnailusingget]]
+=== 下载文件缩略图
+....
+GET /orgs/{orgId}/files/{fileId}/thumbnail
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**fileId** +
+__可选__|文件 ID|string
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* file-controller
+
+
+[[_listusingget]]
+=== 查询项目层级结构导入文件
+....
+GET /orgs/{orgId}/hierarchy-import-files
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|所属组织 ID|string
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_8c595dc8007392ac898b0539e8312297,JsonListResponseBody«HierarchyES»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* hierarchy-controller
+
+
+[[_uploadissueattachmentusingpost]]
+=== 上传遗留问题附件
+....
+POST /orgs/{orgId}/issue-attachments
+....
+
+
+==== 说明
+需要用户在指定组织中拥有操作项目的权限（<code>PROJECT</code>）。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**FormData**|**file** +
+__必填__|file|file
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**201**|Created|<<_889dccdb19320f1871fc372a9ca98349,JsonObjectResponseBody«TemporaryFileDTO»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `multipart/form-data`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* upload-controller
+
+
+[[_uploadissueimportfileusingpost]]
+=== 上传遗留问题导入文件
+....
+POST /orgs/{orgId}/issue-import-files
+....
+
+
+==== 说明
+需要用户在指定组织中拥有操作项目的权限（<code>PROJECT</code>）。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**FormData**|**file** +
+__必填__|file|file
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**201**|Created|<<_889dccdb19320f1871fc372a9ca98349,JsonObjectResponseBody«TemporaryFileDTO»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `multipart/form-data`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* upload-controller
+
+
+[[_uploadmaterialcodealiasgroupimportfileusingpost]]
+=== 上传 材料代码别称与材料分组对应关系导入文件
+....
+POST /orgs/{orgId}/material-code-alias-group-import-files
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**FormData**|**file** +
+__必填__|file|file
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**201**|Created|<<_889dccdb19320f1871fc372a9ca98349,JsonObjectResponseBody«TemporaryFileDTO»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `multipart/form-data`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* upload-controller
+
+
+[[_uploadndtinspectorcertificateusingpost]]
+=== 上传NDT检查人员证书
+....
+POST /orgs/{orgId}/ndt-inspector-certificates
+....
+
+
+==== 说明
+需要用户在指定组织中拥有操作项目的权限（<code>PROJECT</code>）。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**FormData**|**file** +
+__必填__|file|file
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**201**|Created|<<_889dccdb19320f1871fc372a9ca98349,JsonObjectResponseBody«TemporaryFileDTO»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `multipart/form-data`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* upload-controller
+
+
+[[_uploadplanimportfileusingpost]]
+=== 上传项目计划导入文件
+....
+POST /orgs/{orgId}/plan-import-files
+....
+
+
+==== 说明
+需要用户在指定组织中拥有操作项目的权限（<code>PROJECT</code>）。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**FormData**|**file** +
+__必填__|file|file
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**201**|Created|<<_889dccdb19320f1871fc372a9ca98349,JsonObjectResponseBody«TemporaryFileDTO»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `multipart/form-data`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* upload-controller
+
+
+[[_uploadprojectdocumentfileusingpost]]
+=== 上传项目文档文件
+....
+POST /orgs/{orgId}/project-document-files
+....
+
+
+==== 说明
+需要用户在指定组织中拥有操作项目的权限（<code>PROJECT</code>）。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**FormData**|**file** +
+__必填__|file|file
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**201**|Created|<<_889dccdb19320f1871fc372a9ca98349,JsonObjectResponseBody«TemporaryFileDTO»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `multipart/form-data`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* upload-controller
+
+
+[[_listusingget_2]]
+=== 查询项目文档文件
+....
+GET /orgs/{orgId}/project-document-files
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|所属组织 ID|string
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_cbd13b872d450a796979b4731f53a937,JsonListResponseBody«ProjectDocumentES»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* project-document-controller
+
+
+[[_uploadprojecthierarchyimportfileusingpost]]
+=== 上传项目层级结构导入文件
+....
+POST /orgs/{orgId}/project-hierarchy-import-files
+....
+
+
+==== 说明
+需要用户在指定组织中拥有操作项目的权限（<code>PROJECT</code>）。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**FormData**|**file** +
+__必填__|file|file
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**201**|Created|<<_889dccdb19320f1871fc372a9ca98349,JsonObjectResponseBody«TemporaryFileDTO»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `multipart/form-data`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* upload-controller
+
+
+[[_uploadprojectmoduleprocessdefinitionfileusingpost]]
+=== 上传项目模块流程定义文件
+....
+POST /orgs/{orgId}/project-module-process-definition-files
+....
+
+
+==== 说明
+需要用户在指定组织中拥有操作项目的权限（<code>PROJECT</code>）。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**FormData**|**file** +
+__必填__|file|file
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**201**|Created|<<_889dccdb19320f1871fc372a9ca98349,JsonObjectResponseBody«TemporaryFileDTO»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `multipart/form-data`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* upload-controller
+
+
+[[_listusingget_5]]
+=== 查询 WBS 实体导入文件
+....
+GET /orgs/{orgId}/projects/{projectId}/entity-import-files
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|所属组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_721f63edf7c8659e2698b1ee7ae3b12d,JsonListResponseBody«WBSEntitiesES»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* wbs-entity-controller
+
+
+[[_getusingget_2]]
+=== 取得 WBS 实体导入文件
+....
+GET /orgs/{orgId}/projects/{projectId}/entity-import-files/{fileId}
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**fileId** +
+__可选__|文件 ID|string
+|**Path**|**orgId** +
+__可选__|所属组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_1e4dc163bf7b8d17d1456a61c4111dbb,JsonObjectResponseBody«WBSEntitiesES»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* wbs-entity-controller
+
+
+[[_searchusingget_1]]
+=== 查询文件
+....
+GET /orgs/{orgId}/projects/{projectId}/files
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|**Query**|**bizType** +
+__可选__|文件的业务类型|< enum (PROJECT_MODULE_PROCESS_DEFINITION, PROJECT_HIERARCHY, WBS_ENTITIES, WBS_ENTRIES, PROJECT_DOC, ISSUE_ATTACHMENT, WELDERS, WPS, ISSUE_IMPORT_FILES, EXPERIENCE_ATTACHMENT, WPS_ATTACHMENTS, WPQR_ATTACHMENTS, SUBCON_ATTACHMENTS, NDT_INSPECTOR_CERTIFICATE, RATED_TIME_IMPORT_FILE) > array(multi)
+|**Query**|**category** +
+__可选__|文件类型|< enum (FILE, TEXT, IMAGE, AUDIO, VIDEO, DOCUMENT, WORKBOOK, PRESENTATION, ARCHIVE, HTML, XML, JSON, CSV, PNG, JPEG, BMP, SVG, PDF, WORD, EXCEL, POWERPOINT, PAGES, NUMBERS, KEYNOTE) > array(multi)
+|**Query**|**committedBy** +
+__可选__|提交者 ID|string
+|**Query**|**content** +
+__可选__|内容（全文检索）|string
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**id** +
+__可选__|文件 ID|string
+|**Query**|**keyword** +
+__可选__|关键字|< string > array(multi)
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|**Query**|**tag** +
+__可选__|标签|< string > array(multi)
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_761caf4018ad1b9f3d49ca7bdd487260,JsonListResponseBody«FileBasicViewES»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* file-controller
+
+
+[[_listusingget_1]]
+=== 查询项目层级结构导入文件
+....
+GET /orgs/{orgId}/projects/{projectId}/hierarchy-import-files
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|所属组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_8c595dc8007392ac898b0539e8312297,JsonListResponseBody«HierarchyES»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* hierarchy-controller
+
+
+[[_getusingget]]
+=== 取得项目层级结构导入文件
+....
+GET /orgs/{orgId}/projects/{projectId}/hierarchy-import-files/{fileId}
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**fileId** +
+__可选__|文件 ID|string
+|**Path**|**orgId** +
+__可选__|所属组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_d060b9e7ceb7f3338ae1863088737270,JsonObjectResponseBody«HierarchyES»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* hierarchy-controller
+
+
+[[_listusingget_3]]
+=== 查询项目文档文件
+....
+GET /orgs/{orgId}/projects/{projectId}/project-document-files
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|所属组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_cbd13b872d450a796979b4731f53a937,JsonListResponseBody«ProjectDocumentES»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* project-document-controller
+
+
+[[_getusingget_1]]
+=== 取得项目文档文件
+....
+GET /orgs/{orgId}/projects/{projectId}/project-document-files/{fileId}
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**fileId** +
+__可选__|文件 ID|string
+|**Path**|**orgId** +
+__可选__|所属组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_1a178b879f339a15e92ef9708797898d,JsonObjectResponseBody«ProjectDocumentES»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* project-document-controller
+
+
+[[_saveusingpost]]
+=== 保存上传的文件（仅供其他服务调用）
+....
+POST /orgs/{orgId}/projects/{projectId}/uploaded-files/{temporaryFileName}/persist
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|所属组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|**Path**|**temporaryFileName** +
+__可选__|临时文件名|string
+|**Body**|**filePostDTO** +
+__可选__|文档信息|<<_filepostdto,FilePostDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**201**|Created|<<_74ecd1dbd24b929fb5f42c3c7a17cdaf,JsonObjectResponseBody«FileES»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* upload-controller
+
+
+[[_uploadratedtimeimportfileusingpost]]
+=== 上传额定工时导入文件
+....
+POST /orgs/{orgId}/rated-time-import-files
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**FormData**|**file** +
+__必填__|file|file
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**201**|Created|<<_889dccdb19320f1871fc372a9ca98349,JsonObjectResponseBody«TemporaryFileDTO»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `multipart/form-data`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* upload-controller
+
+
+[[_uploadsubconattachmentusingpost]]
+=== 上传分包商LOGO
+....
+POST /orgs/{orgId}/subCon-attachments
+....
+
+
+==== 说明
+需要用户在指定组织中拥有操作项目的权限（<code>PROJECT</code>）。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**FormData**|**file** +
+__必填__|file|file
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**201**|Created|<<_889dccdb19320f1871fc372a9ca98349,JsonObjectResponseBody«TemporaryFileDTO»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `multipart/form-data`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* upload-controller
+
+
+[[_saveusingpost_1]]
+=== 保存上传的文件（仅供其他服务调用）
+....
+POST /orgs/{orgId}/uploaded-files/{temporaryFileName}/persist
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|所属组织 ID|string
+|**Path**|**temporaryFileName** +
+__可选__|临时文件名|string
+|**Body**|**filePostDTO** +
+__可选__|文档信息|<<_filepostdto,FilePostDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**201**|Created|<<_74ecd1dbd24b929fb5f42c3c7a17cdaf,JsonObjectResponseBody«FileES»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* upload-controller
+
+
+[[_uploadwbsentityimportfileusingpost]]
+=== 上传 WBS 实体导入文件
+....
+POST /orgs/{orgId}/wbs-entity-import-files
+....
+
+
+==== 说明
+需要用户在指定组织中拥有操作项目的权限（<code>PROJECT</code>）。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**FormData**|**file** +
+__必填__|file|file
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**201**|Created|<<_889dccdb19320f1871fc372a9ca98349,JsonObjectResponseBody«TemporaryFileDTO»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `multipart/form-data`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* upload-controller
+
+
+[[_uploadwelderattachmentusingpost]]
+=== 上传焊工照片
+....
+POST /orgs/{orgId}/welder-attachments
+....
+
+
+==== 说明
+需要用户在指定组织中拥有操作项目的权限（<code>PROJECT</code>）。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**FormData**|**file** +
+__必填__|file|file
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**201**|Created|<<_889dccdb19320f1871fc372a9ca98349,JsonObjectResponseBody«TemporaryFileDTO»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `multipart/form-data`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* upload-controller
+
+
+[[_uploadwpqrattachmentusingpost]]
+=== 上传WPQR附件
+....
+POST /orgs/{orgId}/wpqr-attachments
+....
+
+
+==== 说明
+需要用户在指定组织中拥有操作项目的权限（<code>PROJECT</code>）。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**FormData**|**file** +
+__必填__|file|file
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**201**|Created|<<_889dccdb19320f1871fc372a9ca98349,JsonObjectResponseBody«TemporaryFileDTO»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `multipart/form-data`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* upload-controller
+
+
+[[_uploadwpsattachmentusingpost]]
+=== 上传WPS附件
+....
+POST /orgs/{orgId}/wps-attachments
+....
+
+
+==== 说明
+需要用户在指定组织中拥有操作项目的权限（<code>PROJECT</code>）。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**FormData**|**file** +
+__必填__|file|file
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**201**|Created|<<_889dccdb19320f1871fc372a9ca98349,JsonObjectResponseBody«TemporaryFileDTO»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `multipart/form-data`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* upload-controller
+
+
+

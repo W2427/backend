@@ -1,0 +1,3785 @@
+
+[[_paths]]
+== 路径
+
+[[_generateapplicationforinspectionusingpost]]
+=== 生成外检确认单
+....
+POST /orgs/{orgId}/projects/{projectId}/application-for-inspection
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**Path**|**projectId** +
+__必填__|projectId|string
+|**Body**|**reportDTO** +
+__必填__|reportDTO|<<_applicationforinspectiondto,ApplicationForInspectionDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* application-for-inspection-controller
+
+
+[[_generateapplicationforinspectionexternalusingpost]]
+=== 生成外检确认单
+....
+POST /orgs/{orgId}/projects/{projectId}/application-for-inspection-external
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**Path**|**projectId** +
+__必填__|projectId|string
+|**Body**|**reportDTO** +
+__必填__|reportDTO|<<_applicationforinspectionexternaldto,ApplicationForInspectionExternalDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* application-for-inspection-external-controller
+
+
+[[_archiveusingpost]]
+=== 手动归档统计数据
+....
+POST /orgs/{orgId}/projects/{projectId}/archive-data/{archiveType}
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**archiveType** +
+__可选__|归档数据业务类型|enum (WBS_PROGRESS, WBS_WELD_PROGRESS, WBS_FIT_UP_PROGRESS, WBS_SPOOL_PROGRESS, WBS_ISO_PROGRESS, WBS_PRESSURE_TEST_PROGRESS, WBS_CLEAN_PROGRESS, WBS_TIGHTNESS_PROGRESS, WBS_INSULATION_PROGRESS, WBS_ISSUE_PROGRESS, WBS_WELDER_RATE)
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_jsonresponsebody,JsonResponseBody>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* archive-data-controller
+
+
+[[_archivedatesusingget]]
+=== 取得归档日次列表
+....
+GET /orgs/{orgId}/projects/{projectId}/archive-data/{archiveType}/archive-dates
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**archiveType** +
+__可选__|归档数据业务类型|enum (WBS_PROGRESS, WBS_WELD_PROGRESS, WBS_FIT_UP_PROGRESS, WBS_SPOOL_PROGRESS, WBS_ISO_PROGRESS, WBS_PRESSURE_TEST_PROGRESS, WBS_CLEAN_PROGRESS, WBS_TIGHTNESS_PROGRESS, WBS_INSULATION_PROGRESS, WBS_ISSUE_PROGRESS, WBS_WELDER_RATE)
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_4068288c5af69b6582b48b2defcb7b17,JsonListResponseBody«ArchiveTimeDTO»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* archive-data-controller
+
+
+[[_archivemonthsusingget]]
+=== 取得归档月次列表
+....
+GET /orgs/{orgId}/projects/{projectId}/archive-data/{archiveType}/archive-months
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**archiveType** +
+__可选__|归档数据业务类型|enum (WBS_PROGRESS, WBS_WELD_PROGRESS, WBS_FIT_UP_PROGRESS, WBS_SPOOL_PROGRESS, WBS_ISO_PROGRESS, WBS_PRESSURE_TEST_PROGRESS, WBS_CLEAN_PROGRESS, WBS_TIGHTNESS_PROGRESS, WBS_INSULATION_PROGRESS, WBS_ISSUE_PROGRESS, WBS_WELDER_RATE)
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_4068288c5af69b6582b48b2defcb7b17,JsonListResponseBody«ArchiveTimeDTO»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* archive-data-controller
+
+
+[[_archiveweeksusingget]]
+=== 取得归档周次列表
+....
+GET /orgs/{orgId}/projects/{projectId}/archive-data/{archiveType}/archive-weeks
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**archiveType** +
+__可选__|归档数据业务类型|enum (WBS_PROGRESS, WBS_WELD_PROGRESS, WBS_FIT_UP_PROGRESS, WBS_SPOOL_PROGRESS, WBS_ISO_PROGRESS, WBS_PRESSURE_TEST_PROGRESS, WBS_CLEAN_PROGRESS, WBS_TIGHTNESS_PROGRESS, WBS_INSULATION_PROGRESS, WBS_ISSUE_PROGRESS, WBS_WELDER_RATE)
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_4068288c5af69b6582b48b2defcb7b17,JsonListResponseBody«ArchiveTimeDTO»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* archive-data-controller
+
+
+[[_perioddatamonthlyusingget]]
+=== 取得归档数据（月次数据）
+....
+GET /orgs/{orgId}/projects/{projectId}/archive-data/{archiveType}/{archiveYear}-{archiveMonth}
+....
+
+
+==== 说明
+将根据归档数据的类型返回相应的聚合值，返回的值及值的字段名称参照<a href="/specifications/statistics-archive-data.xlsx">统计数据说明文件</a>。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**archiveMonth** +
+__可选__|归档时间（月）|integer (int32)
+|**Path**|**archiveType** +
+__可选__|归档类型|enum (WBS_PROGRESS, WBS_WELD_PROGRESS, WBS_FIT_UP_PROGRESS, WBS_SPOOL_PROGRESS, WBS_ISO_PROGRESS, WBS_PRESSURE_TEST_PROGRESS, WBS_CLEAN_PROGRESS, WBS_TIGHTNESS_PROGRESS, WBS_INSULATION_PROGRESS, WBS_ISSUE_PROGRESS, WBS_WELDER_RATE)
+|**Path**|**archiveYear** +
+__可选__|归档时间（年）|integer (int32)
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|**Query**|**dateFrom** +
+__可选__|起始时间|string
+|**Query**|**dateFromTime.day** +
+__可选__|日|integer (int32)
+|**Query**|**dateFromTime.month** +
+__可选__|月|integer (int32)
+|**Query**|**dateFromTime.scheduleType** +
+__可选__|归档时间期间类型|enum (DAILY, WEEKLY, MONTHLY, ANNUALLY)
+|**Query**|**dateFromTime.week** +
+__可选__|周|integer (int32)
+|**Query**|**dateFromTime.year** +
+__可选__|年|integer (int32)
+|**Query**|**dateUntil** +
+__可选__|截止时间|string
+|**Query**|**dateUntilTime.day** +
+__可选__|日|integer (int32)
+|**Query**|**dateUntilTime.month** +
+__可选__|月|integer (int32)
+|**Query**|**dateUntilTime.scheduleType** +
+__可选__|归档时间期间类型|enum (DAILY, WEEKLY, MONTHLY, ANNUALLY)
+|**Query**|**dateUntilTime.week** +
+__可选__|周|integer (int32)
+|**Query**|**dateUntilTime.year** +
+__可选__|年|integer (int32)
+|**Query**|**departmentId** +
+__可选__|聚合单位：责任部门 ID|string
+|**Query**|**entityLength** +
+__可选__|聚合单位：实体长度|string
+|**Query**|**entityMaterial** +
+__可选__|聚合单位：实体材质|string
+|**Query**|**entityNps** +
+__可选__|聚合单位：实体寸径|string
+|**Query**|**issueType** +
+__可选__|聚合单位：遗留问题类型|string
+|**Query**|**managerId** +
+__可选__|聚合单位：管理者用户 ID|string
+|**Query**|**module** +
+__可选__|聚合单位：模块 No.|string
+|**Query**|**pressureTestPackage** +
+__可选__|聚合单位：试压包 No.|string
+|**Query**|**process** +
+__可选__|聚合单位：工序名称|string
+|**Query**|**stage** +
+__可选__|聚合单位：工序阶段名称|string
+|**Query**|**subSystem** +
+__可选__|聚合单位：子系统 No.|string
+|**Query**|**subcontractorId** +
+__可选__|聚合单位：工程建造分包商 ID|string
+|**Query**|**weldType** +
+__可选__|聚合单位：焊口类型|string
+|**Query**|**welderId** +
+__可选__|聚合单位：焊工 ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_311e69977cdb6f89482b7b764db53d5d,JsonObjectResponseBody«ArchiveDataPeriodDataDTO»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* archive-data-controller
+
+
+[[_perioddatadailyusingget]]
+=== 取得归档数据（日次数据）
+....
+GET /orgs/{orgId}/projects/{projectId}/archive-data/{archiveType}/{archiveYear}-{archiveMonth}-{archiveDay}
+....
+
+
+==== 说明
+将根据归档数据的类型返回相应的聚合值，返回的值及值的字段名称参照<a href="/specifications/statistics-archive-data.xlsx">统计数据说明文件</a>。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**archiveDay** +
+__可选__|归档时间（日）|integer (int32)
+|**Path**|**archiveMonth** +
+__可选__|归档时间（月）|integer (int32)
+|**Path**|**archiveType** +
+__可选__|归档类型|enum (WBS_PROGRESS, WBS_WELD_PROGRESS, WBS_FIT_UP_PROGRESS, WBS_SPOOL_PROGRESS, WBS_ISO_PROGRESS, WBS_PRESSURE_TEST_PROGRESS, WBS_CLEAN_PROGRESS, WBS_TIGHTNESS_PROGRESS, WBS_INSULATION_PROGRESS, WBS_ISSUE_PROGRESS, WBS_WELDER_RATE)
+|**Path**|**archiveYear** +
+__可选__|归档时间（年）|integer (int32)
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|**Query**|**dateFrom** +
+__可选__|起始时间|string
+|**Query**|**dateFromTime.day** +
+__可选__|日|integer (int32)
+|**Query**|**dateFromTime.month** +
+__可选__|月|integer (int32)
+|**Query**|**dateFromTime.scheduleType** +
+__可选__|归档时间期间类型|enum (DAILY, WEEKLY, MONTHLY, ANNUALLY)
+|**Query**|**dateFromTime.week** +
+__可选__|周|integer (int32)
+|**Query**|**dateFromTime.year** +
+__可选__|年|integer (int32)
+|**Query**|**dateUntil** +
+__可选__|截止时间|string
+|**Query**|**dateUntilTime.day** +
+__可选__|日|integer (int32)
+|**Query**|**dateUntilTime.month** +
+__可选__|月|integer (int32)
+|**Query**|**dateUntilTime.scheduleType** +
+__可选__|归档时间期间类型|enum (DAILY, WEEKLY, MONTHLY, ANNUALLY)
+|**Query**|**dateUntilTime.week** +
+__可选__|周|integer (int32)
+|**Query**|**dateUntilTime.year** +
+__可选__|年|integer (int32)
+|**Query**|**departmentId** +
+__可选__|聚合单位：责任部门 ID|string
+|**Query**|**entityLength** +
+__可选__|聚合单位：实体长度|string
+|**Query**|**entityMaterial** +
+__可选__|聚合单位：实体材质|string
+|**Query**|**entityNps** +
+__可选__|聚合单位：实体寸径|string
+|**Query**|**issueType** +
+__可选__|聚合单位：遗留问题类型|string
+|**Query**|**managerId** +
+__可选__|聚合单位：管理者用户 ID|string
+|**Query**|**module** +
+__可选__|聚合单位：模块 No.|string
+|**Query**|**pressureTestPackage** +
+__可选__|聚合单位：试压包 No.|string
+|**Query**|**process** +
+__可选__|聚合单位：工序名称|string
+|**Query**|**stage** +
+__可选__|聚合单位：工序阶段名称|string
+|**Query**|**subSystem** +
+__可选__|聚合单位：子系统 No.|string
+|**Query**|**subcontractorId** +
+__可选__|聚合单位：工程建造分包商 ID|string
+|**Query**|**weldType** +
+__可选__|聚合单位：焊口类型|string
+|**Query**|**welderId** +
+__可选__|聚合单位：焊工 ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_311e69977cdb6f89482b7b764db53d5d,JsonObjectResponseBody«ArchiveDataPeriodDataDTO»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* archive-data-controller
+
+
+[[_groupkeysdailyusingget]]
+=== 取得指定名称的聚合 KEY 的列表
+....
+GET /orgs/{orgId}/projects/{projectId}/archive-data/{archiveType}/{archiveYear}-{archiveMonth}-{archiveDay}/{keyNames}
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**archiveDay** +
+__可选__|归档时间（日）|integer (int32)
+|**Path**|**archiveMonth** +
+__可选__|归档时间（月）|integer (int32)
+|**Path**|**archiveType** +
+__可选__|归档类型|enum (WBS_PROGRESS, WBS_WELD_PROGRESS, WBS_FIT_UP_PROGRESS, WBS_SPOOL_PROGRESS, WBS_ISO_PROGRESS, WBS_PRESSURE_TEST_PROGRESS, WBS_CLEAN_PROGRESS, WBS_TIGHTNESS_PROGRESS, WBS_INSULATION_PROGRESS, WBS_ISSUE_PROGRESS, WBS_WELDER_RATE)
+|**Path**|**archiveYear** +
+__可选__|归档时间（年）|integer (int32)
+|**Path**|**keyNames** +
+__可选__|聚合 KEY 名称（多个值通过逗号分隔）|enum (modules, pressure-test-packages, sub-systems, stages, processes, weld-types, issue-types, entity-npses, entity-lengths, entity-materials, subcontractors, departments, welders, managers)
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|**Query**|**departmentId** +
+__可选__|聚合单位：责任部门 ID|string
+|**Query**|**entityLength** +
+__可选__|聚合单位：实体长度|string
+|**Query**|**entityMaterial** +
+__可选__|聚合单位：实体材质|string
+|**Query**|**entityNps** +
+__可选__|聚合单位：实体寸径|string
+|**Query**|**issueType** +
+__可选__|聚合单位：遗留问题类型|string
+|**Query**|**managerId** +
+__可选__|聚合单位：管理者用户 ID|string
+|**Query**|**module** +
+__可选__|聚合单位：模块 No.|string
+|**Query**|**pressureTestPackage** +
+__可选__|聚合单位：试压包 No.|string
+|**Query**|**process** +
+__可选__|聚合单位：工序名称|string
+|**Query**|**stage** +
+__可选__|聚合单位：工序阶段名称|string
+|**Query**|**subSystem** +
+__可选__|聚合单位：子系统 No.|string
+|**Query**|**subcontractorId** +
+__可选__|聚合单位：工程建造分包商 ID|string
+|**Query**|**weldType** +
+__可选__|聚合单位：焊口类型|string
+|**Query**|**welderId** +
+__可选__|聚合单位：焊工 ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_4ca3edc351aff86a9e0dd61ac6bfe363,JsonObjectResponseBody«ArchiveDataPeriodsDTO»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* archive-data-controller
+
+
+[[_groupkeysmonthlyusingget]]
+=== 取得指定名称的聚合 KEY 的列表
+....
+GET /orgs/{orgId}/projects/{projectId}/archive-data/{archiveType}/{archiveYear}-{archiveMonth}/{keyNames}
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**archiveMonth** +
+__可选__|归档时间（月）|integer (int32)
+|**Path**|**archiveType** +
+__可选__|归档类型|enum (WBS_PROGRESS, WBS_WELD_PROGRESS, WBS_FIT_UP_PROGRESS, WBS_SPOOL_PROGRESS, WBS_ISO_PROGRESS, WBS_PRESSURE_TEST_PROGRESS, WBS_CLEAN_PROGRESS, WBS_TIGHTNESS_PROGRESS, WBS_INSULATION_PROGRESS, WBS_ISSUE_PROGRESS, WBS_WELDER_RATE)
+|**Path**|**archiveYear** +
+__可选__|归档时间（年）|integer (int32)
+|**Path**|**keyNames** +
+__可选__|聚合 KEY 名称（多个值通过逗号分隔）|enum (modules, pressure-test-packages, sub-systems, stages, processes, weld-types, issue-types, entity-npses, entity-lengths, entity-materials, subcontractors, departments, welders, managers)
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|**Query**|**departmentId** +
+__可选__|聚合单位：责任部门 ID|string
+|**Query**|**entityLength** +
+__可选__|聚合单位：实体长度|string
+|**Query**|**entityMaterial** +
+__可选__|聚合单位：实体材质|string
+|**Query**|**entityNps** +
+__可选__|聚合单位：实体寸径|string
+|**Query**|**issueType** +
+__可选__|聚合单位：遗留问题类型|string
+|**Query**|**managerId** +
+__可选__|聚合单位：管理者用户 ID|string
+|**Query**|**module** +
+__可选__|聚合单位：模块 No.|string
+|**Query**|**pressureTestPackage** +
+__可选__|聚合单位：试压包 No.|string
+|**Query**|**process** +
+__可选__|聚合单位：工序名称|string
+|**Query**|**stage** +
+__可选__|聚合单位：工序阶段名称|string
+|**Query**|**subSystem** +
+__可选__|聚合单位：子系统 No.|string
+|**Query**|**subcontractorId** +
+__可选__|聚合单位：工程建造分包商 ID|string
+|**Query**|**weldType** +
+__可选__|聚合单位：焊口类型|string
+|**Query**|**welderId** +
+__可选__|聚合单位：焊工 ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_4ca3edc351aff86a9e0dd61ac6bfe363,JsonObjectResponseBody«ArchiveDataPeriodsDTO»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* archive-data-controller
+
+
+[[_perioddataweeklyusingget]]
+=== 取得归档数据（周次数据）
+....
+GET /orgs/{orgId}/projects/{projectId}/archive-data/{archiveType}/{archiveYear}/{archiveWeek}
+....
+
+
+==== 说明
+将根据归档数据的类型返回相应的聚合值，返回的值及值的字段名称参照<a href="/specifications/statistics-archive-data.xlsx">统计数据说明文件</a>。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**archiveType** +
+__可选__|归档类型|enum (WBS_PROGRESS, WBS_WELD_PROGRESS, WBS_FIT_UP_PROGRESS, WBS_SPOOL_PROGRESS, WBS_ISO_PROGRESS, WBS_PRESSURE_TEST_PROGRESS, WBS_CLEAN_PROGRESS, WBS_TIGHTNESS_PROGRESS, WBS_INSULATION_PROGRESS, WBS_ISSUE_PROGRESS, WBS_WELDER_RATE)
+|**Path**|**archiveWeek** +
+__可选__|归档时间（周）|integer (int32)
+|**Path**|**archiveYear** +
+__可选__|归档时间（年）|integer (int32)
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|**Query**|**dateFrom** +
+__可选__|起始时间|string
+|**Query**|**dateFromTime.day** +
+__可选__|日|integer (int32)
+|**Query**|**dateFromTime.month** +
+__可选__|月|integer (int32)
+|**Query**|**dateFromTime.scheduleType** +
+__可选__|归档时间期间类型|enum (DAILY, WEEKLY, MONTHLY, ANNUALLY)
+|**Query**|**dateFromTime.week** +
+__可选__|周|integer (int32)
+|**Query**|**dateFromTime.year** +
+__可选__|年|integer (int32)
+|**Query**|**dateUntil** +
+__可选__|截止时间|string
+|**Query**|**dateUntilTime.day** +
+__可选__|日|integer (int32)
+|**Query**|**dateUntilTime.month** +
+__可选__|月|integer (int32)
+|**Query**|**dateUntilTime.scheduleType** +
+__可选__|归档时间期间类型|enum (DAILY, WEEKLY, MONTHLY, ANNUALLY)
+|**Query**|**dateUntilTime.week** +
+__可选__|周|integer (int32)
+|**Query**|**dateUntilTime.year** +
+__可选__|年|integer (int32)
+|**Query**|**departmentId** +
+__可选__|聚合单位：责任部门 ID|string
+|**Query**|**entityLength** +
+__可选__|聚合单位：实体长度|string
+|**Query**|**entityMaterial** +
+__可选__|聚合单位：实体材质|string
+|**Query**|**entityNps** +
+__可选__|聚合单位：实体寸径|string
+|**Query**|**issueType** +
+__可选__|聚合单位：遗留问题类型|string
+|**Query**|**managerId** +
+__可选__|聚合单位：管理者用户 ID|string
+|**Query**|**module** +
+__可选__|聚合单位：模块 No.|string
+|**Query**|**pressureTestPackage** +
+__可选__|聚合单位：试压包 No.|string
+|**Query**|**process** +
+__可选__|聚合单位：工序名称|string
+|**Query**|**stage** +
+__可选__|聚合单位：工序阶段名称|string
+|**Query**|**subSystem** +
+__可选__|聚合单位：子系统 No.|string
+|**Query**|**subcontractorId** +
+__可选__|聚合单位：工程建造分包商 ID|string
+|**Query**|**weldType** +
+__可选__|聚合单位：焊口类型|string
+|**Query**|**welderId** +
+__可选__|聚合单位：焊工 ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_311e69977cdb6f89482b7b764db53d5d,JsonObjectResponseBody«ArchiveDataPeriodDataDTO»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* archive-data-controller
+
+
+[[_groupkeysweeklyusingget]]
+=== 取得指定名称的聚合 KEY 的列表
+....
+GET /orgs/{orgId}/projects/{projectId}/archive-data/{archiveType}/{archiveYear}/{archiveWeek}/{keyNames}
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**archiveType** +
+__可选__|归档类型|enum (WBS_PROGRESS, WBS_WELD_PROGRESS, WBS_FIT_UP_PROGRESS, WBS_SPOOL_PROGRESS, WBS_ISO_PROGRESS, WBS_PRESSURE_TEST_PROGRESS, WBS_CLEAN_PROGRESS, WBS_TIGHTNESS_PROGRESS, WBS_INSULATION_PROGRESS, WBS_ISSUE_PROGRESS, WBS_WELDER_RATE)
+|**Path**|**archiveWeek** +
+__可选__|归档时间（周）|integer (int32)
+|**Path**|**archiveYear** +
+__可选__|归档时间（年）|integer (int32)
+|**Path**|**keyNames** +
+__可选__|聚合 KEY 名称（多个值通过逗号分隔）|enum (modules, pressure-test-packages, sub-systems, stages, processes, weld-types, issue-types, entity-npses, entity-lengths, entity-materials, subcontractors, departments, welders, managers)
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|**Query**|**departmentId** +
+__可选__|聚合单位：责任部门 ID|string
+|**Query**|**entityLength** +
+__可选__|聚合单位：实体长度|string
+|**Query**|**entityMaterial** +
+__可选__|聚合单位：实体材质|string
+|**Query**|**entityNps** +
+__可选__|聚合单位：实体寸径|string
+|**Query**|**issueType** +
+__可选__|聚合单位：遗留问题类型|string
+|**Query**|**managerId** +
+__可选__|聚合单位：管理者用户 ID|string
+|**Query**|**module** +
+__可选__|聚合单位：模块 No.|string
+|**Query**|**pressureTestPackage** +
+__可选__|聚合单位：试压包 No.|string
+|**Query**|**process** +
+__可选__|聚合单位：工序名称|string
+|**Query**|**stage** +
+__可选__|聚合单位：工序阶段名称|string
+|**Query**|**subSystem** +
+__可选__|聚合单位：子系统 No.|string
+|**Query**|**subcontractorId** +
+__可选__|聚合单位：工程建造分包商 ID|string
+|**Query**|**weldType** +
+__可选__|聚合单位：焊口类型|string
+|**Query**|**welderId** +
+__可选__|聚合单位：焊工 ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_4ca3edc351aff86a9e0dd61ac6bfe363,JsonObjectResponseBody«ArchiveDataPeriodsDTO»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* archive-data-controller
+
+
+[[_createusingpost]]
+=== 创建检查单
+....
+POST /orgs/{orgId}/projects/{projectId}/checklists
+....
+
+
+==== 说明
+根据检查单基本信息，创建检查单。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织ID|string
+|**Path**|**projectId** +
+__可选__|项目ID|string
+|**Body**|**checklistDTO** +
+__可选__|检查单基本信息|<<_checklistdto,ChecklistDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**201**|Created|<<_b43a33c9d66b88c68a0143e06fede361,JsonObjectResponseBody«Checklist»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* checklist-controller
+
+
+[[_searchusingget_1]]
+=== 查询检查单列表
+....
+GET /orgs/{orgId}/projects/{projectId}/checklists
+....
+
+
+==== 说明
+查询检查单列表，或使用过滤条件（名称/编号）进行查询。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织ID|string
+|**Path**|**projectId** +
+__可选__|项目ID|string
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**search** +
+__可选__|过滤条件（名称/编号）|string
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_0122af95216a5408b075a0658ed7e9eb,JsonListResponseBody«Checklist»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* checklist-controller
+
+
+[[_searchusingget]]
+=== 查询单个检查单
+....
+GET /orgs/{orgId}/projects/{projectId}/checklists/{checklistId}
+....
+
+
+==== 说明
+检查单ID进行查询。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**checklistId** +
+__可选__|检查单ID|string
+|**Path**|**orgId** +
+__可选__|组织ID|string
+|**Path**|**projectId** +
+__可选__|项目ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_b43a33c9d66b88c68a0143e06fede361,JsonObjectResponseBody«Checklist»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* checklist-controller
+
+
+[[_editusingput]]
+=== 编辑更新检查单
+....
+PUT /orgs/{orgId}/projects/{projectId}/checklists/{checklistId}
+....
+
+
+==== 说明
+根据检查单ID，使用变更的检查单基本信息，更新检查单。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**checklistId** +
+__可选__|检查单ID|string
+|**Path**|**orgId** +
+__可选__|组织ID|string
+|**Path**|**projectId** +
+__可选__|项目ID|string
+|**Body**|**checklistDTO** +
+__可选__|检查单基本信息|<<_checklistdto,ChecklistDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_b43a33c9d66b88c68a0143e06fede361,JsonObjectResponseBody«Checklist»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* checklist-controller
+
+
+[[_deleteusingdelete]]
+=== 删除检查单
+....
+DELETE /orgs/{orgId}/projects/{projectId}/checklists/{checklistId}
+....
+
+
+==== 说明
+根据检查单ID删除检查单。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**checklistId** +
+__可选__|检查单ID|string
+|**Path**|**orgId** +
+__可选__|组织ID|string
+|**Path**|**projectId** +
+__可选__|项目ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_jsonresponsebody,JsonResponseBody>>
+|**204**|No Content|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|===
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* checklist-controller
+
+
+[[_previewgenerateusingpost]]
+=== 生成预览检查单报表
+....
+POST /orgs/{orgId}/projects/{projectId}/checklists/{checklistId}/generate
+....
+
+
+==== 说明
+根据检查单ID，制作空白检查单报表，并存入文件系统。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**checklistId** +
+__可选__|检查单ID|string
+|**Path**|**orgId** +
+__可选__|组织ID|string
+|**Path**|**projectId** +
+__可选__|项目ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**201**|Created|<<_b43a33c9d66b88c68a0143e06fede361,JsonObjectResponseBody«Checklist»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* checklist-controller
+
+
+[[_createitemusingpost]]
+=== 创建检查项
+....
+POST /orgs/{orgId}/projects/{projectId}/checklists/{checklistId}/items
+....
+
+
+==== 说明
+根据检查单ID，创建检查单下的检查项。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**checklistId** +
+__可选__|检查单ID|string
+|**Path**|**orgId** +
+__可选__|组织ID|string
+|**Path**|**projectId** +
+__可选__|项目ID|string
+|**Body**|**checklistItemDTO** +
+__可选__|检查项信息|<<_checklistitemdto,ChecklistItemDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**201**|Created|<<_2dc208ac1c49bb1c24ec8fe1239587da,JsonObjectResponseBody«ChecklistItem»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* checklist-item-controller
+
+
+[[_searchitemsusingget]]
+=== 查询检查项列表
+....
+GET /orgs/{orgId}/projects/{projectId}/checklists/{checklistId}/items
+....
+
+
+==== 说明
+根据检查单ID，查询检查项列表。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**checklistId** +
+__可选__|检查单ID|string
+|**Path**|**orgId** +
+__可选__|组织ID|string
+|**Path**|**projectId** +
+__可选__|项目ID|string
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_20c9d955b54e6a37f2950c00b074314f,JsonListResponseBody«ChecklistItem»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* checklist-item-controller
+
+
+[[_edititemusingput]]
+=== 编辑检查项
+....
+PUT /orgs/{orgId}/projects/{projectId}/checklists/{checklistId}/items/{checklistItemId}
+....
+
+
+==== 说明
+根据检查项ID，更新检查单下的检查项。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**checklistId** +
+__可选__|检查单ID|string
+|**Path**|**checklistItemId** +
+__可选__|检查项ID|string
+|**Path**|**orgId** +
+__可选__|组织ID|string
+|**Path**|**projectId** +
+__可选__|项目ID|string
+|**Body**|**checklistItemDTO** +
+__可选__|检查项内容|<<_checklistitemdto,ChecklistItemDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_2dc208ac1c49bb1c24ec8fe1239587da,JsonObjectResponseBody«ChecklistItem»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* checklist-item-controller
+
+
+[[_deleteitemusingdelete]]
+=== 删除检查项
+....
+DELETE /orgs/{orgId}/projects/{projectId}/checklists/{checklistId}/items/{checklistItemId}
+....
+
+
+==== 说明
+根据检查项ID，删除检查单下的检查项。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**checklistId** +
+__可选__|检查单ID|string
+|**Path**|**checklistItemId** +
+__可选__|检查项ID|string
+|**Path**|**orgId** +
+__可选__|组织ID|string
+|**Path**|**projectId** +
+__可选__|项目ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_jsonresponsebody,JsonResponseBody>>
+|**204**|No Content|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|===
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* checklist-item-controller
+
+
+[[_createsimulationusingpost]]
+=== 创建模拟检查单
+....
+POST /orgs/{orgId}/projects/{projectId}/checklists/{checklistId}/simulations
+....
+
+
+==== 说明
+根据模拟检查单信息，创建模拟检查单。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**checklistId** +
+__可选__|检查单ID|string
+|**Path**|**orgId** +
+__可选__|组织ID|string
+|**Path**|**projectId** +
+__可选__|项目ID|string
+|**Body**|**checklistSimulationDTO** +
+__可选__|模拟检查单信息|<<_checklistsimulationdto,ChecklistSimulationDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**201**|Created|<<_f53ba84b57451446f543ef1b32a9f54e,JsonObjectResponseBody«ChecklistSimulation»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* checklist-simulation-controller
+
+
+[[_searchsimulationsusingget]]
+=== 查询模拟检查单
+....
+GET /orgs/{orgId}/projects/{projectId}/checklists/{checklistId}/simulations
+....
+
+
+==== 说明
+查询模拟检查单列表。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**checklistId** +
+__可选__|检查单ID|string
+|**Path**|**orgId** +
+__可选__|组织ID|string
+|**Path**|**projectId** +
+__可选__|项目ID|string
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_ca8a2623472aa00eef7692e2fecf7829,JsonListResponseBody«ChecklistSimulation»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* checklist-simulation-controller
+
+
+[[_searchsimulationusingget]]
+=== 查询单个模拟检查单
+....
+GET /orgs/{orgId}/projects/{projectId}/checklists/{checklistId}/simulations/{simulationId}
+....
+
+
+==== 说明
+模拟检查单ID进行查询。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**checklistId** +
+__可选__|检查单ID|string
+|**Path**|**orgId** +
+__可选__|组织ID|string
+|**Path**|**projectId** +
+__可选__|项目ID|string
+|**Path**|**simulationId** +
+__可选__|检查单ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_f53ba84b57451446f543ef1b32a9f54e,JsonObjectResponseBody«ChecklistSimulation»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* checklist-simulation-controller
+
+
+[[_editsimulationusingput]]
+=== 编辑模拟检查单
+....
+PUT /orgs/{orgId}/projects/{projectId}/checklists/{checklistId}/simulations/{simulationId}
+....
+
+
+==== 说明
+根据模拟检查单信息，编辑模拟检查单。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**checklistId** +
+__可选__|检查单ID|string
+|**Path**|**orgId** +
+__可选__|组织ID|string
+|**Path**|**projectId** +
+__可选__|项目ID|string
+|**Path**|**simulationId** +
+__可选__|模拟检查单ID|string
+|**Body**|**checklistSimulationDTO** +
+__可选__|模拟检查单内容|<<_checklistsimulationdto,ChecklistSimulationDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_jsonobjectresponsebody,JsonObjectResponseBody>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* checklist-simulation-controller
+
+
+[[_deletesimulationusingdelete]]
+=== 删除模拟检查单
+....
+DELETE /orgs/{orgId}/projects/{projectId}/checklists/{checklistId}/simulations/{simulationId}
+....
+
+
+==== 说明
+根据模拟检查单ID，删除模拟检查单。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**checklistId** +
+__可选__|检查单ID|string
+|**Path**|**orgId** +
+__可选__|组织ID|string
+|**Path**|**projectId** +
+__可选__|项目ID|string
+|**Path**|**simulationId** +
+__可选__|模拟检查单ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_jsonresponsebody,JsonResponseBody>>
+|**204**|No Content|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|===
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* checklist-simulation-controller
+
+
+[[_simulationgenerateusingpost]]
+=== 生成模拟检查单报表
+....
+POST /orgs/{orgId}/projects/{projectId}/checklists/{checklistId}/simulations/{simulationId}/generate
+....
+
+
+==== 说明
+根据模拟检查单ID，制作检查单报表，并存入文件系统。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**checklistId** +
+__可选__|检查单ID|string
+|**Path**|**orgId** +
+__可选__|组织ID|string
+|**Path**|**projectId** +
+__可选__|项目ID|string
+|**Path**|**simulationId** +
+__可选__|模拟检查单ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**201**|Created|<<_f53ba84b57451446f543ef1b32a9f54e,JsonObjectResponseBody«ChecklistSimulation»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* checklist-simulation-controller
+
+
+[[_generatedesignchangereviewformusingpost]]
+=== 生成设计变更申请单
+....
+POST /orgs/{orgId}/projects/{projectId}/design-change-review-forms
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**Path**|**projectId** +
+__必填__|projectId|string
+|**Body**|**reportDTO** +
+__必填__|reportDTO|<<_designchangereviewformdto,DesignChangeReviewFormDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* design-change-review-form-controller
+
+
+[[_generatedocumenttransmittalrecordusingpost]]
+=== 生成文件传送单
+....
+POST /orgs/{orgId}/projects/{projectId}/document-transmittal-records
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**Path**|**projectId** +
+__必填__|projectId|string
+|**Body**|**reportDTO** +
+__必填__|reportDTO|<<_documenttransmittalrecorddto,DocumentTransmittalRecordDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* document-transmittal-record-controller
+
+
+[[_generatedrawconstructionreportusingpost]]
+=== 生产图纸目录清单
+....
+POST /orgs/{orgId}/projects/{projectId}/draw-construction-report/generate
+....
+
+
+==== 说明
+生产图纸目录清单
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织ID|string
+|**Path**|**projectId** +
+__可选__|项目ID|string
+|**Body**|**drawSubPipeDTO** +
+__可选__|检查项内容|<<_drawsubpipedto,DrawSubPipeDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**201**|Created|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* draw-construction-report-controller
+
+
+[[_generatedrawconstructionsupportoverallreportusingpost]]
+=== 生产图纸目录清单
+....
+POST /orgs/{orgId}/projects/{projectId}/draw-construction-support-overall-report/generate
+....
+
+
+==== 说明
+生产图纸目录清单
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织ID|string
+|**Path**|**projectId** +
+__可选__|项目ID|string
+|**Body**|**drawSubPipeSupportOverallDTO** +
+__可选__|检查项内容|<<_drawsubpipesupportoveralldto,DrawSubPipeSupportOverallDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**201**|Created|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* draw-construction-report-controller
+
+
+[[_generatedrawconstructionsupportreportusingpost]]
+=== 生产图纸目录清单
+....
+POST /orgs/{orgId}/projects/{projectId}/draw-construction-support-report/generate
+....
+
+
+==== 说明
+生产图纸目录清单
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织ID|string
+|**Path**|**projectId** +
+__可选__|项目ID|string
+|**Body**|**drawSubPipeSupportDTO** +
+__可选__|检查项内容|<<_drawsubpipesupportdto,DrawSubPipeSupportDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**201**|Created|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* draw-construction-report-controller
+
+
+[[_generateexternalinspectionitemlistusingpost]]
+=== 生成外检报验清单
+....
+POST /orgs/{orgId}/projects/{projectId}/external-inspection-item-list
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**Path**|**projectId** +
+__必填__|projectId|string
+|**Body**|**reportDTO** +
+__必填__|reportDTO|<<_externalinspectionitemlistdto,ExternalInspectionItemListDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* external-inspection-item-list-controller
+
+
+[[_generatefinalinspectionrecordforpipingprefabricationusingpost]]
+=== 生成管道预制终检记录
+....
+POST /orgs/{orgId}/projects/{projectId}/final-inspection-record-for-piping-pre-fabrication
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**Path**|**projectId** +
+__必填__|projectId|string
+|**Body**|**reportDTO** +
+__必填__|reportDTO|<<_finalinspectionrecordforpipingprefabricationdto,FinalInspectionRecordForPipingPreFabricationDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* final-inspection-record-for-piping-pre-fabrication-controller
+
+
+[[_generategalvanizationpartsinspectionreportusingpost]]
+=== 生成镀锌件检查记录
+....
+POST /orgs/{orgId}/projects/{projectId}/galvanization-parts-inspection-reports
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**Path**|**projectId** +
+__必填__|projectId|string
+|**Body**|**reportDTO** +
+__必填__|reportDTO|<<_galvanizationpartsinspectionreportdto,GalvanizationPartsInspectionReportDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* galvanization-parts-inspection-report-controller
+
+
+[[_generategalvanizechecklistusingpost]]
+=== 生成镀锌检查单
+....
+POST /orgs/{orgId}/projects/{projectId}/galvanize-checklists
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**Path**|**projectId** +
+__必填__|projectId|string
+|**Body**|**reportDTO** +
+__必填__|reportDTO|<<_galvanizechecklistdto,GalvanizeChecklistDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* galvanize-checklist-controller
+
+
+[[_generategalvanizeinspectionreportusingpost]]
+=== 生成镀锌检查记录
+....
+POST /orgs/{orgId}/projects/{projectId}/galvanize-inspection-reports
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**Path**|**projectId** +
+__必填__|projectId|string
+|**Body**|**reportDTO** +
+__必填__|reportDTO|<<_galvanizeinspectionreportdto,GalvanizeInspectionReportDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* galvanize-inspection-report-controller
+
+
+[[_importitemsusingpost]]
+=== 导入检查项
+....
+POST /orgs/{orgId}/projects/{projectId}/import-checklist-items
+....
+
+
+==== 说明
+导入检查单的检查项。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织ID|string
+|**Path**|**projectId** +
+__可选__|项目ID|string
+|**Body**|**batchImportDTO** +
+__可选__|检查单检查项数组|<<_checklistitembatchimportdto,ChecklistItemBatchImportDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**201**|Created|<<_8156606d2e358dd1adc454b961f2ad1f,JsonListResponseBody«ChecklistItemImportDTO»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* checklist-item-controller
+
+
+[[_generateincomingmaterialinspectionrecordusingpost]]
+=== 生成进厂物料检查记录单
+....
+POST /orgs/{orgId}/projects/{projectId}/incoming-material-inspection-records
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**Path**|**projectId** +
+__必填__|projectId|string
+|**Body**|**reportDTO** +
+__必填__|reportDTO|<<_incomingmaterialinspectionrecorddto,IncomingMaterialInspectionRecordDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* incoming-material-inspection-record-controller
+
+
+[[_generateinspectionreleaseformusingpost]]
+=== 生成管道检验放行单
+....
+POST /orgs/{orgId}/projects/{projectId}/inspection-release-forms
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**Path**|**projectId** +
+__必填__|projectId|string
+|**Body**|**reportDTO** +
+__必填__|reportDTO|<<_inspectionreleaseformdto,InspectionReleaseFormDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* inspection-release-form-controller
+
+
+[[_generatemagneticparticleinspectionreportusingpost]]
+=== 生成磁粉探伤报告
+....
+POST /orgs/{orgId}/projects/{projectId}/magnetic-particle-inspection-reports
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**Path**|**projectId** +
+__必填__|projectId|string
+|**Body**|**reportDTO** +
+__必填__|reportDTO|<<_magneticparticleinspectionreportdto,MagneticParticleInspectionReportDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* magnetic-particle-inspection-report-controller
+
+
+[[_generatematerialapplicationlistusingpost]]
+=== 生成材料领用单
+....
+POST /orgs/{orgId}/projects/{projectId}/material-application-lists
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**Path**|**projectId** +
+__必填__|projectId|string
+|**Body**|**reportDTO** +
+__必填__|reportDTO|<<_materialapplicationlistdto,MaterialApplicationListDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* material-application-list-controller
+
+
+[[_generatematerialrequirementplanusingpost]]
+=== 生成用料计划
+....
+POST /orgs/{orgId}/projects/{projectId}/material-requirement-plans
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**Path**|**projectId** +
+__必填__|projectId|string
+|**Body**|**reportDTO** +
+__必填__|reportDTO|<<_materialrequirementplandto,MaterialRequirementPlanDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* material-requirement-plan-controller
+
+
+[[_generatematerialreturnstockusingpost]]
+=== 生成退库单
+....
+POST /orgs/{orgId}/projects/{projectId}/material-return-stock-lists
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**Path**|**projectId** +
+__必填__|projectId|string
+|**Body**|**reportDTO** +
+__必填__|reportDTO|<<_materialreturnstockdto,MaterialReturnStockDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* material-return-stock-controller
+
+
+[[_generateoutsouringapplicationformusingpost]]
+=== 生成外协加工申请单
+....
+POST /orgs/{orgId}/projects/{projectId}/out-souring-application-forms
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**Path**|**projectId** +
+__必填__|projectId|string
+|**Body**|**reportDTO** +
+__必填__|reportDTO|<<_outsouringapplicationformdto,OutSouringApplicationFormDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* out-souring-application-form-controller
+
+
+[[_generatepaintingchecklistusingpost]]
+=== 生成涂装检查单
+....
+POST /orgs/{orgId}/projects/{projectId}/painting-checklists
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**Path**|**projectId** +
+__必填__|projectId|string
+|**Body**|**reportDTO** +
+__必填__|reportDTO|<<_paintingchecklistdto,PaintingChecklistDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* painting-checklist-controller
+
+
+[[_generatepaintinghandoverformusingpost]]
+=== 生成涂装交接报告
+....
+POST /orgs/{orgId}/projects/{projectId}/painting-handover-forms
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**Path**|**projectId** +
+__必填__|projectId|string
+|**Body**|**reportDTO** +
+__必填__|reportDTO|<<_paintinghandoverformdto,PaintingHandoverFormDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* painting-handover-form-controller
+
+
+[[_generatepelininginspectionchecklistusingpost]]
+=== 生成镀塑检验单
+....
+POST /orgs/{orgId}/projects/{projectId}/pe-lining-inspection-checklists
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**Path**|**projectId** +
+__必填__|projectId|string
+|**Body**|**reportDTO** +
+__必填__|reportDTO|<<_pelininginspectionchecklistdto,PeLiningInspectionChecklistDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* pe-lining-inspection-checklist-controller
+
+
+[[_generatepelininginspectionreportusingpost]]
+=== 生成镀塑检验报告
+....
+POST /orgs/{orgId}/projects/{projectId}/pe-lining-inspection-reports
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**Path**|**projectId** +
+__必填__|projectId|string
+|**Body**|**reportDTO** +
+__必填__|reportDTO|<<_pelininginspectionreportdto,PeLiningInspectionReportDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* pe-lining-inspection-report-controller
+
+
+[[_generatepenetrationinspectionreportusingpost]]
+=== 生成渗透探伤报告
+....
+POST /orgs/{orgId}/projects/{projectId}/penetration-inspection-reports
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**Path**|**projectId** +
+__必填__|projectId|string
+|**Body**|**reportDTO** +
+__必填__|reportDTO|<<_penetrationinspectionreportdto,PenetrationInspectionReportDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* penetration-inspection-report-controller
+
+
+[[_generatepicklingchecklistusingpost]]
+=== 生成酸洗磷化检查单
+....
+POST /orgs/{orgId}/projects/{projectId}/pickling-checklists
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**Path**|**projectId** +
+__必填__|projectId|string
+|**Body**|**reportDTO** +
+__必填__|reportDTO|<<_picklingchecklistdto,PicklingChecklistDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* pickling-checklist-controller
+
+
+[[_generatepipefittinginspectionreportusingpost]]
+=== 生成管附件验收报告
+....
+POST /orgs/{orgId}/projects/{projectId}/pipe-fitting-inspection-reports
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**Path**|**projectId** +
+__必填__|projectId|string
+|**Body**|**reportDTO** +
+__必填__|reportDTO|<<_pipefittinginspectionreportdto,PipeFittingInspectionReportDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* pipe-fitting-inspection-report-controller
+
+
+[[_generatepipematerialinspectionreportusingpost]]
+=== 生成管材料验收报告
+....
+POST /orgs/{orgId}/projects/{projectId}/pipe-material-inspection-reports
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**Path**|**projectId** +
+__必填__|projectId|string
+|**Body**|**reportDTO** +
+__必填__|reportDTO|<<_pipematerialinspectionreportdto,PipeMaterialInspectionReportDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* pipe-material-inspection-report-controller
+
+
+[[_generatepipematerialtraceabilityreportusingpost]]
+=== 生成管材料跟踪报告
+....
+POST /orgs/{orgId}/projects/{projectId}/pipe-material-traceability-reports
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**Path**|**projectId** +
+__必填__|projectId|string
+|**Body**|**reportDTO** +
+__必填__|reportDTO|<<_pipematerialtraceabilityreportdto,PipeMaterialTraceabilityReportDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* pipe-material-traceability-report-controller
+
+
+[[_postapplicationformforpipelinefitupinspectionusingpost]]
+=== 生成管道组对检验申请单目录封面
+....
+POST /orgs/{orgId}/projects/{projectId}/pipeline-fit-up-inspection-application-forms
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|**Body**|**reportPostDTO** +
+__可选__|报表数据|<<_pipelinefitupinspectionreportapplicationformpostdto,PipelineFitUpInspectionReportApplicationFormPostDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**201**|Created|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* pipeline-fit-up-report-controller
+
+
+[[_postapplicationforpipelinefitupinspectionusingpost]]
+=== 生成管道组对检验申请单
+....
+POST /orgs/{orgId}/projects/{projectId}/pipeline-fit-up-inspection-applications
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|**Body**|**reportPostDTO** +
+__可选__|报表数据|<<_pipelinefitupinspectionapplicationpostdto,PipelineFitUpInspectionApplicationPostDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**201**|Created|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* pipeline-fit-up-report-controller
+
+
+[[_postpipelinefitupinspectionreportusingpost]]
+=== 生成管道组对检查报告
+....
+POST /orgs/{orgId}/projects/{projectId}/pipeline-fit-up-inspection-reports
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织ID|string
+|**Path**|**projectId** +
+__可选__|项目ID|string
+|**Body**|**reportPostDTO** +
+__可选__|检查项内容|<<_pipelinefitupinspectionreportpostdto,PipelineFitUpInspectionReportPostDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**201**|Created|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* pipeline-fit-up-report-controller
+
+
+[[_generatepipinginstallationreportusingpost]]
+=== 生成管线安装报告
+....
+POST /orgs/{orgId}/projects/{projectId}/piping-installation-reports
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**Path**|**projectId** +
+__必填__|projectId|string
+|**Body**|**reportDTO** +
+__必填__|reportDTO|<<_pipinginstallationreportdto,PipingInstallationReportDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* piping-installation-report-controller
+
+
+[[_generatematerialpositiveidentificationreportusingpost]]
+=== 生成材料PMI材质分析测试报告
+....
+POST /orgs/{orgId}/projects/{projectId}/positive-material-identification-reports
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**Path**|**projectId** +
+__必填__|projectId|string
+|**Body**|**reportDTO** +
+__必填__|reportDTO|<<_positivematerialidentificationreportdto,PositiveMaterialIdentificationReportDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* positive-material-identification-report-controller
+
+
+[[_generatepostweldheattreatmentrecordusingpost]]
+=== 生成焊后热处理报告
+....
+POST /orgs/{orgId}/projects/{projectId}/post-weld-heat-treatment-records
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**Path**|**projectId** +
+__必填__|projectId|string
+|**Body**|**reportDTO** +
+__必填__|reportDTO|<<_postweldheattreatmentrecorddto,PostWeldHeatTreatmentRecordDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* post-weld-heat-treatment-record-controller
+
+
+[[_generateprefabricatepipingreleasereportbeforecoatingusingpost]]
+=== 生成预制管道放行单(涂装前)
+....
+POST /orgs/{orgId}/projects/{projectId}/prefabricate-piping-release-report-before-coating
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**Path**|**projectId** +
+__必填__|projectId|string
+|**Body**|**reportDTO** +
+__必填__|reportDTO|<<_prefabricatepipingreleasereportbeforecoatingdto,PrefabricatePipingReleaseReportBeforeCoatingDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* prefabricate-piping-release-report-before-coating
+
+
+[[_generatepressuretightnesstestreportusingpost]]
+=== 生成压力/密性实验报告
+....
+POST /orgs/{orgId}/projects/{projectId}/pressure-tightness-test-reports
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**Path**|**projectId** +
+__必填__|projectId|string
+|**Body**|**reportDTO** +
+__必填__|reportDTO|<<_pressuretightnesstestreportdto,PressureTightnessTestReportDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* pressure-tightness-test-report-controller
+
+
+[[_generatepwhtandhardnesstestreportusingpost]]
+=== 生成PWHT&硬度测试报告
+....
+POST /orgs/{orgId}/projects/{projectId}/pwht-hardness-test-reports
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**Path**|**projectId** +
+__必填__|projectId|string
+|**Body**|**reportDTO** +
+__必填__|reportDTO|<<_pwhtandhardnesstestreportdto,PwhtAndHardnessTestReportDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* pwht-and-hardness-test-report-controller
+
+
+[[_generateradiographictestreportusingpost]]
+=== 生成射线检验报告
+....
+POST /orgs/{orgId}/projects/{projectId}/radiographic-test-reports
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**Path**|**projectId** +
+__必填__|projectId|string
+|**Body**|**reportDTO** +
+__必填__|reportDTO|<<_radiographictestreportdto,RadiographicTestReportDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* radiographic-test-report-controller
+
+
+[[_generateultrasonictestreportusingpost]]
+=== 生成超声波检验报告
+....
+POST /orgs/{orgId}/projects/{projectId}/ultrasonic-test-reports
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**Path**|**projectId** +
+__必填__|projectId|string
+|**Body**|**reportDTO** +
+__必填__|reportDTO|<<_ultrasonictestreportdto,UltrasonicTestReportDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* ultrasonic-test-report-controller
+
+
+[[_generatevalveinspectionreportusingpost]]
+=== 生成阀件验收报告
+....
+POST /orgs/{orgId}/projects/{projectId}/valve-inspection-reports
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**Path**|**projectId** +
+__必填__|projectId|string
+|**Body**|**reportDTO** +
+__必填__|reportDTO|<<_valveinspectionreportdto,ValveInspectionReportDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* valve-inspection-report-controller
+
+
+[[_generateweldhardnesstestreportusingpost]]
+=== 生成焊缝硬度测试报告
+....
+POST /orgs/{orgId}/projects/{projectId}/weld-hardness-test-reports
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**Path**|**projectId** +
+__必填__|projectId|string
+|**Body**|**reportDTO** +
+__必填__|reportDTO|<<_weldhardnesstestreportdto,WeldHardnessTestReportDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* weld-hardness-test-report-controller
+
+
+[[_generateweldercertificateusingpost]]
+=== 生成焊工证书
+....
+POST /orgs/{orgId}/projects/{projectId}/welder-certificates
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**Path**|**projectId** +
+__必填__|projectId|string
+|**Body**|**reportDTO** +
+__必填__|reportDTO|<<_weldercertificatedto,WelderCertificateDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_cb7d88d9276faaab147c8d26afbeb270,JsonObjectResponseBody«ReportHistory»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* welder-certificate-controller
+
+
+[[_createusingpost_1]]
+=== 创建报表模板
+....
+POST /templates
+....
+
+
+==== 说明
+根据模板信息，创建报表模板。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Body**|**templateDTO** +
+__可选__|报表模板信息|<<_templatedto,TemplateDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**201**|Created|<<_18570033f9539ccee951af1856b797d0,JsonObjectResponseBody«Template»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* report-template-controller
+
+
+[[_searchusingget_2]]
+=== 查询报表模板
+....
+GET /templates
+....
+
+
+==== 说明
+根据模板分类和显示位置，查询报表模板。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Query**|**domain** +
+__可选__|模板分类|enum (CHECKLIST, WEEKLY)
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**position** +
+__可选__|模板显示位置|enum (HEADER, TITLE, DETAIL, SUMMARY, SIGNATURE, FOOTER)
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_8112ccf8ada3115d4dc4476b5e25ecef,JsonListResponseBody«Template»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* report-template-controller
+
+
+

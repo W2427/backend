@@ -1,0 +1,29 @@
+= 文档管理系统
+
+
+[[_overview]]
+== 概览
+提供文档的上传、查询、下载服务。
+
+
+=== 版本信息
+[%hardbreaks]
+__版本__ : v0.0.1
+
+
+=== URI scheme
+[%hardbreaks]
+__域名__ : docs.ose.com
+__基础路径__ : /
+
+
+=== 标签
+
+* file-controller : 文档接口
+* hierarchy-controller : 项目层级结构导入文件接口
+* project-document-controller : 项目文档文件接口
+* upload-controller : 文件上传接口
+* wbs-entity-controller : WBS 实体导入文件接口
+
+
+

@@ -1,0 +1,1050 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="weld-hardness-test-report" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="515" leftMargin="40" rightMargin="40" topMargin="40" bottomMargin="20" isFloatColumnFooter="true" uuid="391f00de-043b-4f01-868b-18622f998e60">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="274"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="717"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="469"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="521"/>
+	<property name="com.jaspersoft.studio.unit." value="mm"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="mm"/>
+	<style name="default-text" isDefault="true" isBlankWhenNull="true" fontName="微软雅黑" fontSize="9"/>
+	<parameter name="ASSETS_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["/var/www/ose/resources/templates/reports/assets"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="REPORT_ID" class="java.lang.String">
+		<defaultValueExpression><![CDATA["0000000000000000"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="projectName" class="java.lang.String"/>
+	<parameter name="reportNo" class="java.lang.String"/>
+	<parameter name="area" class="java.lang.String"/>
+	<parameter name="date" class="java.util.Date"/>
+	<parameter name="templateNo" class="java.lang.String"/>
+	<parameter name="requiredHoldingTemp" class="java.lang.String"/>
+	<parameter name="requiredHoldingTime" class="java.lang.String"/>
+	<parameter name="requiredHeatingRate" class="java.lang.String"/>
+	<parameter name="requiredCoolingRate" class="java.lang.String"/>
+	<parameter name="actualHoldingTemp" class="java.lang.String"/>
+	<parameter name="actualHoldingTime" class="java.lang.String"/>
+	<parameter name="actualHeatingRate" class="java.lang.String"/>
+	<parameter name="actualCoolingRate" class="java.lang.String"/>
+	<parameter name="equipmentDescription" class="java.lang.String"/>
+	<parameter name="chartSpeed" class="java.lang.String"/>
+	<parameter name="recorderNo" class="java.lang.String"/>
+	<parameter name="calibrationDate" class="java.util.Date"/>
+	<parameter name="hardnessTester" class="java.lang.String"/>
+	<parameter name="hardnessTestSerialNo" class="java.lang.String"/>
+	<parameter name="hardnessTestMethod" class="java.lang.String"/>
+	<parameter name="hardnessTestCalibrationDate" class="java.util.Date"/>
+	<parameter name="inspectionItem1" class="java.lang.String"/>
+	<parameter name="serialNo" class="java.lang.String"/>
+	<parameter name="CLIENT_LOGO_DIR" class="java.lang.String"/>
+	<parameter name="CONTRACTOR_LOGO_DIR" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+  `no`, `pieceNo`, `areaNo`, `shopField`, `weldNo`, `size`, `componentType`, `heatBatchNo`
+ FROM
+   `ose_test`.`pipeline_fit_up_report`]]>
+	</queryString>
+	<field name="material" class="java.lang.String"/>
+	<field name="drawingNo" class="java.lang.String"/>
+	<field name="weldNo" class="java.lang.String"/>
+	<field name="size" class="java.lang.String"/>
+	<field name="thk" class="java.lang.String"/>
+	<field name="baseTestValue" class="java.lang.String"/>
+	<field name="hazTestValue" class="java.lang.String"/>
+	<field name="weldTestValue" class="java.lang.String"/>
+	<field name="required" class="java.lang.String"/>
+	<field name="result" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="422">
+			<frame>
+				<reportElement x="0" y="0" width="515" height="94" uuid="63d658b8-4273-4c54-a4c1-d1f874dd69d2"/>
+				<subreport isUsingCache="true" runToBottom="false" overflowType="NoStretch">
+					<reportElement x="0" y="0" width="515" height="50" uuid="659823ff-0b48-4821-9af2-aa9e5c6923e9">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<subreportParameter name="ASSETS_DIR">
+						<subreportParameterExpression><![CDATA[$P{ASSETS_DIR}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="REPORT_ID">
+						<subreportParameterExpression><![CDATA[$P{REPORT_ID}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="REPORT_NAME">
+						<subreportParameterExpression><![CDATA["PWHT & 硬 度 测 试 报 告\nPWHT & HARDNESS TEST REPORT"]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="TEMPLATE_NO">
+						<subreportParameterExpression><![CDATA["WOM-MS/MC-3QM-001-23 Rev. 3"]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="SERIAL_NO">
+						<subreportParameterExpression><![CDATA[$P{serialNo}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="CLIENT_LOGO_DIR">
+						<subreportParameterExpression><![CDATA[$P{CLIENT_LOGO_DIR}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="CONTRACTOR_LOGO_DIR">
+						<subreportParameterExpression><![CDATA[$P{CONTRACTOR_LOGO_DIR}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportExpression><![CDATA[$P{ASSETS_DIR} + "/subreports/header.jasper"]]></subreportExpression>
+				</subreport>
+				<staticText>
+					<reportElement x="0" y="66" width="80" height="28" uuid="5230d526-d1c9-4f62-9414-40a1dee29a99"/>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[Project Name
+项目名称]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="80" y="66" width="140" height="28" uuid="ea30ce1d-858b-4ac3-b670-cabbbb4b952e"/>
+					<box topPadding="2" leftPadding="2" bottomPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{projectName}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="289" y="50" width="226" height="16" uuid="6055ce81-3057-4b78-9aca-5fdffa17645e"/>
+					<box topPadding="2" leftPadding="2" bottomPadding="2">
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{reportNo}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="184" y="50" width="105" height="16" uuid="e2d1730d-4ec2-41e2-8405-b6792a32d9ae"/>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[Report No  报告号：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="220" y="66" width="30" height="28" uuid="bc9e10ee-53b0-4bab-a3c7-e0d7def74ff9"/>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[Area
+区域]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="250" y="66" width="135" height="28" uuid="5ad1e92b-c035-40d8-8580-c536ce57a4bc"/>
+					<box topPadding="2" leftPadding="2" bottomPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{area}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="385" y="66" width="30" height="28" uuid="84b03b98-0294-411f-a66c-c896159b76c5"/>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[Date
+日期]]></text>
+				</staticText>
+				<textField pattern="yyyy-MM-dd">
+					<reportElement x="415" y="66" width="100" height="28" uuid="0c196f2a-fe2f-4e71-b14b-fb8bed23eb3b"/>
+					<box topPadding="2" leftPadding="2" bottomPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="0" y="94" width="515" height="148" uuid="63504995-83d8-4956-aa56-508ab30f8cf5"/>
+				<staticText>
+					<reportElement x="0" y="0" width="515" height="24" uuid="c0085f4e-0b27-4027-96db-6938d9641234"/>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑" size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[PWHT & HARDNESS TEST REPORT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="24" width="175" height="12" uuid="c7cd592d-ec56-4edc-8da4-b28668245b2d"/>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[PROCESS]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="36" width="175" height="14" uuid="9bb3970e-42e1-40b0-a2d0-3195060319f1"/>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[HOLDING TEMP. (℃)  保温温度]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="64" width="175" height="14" uuid="d4d4a821-15ff-4b44-8447-cc3fe1c5bbab"/>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[HEATING RATE (℃/Hr)  升温速率]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="50" width="175" height="14" uuid="0de46808-bef5-47de-b2d4-892c4e38409d"/>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[HOLDING TIME (Hr)  保温时间]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="78" width="175" height="14" uuid="b1effcd0-b55a-42b2-9633-fdc519a0f4cc"/>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[COOLING RATE (℃/Hr)  冷却速率]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="175" y="24" width="170" height="12" uuid="75055b39-cccf-4d77-b3cd-18c16c8f382c"/>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[REQUIRED]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="345" y="24" width="170" height="12" uuid="19075d90-1ced-45ff-8205-fe203e4f26ea"/>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[ACTUAL]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="175" y="36" width="170" height="14" uuid="dbe2f8cb-8900-4c47-a0ac-b6422817da39"/>
+					<box topPadding="2" leftPadding="2" bottomPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{requiredHoldingTemp}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="345" y="36" width="170" height="14" uuid="630e3e2b-0c8c-4302-b6c4-f586b1340690"/>
+					<box topPadding="2" leftPadding="2" bottomPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{actualHoldingTemp}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="175" y="50" width="170" height="14" uuid="93dcc084-d207-4d71-bb82-03fc0a8a4ae0"/>
+					<box topPadding="2" leftPadding="2" bottomPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{requiredHoldingTime}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="345" y="50" width="170" height="14" uuid="2bf7055b-cbef-4572-b7f7-b479cb6181f3"/>
+					<box topPadding="2" leftPadding="2" bottomPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{actualHoldingTime}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="175" y="78" width="170" height="14" uuid="af4fe9e4-143d-4913-8e3b-99c32286547a"/>
+					<box topPadding="2" leftPadding="2" bottomPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{requiredCoolingRate}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="345" y="78" width="170" height="14" uuid="fb2eb4f2-5056-492f-83ee-7c5249460c49"/>
+					<box topPadding="2" leftPadding="2" bottomPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{actualCoolingRate}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="175" y="64" width="170" height="14" uuid="5439dcb0-f350-4a50-a0b6-3a1c5111da4f"/>
+					<box topPadding="2" leftPadding="2" bottomPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{requiredHeatingRate}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="345" y="64" width="170" height="14" uuid="fe42627d-0c70-48c0-820b-8b009fd8b143"/>
+					<box topPadding="2" leftPadding="2" bottomPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{actualHeatingRate}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="92" width="110" height="28" uuid="b7ffc2d7-5886-4aad-9078-e586c3c54350"/>
+					<box topPadding="0" leftPadding="2" bottomPadding="0">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[Equipment Description
+设备描述]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="110" y="92" width="150" height="28" uuid="543edfd9-9fdf-4de1-9ed0-a50dcbb31564"/>
+					<box topPadding="2" leftPadding="2" bottomPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{equipmentDescription}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="260" y="92" width="105" height="28" uuid="60022cd0-019c-4a32-84fd-ef68e4b4051e"/>
+					<box topPadding="0" leftPadding="2" bottomPadding="0">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[Chart Speed
+记录速度]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="365" y="92" width="150" height="28" uuid="f3785ca4-0990-4a5d-89d7-e37bed3665b8"/>
+					<box>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textField>
+						<reportElement x="0" y="0" width="110" height="28" uuid="f7b6a1c0-dad8-4585-8c78-958d726ae61f"/>
+						<box topPadding="2" leftPadding="2" bottomPadding="2">
+							<pen lineWidth="0.5"/>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{chartSpeed}]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="110" y="0" width="40" height="28" uuid="7ba9f57e-06c1-4246-832e-f682cd9c08b9"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="微软雅黑" size="9"/>
+						</textElement>
+						<text><![CDATA[mm/Hr]]></text>
+					</staticText>
+				</frame>
+				<staticText>
+					<reportElement x="0" y="120" width="110" height="28" uuid="c41ff3b8-98b4-43b9-b1d2-5992deec7fdb"/>
+					<box topPadding="0" leftPadding="2" bottomPadding="0">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[Recorder No
+记录单号]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="110" y="120" width="150" height="28" uuid="9151ecce-3ed4-4062-a4d4-3ca137146301"/>
+					<box topPadding="2" leftPadding="2" bottomPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{recorderNo}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="260" y="120" width="105" height="28" uuid="bbb61454-e737-4666-b539-f7935516cbfe"/>
+					<box topPadding="0" leftPadding="2" bottomPadding="0">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[Calibration Date
+校验日期]]></text>
+				</staticText>
+				<textField pattern="yyyy-MM-dd  HH:mm:ss">
+					<reportElement x="365" y="120" width="150" height="28" uuid="de86994b-8eb8-4109-a9f9-5519a78226e5"/>
+					<box topPadding="2" leftPadding="2" bottomPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{calibrationDate}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="0" y="242" width="515" height="80" uuid="85cad54d-7fd4-412f-89f2-28e815a87288"/>
+				<staticText>
+					<reportElement x="0" y="0" width="515" height="24" uuid="b511da39-f4fe-45b3-beaf-2d6dd74ceae6"/>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑" size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[HARDNESS TEST]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="24" width="130" height="28" uuid="dbd40e73-48f2-4cc7-bbd3-157c41e5967a"/>
+					<box topPadding="0" leftPadding="2" bottomPadding="0">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[TYPE OF HARDNESS TESTER
+硬度测试仪类型]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="130" y="24" width="130" height="28" uuid="142c0d36-d020-4ce5-aa19-737d32dba033"/>
+					<box topPadding="2" leftPadding="2" bottomPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{hardnessTester}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="260" y="24" width="130" height="28" uuid="5938b0b6-5bf9-4e66-9ba5-e81057a61f97"/>
+					<box topPadding="0" leftPadding="2" bottomPadding="0">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[SERIAL NO.
+序列号]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="390" y="24" width="125" height="28" uuid="fe41cad9-69e0-42ee-925e-c253c3b16fe4"/>
+					<box topPadding="2" leftPadding="2" bottomPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{hardnessTestSerialNo}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="130" y="52" width="130" height="28" uuid="b889c98c-762e-444c-b74d-822dc1a36314"/>
+					<box topPadding="2" leftPadding="2" bottomPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{hardnessTestMethod}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="52" width="130" height="28" uuid="843d52e0-bf1b-4d8c-a418-68d2fc094652"/>
+					<box topPadding="0" leftPadding="2" bottomPadding="0">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[HARDNESS TEST METHOD
+硬度测试方法]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="260" y="52" width="130" height="28" uuid="d92e2d44-db04-4184-b943-ee3d34e30548"/>
+					<box topPadding="0" leftPadding="2" bottomPadding="0">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[CALIBRATION DATE
+校验日期]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="390" y="52" width="125" height="28" uuid="d0f3b9ff-9d1a-4395-9032-5d49c0c232af"/>
+					<box topPadding="2" leftPadding="2" bottomPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{hardnessTestCalibrationDate}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="0" y="322" width="515" height="100" uuid="0be1e682-fa27-4d48-8d1b-d97d8d565154"/>
+				<ellipse>
+					<reportElement x="185" y="16" width="80" height="80" uuid="278b8b1c-82be-4b3f-8348-3f936ef55ff9"/>
+				</ellipse>
+				<staticText>
+					<reportElement x="0" y="0" width="130" height="100" uuid="e4d0f59f-ff3e-4013-b58c-b5632ca79c9d"/>
+					<box topPadding="2" leftPadding="2" bottomPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement>
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[RESTRICTIONS / COMMENT  意见]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="130" y="0" width="385" height="100" uuid="00055227-417a-41d7-8565-0ce8c7160152"/>
+					<box topPadding="2" leftPadding="2" bottomPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement>
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[SKETCH OF THERMOCOUPLE POSITION  热电偶位置图]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="24">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="515" height="24" backcolor="#DFDFDF" uuid="ff0e4aed-6081-4b1b-b454-539ca4e5a649"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<staticText>
+					<reportElement x="30" y="0" width="60" height="24" uuid="2113b888-53ac-498b-9a19-de7d1649e156"/>
+					<box leftPadding="2"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[Drawing No.
+图纸号]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="90" y="0" width="50" height="24" uuid="b93029fc-5aad-4e87-9005-40dd3407a232"/>
+					<box leftPadding="2">
+						<leftPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[Material
+母材]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="140" y="0" width="50" height="24" uuid="35518399-ea94-4bc2-94bb-ccdb70146f33"/>
+					<box leftPadding="2"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[Weld No.
+焊口]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="280" y="12" width="40" height="12" uuid="f87a19d8-34b3-406b-9399-698b17392ea8"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[Base]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="280" y="0" width="120" height="12" uuid="c299afd6-a989-4bb7-b2ad-039c355c2c3d">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="4" rightPadding="4">
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑" size="8"/>
+					</textElement>
+					<text><![CDATA[ACTUAL TEST VALUE ( HB )]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="0" width="30" height="24" uuid="5555039b-94dd-44a8-8c06-0b8bc9270fbf">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<box leftPadding="4" rightPadding="4">
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[NO
+序号]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="190" y="0" width="50" height="24" uuid="54bc4f1b-cd47-417d-bba5-f6b6178bdfbf"/>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[Size(INCH)
+尺寸]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="240" y="0" width="40" height="24" uuid="92902988-85de-461d-9532-38541b9c4d7f"/>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[THK]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="320" y="12" width="40" height="12" uuid="6b0cec53-a4c4-4f05-b77b-41c8becc04ca"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[HAZ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="360" y="12" width="40" height="12" uuid="dd07a07c-c3d1-4714-a4c6-5f9528a8f08c"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center">
+						<font fontName="微软雅黑"/>
+					</textElement>
+					<text><![CDATA[Weld]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="400" y="0" width="60" height="24" uuid="a7b29603-28d6-4112-8cab-0b4f9ddf4732"/>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑" size="8"/>
+					</textElement>
+					<text><![CDATA[REQUIRED(HB)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="460" y="0" width="55" height="24" uuid="5207ebd9-0935-4c66-8c1c-bb81015eff99"/>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="微软雅黑" size="8"/>
+					</textElement>
+					<text><![CDATA[Result
+结果]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="12" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="ContainerHeight" x="0" y="0" width="30" height="12" uuid="40c1f2af-3d56-47a0-86b4-474be37c9048">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box topPadding="2" leftPadding="4" bottomPadding="2" rightPadding="4">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}.toString( )]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="ContainerHeight" x="30" y="0" width="60" height="12" uuid="d2357c68-de61-4a90-8393-7cd1cc54b1e3"/>
+				<box topPadding="2" leftPadding="4" bottomPadding="2" rightPadding="4">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{drawingNo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="ContainerHeight" x="90" y="0" width="50" height="12" uuid="2b8df63a-49bc-4ebd-bc0c-a3749a848300"/>
+				<box topPadding="2" leftPadding="4" bottomPadding="2" rightPadding="4">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{material}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="ContainerHeight" x="400" y="0" width="60" height="12" uuid="6f1a64ec-96d3-4a9c-b2c1-9cdc8ece1152"/>
+				<box topPadding="2" leftPadding="4" bottomPadding="2" rightPadding="4">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{required}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="ContainerHeight" x="460" y="0" width="55" height="12" uuid="bf1d8b40-fe8e-4547-9648-b07dcb8afd56"/>
+				<box topPadding="2" leftPadding="4" bottomPadding="2" rightPadding="4">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{result}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="ContainerHeight" x="360" y="0" width="40" height="12" uuid="bdaa5d24-c47e-45a3-bfce-febb371d81db"/>
+				<box topPadding="2" leftPadding="4" bottomPadding="2" rightPadding="4">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{weldTestValue}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="ContainerHeight" x="320" y="0" width="40" height="12" uuid="dbd192c6-acbc-4702-babf-7ae1ce3d739e"/>
+				<box topPadding="2" leftPadding="4" bottomPadding="2" rightPadding="4">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hazTestValue}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="ContainerHeight" x="280" y="0" width="40" height="12" uuid="2e95901f-a9f8-43e6-b7d4-3686af62623e"/>
+				<box topPadding="2" leftPadding="4" bottomPadding="2" rightPadding="4">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{baseTestValue}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="ContainerHeight" x="240" y="0" width="40" height="12" uuid="8f98ca74-80a1-4205-9f26-62e9f9b4d9b9"/>
+				<box topPadding="2" leftPadding="4" bottomPadding="2" rightPadding="4">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{thk}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="ContainerHeight" x="190" y="0" width="50" height="12" uuid="d8ef9755-9bc1-49cc-9883-33dc09a15b0c"/>
+				<box topPadding="2" leftPadding="4" bottomPadding="2" rightPadding="4">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{size}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="ContainerHeight" x="140" y="0" width="50" height="12" uuid="cea64b0c-ea2d-4e01-8bde-480fb26a8771"/>
+				<box topPadding="2" leftPadding="4" bottomPadding="2" rightPadding="4">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{weldNo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="90">
+			<staticText>
+				<reportElement x="345" y="60" width="170" height="30" uuid="fb46ea0e-b786-4d75-b817-8406f9ce03d1">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<box leftPadding="4" rightPadding="4">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<text><![CDATA[日期
+Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="30" width="175" height="30" uuid="5cf836d9-4fe4-49df-9449-c7e03626dff6">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<box leftPadding="4" rightPadding="4">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<text><![CDATA[签字
+Sign:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="345" y="30" width="170" height="30" uuid="991c8613-9dc0-431f-93df-a30da050d450">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box leftPadding="4" rightPadding="4">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<text><![CDATA[签字
+Sign:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="175" y="60" width="170" height="30" uuid="115de2cc-9d9a-4658-94ae-5ccc28f9d7e4">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box leftPadding="4" rightPadding="4">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<text><![CDATA[日期
+Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="175" y="30" width="170" height="30" uuid="0eada6b4-af2b-43df-be42-6fd7811debf3">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box leftPadding="4" rightPadding="4">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<text><![CDATA[签字
+Sign:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="60" width="175" height="30" uuid="2d272eb6-dd94-4ba9-8422-449e121261ab">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<box leftPadding="4" rightPadding="4">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<text><![CDATA[日期
+Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="175" height="30" uuid="da354a2f-c50c-461e-944f-1c5a23e1801f">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<text><![CDATA[操作人员
+Operator
+]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="345" y="0" width="170" height="30" uuid="64cefaba-cfe3-4e29-a735-ed282c605195"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{inspectionItem1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="175" y="0" width="170" height="30" uuid="4ace42da-34e2-454e-afb9-70b64871b6eb">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<text><![CDATA[质量部
+QC/QA Dept.]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="24" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<textField>
+				<reportElement x="305" y="0" width="100" height="24" uuid="67c74501-6a5e-42d1-b923-67cd42cd6f85">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<textFieldExpression><![CDATA["第 " + $V{PAGE_NUMBER} + " 页"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="415" y="0" width="100" height="24" uuid="96cdff8f-1d0b-4a4d-9290-e01c5bfdf3fa">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<textFieldExpression><![CDATA["共 " + $V{PAGE_NUMBER} + " 页"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="305" y="0" width="100" height="24" uuid="ab53d060-df3c-4ee6-8037-beaa396fa51c">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<textFieldExpression><![CDATA["第 " + $V{PAGE_NUMBER} + " 页"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="415" y="0" width="100" height="24" uuid="10ca8f96-4454-4510-8fcd-8734c393bf93">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<textFieldExpression><![CDATA["共 " + $V{PAGE_NUMBER} + " 页"]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+</jasperReport>

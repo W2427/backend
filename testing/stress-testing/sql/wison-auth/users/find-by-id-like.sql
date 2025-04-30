@@ -1,0 +1,1 @@
+SELECT `id`, `username`, `email`, `mobile` FROM `users` WHERE `id` LIKE ? AND `deleted` = 0 ORDER BY `mobile` ASC LIMIT ?, ?;

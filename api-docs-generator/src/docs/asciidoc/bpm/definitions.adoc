@@ -1,0 +1,1038 @@
+
+[[_definitions]]
+== 定义
+
+[[_acthitasknodedto]]
+=== ActHiTaskNodeDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**assignee** +
+__可选__|string
+|**assigneeName** +
+__可选__|string
+|**attachments** +
+__可选__|< object > array
+|**comment** +
+__可选__|string
+|**documents** +
+__可选__|< object > array
+|**endTime** +
+__可选__|string (date-time)
+|**hour** +
+__可选__|number (double)
+|**pictures** +
+__可选__|< object > array
+|**revocation** +
+__可选__|boolean
+|**startTime** +
+__可选__|string (date-time)
+|**taskDefKey** +
+__可选__|string
+|**taskId** +
+__可选__|string
+|**taskName** +
+__可选__|string
+|===
+
+
+[[_acttaskcreatedto]]
+=== ActTaskCreateDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**assignee** +
+__可选__|责任人|string
+|**modelName** +
+__可选__|流程模型名称|string
+|**processId** +
+__可选__|工序|string
+|**projectId** +
+__可选__|项目ID|string
+|===
+
+
+[[_acttaskcreateresponsedto]]
+=== ActTaskCreateResponseDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**actRuTasks** +
+__可选__|< <<_bpmactrutask,BpmActRuTask>> > array
+|**nodes** +
+__可选__|< <<_acttasknodedto,ActTaskNodeDTO>> > array
+|**actInstId** +
+__可选__|string
+|**startDate** +
+__可选__|string (date-time)
+|**suspended** +
+__可选__|boolean
+|===
+
+
+[[_acttasknodedto]]
+=== ActTaskNodeDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**orderNo** +
+__可选__|integer (int32)
+|**taskCategory** +
+__可选__|string
+|**taskDefKey** +
+__可选__|string
+|**taskNodeName** +
+__可选__|string
+|===
+
+
+[[_bpmacthiactinst]]
+=== BpmActHiActinst
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**actId** +
+__可选__|string
+|**actName** +
+__可选__|string
+|**actType** +
+__可选__|string
+|**assignee** +
+__可选__|string
+|**callActInstId** +
+__可选__|string
+|**deleteReason** +
+__可选__|string
+|**duration** +
+__可选__|integer
+|**endTime** +
+__可选__|string (date-time)
+|**executionId** +
+__可选__|string
+|**id** +
+__可选__|string
+|**procDefId** +
+__可选__|string
+|**actInstId** +
+__可选__|string
+|**startTime** +
+__可选__|string (date-time)
+|**taskId** +
+__可选__|string
+|**tenantId** +
+__可选__|string
+|===
+
+
+[[_bpmacthitaskinst]]
+=== BpmActHiTaskinst
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**assignee** +
+__可选__|string
+|**category** +
+__可选__|string
+|**claimTime** +
+__可选__|string (date-time)
+|**deleteReason** +
+__可选__|string
+|**description** +
+__可选__|string
+|**dueDate** +
+__可选__|string (date-time)
+|**duration** +
+__可选__|integer
+|**endTime** +
+__可选__|string (date-time)
+|**executionId** +
+__可选__|string
+|**formKey** +
+__可选__|string
+|**id** +
+__可选__|string
+|**name** +
+__可选__|string
+|**owner** +
+__可选__|string
+|**parentTaskId** +
+__可选__|string
+|**priority** +
+__可选__|integer (int32)
+|**procDefId** +
+__可选__|string
+|**actInstId** +
+__可选__|string
+|**startTime** +
+__可选__|string (date-time)
+|**taskDefKey** +
+__可选__|string
+|**tenantId** +
+__可选__|string
+|===
+
+
+[[_bpmactreprocdef]]
+=== BpmActReProcdef
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**category** +
+__可选__||string
+|**deploymentId** +
+__可选__||<<_referencedata,ReferenceData>>
+|**description** +
+__可选__||string
+|**dgrmResourceName** +
+__可选__||string
+|**engineVersion** +
+__可选__||string
+|**hasGraphicalNotation** +
+__可选__|**最小值** : `-128` +
+**最大值** : `127`|integer (int32)
+|**hasStartFormKey** +
+__可选__|**最小值** : `-128` +
+**最大值** : `127`|integer (int32)
+|**id** +
+__可选__||string
+|**key** +
+__可选__||string
+|**name** +
+__可选__||string
+|**resourceName** +
+__可选__||string
+|**rev** +
+__可选__||integer (int32)
+|**suspensionState** +
+__可选__||integer (int32)
+|**tenantId** +
+__可选__||string
+|**version** +
+__可选__||integer (int32)
+|===
+
+
+[[_bpmactrutask]]
+=== BpmActRuTask
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**assignee** +
+__可选__|string
+|**category** +
+__可选__|string
+|**claimTime** +
+__可选__|string (date-time)
+|**createTime** +
+__可选__|<<_timestamp,Timestamp>>
+|**delegation** +
+__可选__|string
+|**description** +
+__可选__|string
+|**dueDate** +
+__可选__|string (date-time)
+|**formKey** +
+__可选__|string
+|**id** +
+__可选__|string
+|**name** +
+__可选__|string
+|**owner** +
+__可选__|string
+|**parentTaskId** +
+__可选__|string
+|**priority** +
+__可选__|integer (int32)
+|**procDefId** +
+__可选__|string
+|**actInstId** +
+__可选__|string
+|**rev** +
+__可选__|integer (int32)
+|**suspensionState** +
+__可选__|integer (int32)
+|**taskDefKey** +
+__可选__|string
+|**tenantId** +
+__可选__|string
+|===
+
+
+[[_delegateresponsedto]]
+=== DelegateResponseDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**actHiTaskinst** +
+__可选__|<<_bpmacthitaskinst,BpmActHiTaskinst>>
+|**actRuTask** +
+__可选__|<<_bpmactrutask,BpmActRuTask>>
+|===
+
+
+[[_diagramresourcedto]]
+=== DiagramResourceDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**diagramResource** +
+__可选__|string
+|**diagramResourceName** +
+__可选__|string
+|===
+
+
+[[_fielderror]]
+=== FieldError
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**message** +
+__可选__|错误描述|string
+|**name** +
+__可选__|发生错误的字段|string
+|**type** +
+__可选__|错误类型|string
+|===
+
+
+[[_c115e4d52adeda96dc4c3266dc2c4771]]
+=== JsonListResponseBody«ActHiTaskNodeDTO»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_acthitasknodedto,ActHiTaskNodeDTO>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_415bde7aeddc3648dcb0839913a31b79]]
+=== JsonListResponseBody«ActTaskNodeDTO»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_acttasknodedto,ActTaskNodeDTO>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_33a888243f95fdc9456401db5054feda]]
+=== JsonListResponseBody«BpmActHiTaskinst»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_bpmacthitaskinst,BpmActHiTaskinst>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_7d8d3afc2c44a7e9b9ce2364902e4e79]]
+=== JsonListResponseBody«BpmActRuTask»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_bpmactrutask,BpmActRuTask>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_1d094d9c5b25ae7e78e7d3b6266119f1]]
+=== JsonListResponseBody«TaskCompleteBatchResponseDTO»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_taskcompletebatchresponsedto,TaskCompleteBatchResponseDTO>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_0ef164a006100a4a51d3c28c0dc777bf]]
+=== JsonListResponseBody«TaskGatewayDTO»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_taskgatewaydto,TaskGatewayDTO>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_5b4e211be58ce9ab2f1004f1a2b75efe]]
+=== JsonObjectResponseBody«ActTaskCreateResponseDTO»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_acttaskcreateresponsedto,ActTaskCreateResponseDTO>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_9121b69229b624ced2188200dc3dbabf]]
+=== JsonObjectResponseBody«BpmActReProcdef»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_bpmactreprocdef,BpmActReProcdef>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_bab435da66f142bc62509ba99787f60e]]
+=== JsonObjectResponseBody«BpmActRuTask»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_bpmactrutask,BpmActRuTask>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_61df7a402b76238c672d7006f40587e6]]
+=== JsonObjectResponseBody«DelegateResponseDTO»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_delegateresponsedto,DelegateResponseDTO>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_c0396fe3c737b2021e4d5c9280309e1e]]
+=== JsonObjectResponseBody«DiagramResourceDTO»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_diagramresourcedto,DiagramResourceDTO>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_7420f1e1b1ce2e8dda28fb912666dcb4]]
+=== JsonObjectResponseBody«ModelDeployResponseDTO»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_modeldeployresponsedto,ModelDeployResponseDTO>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_c1a9fb88936bdea304961398c3d2dd12]]
+=== JsonObjectResponseBody«NextNodeDTO»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_nextnodedto,NextNodeDTO>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_68f16a0f52eef1e825973f7eb6e88d9e]]
+=== JsonObjectResponseBody«RevocationDTO»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_revocationdto,RevocationDTO>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_4eead04dfae79499e3c1a8fd5473c8c0]]
+=== JsonObjectResponseBody«TaskCompleteResponseDTO»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_taskcompleteresponsedto,TaskCompleteResponseDTO>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_jsonresponsebody]]
+=== JsonResponseBody
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_jsonresponseerror]]
+=== JsonResponseError
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**code** +
+__可选__|错误代码|string
+|**errors** +
+__可选__|错误列表|< <<_jsonresponseerror,JsonResponseError>> > array
+|**fields** +
+__可选__|发生校验错误的字段的列表|< <<_fielderror,FieldError>> > array
+|**message** +
+__可选__|错误消息|string
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|===
+
+
+[[_meta]]
+=== Meta
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**count** +
+__可选__|数据总数|integer (int64)
+|**hasNextPage** +
+__可选__|是否存在下一页|boolean
+|**hasPreviousPage** +
+__可选__|是否存在上一页|boolean
+|**isFirstPage** +
+__可选__||boolean
+|**isLastPage** +
+__可选__||boolean
+|**pageNo** +
+__可选__|当前页号|integer (int32)
+|**pageSize** +
+__可选__|分页大小|integer (int32)
+|**pages** +
+__可选__|数据总页数|integer (int32)
+|===
+
+
+[[_modeldeploydto]]
+=== ModelDeployDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**bpmProcessId** +
+__可选__|工序ID|string
+|**category** +
+__可选__|分类|string
+|**description** +
+__可选__|描述|string
+|**processKey** +
+__可选__|流程Key|string
+|**processName** +
+__可选__|流程名称|string
+|**projectId** +
+__可选__|项目ID/工作流中是租户ID|string
+|**temporaryName** +
+__可选__|上传的临时文件名|string
+|===
+
+
+[[_modeldeployresponsedto]]
+=== ModelDeployResponseDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**deployTime** +
+__可选__|string (date-time)
+|**deploymentId** +
+__可选__|string
+|**modeTasks** +
+__可选__|< <<_modeltasknode,ModelTaskNode>> > array
+|**procDefId** +
+__可选__|string
+|**procDefKey** +
+__可选__|string
+|**procDefName** +
+__可选__|string
+|**suspended** +
+__可选__|boolean
+|**version** +
+__可选__|integer (int32)
+|===
+
+
+[[_modeltasknode]]
+=== ModelTaskNode
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**category** +
+__可选__|string
+|**taskDefKey** +
+__可选__|string
+|**taskName** +
+__可选__|string
+|===
+
+
+[[_nextnodedto]]
+=== NextNodeDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**nextNode** +
+__可选__|< string, string > map
+|===
+
+
+[[_page]]
+=== Page
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|===
+
+
+[[_pagedto]]
+=== PageDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**page** +
+__可选__|分页设置|<<_page,Page>>
+|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array
+|===
+
+
+[[_referencedata]]
+=== ReferenceData
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**$ref** +
+__可选__|引用目标数据实体 ID|string
+|===
+
+
+[[_revocationdto]]
+=== RevocationDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**actHiActinst** +
+__可选__|<<_bpmacthiactinst,BpmActHiActinst>>
+|**actHiTaskinst** +
+__可选__|<<_bpmacthitaskinst,BpmActHiTaskinst>>
+|**actRuTasks** +
+__可选__|< <<_bpmactrutask,BpmActRuTask>> > array
+|===
+
+
+[[_taskassigneeinfo]]
+=== TaskAssigneeInfo
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**taskDefKey** +
+__可选__|string
+|**taskName** +
+__可选__|string
+|===
+
+
+[[_taskcompletebatchdto]]
+=== TaskCompleteBatchDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**attachFiles** +
+__可选__|< string > array
+|**command** +
+__可选__|object
+|**comment** +
+__可选__|string
+|**costHour** +
+__可选__|integer (int32)
+|**ids** +
+__可选__|< string > array
+|**operator** +
+__可选__|string
+|**orgId** +
+__可选__|string
+|**pictures** +
+__可选__|< string > array
+|**projectId** +
+__可选__|string
+|===
+
+
+[[_taskcompletebatchresponsedto]]
+=== TaskCompleteBatchResponseDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**actHiActinst** +
+__可选__|<<_bpmacthiactinst,BpmActHiActinst>>
+|**actHiTaskinst** +
+__可选__|<<_bpmacthitaskinst,BpmActHiTaskinst>>
+|**actRuTasks** +
+__可选__|< <<_bpmactrutask,BpmActRuTask>> > array
+|**assigneeInfos** +
+__可选__|< <<_taskassigneeinfo,TaskAssigneeInfo>> > array
+|**attachments** +
+__可选__|string
+|**comment** +
+__可选__|string
+|**id** +
+__可选__|string
+|**message** +
+__可选__|string
+|**pictures** +
+__可选__|string
+|**actInstId** +
+__可选__|string
+|**result** +
+__可选__|boolean
+|===
+
+
+[[_taskcompletedto]]
+=== TaskCompleteDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**attachFiles** +
+__可选__|< string > array
+|**command** +
+__可选__|object
+|**comment** +
+__可选__|string
+|**operator** +
+__可选__|string
+|**orgId** +
+__可选__|string
+|**pictures** +
+__可选__|< string > array
+|**projectId** +
+__可选__|string
+|===
+
+
+[[_taskcompleteresponsedto]]
+=== TaskCompleteResponseDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**actHiActinst** +
+__可选__|<<_bpmacthiactinst,BpmActHiActinst>>
+|**actHiTaskinst** +
+__可选__|<<_bpmacthitaskinst,BpmActHiTaskinst>>
+|**actRuTasks** +
+__可选__|< <<_bpmactrutask,BpmActRuTask>> > array
+|**assigneeInfos** +
+__可选__|< <<_taskassigneeinfo,TaskAssigneeInfo>> > array
+|**attachments** +
+__可选__|string
+|**comment** +
+__可选__|string
+|**pictures** +
+__可选__|string
+|**actInstId** +
+__可选__|string
+|===
+
+
+[[_taskgatewaydto]]
+=== TaskGatewayDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**condition** +
+__可选__|string
+|**items** +
+__可选__|< <<_taskgatewaydto,TaskGatewayDTO>> > array
+|**mutiSelectFlag** +
+__可选__|boolean
+|**name** +
+__可选__|string
+|===
+
+
+[[_timestamp]]
+=== Timestamp
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**date** +
+__可选__|integer (int32)
+|**day** +
+__可选__|integer (int32)
+|**hours** +
+__可选__|integer (int32)
+|**minutes** +
+__可选__|integer (int32)
+|**month** +
+__可选__|integer (int32)
+|**nanos** +
+__可选__|integer (int32)
+|**seconds** +
+__可选__|integer (int32)
+|**time** +
+__可选__|integer (int64)
+|**timezoneOffset** +
+__可选__|integer (int32)
+|**year** +
+__可选__|integer (int32)
+|===
+
+
+[[_todotasksearchdto]]
+=== TodoTaskSearchDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**pageDTO** +
+__可选__|<<_pagedto,PageDTO>>
+|**actInstIds** +
+__可选__|< string > array
+|**taskName** +
+__可选__|string
+|**userid** +
+__可选__|string
+|===
+
+
+

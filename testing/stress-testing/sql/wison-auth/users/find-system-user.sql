@@ -1,0 +1,1 @@
+SELECT `id`, `name` FROM `users` WHERE `type` = 'system' AND `status` = 'DISABLED' AND `deleted` = 0;

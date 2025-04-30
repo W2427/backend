@@ -1,0 +1,2 @@
+redis-cli -h 10.0.0.12 -p 6301 -a m7k4SCb24FdNX58fkOKLwkLN9712Xzvd keys TASK_INFO_* | xargs redis-cli -h 10.0.0.12 -p 6301 -a m7k4SCb24FdNX58fkOKLwkLN9712Xzvd del
+redis-cli -h 127.0.0.1 -p 6301 -a 1qazxsw2 keys REPORT_NO* | xargs redis-cli -h 127.0.0.1 -p 6301 -a 1qazxsw2 del

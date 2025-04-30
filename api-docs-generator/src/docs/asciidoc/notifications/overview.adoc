@@ -1,0 +1,28 @@
+= 通知管理系统
+
+
+[[_overview]]
+== 概览
+提供系统通知服务。
+
+
+=== 版本信息
+[%hardbreaks]
+__版本__ : v0.0.1
+
+
+=== URI scheme
+[%hardbreaks]
+__域名__ : ntf.ose.com
+__基础路径__ : /
+
+
+=== 标签
+
+* biz-code-controller : 业务代码参照表
+* notification-configuration-controller : 通知配置管理接口
+* notification-controller : 通知管理接口
+* notification-template-controller : 通知模版管理接口
+
+
+

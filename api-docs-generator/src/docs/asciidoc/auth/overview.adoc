@@ -1,0 +1,31 @@
+= 用户认证系统
+
+
+[[_overview]]
+== 概览
+提供用户注册与认证、组织管理、权限检查等服务。
+
+
+=== 版本信息
+[%hardbreaks]
+__版本__ : v0.0.1
+
+
+=== URI scheme
+[%hardbreaks]
+__域名__ : auth.ose.com
+__基础路径__ : /
+
+
+=== 标签
+
+* authentication-controller : 用户认证/授权接口
+* biz-code-controller : 业务代码参照表
+* captcha-controller : 人机测试接口
+* organization-controller : 部门接口
+* privilege-controller : 用户权限接口
+* role-controller : 角色接口
+* user-controller : 用户接口
+
+
+

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>用户登录</title>
+  <link type="text/css" rel="stylesheet" href="index.css">
+  <script type="text/javascript" src="../scripts/ejs.min.js"></script>
+</head>
+<body>
+<header>
+  <h1> OSE 用户登录</h1>
+</header>
+<div>
+  <input type="text" id="username" placeholder="登录用户名" autocomplete="off"><br>
+  <input type="password" id="password" placeholder="登录密码"><br>
+  <input type="button" value="登录" onclick="$signIn()">
+  <p id="message"></p>
+</div>
+<footer>&copy; 2018 OSE</footer>
+</body>
+<!--[if IE]><script type="text/javascript" src="../scripts/json3.min.js"></script><![endif]-->
+<!--[if lte IE 8]><script type="text/javascript" src="../scripts/ie8.js"></script><![endif]-->
+<script type="text/javascript" src="../scripts/common.js"></script>
+<script type="text/javascript" src="index.js"></script>
+</html>

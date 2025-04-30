@@ -1,0 +1,1409 @@
+
+[[_paths]]
+== 路径
+
+[[_getimportfileusingget]]
+=== 取得遗留问题导入文件
+....
+GET /orgs/{orgId}/projects/{projectId}/experience-import-file
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_47973baee6a15241860ca101e31626c9,JsonObjectResponseBody«IssueImportTemplate»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* experience-controller
+
+
+[[_createusingpost_1]]
+=== 创建经验教训
+....
+POST /orgs/{orgId}/projects/{projectId}/experiences
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|**Body**|**experienceCreateDTO** +
+__必填__|experienceCreateDTO|<<_experiencecreatedto,ExperienceCreateDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**201**|Created|<<_8a6a00a07a71421b0af69792728600e0,JsonObjectResponseBody«Experience»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* experience-controller
+
+
+[[_searchusingget_1]]
+=== 获取经验教训列表
+....
+GET /orgs/{orgId}/projects/{projectId}/experiences
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织ID|string
+|**Path**|**projectId** +
+__可选__|项目ID|string
+|**Query**|**createdAtEndTime** +
+__可选__|创建结束日期|string (date-time)
+|**Query**|**createdAtStartTime** +
+__可选__|创建开始日期|string (date-time)
+|**Query**|**creatorId** +
+__可选__|创建者 ID|string
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**keyword** +
+__可选__|关键字|string
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**properties[0].propertyDefinitionId** +
+__可选__|自定义属性定义 ID|string
+|**Query**|**properties[0].values** +
+__可选__|设置的属性值|< string > array(multi)
+|**Query**|**props** +
+__可选__|自定义字段查询条件（属性 ID:值）|string
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_564fee211732356619c19d6a8927fffd,JsonListResponseBody«Experience»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* experience-controller
+
+
+[[_getusingget]]
+=== 获取经验教训详情
+....
+GET /orgs/{orgId}/projects/{projectId}/experiences/{experienceId}
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**experienceId** +
+__可选__|经验教训ID|string
+|**Path**|**orgId** +
+__可选__|组织ID|string
+|**Path**|**projectId** +
+__可选__|项目ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_8a6a00a07a71421b0af69792728600e0,JsonObjectResponseBody«Experience»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* experience-controller
+
+
+[[_deleteusingdelete]]
+=== 删除经验教训
+....
+DELETE /orgs/{orgId}/projects/{projectId}/experiences/{experienceId}
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**experienceId** +
+__可选__|经验教训ID|string
+|**Path**|**orgId** +
+__可选__|组织ID|string
+|**Path**|**projectId** +
+__可选__|项目ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_jsonresponsebody,JsonResponseBody>>
+|**204**|No Content|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* experience-controller
+
+
+[[_updateusingpatch]]
+=== 更新经验教训信息
+....
+PATCH /orgs/{orgId}/projects/{projectId}/experiences/{experienceId}
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**experienceId** +
+__可选__|经验教训 ID|string
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|**Body**|**experienceUpdateDTO** +
+__必填__|experienceUpdateDTO|<<_experienceupdatedto,ExperienceUpdateDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_jsonresponsebody,JsonResponseBody>>
+|**204**|No Content|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* experience-controller
+
+
+[[_importexperiencesusingpost]]
+=== 导入经验教训（尚未实现）
+....
+POST /orgs/{orgId}/projects/{projectId}/import-experiences
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|**Body**|**issueImportDTO** +
+__必填__|issueImportDTO|<<_issueimportdto,IssueImportDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|**501**|Not Implemented|<<_jsonresponsebody,JsonResponseBody>>
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* experience-controller
+
+
+[[_importissuesusingpost]]
+=== 导入遗留问题
+....
+POST /orgs/{orgId}/projects/{projectId}/import-issues
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|**Body**|**issueImportDTO** +
+__必填__|issueImportDTO|<<_issueimportdto,IssueImportDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_jsonresponsebody,JsonResponseBody>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* issue-controller
+
+
+[[_getimportfileusingget_1]]
+=== 取得遗留问题导入文件
+....
+GET /orgs/{orgId}/projects/{projectId}/issue-import-file
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_47973baee6a15241860ca101e31626c9,JsonObjectResponseBody«IssueImportTemplate»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* issue-controller
+
+
+[[_createusingpost_3]]
+=== 创建自定义属性
+....
+POST /orgs/{orgId}/projects/{projectId}/issue-properties
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|**Body**|**propertyDefinitionDTO** +
+__必填__|propertyDefinitionDTO|<<_propertydefinitioncreatedto,PropertyDefinitionCreateDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**201**|Created|<<_9852716760d1d97f92289d3f6f4e7405,JsonObjectResponseBody«IssuePropertyDefinition»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* property-definition-controller
+
+
+[[_searchusingget_4]]
+=== 获取自定义属性定义列表
+....
+GET /orgs/{orgId}/projects/{projectId}/issue-properties
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4,.^2"]
+|===
+|类型|名称|说明|类型|默认值
+|**Path**|**orgId** +
+__可选__|组织 ID|string|
+|**Path**|**projectId** +
+__可选__|项目 ID|string|
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean|`"false"`
+|**Query**|**issueType** +
+__可选__|问题类型|enum (ISSUE, EXPERIENCE)|
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)|
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)|
+|**Query**|**propertyType** +
+__可选__|自定义属性值的类型|enum (TEXT, OPTIONS_SINGLE, OPTIONS_MULTIPLE)|
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)|
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_7f1d908f4e741fe122a7fdc0138e5ed2,JsonListResponseBody«IssuePropertyDefinition»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* property-definition-controller
+
+
+[[_detailsusingget]]
+=== 自定义属性定义详情
+....
+GET /orgs/{orgId}/projects/{projectId}/issue-properties/{propertyDefinitionId}
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|**Path**|**propertyDefinitionId** +
+__可选__|自定义属性定义 ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_9852716760d1d97f92289d3f6f4e7405,JsonObjectResponseBody«IssuePropertyDefinition»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* property-definition-controller
+
+
+[[_deleteusingdelete_1]]
+=== 删除自定义属性定义
+....
+DELETE /orgs/{orgId}/projects/{projectId}/issue-properties/{propertyDefinitionId}
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|**Path**|**propertyDefinitionId** +
+__可选__|自定义属性定义 ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_jsonresponsebody,JsonResponseBody>>
+|**204**|No Content|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* property-definition-controller
+
+
+[[_updateusingpatch_2]]
+=== 更新自定义属性
+....
+PATCH /orgs/{orgId}/projects/{projectId}/issue-properties/{propertyDefinitionId}
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|**Path**|**propertyDefinitionId** +
+__可选__|自定义属性定义 ID|string
+|**Body**|**propertyDefinitionDTO** +
+__必填__|propertyDefinitionDTO|<<_propertydefinitionupdatedto,PropertyDefinitionUpdateDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_jsonresponsebody,JsonResponseBody>>
+|**204**|No Content|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* property-definition-controller
+
+
+[[_createusingpost_4]]
+=== 创建项目遗留问题标签
+....
+POST /orgs/{orgId}/projects/{projectId}/issue_tags
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|**Body**|**tagCreateDTO** +
+__必填__|tagCreateDTO|<<_tagcreatedto,TagCreateDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_jsonresponsebody,JsonResponseBody>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* tag-controller
+
+
+[[_searchusingget_5]]
+=== 获取项目遗留问题标签列表
+....
+GET /orgs/{orgId}/projects/{projectId}/issue_tags
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**parentId** +
+__可选__|上级ID|string
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|**Query**|**targetId** +
+__可选__|目标ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_ef6734cee470c090630595108aa11b3f,JsonListResponseBody«Tag»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* tag-controller
+
+
+[[_getusingget_2]]
+=== 获取项目遗留问题标签详情
+....
+GET /orgs/{orgId}/projects/{projectId}/issue_tags/{tagId}
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|**Path**|**tagId** +
+__可选__|标签 ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_bfc54503dd173b2df218d212222ed81e,JsonObjectResponseBody«Tag»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* tag-controller
+
+
+[[_createusingpost_2]]
+=== 创建遗留问题
+....
+POST /orgs/{orgId}/projects/{projectId}/issues
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|**Body**|**issueCreateDTO** +
+__必填__|issueCreateDTO|<<_issuecreatedto,IssueCreateDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**201**|Created|<<_59a56d380051efdcd3f4053977fb3ee1,JsonObjectResponseBody«Issue»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* issue-controller
+
+
+[[_searchusingget_2]]
+=== 获取遗留问题列表
+....
+GET /orgs/{orgId}/projects/{projectId}/issues
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|**Query**|**createdAtEndTime** +
+__可选__|创建结束日期|string (date-time)
+|**Query**|**createdAtStartTime** +
+__可选__|创建开始日期|string (date-time)
+|**Query**|**creatorId** +
+__可选__|创建者 ID|string
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**finishedEndTime** +
+__可选__|完成结束时间|string (date-time)
+|**Query**|**finishedStartTime** +
+__可选__|完成日开始时间|string (date-time)
+|**Query**|**issueIDs** +
+__可选__|问题 ID 列表|< string > array(multi)
+|**Query**|**keyword** +
+__可选__|关键字|string
+|**Query**|**leaderId** +
+__可选__|责任人ID|string
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**participantId** +
+__可选__|参与者 ID|string
+|**Query**|**properties[0].propertyDefinitionId** +
+__可选__|自定义属性定义 ID|string
+|**Query**|**properties[0].values** +
+__可选__|设置的属性值|< string > array(multi)
+|**Query**|**props** +
+__可选__|自定义字段查询条件（属性 ID:值）|string
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|**Query**|**source** +
+__可选__|问题来源|< enum (QC, OWNER, THIRD_PARTY) > array(multi)
+|**Query**|**status** +
+__可选__|状态|< enum (ACTIVE, DISABLED, DELETED, REJECTED, APPROVED, PENDING, FINISHED, CLOSED) > array(multi)
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_fc6c69b7da795532036133b5c16a279a,JsonListResponseBody«Issue»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* issue-controller
+
+
+[[_batchgetusingpost]]
+=== 批量取得问题信息
+....
+POST /orgs/{orgId}/projects/{projectId}/issues/batch-get
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|**Body**|**issueCriteriaDTO** +
+__必填__|issueCriteriaDTO|<<_issuecriteriadto,IssueCriteriaDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_fc6c69b7da795532036133b5c16a279a,JsonListResponseBody«Issue»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* issue-controller
+
+
+[[_transferusingpatch]]
+=== 移交遗留问题
+....
+PATCH /orgs/{orgId}/projects/{projectId}/issues/transfer
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织ID|string
+|**Path**|**projectId** +
+__可选__|项目ID|string
+|**Body**|**issueTransferDTO** +
+__必填__|issueTransferDTO|<<_issuetransferdto,IssueTransferDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_jsonresponsebody,JsonResponseBody>>
+|**204**|No Content|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* issue-controller
+
+
+[[_getusingget_1]]
+=== 获取遗留问题详情
+....
+GET /orgs/{orgId}/projects/{projectId}/issues/{issueId}
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**issueId** +
+__可选__|问题 ID|string
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_59a56d380051efdcd3f4053977fb3ee1,JsonObjectResponseBody«Issue»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* issue-controller
+
+
+[[_updateusingpatch_1]]
+=== 更新遗留问题信息
+....
+PATCH /orgs/{orgId}/projects/{projectId}/issues/{issueId}
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**issueId** +
+__可选__|问题 ID|string
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|**Body**|**issueUpdateDTO** +
+__必填__|issueUpdateDTO|<<_issueupdatedto,IssueUpdateDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_jsonresponsebody,JsonResponseBody>>
+|**204**|No Content|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* issue-controller
+
+
+[[_createusingpost]]
+=== 创建问题评论
+....
+POST /orgs/{orgId}/projects/{projectId}/issues/{issueId}/comments
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**issueId** +
+__可选__|问题 ID|string
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|**Body**|**commentCreateDTO** +
+__必填__|commentCreateDTO|<<_issuecommentcreatedto,IssueCommentCreateDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_jsonresponsebody,JsonResponseBody>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* comment-controller
+
+
+[[_searchusingget]]
+=== 获取评论列表
+....
+GET /orgs/{orgId}/projects/{projectId}/issues/{issueId}/comments
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**issueId** +
+__可选__|问题 ID|string
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_bc450650c4b8d858841908021a845c55,JsonListResponseBody«IssueComment»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* comment-controller
+
+
+[[_updateusingput]]
+=== 更新评论信息
+....
+PUT /orgs/{orgId}/projects/{projectId}/issues/{issueId}/comments/{commentId}
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**commentId** +
+__可选__|评论 ID|string
+|**Path**|**issueId** +
+__可选__|问题 ID|string
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|**Body**|**commentUpdateDTO** +
+__必填__|commentUpdateDTO|<<_issuecommentupdatedto,IssueCommentUpdateDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_jsonresponsebody,JsonResponseBody>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* comment-controller
+
+
+[[_searchusingget_3]]
+=== 获取遗留问题操作记录列表
+....
+GET /orgs/{orgId}/projects/{projectId}/issues/{issueId}/records
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**issueId** +
+__可选__|遗留问题ID|string
+|**Path**|**orgId** +
+__可选__|组织ID|string
+|**Path**|**projectId** +
+__可选__|项目ID|string
+|**Query**|**endTime** +
+__可选__|查询结束时间|string (date-time)
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|**Query**|**startTime** +
+__可选__|查询开始时间|string (date-time)
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_4026f248be9a608a4a02dd0dc8785db5,JsonListResponseBody«IssueRecord»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* issue-record-controller
+
+
+

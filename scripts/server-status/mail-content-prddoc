@@ -1,0 +1,5 @@
+检查时间：2019-11-28 07:30:01
+执行服务器：prddoc
+
+服务器【prddoc】：
+  • 命令（ssh root@prddoc df）执行错误：ssh_exchange_identification: Connection closed by remote host  

@@ -1,0 +1,1583 @@
+
+[[_definitions]]
+== 定义
+
+[[_bomnoderesultsdto]]
+=== BomNodeResultsDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**bompath** +
+__可选__|BOM NODE bompath|string
+|**children** +
+__可选__|BOM NODE LIST|< <<_bomnoderesultsdto,BomNodeResultsDTO>> > array
+|**lnCode** +
+__可选__|BOM NODE LN CODE|string
+|**lnId** +
+__可选__|BOM NODE LN ID|string
+|===
+
+
+[[_fmaterialissuereceiptdto]]
+=== FMaterialIssueReceiptDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**bnlId** +
+__可选__|默认值：NULL|string
+|**companyId** +
+__可选__|施工单位ID|string
+|**description** +
+__可选__|长描述|string
+|**details** +
+__可选__||< <<_fmaterialissuereceiptdetaildto,FMaterialIssueReceiptDetailDTO>> > array
+|**esiStatus** +
+__可选__|默认值：N|string
+|**fahId** +
+__可选__|预测预留ID|string
+|**issueBy** +
+__可选__|发料人|string
+|**issueDate** +
+__可选__|发布时间|string (date-time)
+|**issueType** +
+__可选__|预测预留:R 直接发料:R|string
+|**locId** +
+__可选__|库位ID|string
+|**mirCreateDate** +
+__可选__|单据创建时间|string (date-time)
+|**mirNumber** +
+__可选__|出库单号|string
+|**mirType** +
+__可选__|预测预留:R 直接发料:D|string
+|**poplIssByProc** +
+__可选__|默认值：N|string
+|**revisionId** +
+__可选__|版本|string
+|**shortDesc** +
+__可选__|短描述|string
+|**siteStatInd** +
+__可选__|默认值：N|string
+|**whId** +
+__可选__|仓库ID|string
+|===
+
+
+[[_fmaterialissuereceiptdetaildto]]
+=== FMaterialIssueReceiptDetailDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**esiStatus** +
+__可选__|默认值：N|string
+|**heatId** +
+__可选__|炉批号ID|string
+|**ident** +
+__可选__|材料编码|string
+|**identDeviation** +
+__可选__|代材描述，一般为空|string
+|**issueDate** +
+__可选__|发料日期|string (date-time)
+|**issueQty** +
+__可选__|发料数量|number
+|**iviId** +
+__可选__|库存ID|string
+|**ivprId** +
+__可选__|预测预留明细ID，直接出库为空|string
+|**locId** +
+__可选__|库位ID|string
+|**lpId** +
+__可选__|料表明细ID|string
+|**mirId** +
+__可选__|发料单ID|string
+|**mirNumber** +
+__可选__|出库单号|string
+|**plateId** +
+__可选__|默认值：NULL|string
+|**sasId** +
+__可选__|默认值：NULL|string
+|**siteStatInd** +
+__可选__|默认值：N|string
+|**smstId** +
+__可选__|材料状态|string
+|**tagNumber** +
+__可选__|位号|string
+|**unitId** +
+__可选__|单位|string
+|**whId** +
+__可选__|仓库ID|string
+|===
+
+
+[[_fmaterialreceivereceiptdto]]
+=== FMaterialReceiveReceiptDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**bnlId** +
+__可选__||string
+|**description** +
+__可选__||string
+|**details** +
+__可选__||< <<_fmaterialreceivereceiptdetaildto,FMaterialReceiveReceiptDetailDTO>> > array
+|**esiStatus** +
+__可选__|默认值：N|string
+|**fmstId** +
+__可选__||string
+|**locCode** +
+__可选__||string
+|**locId** +
+__可选__||string
+|**matlRecvDate** +
+__可选__||string (date-time)
+|**mrrNumber** +
+__可选__||string
+|**poplIshByProc** +
+__可选__||string
+|**recvBy** +
+__可选__||string
+|**recvType** +
+__可选__||string
+|**relnId** +
+__可选__||string
+|**revisonId** +
+__可选__||string
+|**sgId** +
+__可选__||string
+|**shipper** +
+__可选__||string
+|**shipperRefNo** +
+__可选__||string
+|**shortDesc** +
+__可选__||string
+|**smstCode** +
+__可选__||string
+|**smstId** +
+__可选__||string
+|**spmPohId** +
+__可选__||string
+|**spmPohNumber** +
+__可选__||string
+|**spmRelnId** +
+__可选__||string
+|**spmRelnNumber** +
+__可选__||string
+|**whCode** +
+__可选__||string
+|**whId** +
+__可选__||string
+|===
+
+
+[[_fmaterialreceivereceiptdetaildto]]
+=== FMaterialReceiveReceiptDetailDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**bnlId** +
+__可选__||string
+|**certificateNumber** +
+__可选__||string
+|**esTagDescription** +
+__可选__||string
+|**esTagShortDesc** +
+__可选__||string
+|**esiStatus** +
+__可选__|默认值：N|string
+|**fileLocation** +
+__可选__||string
+|**heatNumber** +
+__可选__||string
+|**ident** +
+__可选__||string
+|**itemShipId** +
+__可选__||string
+|**ityCode** +
+__可选__||string
+|**locCode** +
+__可选__||string
+|**locId** +
+__可选__||string
+|**manufacturer** +
+__可选__||string
+|**recvDate** +
+__可选__||string (date-time)
+|**recvQty** +
+__可选__||number
+|**smstCode** +
+__可选__||string
+|**smstId** +
+__可选__||string
+|**tagNumber** +
+__可选__||string
+|**unitCode** +
+__可选__||string
+|**unitId** +
+__可选__||string
+|**whCode** +
+__可选__||string
+|**whId** +
+__可选__||string
+|===
+
+
+[[_falistresultsdto]]
+=== FaListResultsDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**dpId** +
+__可选__|object
+|**fahCode** +
+__可选__|object
+|**fahId** +
+__可选__|object
+|**fahType** +
+__可选__|object
+|**jobStatus** +
+__可选__|object
+|**lstId** +
+__可选__|object
+|**projId** +
+__可选__|object
+|**runNumber** +
+__可选__|object
+|**userId** +
+__可选__|object
+|===
+
+
+[[_fadlistdto]]
+=== FadListDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**fahId** +
+__可选__|领料单ID|string
+|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**page** +
+__可选__|分页设置|<<_page,Page>>
+|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array
+|**spmProjId** +
+__可选__|SPM 项目ID|string
+|===
+
+
+[[_fadlistresultsdto]]
+=== FadListResultsDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**esiStatus** +
+__可选__|object
+|**fahId** +
+__可选__|object
+|**heatId** +
+__可选__|object
+|**heatNumber** +
+__可选__|object
+|**ident** +
+__可选__|object
+|**identDeviation** +
+__可选__|object
+|**issueDate** +
+__可选__|object
+|**issueQty** +
+__可选__|object
+|**iviId** +
+__可选__|object
+|**ivprId** +
+__可选__|object
+|**locCode** +
+__可选__|object
+|**locId** +
+__可选__|object
+|**lpId** +
+__可选__|object
+|**mirId** +
+__可选__|object
+|**mirNumber** +
+__可选__|object
+|**plateId** +
+__可选__|object
+|**projId** +
+__可选__|object
+|**resvQty** +
+__可选__|object
+|**sasId** +
+__可选__|object
+|**siteStatInd** +
+__可选__|object
+|**smstCode** +
+__可选__|object
+|**smstId** +
+__可选__|object
+|**tagNumber** +
+__可选__|object
+|**unitCode** +
+__可选__|object
+|**unitId** +
+__可选__|object
+|**whCode** +
+__可选__|object
+|**whId** +
+__可选__|object
+|===
+
+
+[[_fielderror]]
+=== FieldError
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**message** +
+__可选__|错误描述|string
+|**name** +
+__可选__|发生错误的字段|string
+|**type** +
+__可选__|错误类型|string
+|===
+
+
+[[_issuereceiptlistresultsdto]]
+=== IssueReceiptListResultsDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**dpCode** +
+__可选__|object
+|**fahCode** +
+__可选__|object
+|**fahId** +
+__可选__|object
+|**issueType** +
+__可选__|object
+|**locCode** +
+__可选__|object
+|**mirDesc** +
+__可选__|object
+|**mirId** +
+__可选__|object
+|**mirNumber** +
+__可选__|object
+|**mirType** +
+__可选__|object
+|**projId** +
+__可选__|object
+|**revisionId** +
+__可选__|object
+|**runNumber** +
+__可选__|object
+|**whCode** +
+__可选__|object
+|===
+
+
+[[_16c75315d08bc1b49b3d637e6ca8eb84]]
+=== JsonListResponseBody«BomNodeResultsDTO»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_bomnoderesultsdto,BomNodeResultsDTO>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_ad03a7b5fe4f320592e019ed37eded85]]
+=== JsonListResponseBody«FaListResultsDTO»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_falistresultsdto,FaListResultsDTO>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_835df595bc6931ebfaed7bc834e6a2c4]]
+=== JsonListResponseBody«FadListResultsDTO»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_fadlistresultsdto,FadListResultsDTO>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_ee674297edde8e3a4203d577a1640e26]]
+=== JsonListResponseBody«IssueReceiptListResultsDTO»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_issuereceiptlistresultsdto,IssueReceiptListResultsDTO>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_093fa39b3228cc3dc230d1e8fe7b9e21]]
+=== JsonListResponseBody«MCompaniesEntity»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_mcompaniesentity,MCompaniesEntity>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_e37103a63b7e5bb4f1e20278a1d1bc7d]]
+=== JsonListResponseBody«MLocationEntity»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_mlocationentity,MLocationEntity>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_6a21bbcbcfcb798719e50c9aa1a1b7ff]]
+=== JsonListResponseBody«MSiteMatlStatusEntity»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_msitematlstatusentity,MSiteMatlStatusEntity>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_0d87b300451823c485ec7936fc37bd2d]]
+=== JsonListResponseBody«MWareHouseEntity»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_mwarehouseentity,MWareHouseEntity>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_a6b057a70988143f9d124c916d826949]]
+=== JsonListResponseBody«PoDetail»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_podetail,PoDetail>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_144686d9219aed5f1d0220b11233ccb8]]
+=== JsonListResponseBody«ReceiveReceiptListResultsDTO»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_receivereceiptlistresultsdto,ReceiveReceiptListResultsDTO>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_3ec39483cbb31763064cd0345db79def]]
+=== JsonListResponseBody«ReleaseNoteHead»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_releasenotehead,ReleaseNoteHead>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_0dd604f9c8a3b3b636914e2e02b7233f]]
+=== JsonListResponseBody«ReleaseNote»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_releasenote,ReleaseNote>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_3c74c2c9d242d1c2013486dbc919063a]]
+=== JsonListResponseBody«ReqDetail»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_reqdetail,ReqDetail>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_19cefb0144339fbbb216a0c787e3715e]]
+=== JsonListResponseBody«SpmMatchLnNode»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_spmmatchlnnode,SpmMatchLnNode>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_c722669457e9f938e21f941c87d9b095]]
+=== JsonListResponseBody«ViewMxjBominfoEntity»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_viewmxjbominfoentity,ViewMxjBominfoEntity>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_dc2e4b3fe88fcd8dc98596588cb36aae]]
+=== JsonListResponseBody«ViewMxjPosEntity»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_viewmxjposentity,ViewMxjPosEntity>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_777fabcc51cc455e52f7940ca49d4729]]
+=== JsonListResponseBody«ViewMxjReqs»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_viewmxjreqs,ViewMxjReqs>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_c4e02db9dce489b4414850674682493b]]
+=== JsonListResponseBody«ViewMxjValidPohEntity»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_viewmxjvalidpohentity,ViewMxjValidPohEntity>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_7cb1e399d5d74ac33928ff3c5bc7cdd1]]
+=== JsonObjectResponseBody«FaListResultsDTO»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_falistresultsdto,FaListResultsDTO>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_391c2243de165dc22adfc1b02da9d9aa]]
+=== JsonObjectResponseBody«ReceiveReceiptResultDTO»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_receivereceiptresultdto,ReceiveReceiptResultDTO>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_a83a898a1a1118e4b3f6c8d67e1fa9ec]]
+=== JsonObjectResponseBody«ReleaseNoteHead»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_releasenotehead,ReleaseNoteHead>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_jsonresponsebody]]
+=== JsonResponseBody
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_jsonresponseerror]]
+=== JsonResponseError
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**code** +
+__可选__|错误代码|string
+|**errors** +
+__可选__|错误列表|< <<_jsonresponseerror,JsonResponseError>> > array
+|**fields** +
+__可选__|发生校验错误的字段的列表|< <<_fielderror,FieldError>> > array
+|**message** +
+__可选__|错误消息|string
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|===
+
+
+[[_mcompaniesentity]]
+=== MCompaniesEntity
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**companyCode** +
+__可选__|string
+|**companyId** +
+__可选__|integer (int64)
+|**companyName** +
+__可选__|string
+|===
+
+
+[[_mlocationentity]]
+=== MLocationEntity
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**cableDrumInd** +
+__可选__|string
+|**description** +
+__可选__|string
+|**dpId** +
+__可选__|integer (int64)
+|**intRev** +
+__可选__|integer (int64)
+|**lmod** +
+__可选__|string (date-time)
+|**locCode** +
+__可选__|string
+|**locId** +
+__可选__|integer (int64)
+|**projId** +
+__可选__|string
+|**quarantLocInd** +
+__可选__|string
+|**shortDesc** +
+__可选__|string
+|**usrId** +
+__可选__|string
+|===
+
+
+[[_msitematlstatusentity]]
+=== MSiteMatlStatusEntity
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**dpId** +
+__可选__|integer (int64)
+|**intRev** +
+__可选__|integer (int64)
+|**lmod** +
+__可选__|string (date-time)
+|**orderSeq** +
+__可选__|integer (int64)
+|**projId** +
+__可选__|string
+|**smstCode** +
+__可选__|string
+|**smstId** +
+__可选__|integer (int64)
+|**usrId** +
+__可选__|string
+|===
+
+
+[[_mwarehouseentity]]
+=== MWareHouseEntity
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**companyId** +
+__可选__|integer (int64)
+|**corporateWhInd** +
+__可选__|string
+|**deChIsWhInd** +
+__可选__|string
+|**description** +
+__可选__|string
+|**dpId** +
+__可选__|integer (int64)
+|**freeMaterialWhInd** +
+__可选__|string
+|**intRev** +
+__可选__|integer (int64)
+|**lmod** +
+__可选__|string (date-time)
+|**multiWhInd** +
+__可选__|string
+|**nestedPlateInd** +
+__可选__|string
+|**projId** +
+__可选__|string
+|**scrapWhInd** +
+__可选__|string
+|**shortDesc** +
+__可选__|string
+|**usrId** +
+__可选__|string
+|**whCode** +
+__可选__|string
+|**whId** +
+__可选__|integer (int64)
+|===
+
+
+[[_meta]]
+=== Meta
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**count** +
+__可选__|数据总数|integer (int64)
+|**hasNextPage** +
+__可选__|是否存在下一页|boolean
+|**hasPreviousPage** +
+__可选__|是否存在上一页|boolean
+|**isFirstPage** +
+__可选__||boolean
+|**isLastPage** +
+__可选__||boolean
+|**pageNo** +
+__可选__|当前页号|integer (int32)
+|**pageSize** +
+__可选__|分页大小|integer (int32)
+|**pages** +
+__可选__|数据总页数|integer (int32)
+|===
+
+
+[[_page]]
+=== Page
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|===
+
+
+[[_pagedto]]
+=== PageDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**page** +
+__可选__|分页设置|<<_page,Page>>
+|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array
+|===
+
+
+[[_podetail]]
+=== PoDetail
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**commodityCode** +
+__可选__|object
+|**ident** +
+__可选__|object
+|**invQty** +
+__可选__|object
+|**orderType** +
+__可选__|object
+|**pohId** +
+__可选__|object
+|**poliQty** +
+__可选__|object
+|**poliUnitPrice** +
+__可选__|object
+|**reqCode** +
+__可选__|object
+|**shortDesc** +
+__可选__|object
+|**taxCost** +
+__可选__|object
+|**unitCode** +
+__可选__|object
+|===
+
+
+[[_receivereceiptlistresultsdto]]
+=== ReceiveReceiptListResultsDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**dpCode** +
+__可选__|object
+|**locCode** +
+__可选__|object
+|**mrrId** +
+__可选__|object
+|**mrrNumber** +
+__可选__|object
+|**poNumber** +
+__可选__|object
+|**poSupp** +
+__可选__|object
+|**pohId** +
+__可选__|object
+|**projId** +
+__可选__|object
+|**recvType** +
+__可选__|object
+|**relnNumber** +
+__可选__|object
+|**revisionId** +
+__可选__|object
+|**shortDesc** +
+__可选__|object
+|**whCode** +
+__可选__|object
+|===
+
+
+[[_receivereceiptresultdto]]
+=== ReceiveReceiptResultDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**message** +
+__可选__|string
+|**result** +
+__可选__|string
+|===
+
+
+[[_releasenote]]
+=== ReleaseNote
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**commodityId** +
+__可选__|object
+|**dpCode** +
+__可选__|object
+|**dpId** +
+__可选__|object
+|**ident** +
+__可选__|object
+|**itemShipID** +
+__可选__|object
+|**poNumber** +
+__可选__|object
+|**poSupp** +
+__可选__|object
+|**pohId** +
+__可选__|object
+|**poliId** +
+__可选__|object
+|**poliQty** +
+__可选__|number
+|**qtyUnitCode** +
+__可选__|object
+|**qtyUnitId** +
+__可选__|object
+|**recvOnSiteQty** +
+__可选__|number
+|**relnId** +
+__可选__|object
+|**relnNumber** +
+__可选__|object
+|**relnQty** +
+__可选__|number
+|**relnWeight** +
+__可选__|number
+|**shortDesc** +
+__可选__|object
+|**tagNumber** +
+__可选__|object
+|===
+
+
+[[_releasenotehead]]
+=== ReleaseNoteHead
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**poNumber** +
+__可选__|object
+|**poSupp** +
+__可选__|object
+|**pohId** +
+__可选__|object
+|**relnId** +
+__可选__|object
+|**relnNumber** +
+__可选__|object
+|===
+
+
+[[_reqdetail]]
+=== ReqDetail
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**commodityCode** +
+__可选__|string
+|**identCode** +
+__可选__|string
+|**increasePty** +
+__可选__|string
+|**rliPos** +
+__可选__|string
+|**shortDesc** +
+__可选__|string
+|**totalReleaseQty** +
+__可选__|string
+|**unitCode** +
+__可选__|string
+|===
+
+
+[[_spmmatchlnnode]]
+=== SpmMatchLnNode
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**lastModified** +
+__可选__|string
+|**lnCode** +
+__可选__|string
+|**lnId** +
+__可选__|integer (int32)
+|**matchPercent** +
+__可选__|number (float)
+|===
+
+
+[[_spmmatchlnnodedto]]
+=== SpmMatchLnNodeDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**lnCode** +
+__可选__|SPM BOM Match 节点 编号|string
+|**lnId** +
+__可选__|SPM BOM Match节点 ID|string
+|**pageNo** +
+__可选__|pageNo 查询的页码|integer (int32)
+|**pageSize** +
+__可选__|pageSize 一次查询条数|integer (int32)
+|**size** +
+__可选__|SPM BOM Match 节点 总数|integer (int64)
+|**spmProjId** +
+__可选__|SPM 项目ID|string
+|===
+
+
+[[_viewmxjbominfoentity]]
+=== ViewMxjBominfoEntity
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**bompath** +
+__可选__|string
+|**cgGroupCode** +
+__可选__|string
+|**controlDate** +
+__可选__|string (date-time)
+|**id** +
+__可选__|string
+|**ident** +
+__可选__|string
+|**issueQty** +
+__可选__|string
+|**lastLpId** +
+__可选__|string
+|**lmod** +
+__可选__|string
+|**lnId** +
+__可选__|string
+|**lpPos** +
+__可选__|string
+|**lstDate** +
+__可选__|string (date-time)
+|**partCode** +
+__可选__|string
+|**projId** +
+__可选__|string
+|**quantity** +
+__可选__|string
+|**resvQty** +
+__可选__|string
+|**shortDesc** +
+__可选__|string
+|**tagNumber** +
+__可选__|string
+|**unitCode** +
+__可选__|string
+|===
+
+
+[[_viewmxjposentity]]
+=== ViewMxjPosEntity
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**bompath** +
+__可选__|string
+|**cgGroupCode** +
+__可选__|string
+|**controlDate** +
+__可选__|string (date-time)
+|**dpCode** +
+__可选__|string
+|**ident** +
+__可选__|string
+|**issueQty** +
+__可选__|string
+|**lastLpId** +
+__可选__|string
+|**lmod** +
+__可选__|string
+|**lnId** +
+__可选__|string
+|**lpId** +
+__可选__|string
+|**lpPos** +
+__可选__|string
+|**lstCode** +
+__可选__|string
+|**lstDate** +
+__可选__|string (date-time)
+|**parentLnId** +
+__可选__|string
+|**partCode** +
+__可选__|string
+|**pos** +
+__可选__|string
+|**projId** +
+__可选__|string
+|**quantity** +
+__可选__|string
+|**resvQty** +
+__可选__|string
+|**shortDesc** +
+__可选__|string
+|**tagNumber** +
+__可选__|string
+|**unitCode** +
+__可选__|string
+|===
+
+
+[[_viewmxjreqs]]
+=== ViewMxjReqs
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**approvedDate** +
+__可选__|string
+|**bomNo** +
+__可选__|string
+|**buyer** +
+__可选__|string
+|**category** +
+__可选__|string
+|**description** +
+__可选__|string
+|**dpId** +
+__可选__|string
+|**id** +
+__可选__|string
+|**originator** +
+__可选__|string
+|**projectId** +
+__可选__|string
+|**reqCode** +
+__可选__|string
+|**reqSupp** +
+__可选__|string
+|**reqType** +
+__可选__|string
+|**rstCode** +
+__可选__|string
+|===
+
+
+[[_viewmxjvalidpohentity]]
+=== ViewMxjValidPohEntity
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**activeInd** +
+__可选__|string
+|**amountRequired** +
+__可选__|string
+|**approvedBy** +
+__可选__|string
+|**basePohId** +
+__可选__|string
+|**bondIncreaseRequiredInd** +
+__可选__|string
+|**bondPremiumAmount** +
+__可选__|string
+|**budget** +
+__可选__|string
+|**buyer** +
+__可选__|string
+|**cSignedInd** +
+__可选__|string
+|**ccpId** +
+__可选__|string
+|**clientPoNumber** +
+__可选__|string
+|**commentsSettledInd** +
+__可选__|string
+|**commitmentLimit** +
+__可选__|string
+|**companyId** +
+__可选__|string
+|**companyName** +
+__可选__|string
+|**creationDate** +
+__可选__|string (date-time)
+|**currencyCode** +
+__可选__|string
+|**currencyId** +
+__可选__|string
+|**cyId** +
+__可选__|string
+|**discountAmount** +
+__可选__|string
+|**discountBase** +
+__可选__|string
+|**discountPercent** +
+__可选__|string
+|**dpId** +
+__可选__|string
+|**escNoticeInd** +
+__可选__|string
+|**estimatedValue** +
+__可选__|string
+|**expediter** +
+__可选__|string
+|**firstPromContrDate** +
+__可选__|string (date-time)
+|**id** +
+__可选__|string
+|**intRev** +
+__可选__|string
+|**invoiceValue** +
+__可选__|string
+|**issuedBy** +
+__可选__|string
+|**jobId** +
+__可选__|string
+|**lastPromContrDate** +
+__可选__|string (date-time)
+|**lmod** +
+__可选__|string (date-time)
+|**opiInd** +
+__可选__|string
+|**ordDiscPercent** +
+__可选__|string
+|**orderDate** +
+__可选__|string (date-time)
+|**orderType** +
+__可选__|string
+|**orgEtaSiteDate** +
+__可选__|string (date-time)
+|**orgFldReqDate** +
+__可选__|string (date-time)
+|**originId** +
+__可选__|string
+|**paymentBondRqdInd** +
+__可选__|string
+|**performanceBondRqdInd** +
+__可选__|string
+|**performanceScore** +
+__可选__|string
+|**poNumber** +
+__可选__|string
+|**poSupp** +
+__可选__|string
+|**preInspectReqInd** +
+__可选__|string
+|**projId** +
+__可选__|string
+|**readyForApprovalInd** +
+__可选__|string
+|**retentionPercent** +
+__可选__|string
+|**revisionId** +
+__可选__|string
+|**rfaDate** +
+__可选__|string (date-time)
+|**rmId** +
+__可选__|string
+|**scSignedInd** +
+__可选__|string
+|**shipmentGroupInd** +
+__可选__|string
+|**shortDesc** +
+__可选__|string
+|**supId** +
+__可选__|string
+|**techEvalCompDate** +
+__可选__|string (date-time)
+|**totMatlCost** +
+__可选__|string
+|**totalGrossWeight** +
+__可选__|string
+|**totalNetWeight** +
+__可选__|string
+|**totalVolume** +
+__可选__|string
+|**traffic** +
+__可选__|string
+|**usrId** +
+__可选__|string
+|===
+
+
+

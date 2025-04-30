@@ -1,0 +1,1 @@
+DELETE FROM `bpm_entity_sub_type` WHERE `id` LIKE ?;

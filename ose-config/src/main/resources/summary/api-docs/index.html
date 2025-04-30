@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>OSE API 统计</title>
+  <link type="text/css" rel="stylesheet" href="index.css">
+  <script type="text/javascript" src="../scripts/ejs.min.js"></script>
+</head>
+<body>
+<header>
+  <h1> OSE 任务管理系统 API 接口统计</h1>
+</header>
+<nav>
+  接口总数：<span id="route-count">0</span><br><br>
+  <label for="show-interfaces"><input type="checkbox" name="show-interfaces" id="show-interfaces" disabled>显示接口</label>
+  <p></p>
+</nav>
+<div id="api-docs"></div>
+</body>
+<script type="text/html" id="api-doc-template">
+  <div class="head">
+    <table class="table-head">
+      <thead>
+      <tr>
+        <th colspan="2">子系统</th>
+        <th colspan="2">业务</th>
+        <% if (showInterfaces) { %>
+        <th colspan="3">接口</th>
+        <% } %>
+      </tr>
+      <tr>
+        <th class="sub-system left">名称</th>
+        <th class="route-count right">合计</th>
+        <th class="controller left">名称</th>
+        <th class="route-count right">合计</th>
+        <% if (showInterfaces) { %>
+        <th class="interface left">名称</th>
+        <th class="request-method center">请求方</th>
+        <th class="request-url left">请求路径</th>
+        <% } %>
+      </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="content">
+    <div>
+      <table>
+        <tbody>
+        <%
+
+        var docRowNum = 0;
+        var controllerRowNum = 0;
+        var routeRowNum = 0;
+
+        var docRowStyle;
+        var controllerRowStyle;
+        var routeRowStyle;
+
+        docs.forEach(function(doc, docIndex) {
+
+        if (selectedApps.indexOf(doc.instance.app) < 0) {
+        return;
+        }
+
+        docRowStyle = docRowNum % 2 ? 'odd' : 'even';
+        docRowNum++;
+
+        doc.controllers.forEach(function(controller, controllerIndex) {
+
+        controllerRowStyle = controllerRowNum % 2 ? 'odd' : 'even';
+        controllerRowNum++;
+
+        controller.routes.forEach(function(route, routeIndex) {
+
+        if (!showInterfaces && routeIndex > 0) {
+        return;
+        }
+
+        routeRowStyle = routeRowNum % 2 ? 'odd' : 'even';
+        routeRowNum++;
+        %>
+        <tr>
+          <% if (controllerIndex === 0 && routeIndex === 0) { %>
+          <td class="sub-system left <%= docRowStyle %>" title="<%= doc.info.title %>"><a href="//<%= doc.host %>/docs/"
+                                                                                          target="<%= doc.instance.app %>"><%=
+            doc.info.title %></a></td>
+          <td class="route-count right <%= docRowStyle %>"><%= doc.routeCount %></td>
+          <% } else { %>
+          <td class="sub-system <%= docRowStyle %> blank"></td>
+          <td class="route-count <%= docRowStyle %> blank"></td>
+          <% } %>
+          <% if (routeIndex === 0) { %>
+          <td class="controller left <%= controllerRowStyle %>" title="<%= controller.description %>"><a
+            href="//<%= doc.host %>/docs/#/<%= controller.name %>" target="<%= doc.instance.app %>"><%=
+            controller.description %></a></td>
+          <td class="route-count right <%= controllerRowStyle %>"><%= controller.routeCount %></td>
+          <% } else { %>
+          <td class="controller <%= controllerRowStyle %> blank"></td>
+          <td class="route-count <%= controllerRowStyle %> blank"></td>
+          <% } %>
+          <% if (showInterfaces) { %>
+          <td class="interface left <%= routeRowStyle %>" title="<%= route.summary %>"><a
+            href="//<%= doc.host %>/docs/#/<%= controller.name %>/<%= route.operationId %>"
+            target="<%= doc.instance.app %>"><%= route.summary %></a></td>
+          <td class="request-method center <%= routeRowStyle %>"><span class="request-method <%= route.method %>"><%= route.method.toUpperCase() %></span>
+          </td>
+          <td class="request-url left <%= routeRowStyle %>" title="<%= route.path %>"><span class="request-url"><%- route.pathHTML %></span>
+          </td>
+          <% } %>
+        </tr>
+        <%
+        });
+        });
+        });
+        %>
+        </tbody>
+      </table>
+      <footer>&copy; 2018 OSE</footer>
+    </div>
+  </div>
+</script>
+<!--[if IE]><script type="text/javascript" src="../scripts/json3.min.js"></script><![endif]-->
+<!--[if lte IE 8]><script type="text/javascript" src="../scripts/ie8.js"></script><![endif]-->
+<script type="text/javascript" src="../scripts/common.js"></script>
+<script type="text/javascript" src="index.js"></script>
+</html>

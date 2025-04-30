@@ -1,0 +1,82 @@
+USE `ose_tasks`;
+
+CREATE OR REPLACE VIEW `structure_weld_history` AS
+SELECT
+	'' AS `旧编号`,
+	`ew`.`no` AS `新编号`,
+	`ew`.`work_class` AS `工作项代码`,
+	`pn`.`wp01_no` AS `模块名`,
+	LEFT (
+		`ew`.`no`,
+		(
+			( length( `ew`.`no` ) - length( substring_index( `ew`.`no`, '-',- ( 1 ) ) ) ) - 1
+		)
+	) AS `工作包`,
+	`ew`.`display_name` AS `焊口号`,
+	`ew`.`weld_type` AS `焊口类型`,
+	`ew`.`inspection_class` AS `焊接等级`,
+	`ew`.`wp05_no_1` AS `零件1`,
+	`ew`.`wp05_no_2` AS `零件2`,
+	`ew`.`thickness1` AS `厚度1`,
+	`ew`.`thickness1` AS `厚度2`,
+	`ew`.`material_grade_1` AS `材质等级1`,
+	`ew`.`material_grade_2` AS `材质等级2`,
+	`swl`.`Heat Number Element No1` AS `炉批号1`,
+	`swl`.`Heat Number Element No2` AS `炉批号2`,
+	round( `ew`.`length`, 1 ) AS `焊缝长度`,
+	date_format( `swl`.`Fit-up Date`, '%d/%m/%Y' ) AS `组对日期`,
+	`swl`.`Fit-up Report Number` AS `组对报告号`,
+	'ACC' AS `组对结果`,
+	`swl`.`Result ACC/REJ` AS `组对状态`,
+	`swl`.`WPS No` AS `WPS号`,
+	`swl`.`Welder's stamp Root Pass` AS `焊工号（打底）`,
+	`swl`.`Welder's stamp Filling pass (incl. HOT Pass)` AS `焊工号（填充、盖面）`,
+	date_format( `swl`.`Welding date`, '%d/%m/%Y' ) AS `焊接日期`,
+	'ACC' AS `焊接结果`,
+	'100' AS `VT比例`,
+	`ew`.`rt_value` AS `RT比例`,
+	`ew`.`ut_value` AS `UT比例`,
+	`ew`.`mt_value` AS `MT比例`,
+	`ew`.`pt_value` AS `PT比例`,
+	date_format( `swl`.`Welding end date`, '%d/%m/%Y' ) AS `焊接VT日期`,
+	'ACC' AS `VT结果`,
+	`swl`.`No of visual testing report` AS `焊接VT报告号`,
+	`swl`.`VT Result` AS `焊接VT状态`,
+	date_format( `swl`.`Date of RT testing`, '%d/%m/%Y' ) AS `焊接RT日期`,
+	'ACC' AS `RT结果`,
+	`swl`.`No of RT testing report` AS `焊接RT报告号`,
+	`swl`.`RT Result` AS `RT状态`,
+	date_format( `swl`.`Date of UT testing`, '%d/%m/%Y' ) AS `UT日期`,
+	'ACC' AS `UT结果`,
+	`swl`.`No of UT testing report` AS `UT报告号`,
+	`swl`.`UT Result` AS `UT状态`,
+	date_format( `swl`.`Date of MT testing`, '%d/%m/%Y' ) AS `MT日期`,
+	'ACC' AS `MT结果`,
+	`swl`.`No of MT testing report` AS `MT报告号`,
+	`swl`.`MT Result` AS `MT状态`,
+	date_format( `swl`.`Date of PT testing`, '%d/%m/%Y' ) AS `PT日期`,
+	'ACC' AS `PT结果`,
+	`swl`.`No of PT testing report` AS `PT报告号`,
+	`swl`.`PT Result` AS `PT状态`,
+	'OK' AS `质量控制结果`,
+	'' AS `SMAW`,
+	'' AS `FCAW`,
+	'' AS `SAW`,
+	'' AS `SAW FLUX`,
+	'' AS `TYPE OF DEFECT`,
+	'' AS `Size of Defect`,
+	'' AS `Defect Welder No`,
+	'' AS `Position of Defect`,
+	'' AS `Penalty Details`,
+	'' AS `PRE-HEAT Report No`,
+	'' AS `Remarks`,
+	`ew`.`welding_map_no` AS `Weld Map Number`,
+	`ew`.`revision` AS `revision`,
+	`ew`.`project_id` AS `project_id`,
+	`ew`.`org_id` AS `org_id`
+FROM
+	(
+		( `entity_structure_weld` `ew` JOIN `project_node` `pn` ON ( ( `ew`.`id` = `pn`.`entity_id` ) ) )
+	LEFT JOIN `structure_weld_log` `swl` ON ( ( `swl`.`entity_id` = `ew`.`id` ) )
+	);
+

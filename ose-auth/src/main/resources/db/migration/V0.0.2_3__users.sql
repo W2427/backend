@@ -1,0 +1,57 @@
+alter table users drop column first_name_en;
+alter table users drop column first_name_cn;
+alter table users drop column last_name_cn;
+alter table users drop column last_name_en;
+
+alter table users add column preferred_name varchar(64) not null default '' comment '员工英文名';
+alter table users add column number varchar(64) not null default '' comment '员工编号';
+alter table users add column contact_no varchar(64) not null default '' comment '联系方式';
+alter table users add column feed_hull tinyint not null default 0 comment '设计能力';
+alter table users add column basic_design_hull tinyint not null default 0 comment '';
+alter table users add column detailed_design_hull tinyint not null default 0 comment '';
+alter table users add column production_design_hull tinyint not null default 0 comment '';
+alter table users add column feed_top_side tinyint not null default 0 comment '';
+alter table users add column basic_design_top_side tinyint not null default 0 comment '';
+alter table users add column detailed_design_top_side tinyint not null default 0 comment '';
+alter table users add column production_design_top_side tinyint not null default 0 comment '';
+alter table users add column engineering_capability tinyint not null default 0 comment '';
+alter table users add column project_management_capability tinyint not null default 0 comment '';
+alter table users add column team_management_capability tinyint not null default 0 comment '';
+alter table users add column language_capability tinyint not null default 0 comment '';
+
+alter table users add column personal_email varchar(64) not null default '' comment '个人邮箱';
+--alter table users add column company_email varchar(64) not null default '' comment '公司邮箱';
+alter table users add column ic_number varchar(64) not null default '' comment '身份证号';
+alter table users add column birthday timestamp  comment '';
+alter table users add column working_years_in_industry int not null default 0 comment '行业工作经验';
+alter table users add column project_site_experience int not null default 0 comment '项目现场经验';
+alter table users add column contact_address varchar(256) not null default '' comment '联系地址';
+alter table users add column passport_no varchar(256) not null default '' comment '护照编号';
+alter table users add column passport_date_of_issue varchar(64) default '' comment '护照签发时间';
+alter table users add column passport_date_of_expire varchar(64) default '' comment '护照过期时间';
+alter table users add column first_employment_date timestamp  comment '开始工作日期';
+alter table users add column willingness_for_business_travel varchar(32) not null default 'No' comment '出差意愿 No, Business Trip = within 30 days, Assignment = within 60days, Shot-term：within 90days, Long-term: above 90 days';
+alter table users add column mother_tongue varchar(32) not null default 'chinese' comment '母语';
+alter table users add column second_language varchar(32) not null default 'english' comment '第二语言';
+alter table users add column third_language varchar(32) not null default '' comment '第三语言';
+alter table users add column overall varchar(32) not null default '' comment '工作服尺寸';
+alter table users add column safety_shoes varchar(32) not null default '' comment '工作鞋尺寸';
+alter table users add column location varchar(64) not null default '' comment '工作地点';
+alter table users add column contract_company varchar(64) not null default '' comment '合同签约地';
+alter table users add column contract_type varchar(64) not null default '' comment '合同类型：Long-term, Project-base, Retirement Rehire Agreement, Outsouring, Part-Time';
+alter table users add column onboarding_date timestamp not null default now() comment '入职时间';
+alter table users add column probation_period tinyint not null default 6 comment '转正月份';
+alter table users add column first_contract_period int default 1 comment '隐藏数据 第一份合同周期 1,3,5';
+alter table users add column first_contract_end_date timestamp default now() comment '隐藏数据 第一份合同结束日期';
+alter table users add column second_contract_period int default 1 comment '隐藏数据 第一份合同周期 1,3,5';
+alter table users add column second_contract_end_date timestamp default now() comment '隐藏数据 第二份合同结束日期';
+
+alter table users add column first_degree varchar(64) default '' comment '学历';
+alter table users add column age_group varchar(64) default '' comment '年龄段';
+alter table users add column service_years varchar(64) default '' comment '司龄';
+alter table users add column onboarding_month int  comment '入职月份';
+
+alter table users add column job_title varchar(128) default '' comment '岗位';
+alter table users add column contract_number varchar(128) default '' comment '合同编号';
+alter table users add column department_abbr varchar(128) default '' comment '部门简称';
+alter table users add column engineering_level varchar(128) default '' comment '设计职级';

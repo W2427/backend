@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+* {
+  font-size: 12px;
+  font-family: 'Consolas', 'Menlo', 'Monaco', 'Courier', 'PingFang SC', '苹方', 'Hiragino Sans GB', 'Microsoft YaHei UI', 'Microsoft YaHei', '微软雅黑', 'sans-serif';
+}
+
+svg#paths > rect {
+  position: relative;
+  fill: none;
+  pointer-events: all;
+}
+
+svg#paths > rect:hover {
+  fill: rgba(0, 0, 0, 0.0625);
+  cursor: pointer;
+}
+
+svg#paths > line {
+  display: none;
+}
+
+svg#paths > line.show {
+  display: block;
+}
+
+svg#graduations > text,
+svg#periods > text {
+  fill: #5F5F5F;
+}
+
+svg#period-values {
+  display: none;
+}
+
+svg#period-values.show {
+  display: block;
+}
+
+svg#period-values > rect {
+  fill: rgba(0, 0, 0, 0.75);
+}
+
+svg#period-values > text#datetime {
+  font-weight: bold;
+  fill: #FFFFFF;
+}

@@ -1,0 +1,33 @@
+{
+  "env": {
+    "es6": true,
+    "browser": false,
+    "node": true,
+    "mongo": false
+  },
+  "parserOptions": {
+    "ecmaVersion": 2017
+  },
+  "globals": {
+      "is": true,
+      "gui": true,
+      "http": true
+  },
+  "rules": {
+    "strict": [ "error", "global" ],
+    "indent": [ "error", 2, { "SwitchCase": 1 } ],
+    "curly": "error",
+    "semi": "error",
+    "quotes": [ "error", "single", "avoid-escape" ],
+    "eqeqeq": "error",
+    //"key-spacing": [ "error", { "beforeColon": true, "afterColon": true } ],
+    "no-underscore-dangle": "error",
+    "no-shadow": 0,
+    "no-unused-expressions": [ "error", { "allowShortCircuit": true, "allowTernary": true } ],
+    "new-cap": "error",
+    "no-undef": "error",
+    "no-multi-spaces": [ "error", { "exceptions": { "Property": true, "VariableDeclarator": true, "ImportDeclaration": true } } ],
+    "no-mixed-spaces-and-tabs": "error",
+    "no-trailing-spaces": "error"
+  }
+}

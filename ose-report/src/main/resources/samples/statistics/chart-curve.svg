@@ -1,0 +1,69 @@
+<?xml version="1.0" standalone="no"?>
+<?xml-stylesheet type="text/css" href="./chart.css" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     id="root" width="100%" height="100%" viewBox="0 0 900 450" preserveAspectRatio="xMidYMin">
+
+    <text id="title" x="450" y="30" font-weight="bold" text-anchor="middle"/>
+
+    <svg id="figures" x="10" y="10">
+    </svg>
+
+    <!-- 坐标 -->
+    <svg x="75" y="45" width="800" height="325">
+
+        <!-- 标线 -->
+        <line x1="0" y1="020" x2="800" y2="020" stroke="#D7D7D7" stroke-dasharray="2"/>
+        <line x1="0" y1="050" x2="800" y2="050" stroke="#D7D7D7" stroke-dasharray="2"/>
+        <line x1="0" y1="080" x2="800" y2="080" stroke="#D7D7D7" stroke-dasharray="2"/>
+        <line x1="0" y1="110" x2="800" y2="110" stroke="#D7D7D7" stroke-dasharray="2"/>
+        <line x1="0" y1="140" x2="800" y2="140" stroke="#D7D7D7" stroke-dasharray="2"/>
+        <line x1="0" y1="170" x2="800" y2="170" stroke="#D7D7D7" stroke-dasharray="2"/>
+        <line x1="0" y1="200" x2="800" y2="200" stroke="#D7D7D7" stroke-dasharray="2"/>
+        <line x1="0" y1="230" x2="800" y2="230" stroke="#D7D7D7" stroke-dasharray="2"/>
+        <line x1="0" y1="260" x2="800" y2="260" stroke="#D7D7D7" stroke-dasharray="2"/>
+        <line x1="0" y1="290" x2="800" y2="290" stroke="#D7D7D7" stroke-dasharray="2"/>
+        <line x1="0" y1="320" x2="800" y2="320" stroke="#D7D7D7" stroke-dasharray="2"/>
+
+        <!-- 坐标轴 -->
+        <!--
+        <polyline points="0,20 0,320 800,320" fill="none" stroke="#000000" />
+        -->
+
+        <!-- 曲线及标记点 -->
+        <svg id="paths" x="0" y="0" width="800" height="325">
+        </svg>
+
+    </svg>
+
+    <!-- 标线值 -->
+    <svg id="graduations" x="0" y="45" width="70" height="350">
+        <text id="value-10" x="70" y="020" text-anchor="end">100</text>
+        <text id="value-09" x="70" y="050" text-anchor="end">90</text>
+        <text id="value-08" x="70" y="080" text-anchor="end">80</text>
+        <text id="value-07" x="70" y="110" text-anchor="end">70</text>
+        <text id="value-06" x="70" y="140" text-anchor="end">60</text>
+        <text id="value-05" x="70" y="170" text-anchor="end">50</text>
+        <text id="value-04" x="70" y="200" text-anchor="end">40</text>
+        <text id="value-03" x="70" y="230" text-anchor="end">30</text>
+        <text id="value-02" x="70" y="260" text-anchor="end">20</text>
+        <text id="value-01" x="70" y="290" text-anchor="end">10</text>
+        <text id="value-00" x="70" y="320" text-anchor="end">0</text>
+    </svg>
+
+    <!-- 时间标记 -->
+    <svg id="periods" x="65" y="375" width="820" height="80">
+    </svg>
+
+    <!-- 区间值 -->
+    <svg id="period-values" x="0" y="0" width="90" height="77">
+        <rect width="100%" height="100%" rx="3" ry="3"/>
+        <text id="datetime" x="50%" y="14" text-anchor="middle">2018-12-31</text>
+        <text id="period-value-01" x="50%" y="28" text-anchor="middle">9.99</text>
+        <text id="period-value-02" x="50%" y="42" text-anchor="middle">9.99</text>
+        <text id="period-value-03" x="50%" y="56" text-anchor="middle">9.99</text>
+        <text id="period-value-04" x="50%" y="70" text-anchor="middle">9.99</text>
+    </svg>
+
+    <script type="text/javascript" xlink:href="./chart-curve.js"/>
+</svg>

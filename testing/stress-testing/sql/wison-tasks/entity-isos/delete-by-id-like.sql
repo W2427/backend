@@ -1,0 +1,1 @@
+DELETE FROM `entity_iso` WHERE `id` LIKE ?;

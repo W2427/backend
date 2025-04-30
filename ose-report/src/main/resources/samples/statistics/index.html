@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=640,user-scalable=no">
+  <title>Dashboard - Statistics Archive Data Demo</title>
+  <link type="text/css" rel="stylesheet" href="common.css">
+  <link type="text/css" rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<h1> OSE 系统统计数据前端示例</h1>
+
+<div class="buttons">
+  <a class="button" href="/specifications/statistics-archive-data.xlsx">下载说明文档</a>
+  <button id="reload">刷新</button>
+  <button id="sign-out">注销登录</button>
+</div>
+
+<fieldset class="archive-data">
+  <legend>归档数据</legend>
+  <label for="projects">
+    项目<br>
+    <select id="projects"></select>
+  </label>
+  <label for="archive-type">
+    归档数据类型 <a onclick="gui.showMessage('统计数据的业务类型，为一组常量。');">[?]</a><br>
+    <select id="archive-type" class="left">
+      <option value="WBS_PROGRESS">1./2. WBS 计划进度</option>
+      <option value="WBS_ACTIVITIES_PROGRESS">10. 任务统计</option>
+      <option value="WBS_WELD_PROGRESS" disabled="disabled">11. 焊接完成量</option>
+      <option value="WBS_FIT_UP_PROGRESS" disabled="disabled">12. 下料完成量</option>
+      <option value="WBS_SPOOL_PROGRESS" disabled="disabled">13. 单管施工完成量</option>
+      <option value="WBS_ISO_PROGRESS" disabled="disabled">14. 管线施工完成量</option>
+      <option value="WBS_PRESSURE_TEST_PROGRESS" disabled="disabled">15. 试压进度</option>
+      <option value="WBS_CLEAN_PROGRESS" disabled="disabled">16. 清洁进度</option>
+      <option value="WBS_ISSUE_PROGRESS">19. 遗留问题处理量</option>
+      <option value="WBS_WELDER_RATE">20. 焊工合格率</option>
+      <option value="WBS_PASS_RATE_PROGRESS">21. 报验合格率</option>
+    </select>
+    <button id="archive-data" class="middle">归档</button>
+    <button id="show-logs" class="right">日志</button>
+  </label>
+  <label for="schedule-type">
+    归档计划类型 <a onclick="gui.showMessage('对象数据聚合的时间单位，为一组常量。');">[?]</a><br>
+    <select id="schedule-type">
+      <option value="DAILY">日次</option>
+      <option value="WEEKLY">周次</option>
+      <option value="MONTHLY">月次</option>
+    </select>
+  </label>
+  <label for="archive-time">
+    归档时间 <a
+    onclick="gui.showMessage('生成归档数据的时间，通过<a target=\x22ose_report_docs\x22 href=\x22/docs/#/archive-data-controller/archiveDatesUsingGET\x22>[取得归档日次/周次/月次列表]</a>接口取得。', true);">[?]</a><br>
+    <select id="archive-time"></select>
+  </label>
+</fieldset>
+
+<fieldset class="archive-data">
+  <legend>对象数据期间 <a
+    onclick="gui.showMessage('对象数据期间，通过<a target=\x22ose_report_docs\x22 href=\x22/docs/#/archive-data-controller/groupKeysDailyUsingGET\x22>[取得指定名称的聚合 KEY 的列表]</a>接口取得（注意：实际为三个接口，分别对应不同格式的归档时间参数）。', true);">[?]</a>
+  </legend>
+  <label for="projects">
+    起始时间<br>
+    <select id="date-from"></select>
+  </label>
+  <label for="projects">
+    截止时间<br>
+    <select id="date-until"></select>
+  </label>
+</fieldset>
+
+<fieldset class="group-keys">
+  <legend>聚合单位 <a
+    onclick="gui.showMessage('聚合分组字段，通过<a target=\x22ose_report_docs\x22 href=\x22/docs/#/archive-data-controller/groupKeysDailyUsingGET\x22>[取得指定名称的聚合 KEY 的列表]</a>接口取得（注意：实际为三个接口，分别对应不同格式的归档时间参数），可以一次取得多个字段的列表；字段之间存在联动的关系，即变更其中之一时需要以已选择的字段值为参数更新所有字段的列表；每一类统计数据对应一组聚合字段，对应关系参照<a href=\22/specifications/statistics-archive-data.xlsx\22>[统计数据说明文档]</a>。', true);">[?]</a>
+  </legend>
+  <label for="areas">
+    区域<br>
+    <select id="areas"></select>
+  </label>
+  <label for="modules">
+    模块<br>
+    <select id="modules"></select>
+  </label>
+  <label for="pressure-test-packages">
+    试压包<br>
+    <select id="pressure-test-packages"></select>
+  </label>
+  <label for="sub-systems">
+    子系统<br>
+    <select id="sub-systems"></select>
+  </label>
+  <label for="stages">
+    阶段<br>
+    <select id="stages"></select>
+  </label>
+  <label for="processes">
+    工序<br>
+    <select id="processes"></select>
+  </label>
+  <label for="weld-types">
+    焊口类型<br>
+    <select id="weld-types"></select>
+  </label>
+  <label for="issue-levels">
+    问题等级<br>
+    <select id="issue-levels"></select>
+  </label>
+  <label for="issue-types">
+    问题类型<br>
+    <select id="issue-types"></select>
+  </label>
+  <label for="entity-npses">
+    实体寸径<br>
+    <select id="entity-npses"></select>
+  </label>
+  <label for="entity-lengths">
+    实体长度<br>
+    <select id="entity-lengths"></select>
+  </label>
+  <label for="entity-materials">
+    实体材料<br>
+    <select id="entity-materials"></select>
+  </label>
+  <label for="subcontractors">
+    分包商<br>
+    <select id="subcontractors"></select>
+  </label>
+  <label for="departments">
+    责任部门<br>
+    <select id="departments"></select>
+  </label>
+  <label for="welders">
+    焊工<br>
+    <select id="welders"></select>
+  </label>
+  <label for="managers">
+    管理者<br>
+    <select id="managers"></select>
+  </label>
+</fieldset>
+
+<blockquote>当数据的单位为百分比时，应对每一个期间的数据与之前期间的数据进行累加，并计算占总和的百分比。</blockquote>
+
+<div id="logs">
+  <table>
+    <thead>
+    <tr>
+      <th>名称</th>
+      <th>开始时间</th>
+      <th>结束时间</th>
+    </tr>
+    </thead>
+    <tbody id="log-entries"></tbody>
+  </table>
+</div>
+
+<div id="charts"></div>
+
+<script type="text/javascript" src="./common.js"></script>
+<script type="text/javascript" src="./index.js"></script>
+</body>
+</html>

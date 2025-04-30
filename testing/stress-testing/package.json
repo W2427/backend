@@ -1,0 +1,23 @@
+{
+  "name": "stress-testing",
+  "description": "压力测试脚本",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=10.10.0"
+  },
+  "dependencies": {
+    "bcrypt": "3.0.2",
+    "colors": "1.3.2",
+    "moment": "2.22.2",
+    "progress": "2.0.1",
+    "promise-mysql": "3.3.1"
+  },
+  "scripts": {
+    "data": "NODE_ENV=dev node import-data.js",
+    "test": "NODE_ENV=dev node concurrency-test.js",
+    "pro-data": "NODE_ENV=pro node import-data.js",
+    "pro-test": "NODE_ENV=pro node concurrency-test.js",
+    "remote-data": "NODE_ENV=remote node import-data.js",
+    "remote-test": "NODE_ENV=remote node concurrency-test.js"
+  }
+}

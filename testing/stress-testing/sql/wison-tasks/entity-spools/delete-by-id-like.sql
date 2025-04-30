@@ -1,0 +1,1 @@
+DELETE FROM `entity_spool` WHERE `id` LIKE ?;

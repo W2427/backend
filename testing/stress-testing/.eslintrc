@@ -1,0 +1,49 @@
+{
+  // 环境：ECMAScript6、Node.js
+  "env": {
+    "es6": true,
+    "node": true
+  },
+
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+
+  // 全局变量
+  "globals": {
+  },
+
+  // 规范
+  "rules": {
+    // 严格模式
+    "strict": [ "error", "global" ],
+    // 使用两个空格缩进
+    "indent": [ "error", 2, { "SwitchCase": 1 } ],
+    // 必须使用花括号
+    "curly": "error",
+    // 必须以分号结尾
+    "semi": "error",
+    // 字符串使用单引号
+    "quotes": [ "error", "single", "avoid-escape" ],
+    // 使用严格等于
+    "eqeqeq": "error",
+    // 键值之间的冒号后应有空格
+    "key-spacing": [ "error", { "beforeColon": false, "afterColon": true } ],
+    // 不允许以下划线开始的变量名
+    "no-underscore-dangle": "error",
+    // 不允许子代码块重复使用变量名
+    "no-shadow": "off",
+    // 允许使用短路表达式及三元表达式
+    "no-unused-expressions": [ "error", { "allowShortCircuit": true, "allowTernary": true } ],
+    // 当函数名第一个字母为大写时（即为构造函数时）必须通过 new 关键字构造
+    "new-cap": "error",
+    // 变量必须声明
+    "no-undef": "error",
+    // 不允许出现连续的空格
+    "no-multi-spaces": "error",
+    // 不允许空格与制表符混写
+    "no-mixed-spaces-and-tabs": "error",
+    // 行尾不许有空格
+    "no-trailing-spaces": "error"
+  }
+}

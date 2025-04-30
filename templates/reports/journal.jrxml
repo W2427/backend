@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="application-for-inspection-external" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="515" leftMargin="40" rightMargin="40" topMargin="40" bottomMargin="26" isFloatColumnFooter="true" uuid="6a4a1921-8127-4e46-99dc-8b8a6845e7e4">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="net.sf.jasperreports.print.create.bookmarks" value="false"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<style name="Default" isBlankWhenNull="true" fontName="微软雅黑" fontSize="9">
+		<box leftPadding="4" rightPadding="4"/>
+	</style>
+	<parameter name="ASSETS_DIR" class="java.lang.String" evaluationTime="Early">
+		<parameterDescription><![CDATA[静态资源绝对路径]]></parameterDescription>
+		<defaultValueExpression><![CDATA["/var/www/ose/resources/templates/reports/assets"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="REPORT_ID" class="java.lang.String" evaluationTime="Early">
+		<parameterDescription><![CDATA[报表 ID]]></parameterDescription>
+		<defaultValueExpression><![CDATA["0000000000000000"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="projectName" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="reportNo" class="java.lang.String"/>
+	<parameter name="templateNo" class="java.lang.String"/>
+	<parameter name="serialNo" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="processStatisticsProcessStage" class="java.lang.String"/>
+	<field name="processStatisticsProcess" class="java.lang.String"/>
+	<field name="processStatisticsPlanFinished" class="java.lang.String"/>
+	<field name="processStatisticsFinished" class="java.lang.String"/>
+	<field name="processStatisticsPlanStart" class="java.lang.String"/>
+	<field name="processStatisticsinProcess" class="java.lang.String"/>
+	<title>
+		<band height="65">
+			<staticText>
+				<reportElement style="Default" x="260" y="50" width="100" height="15" uuid="9cf52a05-0814-4e74-9cf1-71f2f5792958">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<text><![CDATA[报告号 Report No.:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="360" y="50" width="155" height="15" uuid="6fc762a8-3eb9-4f02-8608-2b41b4058def">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{reportNo}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="388" y="0" width="72" height="40" uuid="2fac8255-42ba-4aa6-9093-c8a228971085">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{ASSETS_DIR} + "/images/logos/ose.png"]]></imageExpression>
+			</image>
+			<componentElement>
+				<reportElement x="465" y="0" width="50" height="50" uuid="f744e0db-822e-43c2-86d8-95280552805b">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.margin" value="pixel"/>
+				</reportElement>
+				<jr:QRCode xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" margin="2">
+					<jr:codeExpression><![CDATA[$P{REPORT_ID}]]></jr:codeExpression>
+				</jr:QRCode>
+			</componentElement>
+			<textField>
+				<reportElement x="0" y="-20" width="240" height="20" uuid="7f27fece-1683-4b15-9470-71083b6c609e"/>
+				<box leftPadding="0" bottomPadding="0"/>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[$P{templateNo}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="460" y="-12" width="55" height="12" uuid="371c417e-c692-4fa9-af82-52ef1e225154"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{serialNo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="137" y="0" width="240" height="50" uuid="319e4e51-b2ba-4c2c-81bb-1ec58fbe0c31"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="16"/>
+				</textElement>
+				<text><![CDATA[计划日报/周报]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="40">
+			<subreport>
+				<reportElement x="0" y="0" width="515" height="40" uuid="83183e43-4662-41a8-b075-55caf2116e2f"/>
+				<subreportExpression><![CDATA[$P{ASSETS_DIR} + "/subreports/journal-process-statistics.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

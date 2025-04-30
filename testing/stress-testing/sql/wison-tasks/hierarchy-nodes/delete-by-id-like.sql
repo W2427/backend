@@ -1,0 +1,1 @@
+DELETE FROM `hierarchy_node` WHERE `id` LIKE ?;

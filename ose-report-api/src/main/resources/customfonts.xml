@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<fontFamilies>
+
+    <fontFamily name="FreeUniversal">
+        <normal>fonts/FreeUniversal-Regular.ttf</normal>
+        <bold>fonts/FreeUniversal-Bold.ttf</bold>
+        <italic>fonts/FreeUniversal-Italic.ttf</italic>
+        <boldItalic>fonts/FreeUniversal-BoldItalic.ttf</boldItalic>
+        <pdfEncoding>Cp1252</pdfEncoding>
+        <pdfEmbedded>true</pdfEmbedded>
+    </fontFamily>
+
+    <fontFamily name="MSYahei">
+        <normal>fonts/msyh.ttf</normal>
+        <bold>fonts/msyhbd.ttf</bold>
+        <italic>fonts/msyh.ttf</italic>
+        <boldItalic>fonts/msyh.ttf</boldItalic>
+        <pdfEncoding>Identity-H</pdfEncoding>
+        <pdfEmbedded>true</pdfEmbedded>
+    </fontFamily>
+
+
+    <fontFamily name="MSYaHei">
+        <normal>fonts/msyh.ttf</normal>
+        <bold>fonts/msyhbd.ttf</bold>
+        <italic>fonts/msyh.ttf</italic>
+        <boldItalic>fonts/msyh.ttf</boldItalic>
+        <pdfEncoding>Identity-H</pdfEncoding>
+        <pdfEmbedded>true</pdfEmbedded>
+    </fontFamily>
+
+</fontFamilies>

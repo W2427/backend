@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>OSE 服务运行状态一览表</title>
+  <link type="text/css" rel="stylesheet" href="index.css">
+  <script type="text/javascript" src="../scripts/ejs.min.js"></script>
+</head>
+<body>
+<div id="progress"></div>
+<header>
+  <h1>OSE 服务运行状态一览表</h1>
+  <input type="button" value="注销" class="warning"
+         onclick="localStorage.removeItem('access-token'); location.reload(true);">
+</header>
+<input type="button" value="刷新" onclick="$refresh();">
+<div id="services"></div>
+<h2>操作说明</h2>
+<ul>
+  <li>服务的实例<strong>暂停</strong>后将不会接受新的客户端请求（接收到新的请求后将返回 503 错误，由 nginx 将请求转发给其他实例）</li>
+  <li>服务的实例被<strong>停止</strong>后，将不会接受新的客户端请求（同暂停操作），并在所有处理中的请求完成响应后关闭实例</li>
+  <li>通过<strong>恢复</strong>操作可将暂停的服务恢复，或在实例关闭前取消关闭操作</li>
+  <li>重新发布服务时，先将 JAR 文件上传到服务器的 <span>/mnt/mfs/ose-jar/</span> 路径下，再停止服务的实例</li>
+  <li>服务器上的定时任务会定期启动尚未启动的服务，因此实例被关闭后将会被自动启动（在应用服务器上通过 <span>crontab -u root -e</span> 查看定时任务配置）</li>
+</ul>
+<h2>注意事项</h2>
+<ul>
+  <li>必须通过命令 <span>mvn clean install</span> 方式编译并打包源代码（不要将调试过程中生成的 JAR 文件发布）</li>
+  <li>切勿同时停止一个服务的所有实例，否则将导致该服务不可用</li>
+  <li>如果要彻底在目标服务器上关闭一个服务，需要删除 <span>/var/ose/</span> 下相应服务的 JAR 文件的符号链接</li>
+  <li>手动重启后台服务时应先执行命令 <span>systemctl stop crond</span> 以停止定时任务，之后再执行命令 <span>systemctl start crond</span> 恢复定时任务</li>
+</ul>
+<footer>&copy; 2018 OSE</footer>
+</body>
+<script type="text/html" id="service-template">
+  <table>
+    <thead>
+    <tr>
+      <th colspan="2">服务</th>
+      <th colspan="5">实例</th>
+      <th rowspan="2" class="right">处理中<br>请求数</th>
+      <th rowspan="2">服务器时间</th>
+      <th rowspan="2">状态</th>
+      <th rowspan="2">操作</th>
+    </tr>
+    <tr>
+      <th class="left">代码</th>
+      <th class="left">名称</th>
+      <th>IP 地址</th>
+      <th>端口号</th>
+      <th>启动时间</th>
+      <th>注册时间</th>
+      <th>最后更新时间</th>
+    </tr>
+    </thead>
+    <tbody>
+    <%
+    var rowNo = 0;
+    for (var appIndex = 0; appIndex < apps.length; appIndex++) {
+    var app = apps[appIndex];
+    for (var instanceIndex = 0; instanceIndex < app.instances.length; instanceIndex++) {
+    var instance = app.instances[instanceIndex];
+    %>
+    <tr
+      class="<%= appIndex % 2 === 0 ? 'app-odd' : 'app-even' %> <%= rowNo % 2 === 0 ? 'odd' : 'even' %> <%= instanceIndex === 0 ? 'separator' : '' %>">
+      <% if (instanceIndex === 0) { %>
+      <td rowspan="<%= Math.max(app.instanceCount, 1) %>" class="app-info left"><%= app.code %></td>
+      <td rowspan="<%= Math.max(app.instanceCount, 1) %>" class="app-info left"><%= app.name %>(<%= app.instanceCount
+        %>)
+      </td>
+      <% } %>
+      <td><%= instance.ipAddr %></td>
+      <td><%= instance.port.$ %></td>
+      <td><%= $datetime(instance.leaseInfo.serviceUpTimestamp) %></td>
+      <td><%= $datetime(instance.leaseInfo.registrationTimestamp) %></td>
+      <td><%= $datetime(instance.leaseInfo.lastRenewalTimestamp) %></td>
+      <td id="<%= instance.$requestCountDomId %>" class="right">&nbsp;</td>
+      <td id="<%= instance.$serverTimeDomId %>">&nbsp;</td>
+      <td id="<%= instance.$statusDomId %>">&nbsp;</td>
+      <td><% if (app.instanceCount > 0) {
+        %><input type="button" value="恢复" onclick="$instance.restore('<%= instance.$id %>')"><%
+        %><input type="button" class="warning" value="暂停" onclick="$instance.suspend('<%= instance.$id %>')"><%
+        %><input type="button" class="warning" value="停止" onclick="$instance.shutdown('<%= instance.$id %>')"><%
+        } %>
+      </td>
+    </tr>
+    <%
+    rowNo++;
+    }
+    }
+    %>
+    </tbody>
+  </table>
+</script>
+<!--[if IE]><script type="text/javascript" src="../scripts/json3.min.js"></script><![endif]-->
+<!--[if lte IE 8]><script type="text/javascript" src="../scripts/ie8.js"></script><![endif]-->
+<script type="text/javascript" src="../scripts/common.js"></script>
+<script type="text/javascript" src="index.js"></script>
+</html>

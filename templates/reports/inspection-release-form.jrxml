@@ -1,0 +1,804 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="inspection-release-form" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="515" leftMargin="40" rightMargin="40" topMargin="40" bottomMargin="20" isFloatColumnFooter="true" uuid="391f00de-043b-4f01-868b-18622f998e60">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="274"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="717"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="469"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="521"/>
+	<property name="com.jaspersoft.studio.unit." value="mm"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="mm"/>
+	<style name="default-text" isDefault="true" isBlankWhenNull="true" fontName="微软雅黑" fontSize="9"/>
+	<parameter name="ASSETS_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["/var/www/ose/resources/templates/reports/assets"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="REPORT_ID" class="java.lang.String">
+		<defaultValueExpression><![CDATA["0000000000000000"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="projectName" class="java.lang.String"/>
+	<parameter name="reportNo" class="java.lang.String"/>
+	<parameter name="date" class="java.util.Date"/>
+	<parameter name="systemNo" class="java.lang.String" evaluationTime="Early"/>
+	<parameter name="CLIENT_LOGO_DIR" class="java.lang.String"/>
+	<parameter name="CONTRACTOR_LOGO_DIR" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+  `no`, `pieceNo`, `areaNo`, `shopField`, `weldNo`, `size`, `componentType`, `heatBatchNo`
+ FROM
+   `ose_test`.`pipeline_fit_up_report`]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="50">
+			<staticText>
+				<reportElement x="0" y="-20" width="180" height="20" uuid="c644680c-679d-4795-9915-97f9f56c7afb"/>
+				<textElement verticalAlignment="Bottom"/>
+				<text><![CDATA[WNT-MSQHSE-31423-17 Rev.1]]></text>
+			</staticText>
+			<subreport isUsingCache="true" runToBottom="false" overflowType="NoStretch">
+				<reportElement x="0" y="0" width="515" height="50" uuid="a47f2c6d-a395-49c4-9ab1-bb8e7eb6e413">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<subreportParameter name="ASSETS_DIR">
+					<subreportParameterExpression><![CDATA[$P{ASSETS_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="REPORT_ID">
+					<subreportParameterExpression><![CDATA[$P{REPORT_ID}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="REPORT_NAME">
+					<subreportParameterExpression><![CDATA["管 道 检 验 放 行 单\nINSPECTION RELEASE FORM (PIPEWORK)"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="CLIENT_LOGO_DIR">
+					<subreportParameterExpression><![CDATA[$P{CLIENT_LOGO_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="CONTRACTOR_LOGO_DIR">
+					<subreportParameterExpression><![CDATA[$P{CONTRACTOR_LOGO_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportExpression><![CDATA[$P{ASSETS_DIR} + "/subreports/header.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="648">
+			<frame>
+				<reportElement x="0" y="0" width="515" height="516" uuid="17a2f1e2-c40c-4247-a6b8-ae82b9f69bbe"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<staticText>
+					<reportElement x="0" y="0" width="110" height="12" uuid="0af2e9a8-80ce-4b0e-9591-d95eed4bff36">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Project Name 项目名称：]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="110" y="0" width="120" height="12" uuid="4d63408e-769a-48e2-ac1b-8fd7911fb523">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$P{projectName}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="340" y="0" width="175" height="12" uuid="f8c353c2-0af1-4d7a-a4d7-3df2169c42ad">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$P{reportNo}]]></textFieldExpression>
+				</textField>
+				<textField pattern="yyy-MM-dd">
+					<reportElement x="340" y="12" width="175" height="12" uuid="284769ec-e286-455c-8e3d-efcc6970ef4a">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="12" width="110" height="12" uuid="0ac23e06-f0b1-4632-a7f5-6381f43b7932">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[System No. 系统号：]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="110" y="12" width="120" height="12" uuid="aebfad10-d22d-4572-8f10-7cc581004a40">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$P{systemNo}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="340" y="24" width="175" height="24" uuid="bc0345e8-7769-470e-aeb8-a501ef33f821">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<text><![CDATA[□Accept接受  □Reject拒绝  □N/A不适用]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="24" width="340" height="24" uuid="0c2feb21-217e-43d4-9595-c206be103a55">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Pipe-segment prefabrication/laying of piping meets the requirements of design document and specification.管道管段预制/安装符合设计文件和规范要求]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="230" y="0" width="110" height="12" uuid="7c613893-645d-4a3b-8b24-ebd11d1d9c26">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<text><![CDATA[Form No.检验放行单编号: ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="230" y="12" width="110" height="12" uuid="73096bf0-4ef5-47f2-aca7-0f7e9666c085">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<text><![CDATA[Date 日期：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="340" y="48" width="175" height="24" uuid="9f015dab-4aa6-4e84-886f-2e16ebf44f87">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<text><![CDATA[□Accept接受  □Reject拒绝  □N/A不适用]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="48" width="340" height="24" uuid="89ce286b-2afc-4714-8153-1679e65feab3">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Steel pipe and its components of piping have been inspected or re-inspected eligible.管道钢管及组成件检验或复验合格]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="340" y="72" width="175" height="24" uuid="d84df4ae-b694-4995-b24b-b8110a3db1f8">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<text><![CDATA[□Accept接受  □Reject拒绝  □N/A不适用]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="72" width="340" height="24" uuid="f2566d40-e9ab-4df8-9aea-0ed296cf4068">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Weld appearance quality meet the requirements.焊缝成形外观质量符合要求]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="96" width="340" height="24" uuid="8460735a-3a28-4337-a025-292353bb8d97">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Cleaning of pipe inside confirmation.管道内部清洁确认。]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="340" y="96" width="175" height="24" uuid="f2d17bf4-d159-44bd-bae2-4565a89aa813">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<text><![CDATA[□Accept接受  □Reject拒绝  □N/A不适用]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="120" width="340" height="24" uuid="a12d3576-3e83-4a79-8724-caf8610d5fd3">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Pipe-segment dimensional precision meets the requirement.管段尺寸精度检验符合要求]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="340" y="120" width="175" height="24" uuid="43a89ec9-f915-4e93-95f2-aba2a7a06352">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<text><![CDATA[□Accept接受  □Reject拒绝  □N/A不适用]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="340" y="144" width="175" height="24" uuid="8b3b1dc0-ba3f-41cd-9b47-2cf0e7ad6ea4">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<text><![CDATA[□Accept接受  □Reject拒绝  □N/A不适用]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="144" width="340" height="24" uuid="4d231df2-59dc-452a-9546-45a7ba2c9efe">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[NDT result meets the requirements in design document and specification.无损检测结果符合设计文件和规范要求]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="168" width="340" height="24" uuid="f0e72358-62be-4bce-8b09-28cb9695292d">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Welding inspection records(if necessary)焊接检查记录（必要时）]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="340" y="168" width="175" height="24" uuid="32a2c11e-b95a-404a-9e50-7d7a29aaeca1">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<text><![CDATA[□Accept接受  □Reject拒绝  □N/A不适用]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="192" width="340" height="24" uuid="e535135f-154b-4cf2-92f0-4fba6aff53e5">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Pressure testings in pipe-segments’ prefabrication process are eligible.管段预制过程压力试验合格]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="340" y="192" width="175" height="24" uuid="8502cedc-da65-4647-ae6d-d86dd26dfae6">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<text><![CDATA[□Accept接受  □Reject拒绝  □N/A不适用]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="216" width="340" height="24" uuid="f5ab8ac7-3343-4bc6-8cbf-d1d1cd720271">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Heat treatment result meets the requirements in design document and specification.热处理结果符合设计文件和规范要求]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="340" y="216" width="175" height="24" uuid="0050716d-07ea-47a9-b3e7-26af1d1802cf">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<text><![CDATA[□Accept接受  □Reject拒绝  □N/A不适用]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="340" y="240" width="175" height="24" uuid="3629247e-7936-413c-bd0d-89b2051b248e">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<text><![CDATA[□Accept接受  □Reject拒绝  □N/A不适用]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="240" width="340" height="24" uuid="67db1129-98d6-41f8-9225-b04bbb4eb50d">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Galvanization/painting is eligible after pipe-segments’ prefabrication.管段预制后镀锌处理/涂装合格]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="340" y="264" width="175" height="24" uuid="31456013-c6b2-4e0c-874c-9178d5478f57">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<text><![CDATA[□Accept接受  □Reject拒绝  □N/A不适用]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="264" width="340" height="24" uuid="b21fb409-01e3-4e63-822f-3d0d70d2ae33">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Pipe support and hanging bracket’s mounting meets the requirements.管道支架、吊架安装符合要求]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="340" y="288" width="175" height="24" uuid="bab4792f-f3e7-4fbd-8e22-75fd9cb64a56">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<text><![CDATA[□Accept接受  □Reject拒绝  □N/A不适用]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="288" width="340" height="24" uuid="88f83a07-acc0-40f8-b870-6b7e161aa769">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Material identification of alloy steel piping is clear and complete.合金钢管道材质标识清晰齐全]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="340" y="312" width="175" height="24" uuid="135f3aca-d952-497c-8e8e-5a1bfc05c5e3">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<text><![CDATA[□Accept接受  □Reject拒绝  □N/A不适用]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="312" width="340" height="24" uuid="e823f9a7-9837-47e6-98f6-7184cc7d5d44">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Pickling and degreasing of oil, gas, lubricanting oil piping systems油、气、润滑油管道等系统酸洗、脱脂处理]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="340" y="336" width="175" height="24" uuid="0c09cf11-9619-4a79-8d1f-40187c3c12f6">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<text><![CDATA[□Accept接受  □Reject拒绝  □N/A不适用]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="336" width="340" height="24" uuid="1d49c873-2d8e-4c84-ac0e-ea63819ec394">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[PPT index of testing medium water in stainless steel piping不锈钢管道的试验介质（水）的PPT指标]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="340" y="360" width="175" height="24" uuid="4fa78620-8cc7-4e77-b3f6-8b56603ff4c0">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<text><![CDATA[□Accept接受  □Reject拒绝  □N/A不适用]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="360" width="340" height="24" uuid="8ab62e8e-00e4-476d-b1a8-637ac9eedfea">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Safety accessories and instruments, which don’t join the system testing, have been backouted or insulated.不参与系统试验的安全附件、仪表已拆除或隔离]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="340" y="384" width="175" height="24" uuid="a59ac537-aad2-4444-b7c0-cf7a1a30567f">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<text><![CDATA[□Accept接受  □Reject拒绝  □N/A不适用]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="384" width="340" height="24" uuid="9ac1bc30-56eb-42a4-bea0-e250925299a2">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Temporary reinforcing actions and blind’s position and identification meet the construction programme.临时加固措施、盲板位置与标识符合建造方案要求]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="340" y="408" width="175" height="24" uuid="3a663a8e-b19e-47cc-b745-008c33696fc7">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<text><![CDATA[□Accept接受  □Reject拒绝  □N/A不适用]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="408" width="340" height="24" uuid="2d893ba7-52f1-48a0-8694-32255f2bce94">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Weld joints and parts needing inspection have not been covered.接头及需要检验的部位未被覆盖]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="432" width="340" height="36" uuid="4587ee91-2dea-4a3e-ad5c-fa9669278e89">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Range, precision grage, verification and calibration status of  pressure gauges, which used in pressure testing, meet the specification.试压用压力表量程、精度等级、检定状态符合规范要求]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="340" y="432" width="175" height="36" uuid="9841b616-fdef-424a-a9f5-91eb214a5bef">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<text><![CDATA[□Accept接受  □Reject拒绝  □N/A不适用]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="468" width="340" height="24" uuid="8cd7bba2-4526-4446-b99a-98b892fb7280">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Integrity inspection of piping installation 管道安装整体性的检验验收]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="340" y="468" width="175" height="24" uuid="9a9ba103-120d-487f-9aea-0c03e03c12c0">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<text><![CDATA[□Accept接受  □Reject拒绝  □N/A不适用]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="340" y="492" width="175" height="24" uuid="a263dfe6-e37c-4053-9f8b-5555015e3dd0">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<text><![CDATA[□Accept接受  □Reject拒绝  □N/A不适用]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="492" width="340" height="24" uuid="45385de7-8250-49a6-943d-037cd81a8698">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Flange protection法兰的保护]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement x="0" y="516" width="515" height="132" uuid="73c2e45b-135b-41fa-bd48-a34640154e9d"/>
+				<staticText>
+					<reportElement x="0" y="0" width="515" height="24" uuid="61b71c4e-233f-4a8a-a960-c083b0518f8c">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[The aboved relevant items have been finished and inspected, and the conclusion is 以上相关项目已经完成并经检验，确认结果为：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="24" width="515" height="12" uuid="9c1bdae4-e6c9-4294-ac8a-e0619144f22c">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[□Accept and Release接收放行　□ Accepted As Is让步接收放行  □ Urgent Release紧急放行 ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="36" width="515" height="12" uuid="e490db09-aef0-433d-9ee3-bcd1591a5c99">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[The next working procedure is放行到下一个工序过程为：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="48" width="515" height="24" uuid="82076b66-675c-435c-aace-2296f4a6d9fc">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[□Painting(including galvanization)涂装（包括镀锌处理）□Pressure Testing压力试验　□Heat Treatment热处理　    □System Installation系统安装　    □System Commissioning系统调试]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="72" width="140" height="24" uuid="3e0c03cb-6a0e-414f-b7ee-41d508177b76">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Construction Supervisor
+建造主管]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="140" y="72" width="110" height="24" uuid="1936dec8-0c38-4e3c-99bb-5f0be8c47899">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="360" y="72" width="155" height="24" uuid="c0683691-e39e-4cac-932d-c72b740c20e2">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="250" y="72" width="110" height="24" uuid="89bff7f9-2033-4724-8030-ea6ecc608c93">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[QC Engineer/Inspector
+质检工程师/检验员]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="96" width="515" height="12" uuid="c928f01f-11da-4641-8a0c-b0b29ce4ce05">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Approved by批准:　]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="360" y="108" width="155" height="24" uuid="37fa2fe6-e2ed-4e69-9378-ad0b2e5fc032">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="250" y="108" width="110" height="24" uuid="c9ef3226-f3bd-4987-8660-91cfed2edb88">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Project Manager/Date
+项目经理/ 日期:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="140" y="108" width="110" height="24" uuid="4d773cb9-06dc-44c0-95bd-bf154f9dc441">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="108" width="140" height="24" uuid="12e4f42a-887f-46e1-8b1a-f08dc5a7417a">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Project Quality Manager/Date
+项目质量经理/ 日期:]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="24" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<textField>
+				<reportElement x="290" y="0" width="100" height="24" uuid="67c74501-6a5e-42d1-b923-67cd42cd6f85">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["第 " + $V{PAGE_NUMBER} + " 页"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="400" y="0" width="100" height="24" uuid="96cdff8f-1d0b-4a4d-9290-e01c5bfdf3fa">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["共 " + $V{PAGE_NUMBER} + " 页"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="290" y="30" width="100" height="24" uuid="1bb2a8f3-d71f-4c92-ad66-685752e23f93">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["第 " + $V{PAGE_NUMBER} + " 页"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="400" y="30" width="100" height="24" uuid="b3e97f9a-08ad-4e9b-a4ec-ba8e25d19cce">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["共 " + $V{PAGE_NUMBER} + " 页"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="515" height="30" uuid="665be4a5-8656-4630-8679-27cf9b6aadcf"/>
+				<text><![CDATA[★ “让步接收放行”须经项目质量经理批准Accepted As Is shall be approved by Project Quality Manager
+★ “紧急放行”须经项目经理批准。 Urgent Release shall be approved by Project Manager.　]]></text>
+			</staticText>
+		</band>
+	</lastPageFooter>
+</jasperReport>

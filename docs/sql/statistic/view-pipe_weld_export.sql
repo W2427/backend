@@ -1,0 +1,72 @@
+USE `ose_tasks`;
+
+CREATE OR REPLACE VIEW `pipe_weld_export` AS
+SELECT
+		ew.iso_no	`iso`,
+		ew.revision	`版本`,
+		ew.spool_no	`spool`,
+		ew.no	`weld`,
+		ew.sheet_no	`页码`,
+		ew.sheet_total	`总页数`,
+		ew.shop_field	`焊口阶段`,
+		ew.weld_type	`焊口类型`,
+		ew.nps_text	`英寸`,
+		ew.thickness	`壁厚`,
+		ew.pipe_class	`管线等级`,
+		ew.material_type	`material type code`,
+		ew.tag_no1	`组件1`,
+		ew.material_code1	`材料编码1`,
+		CASE WHEN pwtl.material1 = ew.material_code1 THEN pwtl.HeatNo1 ELSE pwtl.HeatNo2 END	`炉批号1`,
+		ew.material1	`Material Description 1`,
+		ew.tag_no2	`组件2`,
+		ew.material_code2	`材料编码2`,
+		CASE WHEN pwtl.material2 = ew.material_code2 THEN pwtl.HeatNo2 ELSE pwtl.HeatNo1 END	`炉批号2`,
+		ew.material2	`Material Description 2`,
+		pwtl.wpsNos	`WPS`,
+		pws.welder	`焊工号`,
+		pws.subContractors	`所属分包`,
+		pwtl.FitupDate	`组对日期`,
+		pwtl.FitupStatus	`组对状态`,
+		pwtl.FitupCurrentDate	`FITUP目前状态时间点`,
+		pwtl.FitupReportNo	`组对报告号`,
+		pwtl.WeldDate	`焊接日期`,
+		pwtl.WeldStatus	`焊接状态`,
+		pwtl.WeldCurrentDate	`WELD目前状态时间点`,
+		pwtl.WeldReportNo	`焊接报告号`,
+		ew.rt	`RT%`,
+		pwtl.RtStatus	`RT是否完成`,
+		pwtl.RtDate	`RT日期`,
+		pwtl.RtReportNo	`RT报告号`,
+		ew.ut	`UT%`,
+		pwtl.UtStatus	`UT是否完成`,
+		pwtl.UtDate	`UT日期`,
+		pwtl.UtReportNo	`UT报告号`,
+		ew.mt	`MT%`,
+		pwtl.MtStatus	`MT是否完成`,
+		pwtl.MtDate	`MT日期`,
+		pwtl.MtReportNo	`MT报告号`,
+		ew.pt	`PT%`,
+		pwtl.PtStatus	`PT是否完成`,
+		pwtl.PtDate	`PT日期`,
+		pwtl.PtReportNo	`PT报告号`,
+		pwtl.PwhtStatus	`PWHT是否完成`,
+		pwtl.PwhtDate	`PWHT日期`,
+		pwtl.PwhtReportNo	`PWHT报告号`,
+		CASE WHEN ew.hardness_test THEN 'Y' ELSE 'N' END	`HD`,
+		pwtl.HdStatus	`HD是否完成`,
+		pwtl.HdDate	`HD日期`,
+		ew.pmi_ratio	`PMI%`,
+		pwtl.PmiStatus	`PMI是否完成`,
+		pwtl.PmiDate	`PMI日期`,
+		pwtl.pmiReport	`PMI报告号`,
+		ei.painting_code	`油漆代码`,
+		ew.project_id,
+		ew.org_id
+
+
+FROM entity_weld ew
+		LEFT JOIN entity_iso ei ON ei.id = ew.iso_entity_id AND ei.project_id = ew.project_id
+		LEFT JOIN pipe_weld_task_log pwtl ON pwtl.entity_id = ew.id AND pwtl.project_id = ew.project_id
+		LEFT JOIN pipe_welder_subcontractor pws ON pws.weld_id = ew.id AND ew.project_id = pws.project_id
+;
+

@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="application-for-inspection" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="515" leftMargin="40" rightMargin="40" topMargin="40" bottomMargin="26" isFloatColumnFooter="true" uuid="6a4a1921-8127-4e46-99dc-8b8a6845e7e4">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="net.sf.jasperreports.print.create.bookmarks" value="false"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<style name="Default" isBlankWhenNull="true" fontName="微软雅黑" fontSize="9">
+		<box leftPadding="4" rightPadding="4"/>
+	</style>
+	<parameter name="ASSETS_DIR" class="java.lang.String" evaluationTime="Early">
+		<parameterDescription><![CDATA[静态资源绝对路径]]></parameterDescription>
+		<defaultValueExpression><![CDATA["/var/www/ose/resources/templates/reports/assets"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="REPORT_ID" class="java.lang.String" evaluationTime="Early">
+		<parameterDescription><![CDATA[报表 ID]]></parameterDescription>
+		<defaultValueExpression><![CDATA["0000000000000000"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="projectName" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="reportNo" class="java.lang.String"/>
+	<parameter name="applyingDate" class="java.util.Date"/>
+	<parameter name="applicantName" class="java.lang.String"/>
+	<parameter name="applicantTel" class="java.lang.String"/>
+	<parameter name="inspectionDate" class="java.util.Date"/>
+	<parameter name="inspectionLocation" class="java.lang.String"/>
+	<parameter name="inspectionContents" class="java.lang.String"/>
+	<parameter name="CLIENT_LOGO_DIR" class="java.lang.String"/>
+	<parameter name="CONTRACTOR_LOGO_DIR" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<title>
+		<band height="65">
+			<staticText>
+				<reportElement x="0" y="-20" width="190" height="20" forecolor="#777777" uuid="679b2acc-6ec3-4c2c-a2be-e05952396898"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="微软雅黑" size="8"/>
+				</textElement>
+				<text><![CDATA[WNT-MS/QHSE-30503-33 Rev. 2]]></text>
+			</staticText>
+			<subreport isUsingCache="true" runToBottom="false" overflowType="NoStretch">
+				<reportElement x="0" y="0" width="515" height="50" uuid="e34d04c6-320d-4afb-8ef9-d39e35e922b4">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<subreportParameter name="ASSETS_DIR">
+					<subreportParameterExpression><![CDATA[$P{ASSETS_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="REPORT_ID">
+					<subreportParameterExpression><![CDATA[$P{REPORT_ID}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="REPORT_NAME">
+					<subreportParameterExpression><![CDATA["检　验　申　请　单\nAPPLICATION FOR INSPECTION"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="CONTRACTOR_LOGO_DIR">
+					<subreportParameterExpression><![CDATA[$P{CONTRACTOR_LOGO_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="CLIENT_LOGO_DIR">
+					<subreportParameterExpression><![CDATA[$P{CLIENT_LOGO_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportExpression><![CDATA[$P{ASSETS_DIR} + "/subreports/header.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement style="Default" x="0" y="50" width="110" height="15" uuid="2f33b8fa-a826-4463-bb12-f5136ce6f378">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<text><![CDATA[项目名称 Project Name:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="110" y="50" width="144" height="15" uuid="6ff2f2b5-b9a3-4aac-bd00-f0005407005d">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{projectName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Default" x="255" y="50" width="100" height="15" uuid="9cf52a05-0814-4e74-9cf1-71f2f5792958">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<text><![CDATA[申请单号 Report No.:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="355" y="50" width="158" height="15" uuid="6fc762a8-3eb9-4f02-8608-2b41b4058def">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{reportNo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="476">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<frame borderSplitType="NoBorders">
+				<reportElement positionType="Float" x="0" y="0" width="515" height="476" isPrintWhenDetailOverflows="true" uuid="c9505e49-ec51-4f71-9659-95f2cacd57a4">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<frame borderSplitType="NoBorders">
+					<reportElement positionType="Float" x="0" y="0" width="515" height="28" uuid="984e2982-76aa-4ddc-b04e-0063e364896d"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<staticText>
+						<reportElement style="Default" stretchType="ContainerHeight" x="0" y="0" width="110" height="28" isPrintWhenDetailOverflows="true" uuid="d6667939-916c-4699-a35b-7a7f4258e9c5">
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						</reportElement>
+						<box topPadding="2" bottomPadding="2">
+							<pen lineWidth="0.5"/>
+							<topPen lineWidth="0.0"/>
+							<leftPen lineWidth="0.0"/>
+							<bottomPen lineWidth="0.0"/>
+							<rightPen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="微软雅黑" isBold="false"/>
+						</textElement>
+						<text><![CDATA[申请日期
+Applying Date]]></text>
+					</staticText>
+					<textField isStretchWithOverflow="true" pattern="yyyy-MM-dd" isBlankWhenNull="true">
+						<reportElement style="Default" stretchType="ContainerHeight" x="110" y="0" width="145" height="28" isPrintWhenDetailOverflows="true" uuid="93148957-7071-42ee-b977-6a0d2573c49e">
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						</reportElement>
+						<box topPadding="2" bottomPadding="2">
+							<bottomPen lineWidth="0.0"/>
+							<rightPen lineWidth="0.0"/>
+						</box>
+						<textElement verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{applyingDate}]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement style="Default" stretchType="ContainerHeight" x="255" y="0" width="110" height="28" isPrintWhenDetailOverflows="true" uuid="1e3c7258-df0f-4161-9ddf-18c686f4958e">
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						</reportElement>
+						<box topPadding="2" bottomPadding="2">
+							<leftPen lineWidth="0.5"/>
+							<bottomPen lineWidth="0.0"/>
+							<rightPen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="微软雅黑" isBold="false"/>
+						</textElement>
+						<text><![CDATA[申请人/电话
+Applicant/Tel.]]></text>
+					</staticText>
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+						<reportElement style="Default" stretchType="ContainerHeight" x="365" y="0" width="150" height="28" isPrintWhenDetailOverflows="true" uuid="8d245393-d6a7-4da3-9c38-1396db634ae6">
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						</reportElement>
+						<box topPadding="2" bottomPadding="2">
+							<bottomPen lineWidth="0.0"/>
+							<rightPen lineWidth="0.0"/>
+						</box>
+						<textElement verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[(($P{applicantName} == null || "".equals( $P{applicantName} ))? "" : ($P{applicantName}) + "\n" + (($P{applicantTel} == null  || "".equals( $P{applicantTel}) )? "" : $P{applicantTel}) )]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame borderSplitType="NoBorders">
+					<reportElement positionType="Float" x="0" y="28" width="515" height="28" uuid="b0e2d7da-83c2-48f9-b701-5e70a8b59787"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<staticText>
+						<reportElement style="Default" stretchType="ContainerHeight" x="0" y="0" width="110" height="28" isPrintWhenDetailOverflows="true" uuid="1ca47713-d1af-4cbf-afb3-d22039c0a79b">
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						</reportElement>
+						<box topPadding="2" bottomPadding="2">
+							<pen lineWidth="0.5"/>
+							<topPen lineWidth="0.0"/>
+							<leftPen lineWidth="0.0"/>
+							<bottomPen lineWidth="0.0"/>
+							<rightPen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="微软雅黑" isBold="false"/>
+						</textElement>
+						<text><![CDATA[检验日期/时间
+Inspection Date/Time]]></text>
+					</staticText>
+					<textField isStretchWithOverflow="true" pattern="yyyy-MM-dd" isBlankWhenNull="true">
+						<reportElement style="Default" stretchType="ContainerHeight" x="110" y="0" width="145" height="28" isPrintWhenDetailOverflows="true" uuid="232e1344-228e-49dd-902a-8bf1d095e218">
+							<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						</reportElement>
+						<box topPadding="2" bottomPadding="2">
+							<bottomPen lineWidth="0.0"/>
+							<rightPen lineWidth="0.0"/>
+						</box>
+						<textElement verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{inspectionDate}]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement style="Default" stretchType="ContainerHeight" x="255" y="0" width="110" height="28" isPrintWhenDetailOverflows="true" uuid="9898c4b6-fb7f-4654-8966-9a2ac03ef378">
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						</reportElement>
+						<box topPadding="2" bottomPadding="2">
+							<leftPen lineWidth="0.5"/>
+							<bottomPen lineWidth="0.0"/>
+							<rightPen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="微软雅黑" isBold="false"/>
+						</textElement>
+						<text><![CDATA[检验地点
+Inspection Location]]></text>
+					</staticText>
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+						<reportElement style="Default" stretchType="ContainerHeight" x="365" y="0" width="150" height="28" isPrintWhenDetailOverflows="true" uuid="ea3f9f36-de91-4f83-9ecf-cd6bf9116c2c">
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						</reportElement>
+						<box topPadding="2" bottomPadding="2">
+							<bottomPen lineWidth="0.0"/>
+							<rightPen lineWidth="0.0"/>
+						</box>
+						<textElement verticalAlignment="Middle">
+							<font fontName="微软雅黑"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{inspectionLocation}]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame borderSplitType="NoBorders">
+					<reportElement positionType="Float" x="0" y="56" width="515" height="28" uuid="1cad4b39-3e2f-404a-aced-fa0504eabe60"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<staticText>
+						<reportElement style="Default" stretchType="ContainerHeight" x="0" y="0" width="110" height="28" isPrintWhenDetailOverflows="true" uuid="ba7233a4-b32a-45c8-9edc-d70dd67cd484">
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						</reportElement>
+						<box topPadding="2" bottomPadding="2">
+							<pen lineWidth="0.5"/>
+							<topPen lineWidth="0.0"/>
+							<leftPen lineWidth="0.0"/>
+							<bottomPen lineWidth="0.0"/>
+							<rightPen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="微软雅黑" isBold="false"/>
+						</textElement>
+						<text><![CDATA[施工单位
+Construction Unit]]></text>
+					</staticText>
+					<staticText>
+						<reportElement style="Default" stretchType="ContainerHeight" x="255" y="0" width="110" height="28" isPrintWhenDetailOverflows="true" uuid="ce07e221-9a70-47e3-a74d-4155d24a2180">
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						</reportElement>
+						<box topPadding="2" bottomPadding="2">
+							<leftPen lineWidth="0.5"/>
+							<bottomPen lineWidth="0.0"/>
+							<rightPen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="微软雅黑" isBold="false"/>
+						</textElement>
+						<text><![CDATA[施工班组
+Construction Team]]></text>
+					</staticText>
+				</frame>
+				<frame borderSplitType="NoBorders">
+					<reportElement positionType="Float" x="0" y="84" width="515" height="280" isPrintWhenDetailOverflows="true" uuid="dd95c04b-547e-4e04-bdd9-196788549867">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<frame borderSplitType="NoBorders">
+						<reportElement x="0" y="0" width="515" height="28" uuid="732565d7-d7a6-45c5-b775-06b62fabe35d">
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						</reportElement>
+						<box>
+							<pen lineWidth="0.0"/>
+						</box>
+						<staticText>
+							<reportElement style="Default" x="0" y="0" width="515" height="28" isPrintWhenDetailOverflows="true" uuid="cbcb8212-9f11-4525-b877-e1e6d466115f">
+								<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+								<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+							</reportElement>
+							<box topPadding="2" bottomPadding="2">
+								<pen lineWidth="0.0"/>
+							</box>
+							<textElement textAlignment="Left" verticalAlignment="Middle">
+								<font fontName="微软雅黑" isBold="false"/>
+							</textElement>
+							<text><![CDATA[检验内容（可副页）：
+Inspection Contents (Can be attached):]]></text>
+						</staticText>
+					</frame>
+					<frame borderSplitType="NoBorders">
+						<reportElement x="0" y="28" width="515" height="224" isPrintWhenDetailOverflows="true" uuid="c94c449c-7efb-4e15-917b-eff5fdd2882e">
+							<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						</reportElement>
+						<box>
+							<pen lineWidth="0.0"/>
+						</box>
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement x="0" y="0" width="515" height="224" isPrintWhenDetailOverflows="true" uuid="5411e8cb-7716-4039-b324-1d936b663aa1">
+								<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+								<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+								<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+							</reportElement>
+							<box topPadding="14" leftPadding="14" bottomPadding="7" rightPadding="14"/>
+							<textElement>
+								<font fontName="微软雅黑"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$P{inspectionContents}]]></textFieldExpression>
+						</textField>
+					</frame>
+					<frame borderSplitType="NoBorders">
+						<reportElement positionType="Float" x="0" y="252" width="515" height="28" uuid="ed045f4b-7d7a-4738-840b-5ab4761b91fa">
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						</reportElement>
+						<box>
+							<pen lineWidth="0.0"/>
+						</box>
+						<staticText>
+							<reportElement style="Default" x="0" y="0" width="335" height="28" isPrintWhenDetailOverflows="true" uuid="f6e1ce43-ff36-4a75-911c-a0e3bc2d0fa6">
+								<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+							</reportElement>
+							<box topPadding="2" bottomPadding="2">
+								<pen lineWidth="0.5"/>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textElement textAlignment="Right" verticalAlignment="Middle">
+								<font fontName="微软雅黑" isBold="false"/>
+							</textElement>
+							<text><![CDATA[主管 Supervisor/日期 Date：]]></text>
+						</staticText>
+					</frame>
+				</frame>
+				<frame borderSplitType="NoBorders">
+					<reportElement positionType="Float" x="0" y="364" width="515" height="56" isPrintWhenDetailOverflows="true" uuid="c677b371-6467-4318-8b67-86f083526e5f">
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<staticText>
+						<reportElement style="Default" x="0" y="0" width="515" height="28" isPrintWhenDetailOverflows="true" uuid="9121cdf3-dad8-4f81-92a8-61be44830430">
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						</reportElement>
+						<box topPadding="2" bottomPadding="2">
+							<pen lineWidth="0.0"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="微软雅黑" isBold="false"/>
+						</textElement>
+						<text><![CDATA[检验结论：
+Inspection Conclusion:]]></text>
+					</staticText>
+					<staticText>
+						<reportElement style="Default" x="0" y="28" width="335" height="28" isPrintWhenDetailOverflows="true" uuid="8a0fea29-c97f-4bb9-bd86-155a6291a8e4">
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						</reportElement>
+						<box topPadding="2" bottomPadding="2">
+							<pen lineWidth="0.5"/>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Right" verticalAlignment="Middle">
+							<font fontName="微软雅黑" isBold="false"/>
+						</textElement>
+						<text><![CDATA[主管 Supervisor/日期 Date：]]></text>
+					</staticText>
+				</frame>
+				<frame borderSplitType="NoBorders">
+					<reportElement positionType="Float" x="0" y="420" width="515" height="56" isPrintWhenDetailOverflows="true" uuid="8f158b77-79c8-4521-8312-a6ec41755fe7">
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<staticText>
+						<reportElement style="Default" x="0" y="0" width="515" height="28" isPrintWhenDetailOverflows="true" uuid="ff29737b-177c-4bad-8ad4-8e761d5586b0">
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						</reportElement>
+						<box topPadding="2" bottomPadding="2">
+							<pen lineWidth="0.0"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="微软雅黑" isBold="false"/>
+						</textElement>
+						<text><![CDATA[复检（必要时）：
+Re-Inspected (If necessary):]]></text>
+					</staticText>
+					<staticText>
+						<reportElement style="Default" x="0" y="28" width="335" height="28" isPrintWhenDetailOverflows="true" uuid="2273039c-5414-424f-986f-3a6d567a30bf">
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						</reportElement>
+						<box topPadding="2" bottomPadding="2">
+							<pen lineWidth="0.5"/>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Right" verticalAlignment="Middle">
+							<font fontName="微软雅黑" isBold="false"/>
+						</textElement>
+						<text><![CDATA[主管 Supervisor/日期 Date：]]></text>
+					</staticText>
+				</frame>
+			</frame>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="24">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<textField>
+				<reportElement x="290" y="0" width="100" height="24" uuid="1f1c928f-05e8-484a-ac4a-986dd93708bc">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<textFieldExpression><![CDATA["第 " + $V{PAGE_NUMBER} + " 页"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="400" y="0" width="100" height="24" uuid="f4463cca-94b1-462a-b8dc-e6879e8d70b7">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="微软雅黑"/>
+				</textElement>
+				<textFieldExpression><![CDATA["共 " + $V{PAGE_NUMBER} + " 页"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="168">
+			<staticText>
+				<reportElement style="Default" x="0" y="0" width="515" height="168" uuid="c6c1507d-4931-46c5-af06-5fcd1415215d"/>
+				<box topPadding="7" leftPadding="7" rightPadding="7"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="7"/>
+				</textElement>
+				<text><![CDATA[检验结论说明：
+1）“A”：优良/良好，没有或有极少量的任何修补整改工作，报验第一次就给予确认。
+2）“B”：良好/合格，仅有少量修补工作，或少量小错误，无较大问题，但按质量缺陷符号标识进行整改完成后须要再次确认。
+3）“C”：不合格，有较多修补工作或小错误，或重大问题，按质量缺陷符号标识进行整改完成后须重新申请检验。
+4）“D”：严重不合格，自检很差或根本没有自检、或有较严重质量问题须返工、返修处理，按质量标准要求整改完成后须重新申请检验。
+5）A 级或 B 级可以附加上“+”、“-”符号，以更精确表示检验结果状态，如“A+”、“A-”。
+
+Notes About Inspection Conclusion:
+1) "A": Excellent/Good, means those without or with few repair or improving activities and passed at the first-time inspection.
+2) "B": Good/Qualified, means those with few repair activities or insignificant defects and without major problems; however, need to be re-inspected after improvement in light of quality defect symbol identification.
+3) "C": Unqualified, means those with a number of repair activities or insignificant defects or major problem, and need to apply for another inspection after being improved in light of quality defect symbol identification.
+4) "D": Severely Unqualified, means those with poor self-inspection results or without self-inspection process or need to be remade or repaired due to major quality problem, and need to apply for  another inspection after being improved in light of quality defect symbol identification.
+5) Level A or Level B can be marked with "+" or "-" in addition to present the inspection status result more accurately, such as "A+", "A-".]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

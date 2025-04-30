@@ -1,0 +1,1 @@
+SELECT `id`, `company_id`, `org_id` FROM `projects` WHERE `id` LIKE ?;

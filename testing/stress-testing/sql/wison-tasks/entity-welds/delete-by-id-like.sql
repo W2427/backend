@@ -1,0 +1,1 @@
+DELETE FROM `entity_weld` WHERE `id` LIKE ?;

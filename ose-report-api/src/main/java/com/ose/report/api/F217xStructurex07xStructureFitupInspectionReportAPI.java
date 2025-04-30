@@ -1,0 +1,40 @@
+package com.ose.report.api;
+
+import com.ose.report.dto.StructureFitupInspectionReportDTO;
+import com.ose.report.entity.ReportHistory;
+import com.ose.response.JsonObjectResponseBody;
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.*;
+
+import static org.springframework.http.HttpStatus.CREATED;
+import static org.springframework.http.MediaType.ALL_VALUE;
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
+
+/**
+ * 检查单报表接口
+ */
+@FeignClient(name = "ose-report", contextId = "f217StFitupFeign")
+public interface F217xStructurex07xStructureFitupInspectionReportAPI {
+
+    /**
+     * 管系装配报告
+     *
+     * @param orgId         组织 ID
+     * @param projectId     项目 ID
+     * @param reportPostDTO 报告数据
+     * @return 制作完成的检查单
+     */
+    @RequestMapping(
+        method = POST,
+        value = "/orgs/{orgId}/projects/{projectId}/structure-fit-up-inspection-reports",
+        consumes = ALL_VALUE,
+        produces = APPLICATION_JSON_VALUE
+    )
+    @ResponseStatus(CREATED)
+    JsonObjectResponseBody<ReportHistory> postStructureFitUpInspectionReport(
+        @PathVariable("orgId") Long orgId,
+        @PathVariable("projectId") Long projectId,
+        @RequestBody StructureFitupInspectionReportDTO reportPostDTO
+    );
+}

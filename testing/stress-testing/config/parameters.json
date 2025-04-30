@@ -1,0 +1,22 @@
+{
+  "password": "Test20181112",
+  "users": 10000000,
+  "projects": 10,
+  "members": 100,
+  "hierarchyNodes": {
+    "area": 5,
+    "module": 10,
+    "iso": 20,
+    "spool": 40,
+    "pipePiece": 40,
+    "sbw": 25,
+    "fbw": 15,
+    "layerPackage": 5,
+    "pressureTestPackage": 5,
+    "cleanPackage": 5,
+    "subSystem": 5
+  },
+  "concurrency": {
+    "userSignIn": [10, 20, 40, 80, 160, 320]
+  }
+}

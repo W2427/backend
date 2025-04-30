@@ -1,0 +1,791 @@
+{
+  "info": {
+    "_postman_id": "a29da410-6c53-442a-86b2-765baa16a75c",
+    "name": "Report",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "01 检查单",
+      "description": "",
+      "item": [
+        {
+          "name": "创建",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJCTVhaTTJKUURNOTdYRjNHXG5CTVhaTFFJSDc5VEc3Q1VIXG51c2VyXG5cbkthcmwgS0lNXG5qam55Nzd2a1xuN0YwMDAwMDFcbkJNWFpLSjhNU0s1SzQ0NzgifQ.uTIxTkbPEmsq68SZGmUY670TvkfqvlDKH8ZFqcFOMtpgaXJaij-QqhFH0A8SFEV2",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"headerTemplate\": \"BMMVRO9BLWT4494Y\",\r\n  \"name\": \"MC-E-23 LV Power Cable by subSystem\",\r\n  \"serial\": \"AAA-AA-#AAB\",\r\n  \"signatureTemplate\": \"BMMVROA7L9MHC829\",\r\n  \"title\": \"S188 FSRU Project\"\r\n}"
+            },
+            "url": {
+              "raw": "http://{{REPORT_SERV}}/orgs/{{ORG_ID}}/projects/{{PROJECT_ID}}/checklists",
+              "protocol": "http",
+              "host": [
+                "{{REPORT_SERV}}"
+              ],
+              "path": [
+                "orgs",
+                "{{ORG_ID}}",
+                "projects",
+                "{{PROJECT_ID}}",
+                "checklists"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "查询（无条件）",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJCTVhaTTJKUURNOTdYRjNHXG5CTVhaTFFJSDc5VEc3Q1VIXG51c2VyXG5cbkthcmwgS0lNXG5qam55Nzd2a1xuN0YwMDAwMDFcbkJNWFpLSjhNU0s1SzQ0NzgifQ.uTIxTkbPEmsq68SZGmUY670TvkfqvlDKH8ZFqcFOMtpgaXJaij-QqhFH0A8SFEV2",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "http://{{REPORT_SERV}}/orgs/{{ORG_ID}}/projects/{{PROJECT_ID}}/checklists?page.no=1&page.size=20",
+              "protocol": "http",
+              "host": [
+                "{{REPORT_SERV}}"
+              ],
+              "path": [
+                "orgs",
+                "{{ORG_ID}}",
+                "projects",
+                "{{PROJECT_ID}}",
+                "checklists"
+              ],
+              "query": [
+                {
+                  "key": "page.no",
+                  "value": "1"
+                },
+                {
+                  "key": "page.size",
+                  "value": "20"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "查询（有条件）",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{TOKEN}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "http://{{REPORT_SERV}}/orgs/{{ORG_ID}}/projects/{{PROJECT_ID}}/checklists?search=AAA-AA-%23AA",
+              "protocol": "http",
+              "host": [
+                "{{REPORT_SERV}}"
+              ],
+              "path": [
+                "orgs",
+                "{{ORG_ID}}",
+                "projects",
+                "{{PROJECT_ID}}",
+                "checklists"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "AAA-AA-%23AA"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "查询（根据ID）",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{TOKEN}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "http://{{REPORT_SERV}}/orgs/{{ORG_ID}}/projects/{{PROJECT_ID}}/checklists/BMYMZ4WGGOH01AH5",
+              "protocol": "http",
+              "host": [
+                "{{REPORT_SERV}}"
+              ],
+              "path": [
+                "orgs",
+                "{{ORG_ID}}",
+                "projects",
+                "{{PROJECT_ID}}",
+                "checklists",
+                "BMYMZ4WGGOH01AH5"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "编辑",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{TOKEN}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"headerTemplate\": \"BMMVRO9BLWT4494M\",\r\n  \"name\": \"NC-E-23 DIESEL ENGINE KM\",\r\n  \"serial\": \"BAA-AA-#BBM\",\r\n  \"signatureTemplate\": \"BMMVROA7L9MHC82M\",\r\n  \"title\": \"S188 FSRU ProjectM\"\r\n}"
+            },
+            "url": {
+              "raw": "http://{{REPORT_SERV}}/orgs/{{ORG_ID}}/projects/{{PROJECT_ID}}/checklists/BMYMZ4WGGOH01AH5",
+              "protocol": "http",
+              "host": [
+                "{{REPORT_SERV}}"
+              ],
+              "path": [
+                "orgs",
+                "{{ORG_ID}}",
+                "projects",
+                "{{PROJECT_ID}}",
+                "checklists",
+                "BMYMZ4WGGOH01AH5"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "删除",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{TOKEN}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "http://{{REPORT_SERV}}/orgs/{{ORG_ID}}/projects/{{PROJECT_ID}}/checklists/BMYMZ4WGGOH01AH5",
+              "protocol": "http",
+              "host": [
+                "{{REPORT_SERV}}"
+              ],
+              "path": [
+                "orgs",
+                "{{ORG_ID}}",
+                "projects",
+                "{{PROJECT_ID}}",
+                "checklists",
+                "BMYMZ4WGGOH01AH5"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "导入检查项",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{TOKEN}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\r\n  {\r\n    \"description\": \"99.0 测试描述99.0\",\r\n    \"itemNo\": \"99.0\",\r\n    \"serial\": \"AAA-AA-#AAA\"\r\n  },\r\n  {\r\n    \"description\": \"99.1 测试描述99.1\",\r\n    \"itemNo\": \"99.1\",\r\n    \"serial\": \"AAA-AA-#AAA\"\r\n  },\r\n  {\r\n    \"description\": \"99.2 测试描述99.2\",\r\n    \"itemNo\": \"99.2\",\r\n    \"serial\": \"AAA-AA-#AAA\"\r\n  },\r\n  {\r\n    \"description\": \"99.3 测试描述99.3\",\r\n    \"itemNo\": \"99.3\",\r\n    \"serial\": \"AAA-AA-#AAA\"\r\n  },\r\n  {\r\n    \"description\": \"99.4 测试描述99.4\",\r\n    \"itemNo\": \"99.4\",\r\n    \"serial\": \"AAA-AA-#AAA\"\r\n  },\r\n  {\r\n    \"description\": \"99.5 测试描述99.5\",\r\n    \"itemNo\": \"99.5\",\r\n    \"serial\": \"AAA-AA-#AAA\"\r\n  }\r\n]"
+            },
+            "url": {
+              "raw": "http://{{REPORT_SERV}}/orgs/{{ORG_ID}}/projects/{{PROJECT_ID}}/checklists/import",
+              "protocol": "http",
+              "host": [
+                "{{REPORT_SERV}}"
+              ],
+              "path": [
+                "orgs",
+                "{{ORG_ID}}",
+                "projects",
+                "{{PROJECT_ID}}",
+                "checklists",
+                "import"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "生成预览检查单",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJCTVhaTTJKUURNOTdYRjNHXG5CTVhaTFFJSDc5VEc3Q1VIXG51c2VyXG5cbkthcmwgS0lNXG5qam55Nzd2a1xuN0YwMDAwMDFcbkJNWFpLSjhNU0s1SzQ0NzgifQ.uTIxTkbPEmsq68SZGmUY670TvkfqvlDKH8ZFqcFOMtpgaXJaij-QqhFH0A8SFEV2",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"cpNo\": \"M-01-01\",\r\n  \"dwgNo\": \"S188-EP-H-ELE-DGM-06312\",\r\n  \"location\": \"M-01-01 LvCables site\",\r\n  \"subSysDesc\": \"Shore Power JB\",\r\n  \"sysNo\": \"M01\",\r\n  \"tagDesc\": \"低压电力电缆（接子系统） Lv Power Cable by subSystem\",\r\n  \"tagNo\": \"M-01-01 LvCables\"\r\n}"
+            },
+            "url": {
+              "raw": "http://{{REPORT_SERV}}/orgs/{{ORG_ID}}/projects/{{PROJECT_ID}}/checklists/BMYMZULJ6ULVWLTM/generate",
+              "protocol": "http",
+              "host": [
+                "{{REPORT_SERV}}"
+              ],
+              "path": [
+                "orgs",
+                "{{ORG_ID}}",
+                "projects",
+                "{{PROJECT_ID}}",
+                "checklists",
+                "BMYMZULJ6ULVWLTM",
+                "generate"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "02 检查项",
+      "description": "",
+      "item": [
+        {
+          "name": "创建",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{TOKEN}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"checklistId\": \"BMYMZULJ6ULVWLTM\",\r\n  \"description\": \"Check Baseplate levelled and properly shim packed, jackscrews removed,foundations tightened. Equipment tie down bolt lengths are correct. (检查机座水平，加合适的垫片，移除千斤顶，紧固底座。设备的底脚螺栓正确）\",\r\n  \"itemNo\": \"2.01\"\r\n}"
+            },
+            "url": {
+              "raw": "http://{{REPORT_SERV}}/orgs/{{ORG_ID}}/projects/{{PROJECT_ID}}/checklists/BMYMZULJ6ULVWLTM/items",
+              "protocol": "http",
+              "host": [
+                "{{REPORT_SERV}}"
+              ],
+              "path": [
+                "orgs",
+                "{{ORG_ID}}",
+                "projects",
+                "{{PROJECT_ID}}",
+                "checklists",
+                "BMYMZULJ6ULVWLTM",
+                "items"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "查询",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{TOKEN}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "http://{{REPORT_SERV}}/orgs/{{ORG_ID}}/projects/{{PROJECT_ID}}/checklists/BMYMZULJ6ULVWLTM/items?page.no=1&page.size=10&sort=itemNo:asc",
+              "protocol": "http",
+              "host": [
+                "{{REPORT_SERV}}"
+              ],
+              "path": [
+                "orgs",
+                "{{ORG_ID}}",
+                "projects",
+                "{{PROJECT_ID}}",
+                "checklists",
+                "BMYMZULJ6ULVWLTM",
+                "items"
+              ],
+              "query": [
+                {
+                  "key": "page.no",
+                  "value": "1"
+                },
+                {
+                  "key": "page.size",
+                  "value": "10"
+                },
+                {
+                  "key": "sort",
+                  "value": "itemNo:asc"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "编辑",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{TOKEN}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"checklistId\" : \"BMYMZULJ6ULVWLTM\",\r\n  \"description\": \"Check 脚螺栓正确 - 修改）\",\r\n  \"itemNo\": \"2.01\"\r\n}"
+            },
+            "url": {
+              "raw": "http://{{REPORT_SERV}}/orgs/{{ORG_ID}}/projects/{{PROJECT_ID}}/checklists/items/BMYN306AN0PFAJUS",
+              "protocol": "http",
+              "host": [
+                "{{REPORT_SERV}}"
+              ],
+              "path": [
+                "orgs",
+                "{{ORG_ID}}",
+                "projects",
+                "{{PROJECT_ID}}",
+                "checklists",
+                "items",
+                "BMYN306AN0PFAJUS"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "删除",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{TOKEN}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "http://{{REPORT_SERV}}/orgs/{{ORG_ID}}/projects/{{PROJECT_ID}}/checklists/items/BMYN306AN0PFAJUS",
+              "protocol": "http",
+              "host": [
+                "{{REPORT_SERV}}"
+              ],
+              "path": [
+                "orgs",
+                "{{ORG_ID}}",
+                "projects",
+                "{{PROJECT_ID}}",
+                "checklists",
+                "items",
+                "BMYN306AN0PFAJUS"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "03 报表模板",
+      "description": "",
+      "item": [
+        {
+          "name": "查询",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "http://{{REPORT_SERV}}/templates?domain=CHECKLIST&position=TITLE",
+              "protocol": "http",
+              "host": [
+                "{{REPORT_SERV}}"
+              ],
+              "path": [
+                "templates"
+              ],
+              "query": [
+                {
+                  "key": "domain",
+                  "value": "CHECKLIST"
+                },
+                {
+                  "key": "position",
+                  "value": "TITLE"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "04 检查单测试模拟",
+      "description": "",
+      "item": [
+        {
+          "name": "创建",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{TOKEN}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"checklistId\": \"BMYMZULJ6ULVWLTM\",\r\n  \"name\": \"低压电力电缆（接子系统）（测试）\",\r\n  \"simulationData\": {\r\n\t  \"cpNo\": \"M-01-01\",\r\n\t  \"dwgNo\": \"S188-EP-H-ELE-DGM-06312\",\r\n\t  \"location\": \"M-01-01 LvCables site\",\r\n\t  \"subSysDesc\": \"Shore Power JB\",\r\n\t  \"sysNo\": \"M01\",\r\n\t  \"tagDesc\": \"低压电力电缆（接子系统） Lv Power Cable by subSystem\",\r\n\t  \"tagNo\": \"M-01-01 LvCables\"\r\n  }\r\n}"
+            },
+            "url": {
+              "raw": "http://{{REPORT_SERV}}/orgs/{{ORG_ID}}/projects/{{PROJECT_ID}}/checklists/simulations",
+              "protocol": "http",
+              "host": [
+                "{{REPORT_SERV}}"
+              ],
+              "path": [
+                "orgs",
+                "{{ORG_ID}}",
+                "projects",
+                "{{PROJECT_ID}}",
+                "checklists",
+                "simulations"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "查询",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{TOKEN}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "http://{{REPORT_SERV}}/orgs/{{ORG_ID}}/projects/{{PROJECT_ID}}/checklists/simulations",
+              "protocol": "http",
+              "host": [
+                "{{REPORT_SERV}}"
+              ],
+              "path": [
+                "orgs",
+                "{{ORG_ID}}",
+                "projects",
+                "{{PROJECT_ID}}",
+                "checklists",
+                "simulations"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "查询（根据ID）",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{TOKEN}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "http://{{REPORT_SERV}}/orgs/{{ORG_ID}}/projects/{{PROJECT_ID}}/checklists/simulations/BMYN4CJTW9EQQ7UQ",
+              "protocol": "http",
+              "host": [
+                "{{REPORT_SERV}}"
+              ],
+              "path": [
+                "orgs",
+                "{{ORG_ID}}",
+                "projects",
+                "{{PROJECT_ID}}",
+                "checklists",
+                "simulations",
+                "BMYN4CJTW9EQQ7UQ"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "编辑",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{TOKEN}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"checklistId\": \"BMYMZULJ6ULVWLTM\",\r\n  \"name\": \"G低压电力电缆（接子系统）（测试）\",\r\n  \"simulationData\": {\r\n\t  \"cpNo\": \"GM-01-01\",\r\n\t  \"dwgNo\": \"GS188-EP-H-ELE-DGM-06312\",\r\n\t  \"location\": \"GM-01-01 LvCables site\",\r\n\t  \"subSysDesc\": \"GShore Power JB\",\r\n\t  \"sysNo\": \"GM01\",\r\n\t  \"tagDesc\": \"G低压电力电缆（接子系统） Lv Power Cable by subSystem\",\r\n\t  \"tagNo\": \"GM-01-01 LvCables\"\r\n  }\r\n}"
+            },
+            "url": {
+              "raw": "http://{{REPORT_SERV}}/orgs/{{ORG_ID}}/projects/{{PROJECT_ID}}/checklists/simulations/BMYN4CJTW9EQQ7UQ",
+              "protocol": "http",
+              "host": [
+                "{{REPORT_SERV}}"
+              ],
+              "path": [
+                "orgs",
+                "{{ORG_ID}}",
+                "projects",
+                "{{PROJECT_ID}}",
+                "checklists",
+                "simulations",
+                "BMYN4CJTW9EQQ7UQ"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "删除",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{TOKEN}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://{{REPORT_SERV}}/orgs/{{ORG_ID}}/projects/{{PROJECT_ID}}/checklists/simulations/BMYN5UVRRG84AT9E",
+              "protocol": "http",
+              "host": [
+                "{{REPORT_SERV}}"
+              ],
+              "path": [
+                "orgs",
+                "{{ORG_ID}}",
+                "projects",
+                "{{PROJECT_ID}}",
+                "checklists",
+                "simulations",
+                "BMYN5UVRRG84AT9E"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "生成模拟检查单",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{TOKEN}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"cpNo\": \"M-01-01\",\r\n  \"dwgNo\": \"S188-EP-H-ELE-DGM-06312\",\r\n  \"location\": \"M-01-01 LvCables site\",\r\n  \"subSysDesc\": \"Shore Power JB\",\r\n  \"sysNo\": \"M01\",\r\n  \"tagDesc\": \"低压电力电缆（接子系统） Lv Power Cable by subSystem\",\r\n  \"tagNo\": \"M-01-01 LvCables\"\r\n}"
+            },
+            "url": {
+              "raw": "http://{{REPORT_SERV}}/orgs/{{ORG_ID}}/projects/{{PROJECT_ID}}/checklists/simulations/BMYN4CJTW9EQQ7UQ/generate",
+              "protocol": "http",
+              "host": [
+                "{{REPORT_SERV}}"
+              ],
+              "path": [
+                "orgs",
+                "{{ORG_ID}}",
+                "projects",
+                "{{PROJECT_ID}}",
+                "checklists",
+                "simulations",
+                "BMYN4CJTW9EQQ7UQ",
+                "generate"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

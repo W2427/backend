@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.3.4</version>
+    </parent>
+
+    <groupId>com.ose</groupId>
+    <artifactId>parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <name>OSE BPM</name>
+    <packaging>pom</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <modules>
+        <module>ose-config</module>
+        <module>ose-base</module>
+        <module>ose-auth-api</module>
+        <module>ose-auth</module>
+        <module>ose-docs-api</module>
+        <module>ose-docs</module>
+        <module>ose-notifications-api</module>
+        <module>ose-notifications</module>
+        <module>ose-report-api</module>
+        <module>ose-report</module>
+        <module>ose-issues-api</module>
+        <module>ose-issues</module>
+        <module>ose-material-api</module>
+        <module>ose-material</module>
+<!--        <module>ose-materialspm-api</module>-->
+<!--        <module>ose-materialspm</module>-->
+        <module>ose-tasks-api</module>
+        <module>ose-tasks</module>
+		<module>ose-prints-api</module>
+		<module>ose-prints</module>
+<!--        <module>ose-test</module>-->
+  </modules>
+
+</project>

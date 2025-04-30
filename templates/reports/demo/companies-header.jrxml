@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="header" pageWidth="515" pageHeight="40" whenNoDataType="AllSectionsNoDetail" columnWidth="515" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isFloatColumnFooter="true" uuid="d5b99a4b-92a8-4d3c-8560-4aee5b7e7490">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Empty Records"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<style name="default-text" isDefault="true" isBlankWhenNull="true" fontName="微软雅黑" fontSize="9"/>
+	<parameter name="ASSETS_DIR" class="java.lang.String">
+		<parameterDescription><![CDATA[静态资源路径]]></parameterDescription>
+		<defaultValueExpression><![CDATA["/var/www/ose/resources/templates/reports/assets"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="REPORT_ID" class="java.lang.String">
+		<parameterDescription><![CDATA[报表 ID]]></parameterDescription>
+		<defaultValueExpression><![CDATA["0000000000000001"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="REPORT_NAME" class="java.lang.String">
+		<parameterDescription><![CDATA[报表名称]]></parameterDescription>
+		<defaultValueExpression><![CDATA["子报表"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<title>
+		<band height="40" splitType="Stretch">
+			<textField>
+				<reportElement x="157" y="0" width="200" height="40" uuid="8585d359-551c-45f2-a758-29baae972fb2">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{REPORT_NAME}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="0" y="0" width="56" height="40" uuid="65a95e7b-d8d9-4666-b7b5-1855f46136e0">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{ASSETS_DIR}+"/images/logos/exmar.png"]]></imageExpression>
+			</image>
+			<componentElement>
+				<reportElement x="475" y="0" width="40" height="40" uuid="4df86ec2-0967-4baf-95e2-5fd0cbb401db">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<jr:QRCode xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<jr:codeExpression><![CDATA[$P{REPORT_ID}]]></jr:codeExpression>
+				</jr:QRCode>
+			</componentElement>
+			<image>
+				<reportElement x="375" y="0" width="100" height="30" uuid="3a767f4a-ddf4-4a5f-9056-334419d226be">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{ASSETS_DIR} + "/images/logos/ose.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+</jasperReport>

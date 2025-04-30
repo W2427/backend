@@ -1,0 +1,1500 @@
+
+[[_paths]]
+== 路径
+
+[[_bomnodesusingget]]
+=== 获取Bom Node列表
+....
+GET /orgs/{orgId}/projects/{projectId}/bomnodes
+....
+
+
+==== 说明
+获取Bom Node列表。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|orgId|string
+|**Path**|**projectId** +
+__可选__|项目id|string
+|**Query**|**spmProjId** +
+__可选__|SPM 项目ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_16c75315d08bc1b49b3d637e6ca8eb84,JsonListResponseBody«BomNodeResultsDTO»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* bom-controller
+
+
+[[_bomsusingget]]
+=== 获取BOM List
+....
+GET /orgs/{orgId}/projects/{projectId}/boms
+....
+
+
+==== 说明
+获取BOM List。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|orgId|string
+|**Path**|**projectId** +
+__可选__|项目id|string
+|**Query**|**bompath** +
+__可选__|SPM BOM结构|string
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|**Query**|**spmProjId** +
+__可选__|SPM 项目ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_dc2e4b3fe88fcd8dc98596588cb36aae,JsonListResponseBody«ViewMxjPosEntity»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* bom-controller
+
+
+[[_getlistusingget]]
+=== 查询Demo
+....
+GET /orgs/{orgId}/projects/{projectId}/demo
+....
+
+
+==== 说明
+获取Demo list。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|orgId|string
+|**Path**|**projectId** +
+__可选__|项目id|string
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**name** +
+__可选__|名称(中文/英文)|string
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**processStageId** +
+__可选__|工序阶段id|string
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_jsonresponsebody,JsonResponseBody>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `*/*`
+
+
+==== 标签
+
+* demo-controller
+
+
+[[_getissuereceiptusingget]]
+=== 获取出库单列表
+....
+GET /orgs/{orgId}/projects/{projectId}/issue-receipts
+....
+
+
+==== 说明
+获取出库单列表。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|orgId|string
+|**Path**|**projectId** +
+__可选__|项目id|string
+|**Query**|**fahCode** +
+__可选__|SPM 领料单号|string
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|**Query**|**spmProjId** +
+__可选__|SPM 项目ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_ee674297edde8e3a4203d577a1640e26,JsonListResponseBody«IssueReceiptListResultsDTO»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* issue-receipt-controller
+
+
+[[_getfadlistusingpost]]
+=== 根据领料单ID，查询领料单详情信息
+....
+POST /orgs/{orgId}/projects/{projectId}/mr/fads
+....
+
+
+==== 说明
+根据领料单ID，查询领料单详情信息
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|orgId|string
+|**Path**|**projectId** +
+__可选__|项目id|string
+|**Body**|**fadListDTO** +
+__必填__|fadListDTO|<<_fadlistdto,FadListDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_835df595bc6931ebfaed7bc834e6a2c4,JsonListResponseBody«FadListResultsDTO»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* spm-material-requisition-controller
+
+
+[[_getfadlistfordisplayusingget]]
+=== 根据领料单ID，查询领料单详情信息（页面使用）
+....
+GET /orgs/{orgId}/projects/{projectId}/mr/fads
+....
+
+
+==== 说明
+根据领料单ID，查询领料单详情信息（页面使用）。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|orgId|string
+|**Path**|**projectId** +
+__可选__|项目id|string
+|**Query**|**fahId** +
+__可选__|领料单ID|string
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|**Query**|**spmProjId** +
+__可选__|SPM 项目ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_835df595bc6931ebfaed7bc834e6a2c4,JsonListResponseBody«FadListResultsDTO»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* spm-material-requisition-controller
+
+
+[[_getfahusingpost]]
+=== 根据领料单ID，查询领料单信息
+....
+POST /orgs/{orgId}/projects/{projectId}/mr/fah
+....
+
+
+==== 说明
+根据领料单ID，查询领料单信息
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|orgId|string
+|**Path**|**projectId** +
+__可选__|项目id|string
+|**Body**|**fadListDTO** +
+__必填__|fadListDTO|<<_fadlistdto,FadListDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_7cb1e399d5d74ac33928ff3c5bc7cdd1,JsonObjectResponseBody«FaListResultsDTO»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* spm-material-requisition-controller
+
+
+[[_getfahlistusingget]]
+=== 根据领料单号，查询领料单信息
+....
+GET /orgs/{orgId}/projects/{projectId}/mr/fas
+....
+
+
+==== 说明
+根据领料单号，查询领料单信息
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|orgId|string
+|**Path**|**projectId** +
+__可选__|项目id|string
+|**Query**|**faCode** +
+__可选__|领料单号|string
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|**Query**|**spmProjId** +
+__可选__|SPM 项目ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_ad03a7b5fe4f320592e019ed37eded85,JsonListResponseBody«FaListResultsDTO»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* spm-material-requisition-controller
+
+
+[[_getinventoryusingget]]
+=== 库存查询
+....
+GET /orgs/{orgId}/projects/{projectId}/mr/inventory
+....
+
+
+==== 说明
+库存查询
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|orgId|string
+|**Path**|**projectId** +
+__可选__|项目id|string
+|**Query**|**bomPath** +
+__可选__|bom路径|string
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**shortDesc** +
+__可选__|描述|string
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|**Query**|**spmProjId** +
+__可选__|SPM 项目ID|string
+|**Query**|**tagNumber** +
+__可选__|材料编码|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_c722669457e9f938e21f941c87d9b095,JsonListResponseBody«ViewMxjBominfoEntity»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* spm-material-requisition-controller
+
+
+[[_getpodetailusingget]]
+=== 获取合同详情
+....
+GET /orgs/{orgId}/projects/{projectId}/po
+....
+
+
+==== 说明
+获取合同详情。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|orgId|string
+|**Path**|**projectId** +
+__可选__|项目id|string
+|**Query**|**buyer** +
+__可选__|SPM BUYER|string
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**poNumber** +
+__可选__|SPM 订单编号|string
+|**Query**|**pohId** +
+__可选__|SPM 合同编号|string
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|**Query**|**spmProjId** +
+__可选__|SPM 项目ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_a6b057a70988143f9d124c916d826949,JsonListResponseBody«PoDetail»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* po-controller
+
+
+[[_getpohusingget]]
+=== 获取合同列表
+....
+GET /orgs/{orgId}/projects/{projectId}/pos
+....
+
+
+==== 说明
+获取合同列表。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|orgId|string
+|**Path**|**projectId** +
+__可选__|项目id|string
+|**Query**|**buyer** +
+__可选__|SPM BUYER|string
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**poNumber** +
+__可选__|SPM 订单编号|string
+|**Query**|**pohId** +
+__可选__|SPM 合同编号|string
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|**Query**|**spmProjId** +
+__可选__|SPM 项目ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_c4e02db9dce489b4414850674682493b,JsonListResponseBody«ViewMxjValidPohEntity»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* po-controller
+
+
+[[_getreceivereceiptusingget]]
+=== 获取入库单列表
+....
+GET /orgs/{orgId}/projects/{projectId}/receive-receipts
+....
+
+
+==== 说明
+获取入库单列表。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|orgId|string
+|**Path**|**projectId** +
+__可选__|项目id|string
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**poNumber** +
+__可选__|SPM 订单编号|string
+|**Query**|**relnNumber** +
+__可选__|SPM 放行单|string
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|**Query**|**spmProjId** +
+__可选__|SPM 项目ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_144686d9219aed5f1d0220b11233ccb8,JsonListResponseBody«ReceiveReceiptListResultsDTO»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* receive-receipt-controller
+
+
+[[_getdetailusingget]]
+=== 获取请购单详情
+....
+GET /orgs/{orgId}/projects/{projectId}/req
+....
+
+
+==== 说明
+获取请购单详情。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|orgId|string
+|**Path**|**projectId** +
+__可选__|项目id|string
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**reqId** +
+__可选__|SPM 请购单ID|string
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|**Query**|**spmProjId** +
+__可选__|SPM 项目ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_3c74c2c9d242d1c2013486dbc919063a,JsonListResponseBody«ReqDetail»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* req-controller
+
+
+[[_getlistusingget_1]]
+=== 获取请购单列表
+....
+GET /orgs/{orgId}/projects/{projectId}/reqs
+....
+
+
+==== 说明
+获取请购单列表。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|orgId|string
+|**Path**|**projectId** +
+__可选__|项目id|string
+|**Query**|**buyer** +
+__可选__|采购员|string
+|**Query**|**dpid** +
+__可选__|专业|string
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**reqcode** +
+__可选__|请购单编号|string
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|**Query**|**spmProjId** +
+__可选__|SPM 项目ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_777fabcc51cc455e52f7940ca49d4729,JsonListResponseBody«ViewMxjReqs»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* req-controller
+
+
+[[_getmcompaniesusingget]]
+=== 查询施工单位列表
+....
+GET /orgs/{orgId}/projects/{projectId}/spm-projects/{projId}/m-companies
+....
+
+
+==== 说明
+查询施工单位列表
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|orgId|string
+|**Path**|**projId** +
+__可选__|projId|string
+|**Path**|**projectId** +
+__可选__|项目id|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_093fa39b3228cc3dc230d1e8fe7b9e21,JsonListResponseBody«MCompaniesEntity»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* m-companies-controller
+
+
+[[_getmlocationusingget]]
+=== 查询库位列表
+....
+GET /orgs/{orgId}/projects/{projectId}/spm-projects/{projId}/m-locations
+....
+
+
+==== 说明
+查询库位列表
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|orgId|string
+|**Path**|**projId** +
+__可选__|projId|string
+|**Path**|**projectId** +
+__可选__|项目id|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_e37103a63b7e5bb4f1e20278a1d1bc7d,JsonListResponseBody«MLocationEntity»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* m-location-controller
+
+
+[[_getmsitematlstatususingget]]
+=== 查询材料状态列表
+....
+GET /orgs/{orgId}/projects/{projectId}/spm-projects/{projId}/m-site-matl-status
+....
+
+
+==== 说明
+查询材料状态列表
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|orgId|string
+|**Path**|**projId** +
+__可选__|projId|string
+|**Path**|**projectId** +
+__可选__|项目id|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_6a21bbcbcfcb798719e50c9aa1a1b7ff,JsonListResponseBody«MSiteMatlStatusEntity»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* m-site-matl-status-controller
+
+
+[[_getmwarehouseusingget]]
+=== 查询仓库列表
+....
+GET /orgs/{orgId}/projects/{projectId}/spm-projects/{projId}/m-ware-houses
+....
+
+
+==== 说明
+查询仓库列表
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|orgId|string
+|**Path**|**projId** +
+__可选__|projId|string
+|**Path**|**projectId** +
+__可选__|项目id|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_0d87b300451823c485ec7936fc37bd2d,JsonListResponseBody«MWareHouseEntity»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* m-ware-house-controller
+
+
+[[_savemirusingpost]]
+=== 保存出库信息
+....
+POST /orgs/{orgId}/projects/{projectId}/spm-projects/{projId}/save-mir
+....
+
+
+==== 说明
+保存出库信息
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|orgId|string
+|**Path**|**projId** +
+__可选__|projId|string
+|**Path**|**projectId** +
+__可选__|项目id|string
+|**Body**|**issueReceiptDTO** +
+__必填__|issueReceiptDTO|<<_fmaterialissuereceiptdto,FMaterialIssueReceiptDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_391c2243de165dc22adfc1b02da9d9aa,JsonObjectResponseBody«ReceiveReceiptResultDTO»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* issue-receipt-controller
+
+
+[[_savemrrusingpost]]
+=== 保存入库信息
+....
+POST /orgs/{orgId}/projects/{projectId}/spm-projects/{projId}/save-mrr
+....
+
+
+==== 说明
+保存入库信息
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|orgId|string
+|**Path**|**projId** +
+__可选__|projId|string
+|**Path**|**projectId** +
+__可选__|项目id|string
+|**Body**|**receiveReceiptDTO** +
+__必填__|receiveReceiptDTO|<<_fmaterialreceivereceiptdto,FMaterialReceiveReceiptDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_391c2243de165dc22adfc1b02da9d9aa,JsonObjectResponseBody«ReceiveReceiptResultDTO»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* receive-receipt-controller
+
+
+[[_getreleasenoteheadlistusingget]]
+=== 获取放行单列表
+....
+GET /orgs/{orgId}/projects/{projectId}/spm-projects/{spmProjectId}/spm-release-notes
+....
+
+
+==== 说明
+获取放行单列表。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|orgId|string
+|**Path**|**projectId** +
+__可选__|项目id|string
+|**Path**|**spmProjectId** +
+__可选__|SPM项目id|string
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|**Query**|**spmRelnNumber** +
+__可选__|SPM 放行单号|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_3ec39483cbb31763064cd0345db79def,JsonListResponseBody«ReleaseNoteHead»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* spm-release-note-controller
+
+
+[[_getreleasenoteusingget]]
+=== 获取放行单详情
+....
+GET /orgs/{orgId}/projects/{projectId}/spm-projects/{spmProjectId}/spm-release-notes/{relnNumber}
+....
+
+
+==== 说明
+获取放行单详情。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|orgId|string
+|**Path**|**projectId** +
+__可选__|项目id|string
+|**Path**|**relnNumber** +
+__可选__|relnNumber|string
+|**Path**|**spmProjectId** +
+__可选__|SPM项目id|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_a83a898a1a1118e4b3f6c8d67e1fa9ec,JsonObjectResponseBody«ReleaseNoteHead»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* spm-release-note-controller
+
+
+[[_getreleasenoteitemsbypageusingpost]]
+=== 获取放行单明细
+....
+POST /orgs/{orgId}/projects/{projectId}/spm-projects/{spmProjectId}/spm-release-notes/{relnNumber}/items
+....
+
+
+==== 说明
+获取放行单明细。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|orgId|string
+|**Path**|**projectId** +
+__可选__|项目id|string
+|**Path**|**relnNumber** +
+__可选__|relnNumber|string
+|**Path**|**spmProjectId** +
+__可选__|SPM项目id|string
+|**Body**|**pageDTO** +
+__必填__|pageDTO|<<_pagedto,PageDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_0dd604f9c8a3b3b636914e2e02b7233f,JsonListResponseBody«ReleaseNote»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* spm-release-note-controller
+
+
+[[_getreleasenoteitemsusingpost]]
+=== 获取放行单明细（无分页）
+....
+POST /orgs/{orgId}/projects/{projectId}/spm-projects/{spmProjectId}/spm-release-notes/{relnNumber}/no-page-items
+....
+
+
+==== 说明
+获取放行单明细（无分页）。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|orgId|string
+|**Path**|**projectId** +
+__可选__|项目id|string
+|**Path**|**relnNumber** +
+__可选__|relnNumber|string
+|**Path**|**spmProjectId** +
+__可选__|SPM项目id|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_0dd604f9c8a3b3b636914e2e02b7233f,JsonListResponseBody«ReleaseNote»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* spm-release-note-controller
+
+
+[[_matchlnnodecountusingget]]
+=== matchLnNodeCount
+....
+GET /orgs/{orgId}/projects/{projectId}/spmMatchLnNodeCount/{projId}
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**Path**|**projId** +
+__必填__|projId|string
+|**Path**|**projectId** +
+__必填__|projectId|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|integer (int64)
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* spm-match-ln-node-controller
+
+
+[[_matchlnnodesusingget]]
+=== matchLnNodes
+....
+GET /orgs/{orgId}/projects/{projectId}/spmMatchLnNodes
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__必填__|orgId|string
+|**Path**|**projectId** +
+__必填__|projectId|string
+|**Body**|**spmMatchLnNodeDTO** +
+__必填__|spmMatchLnNodeDTO|<<_spmmatchlnnodedto,SpmMatchLnNodeDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_19cefb0144339fbbb216a0c787e3715e,JsonListResponseBody«SpmMatchLnNode»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `*/*`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* spm-match-ln-node-controller
+
+
+

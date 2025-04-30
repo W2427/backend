@@ -1,0 +1,5 @@
+检查时间：2019-11-27 03:30:02
+执行服务器：prddata02
+
+服务器【prddata01】：
+  • 命令（ssh root@prddata01 . ~/.bash_profile && node -e "console.log(JSON.stringify(os.cpus()))"）执行错误：ssh_exchange_identification: Connection closed by remote host  

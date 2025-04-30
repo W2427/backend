@@ -1,0 +1,16 @@
+{
+  "env": {
+    "es6": false,
+    "browser": true,
+    "node": false,
+    "mongo": false
+  },
+  "globals": {
+      "$wget": true,
+      "$post": true,
+      "$queue": true,
+      "$datetime": true,
+      "$keys": true,
+      "ejs": true
+  }
+}

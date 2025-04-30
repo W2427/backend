@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>OSE API Documents</title>
+<link rel="stylesheet" type="text/css" href="./index.css">
+<script type="text/javascript" src="./ejs.min.js"></script>
+</head>
+<body></body>
+<script type="text/html" id="api-docs-template">
+  <nav>
+    <div class="sub-system-info">
+      <h1><%= info.title %><label class="route-count"><%= routeCount %></label></h1>
+      <p class="version"><%= info.version %></p>
+      <p class="description"><%= info.description %></p>
+    </div>
+    <ul>
+      <% controllers.forEach(function(controller) { %>
+      <li id="menu-item-<%= controller.name %>">
+        <a href="#/<%= controller.name %>" onclick="showRoutes(event)"><%= controller.description %><label class="route-count"><%= controller.routeCount %></label></a>
+        <ul>
+          <% controller.routes.forEach(function(route) { %>
+          <li>
+            <a href="#<%= route.routeId %>">
+              <span class="summary"><%= route.summary %></span>
+              <span class="request-url"><span class="request-method <%= route.method %>">&nbsp;</span> <span class="request-path"><%- route.pathHTML %></span></span>
+            </a>
+          </li>
+          <% }); %>
+        </ul>
+      </li>
+      <% }); %>
+    </ul>
+  </nav>
+  <div id="controllers">
+    <div>
+      <% controllers.forEach(function(controller) { %>
+      <div class="controller" id="<%= controller.name %>">
+        <% controller.routes.forEach(function(route) { %>
+        <section>
+          <h2><a href="#<%= route.routeId %>" id="<%= route.routeId %>"><%= route.summary %></a></h2>
+          <dl>
+            <% if (route.description) { %>
+            <dt>说明</dt>
+            <dd><%- route.description %></dd>
+            <% } %>
+            <dt>请求方法及路径</dt>
+            <dd class="request-url"><label class="http-method <%= route.method %>"><%= route.method.toUpperCase() %></label> <span><%- route.pathHTML %></span></dd>
+            <% if (route.pathVariables.length > 0) { %>
+            <dt>路径参数</dt>
+            <dd><%- renderDataStructure(route, 'pathVariables') %></dd>
+            <% } if (route.searchParameters.length > 0) { %>
+            <dt>查询参数</dt>
+            <dd><%- renderDataStructure(route, 'searchParameters') %></dd>
+            <% } if (route.requestBody) { %>
+            <dt>请求数据</dt>
+            <dd><%- renderDataStructure(route, 'requestBody') %></dd>
+            <% } %>
+            <dt>响应数据</dt>
+            <dd><%- renderDataStructure(route, 'responseBody') %></dd>
+          </dl>
+        </section>
+        <% }); %>
+      </div>
+      <% }); %>
+      <footer>&copy; 2018 OSE</footer>
+    </div>
+  </div>
+</script>
+<script type="text/html" id="data-structure-template">
+  <% var collapsed = schemaName === 'JsonResponseError' || schemaName === 'ReferenceData' || schemaName === 'Meta'; %>
+  <% if (schemaName) { %>
+  <code class="data-type"><%= schemaName %></code>
+  <% if (collapsed) { %>
+  <button class="show-details" onclick="this.parentElement.parentElement.className = 'expanded';">•••</button>
+  <% } %>
+  <% } %>
+  <table>
+    <thead>
+      <tr>
+        <th class="left" style="min-width: 8em;">名称</th>
+        <th class="center" style="min-width: 5em; width: 5em;">类型</th>
+        <th class="center" style="min-width: 3em; width: 3em;">必须</th>
+        <th class="left" style="min-width: 8em;">有效值</th>
+        <th class="left" style="min-width: 16em;">说明</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%
+        parameters.forEach(function(parameter) {
+
+          setDataType(parameter);
+
+          parameter.$schema = parameter.$ref || (parameter.schema || {}).$ref || (parameter.items || {}).$ref;
+
+          if (parameter.$schema) {
+            parameter.$schema = parameter.$schema.replace(/«/g, '<').replace(/»/g, '>').replace(/^.+\/([^\/]+)$/, '$1');
+          }
+
+          parameter.$collapsed = parameter.$schema === 'JsonResponseError' || parameter.$schema === 'ReferenceData' || parameter.$schema === 'Meta';
+
+      %>
+      <tr class="<%= parameter.$collapsed ? 'collapsed' : 'expanded' %>">
+        <td class="left" style="word-break: keep-all; white-space: nowrap;"><%= parameter.name %></td>
+        <td class="center"><%= parameter.dataType %></td>
+        <td class="center"><%= parameter.required ? '是' : '' %></td>
+        <td class="left" style="max-width: 32em; word-break: break-word;"><%- parameter.validValues %></td>
+        <td class="left" style="word-break: break-word;">
+          <%- parameter.description === parameter.name ? '' : parameter.description %>
+          <%- renderDataStructure(parameter, null, depth + 1) %>
+        </td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</script>
+<!--[if IE]><script type="text/javascript" src="./json3.min.js"></script><![endif]-->
+<!--[if lte IE 8]><script type="text/javascript" src="ie8.js"></script><![endif]-->
+<script type="text/javascript" src="./index.js"></script>
+</html>

@@ -1,0 +1,338 @@
+@charset "UTF-8";
+
+* {
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+  color: inherit;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -webkit-text-size-adjust: none;
+  -webkit-overflow-scrolling: touch;
+  text-shadow: inherit;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+html {
+  font-size: 12px;
+  font-family: "Menlo", "Consolas", "Microsoft YaHei", "PingFang SC", "monospace";
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  color: #BFBFBF;
+  background: #272727;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 0 0 0 20em;
+  height: 100%;
+  overflow: hidden;
+}
+body.not-compatible {
+  padding: 2em;
+}
+body.not-compatible > p {
+  font-size: 1.33em;
+  font-family: "Verdana", "Tahoma", "Helvetica Neue", "Microsoft YaHei UI", "Microsoft YaHei", "PingFang SC", "sans-serif";
+  margin: 1em 0 1em 0;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 2em 0 2em 0;
+  width: 20em;
+  height: 100%;
+  z-index: 2;
+  overflow-y: auto;
+  background: #0F0F0F;
+  background: rgba(0, 0, 0, 0.95);
+  -webkit-backdrop-filter: blur(0.25em);
+  -webkit-transition: ease-in-out 0.2s 0s;
+  transition: ease-in-out 0.2s 0s;
+}
+html.safari nav {
+  background: rgba(0, 0, 0, 0.9);
+}
+nav:hover {
+  width: 50em;
+}
+nav > div.sub-system-info {
+  padding: 0 1.5em 0 1.5em;
+}
+nav > div.sub-system-info > p {
+  margin: 0.5em 0 0.5em 0;
+  width: 17em;
+  color: #7F7F7F;
+}
+nav ul {
+  list-style: none;
+}
+nav ul > li {
+  margin: 0;
+  padding: 0;
+}
+nav ul > li > a {
+  display: block;
+  padding: 0.5em 1em 0.5em 1em;
+  line-height: 1.5em;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: keep-all;
+  text-decoration: none;
+}
+nav ul > li > a:hover {
+  color: #FFFFFF;
+  background: #000000;
+  background: rgba(31, 31, 31, 0.66);
+}
+nav > ul {
+  margin: 2em 0 2em 0;
+  padding: 0;
+}
+nav > ul > li > a {
+  font-size: 1.2em;
+}
+nav > ul > li > ul {
+  display: none;
+  margin: 0;
+  padding: 0 0 0 1.5em;
+}
+nav > ul > li.show-routes > ul {
+  display: block;
+}
+nav > ul > li > ul > li > a > span {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: keep-all;
+}
+nav > ul > li > ul > li > a > span.request-url {
+  color: #5F5F5F;
+  line-height: 1.5em;
+}
+nav > ul > li > ul > li > a > span.request-url > span {
+  vertical-align: middle;
+}
+nav > ul > li > ul > li > a > span.request-url > span.request-method {
+  display: inline-block;
+  width: 0.8em;
+  height: 0.8em;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+nav > ul > li > ul > li > a > span.request-url > span.request-method.get {
+  background: #003F00;
+}
+nav > ul > li > ul > li > a > span.request-url > span.request-method.post {
+  background: #00005F;
+}
+nav > ul > li > ul > li > a > span.request-url > span.request-method.patch {
+  background: #003F5F;
+}
+nav > ul > li > ul > li > a > span.request-url > span.request-method.put {
+  background: #4F4F00;
+}
+nav > ul > li > ul > li > a > span.request-url > span.request-method.delete {
+  background: #5F0000;
+}
+nav > ul > li > ul > li > a > span.request-url > span.request-path > code {
+  color: #3F4F5F;
+}
+label.route-count {
+  font-size: 0.8em;
+  font-weight: bold;
+  display: inline-block;
+  margin: 0 0 0 0.5em;
+  padding: 0 0.5em 0 0.5em;
+  height: 1.2em;
+  line-height: 1.2em;
+  color: #171717;
+  background: #BFBFBF;
+  -webkit-border-radius: 0.25em;
+  border-radius: 0.25em;
+}
+a > label.route-count {
+  cursor: pointer;
+}
+
+h1, h2 {
+  font-weight: bold;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: keep-all;
+  white-space: nowrap;
+  color: #FFFFFF;
+}
+h1 {
+  font-size: 1.2em;
+}
+h2 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+h2 > a {
+  text-decoration: none;
+}
+
+dl {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+#controllers {
+  padding: 1em;
+  height: 100%;
+  overflow: auto;
+  z-index: 1;
+}
+#controllers > div {
+  position: relative;
+  padding: 0 0 3em 0;
+  width: 100%;
+  min-height: 100%;
+}
+#controllers > div > div > section {
+  padding: 1em;
+}
+#controllers > div > div > section > dl > dt {
+  font-size: 1.33em;
+  font-weight: bold;
+  margin: 1em 0 0 1em;
+  color: #FFFFFF;
+}
+#controllers > div > div > section > dl > dd {
+  margin: 1em 0 0 2em;
+}
+#controllers > div > div > section > dl > dd > code,
+#controllers > div > div > section > dl > dd > a {
+  color: #FFFFFF;
+}
+#controllers > div > div > section > dl > dd.request-url {
+  line-height: 1.5em;
+  color: #FFFFFF;
+}
+#controllers > div > div > section > dl > dd.request-url > label.http-method {
+  display: inline-block;
+  font-weight: bold;
+  width: 5em;
+  text-align: center;
+  -webkit-border-radius: 0.25em;
+  border-radius: 0.25em;
+}
+#controllers > div > div > section > dl > dd.request-url > label.http-method.get {
+  background: #007F00;
+}
+#controllers > div > div > section > dl > dd.request-url > label.http-method.post {
+  background: #005FBF;
+}
+#controllers > div > div > section > dl > dd.request-url > label.http-method.patch {
+  background: #009FBF;
+}
+#controllers > div > div > section > dl > dd.request-url > label.http-method.put {
+  background: #BF5F00;
+}
+#controllers > div > div > section > dl > dd.request-url > label.http-method.delete {
+  background: #BF0000;
+}
+#controllers > div > div > section > dl > dd.request-url > span > code {
+  color: #00FFFF;
+}
+
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  border: solid 1px #000000;
+}
+table th,
+table td {
+  padding: 0.25em 0.5em 0.25em 0.5em;
+  line-height: 1.33em;
+}
+table *.left {
+  text-align: left;
+}
+table *.center {
+  text-align: center;
+}
+table > thead {
+}
+table > thead > tr > th {
+  background: #0F0F0F;
+}
+table > tbody {
+}
+table > tbody > tr:nth-child(odd) > td {
+  background: #272727;
+}
+table > tbody > tr:nth-child(even) > td {
+  background: #1F1F1F;
+}
+table > tbody > tr.collapsed > td > table {
+  display: none;
+}
+table > tbody > tr.collapsed > td > button.show-details {
+  margin: 0;
+  padding: 0 .5em 0 .5em;
+  height: 1.2em;
+  line-height: 1.2em;
+  text-shadow: 0 1px #3F3F3F;
+  color: #9F9F9F;
+  background: #070707;
+  border: none;
+  -webkit-border-radius: .6em;
+  border-radius: .6em;
+  cursor: pointer;
+}
+table > tbody > tr.collapsed > td > button.show-details:hover {
+  color: #DFDFDF;
+  background: #0F0F0F;
+}
+table > tbody > tr.expanded > td > button.show-details {
+  display: none;
+}
+table > tbody > tr > td code {
+  color: #7FFF7F;
+}
+table > tbody > tr > td > code.data-type {
+  font-weight: bold;
+  display: inline-block;
+  margin: 0 0 .25em 0;
+  padding: 0 .5em 0 .5em;
+  height: 1.4em;
+  line-height: 1.4em;
+  text-align: center;
+  color: #1F1F1F;
+  background: #3F3F3F;
+  border: none;
+  -webkit-border-radius: .25em;
+  border-radius: .25em;
+}
+
+footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  line-height: 3em;
+  text-align: center;
+}

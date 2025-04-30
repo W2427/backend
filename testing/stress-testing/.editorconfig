@@ -1,0 +1,16 @@
+# http://EditorConfig.org
+
+root = true
+
+[*.{js,json,sql}]
+indent_style = space
+indent_size = 2
+trim_trailing_whitespace = true
+end_of_line = lf
+charset = utf-8
+
+[*.{js}]
+insert_final_newline: true
+
+[*.{json,sql}]
+insert_final_newline: false

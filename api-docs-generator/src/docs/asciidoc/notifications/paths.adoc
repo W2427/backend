@@ -1,0 +1,1232 @@
+
+[[_paths]]
+== 路径
+
+[[_listusingget]]
+=== 取得业务代码列表
+....
+GET /biz-code-types/{bizCodeType}/biz-codes
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**bizCodeType** +
+__可选__|业务代码类型|enum (NOTIFICATION_TYPE)
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_99bb1bc01aa333e8b427e03782a647da,JsonListResponseBody«BizCodeDTO»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* biz-code-controller
+
+
+[[_createusingpost_1]]
+=== 创建系统通知消息模版
+....
+POST /notification-templates
+....
+
+
+==== 说明
+使用 <a href="http://velocity.apache.org/engine/1.7/developer-guide.html" target="_blank">Apache Velocity</a> 作为模版引擎。<br>通知发送接口的请求的 Body 部分包含一个名为 <code>parameters</code> 字段，该字段若为列表，那么它在模版的上下文中将会被命名为 <code>items</code>，否则其各属性值将以各自的属性名设置到上下文中。<br>另外，模版中可通过 <code>SENDER</code> 参数引用发送者用户的信息，通过 <code>RECEIVER</code> 参数（仅当通知不为公告时）引用接收者用户的信息。<br>
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Body**|**templateDTO** +
+__必填__|templateDTO|<<_notificationtemplatepostdto,NotificationTemplatePostDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_15e20183cd10f4393ba98f81c02d16a9,JsonObjectResponseBody«NotificationTemplate»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* notification-template-controller
+
+
+[[_searchusingget_1]]
+=== 查询系统通知模版
+....
+GET /notification-templates
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**name** +
+__可选__|模板名称|string
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|**Query**|**tags** +
+__可选__|标签列表|< string > array(multi)
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_4c77c3646759cf891ab7ccdb054f830f,JsonListResponseBody«NotificationTemplateBasic»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* notification-template-controller
+
+
+[[_getusingget_2]]
+=== 取得系统通知模版详细信息
+....
+GET /notification-templates/{templateId}
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**templateId** +
+__可选__|模版 ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_15e20183cd10f4393ba98f81c02d16a9,JsonObjectResponseBody«NotificationTemplate»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* notification-template-controller
+
+
+[[_deleteusingdelete_1]]
+=== 删除系统通知模版信息
+....
+DELETE /notification-templates/{templateId}
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**templateId** +
+__可选__|模版 ID|string
+|**Query**|**version** +
+__可选__|模版更新版本号|integer (int64)
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_jsonresponsebody,JsonResponseBody>>
+|**204**|No Content|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|===
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* notification-template-controller
+
+
+[[_updateusingpatch_1]]
+=== 更新系统通知模版信息
+....
+PATCH /notification-templates/{templateId}
+....
+
+
+==== 说明
+更新模版内容可能会导致模版 ID 被更新。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**templateId** +
+__可选__|模版 ID|string
+|**Query**|**version** +
+__可选__|模版更新版本号|integer (int64)
+|**Body**|**templateDTO** +
+__必填__|templateDTO|<<_notificationtemplatepatchdto,NotificationTemplatePatchDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_15e20183cd10f4393ba98f81c02d16a9,JsonObjectResponseBody«NotificationTemplate»>>
+|**204**|No Content|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* notification-template-controller
+
+
+[[_historyusingget]]
+=== 取得系统通知模版历史版本
+....
+GET /notification-templates/{templateId}/history
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**templateId** +
+__可选__|模版 ID|string
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_4c77c3646759cf891ab7ccdb054f830f,JsonListResponseBody«NotificationTemplateBasic»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* notification-template-controller
+
+
+[[_createusingpost_2]]
+=== 创建组织通知消息模版
+....
+POST /orgs/{orgId}/notification-templates
+....
+
+
+==== 说明
+使用 Apache Velocity 作为模版引擎。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Body**|**templateDTO** +
+__必填__|templateDTO|<<_notificationtemplatepostdto,NotificationTemplatePostDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_15e20183cd10f4393ba98f81c02d16a9,JsonObjectResponseBody«NotificationTemplate»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* notification-template-controller
+
+
+[[_searchusingget_2]]
+=== 查询组织通知模版
+....
+GET /orgs/{orgId}/notification-templates
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**name** +
+__可选__|模板名称|string
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|**Query**|**tags** +
+__可选__|标签列表|< string > array(multi)
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_4c77c3646759cf891ab7ccdb054f830f,JsonListResponseBody«NotificationTemplateBasic»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* notification-template-controller
+
+
+[[_getusingget_3]]
+=== 取得组织通知模版详细信息
+....
+GET /orgs/{orgId}/notification-templates/{templateId}
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**templateId** +
+__可选__|模版 ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_15e20183cd10f4393ba98f81c02d16a9,JsonObjectResponseBody«NotificationTemplate»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* notification-template-controller
+
+
+[[_deleteusingdelete_2]]
+=== 删除组织通知模版信息
+....
+DELETE /orgs/{orgId}/notification-templates/{templateId}
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**templateId** +
+__可选__|模版 ID|string
+|**Query**|**version** +
+__可选__|模版更新版本号|integer (int64)
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_jsonresponsebody,JsonResponseBody>>
+|**204**|No Content|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|===
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* notification-template-controller
+
+
+[[_updateusingpatch_2]]
+=== 更新组织通知模版信息
+....
+PATCH /orgs/{orgId}/notification-templates/{templateId}
+....
+
+
+==== 说明
+更新模版内容可能会导致模版 ID 被更新。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**templateId** +
+__可选__|模版 ID|string
+|**Query**|**version** +
+__可选__|模版更新版本号|integer (int64)
+|**Body**|**templateDTO** +
+__必填__|templateDTO|<<_notificationtemplatepatchdto,NotificationTemplatePatchDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_15e20183cd10f4393ba98f81c02d16a9,JsonObjectResponseBody«NotificationTemplate»>>
+|**204**|No Content|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* notification-template-controller
+
+
+[[_historyusingget_1]]
+=== 取得组织通知模版历史版本
+....
+GET /orgs/{orgId}/notification-templates/{templateId}/history
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**templateId** +
+__可选__|模版 ID|string
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_4c77c3646759cf891ab7ccdb054f830f,JsonListResponseBody«NotificationTemplateBasic»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* notification-template-controller
+
+
+[[_batchesusingget]]
+=== 查询通知批次
+....
+GET /orgs/{orgId}/projects/{projectId}/notification-batches
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|**Query**|**type** +
+__可选__|通知类型|enum (MATERIAL_PURCHASE_REQUISITION_STATE_CHANGE, MATERIAL_CONTRACT_STATE_CHANGE, MATERIAL_DELIVERY_WORKFLOW_FINISH, MATERIAL_STOCKING_WORKFLOW_FINISH, DRAWING_CONFIGURATION_DETAILS, DRAWING_REVIEW_WORKFLOW_STATE_CHANGE, DRAWING_MODIFYING_WORKFLOW_STATE_CHANGE, ISSUE_STATUS_CHANGE, ISSUE_RESOLVER_CHANGE, ISSUE_CONTENT_UPDATE, CONSTRUCTION_EXTERNAL_INSPECTION, CONSTRUCTION_INTERNAL_INSPECTION, REPORT_DAILY, REPORT_WEEKLY, SYSTEM_SERVICE_ACTIVITY, SYSTEM_TUTORIAL, MESSAGE_INTERNAL)
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_75a292e67dc90be865de60aa5bcdbbe6,JsonListResponseBody«NotificationBatchSummary»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* notification-controller
+
+
+[[_batchusingget]]
+=== 取得通知批次详细
+....
+GET /orgs/{orgId}/projects/{projectId}/notification-batches/{batchId}
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**batchId** +
+__可选__|批次 ID|string
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_4e5e3bd43208b290d7b34cc22829179b,JsonObjectResponseBody«NotificationBatch»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* notification-controller
+
+
+[[_resendusingpost]]
+=== 重新发送发送失败的通知
+....
+POST /orgs/{orgId}/projects/{projectId}/notification-batches/{batchId}/resend
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**batchId** +
+__可选__|批次 ID|string
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_jsonresponsebody,JsonResponseBody>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* notification-controller
+
+
+[[_searchusingget]]
+=== 查询通知配置
+....
+GET /orgs/{orgId}/projects/{projectId}/notification-configurations
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_f8bf1e2c1ef363f1720cce395040f81e,JsonListResponseBody«NotificationConfigurationBasic»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* notification-configuration-controller
+
+
+[[_getusingget]]
+=== 取得通知配置信息
+....
+GET /orgs/{orgId}/projects/{projectId}/notification-configurations/{notificationId}
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**notificationId** +
+__可选__|通知 ID|string
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_0fd08077792316d97a549d404c332444,JsonObjectResponseBody«NotificationConfiguration»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* notification-configuration-controller
+
+
+[[_createusingpost]]
+=== 创建通知配置
+....
+POST /orgs/{orgId}/projects/{projectId}/notification-configurations/{notificationType}
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**notificationType** +
+__可选__|通知类型|enum (MATERIAL_PURCHASE_REQUISITION_STATE_CHANGE, MATERIAL_CONTRACT_STATE_CHANGE, MATERIAL_DELIVERY_WORKFLOW_FINISH, MATERIAL_STOCKING_WORKFLOW_FINISH, DRAWING_CONFIGURATION_DETAILS, DRAWING_REVIEW_WORKFLOW_STATE_CHANGE, DRAWING_MODIFYING_WORKFLOW_STATE_CHANGE, ISSUE_STATUS_CHANGE, ISSUE_RESOLVER_CHANGE, ISSUE_CONTENT_UPDATE, CONSTRUCTION_EXTERNAL_INSPECTION, CONSTRUCTION_INTERNAL_INSPECTION, REPORT_DAILY, REPORT_WEEKLY, SYSTEM_SERVICE_ACTIVITY, SYSTEM_TUTORIAL, MESSAGE_INTERNAL)
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|**Body**|**configurationDTO** +
+__必填__|configurationDTO|<<_notificationconfigurationpostdto,NotificationConfigurationPostDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_57f27a13703d64f6ab75c9a7c745b406,JsonObjectResponseBody«NotificationConfigurationBasic»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* notification-configuration-controller
+
+
+[[_deleteusingdelete]]
+=== 删除通知配置
+....
+DELETE /orgs/{orgId}/projects/{projectId}/notification-configurations/{notificationType}
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**notificationType** +
+__可选__|通知类型|enum (MATERIAL_PURCHASE_REQUISITION_STATE_CHANGE, MATERIAL_CONTRACT_STATE_CHANGE, MATERIAL_DELIVERY_WORKFLOW_FINISH, MATERIAL_STOCKING_WORKFLOW_FINISH, DRAWING_CONFIGURATION_DETAILS, DRAWING_REVIEW_WORKFLOW_STATE_CHANGE, DRAWING_MODIFYING_WORKFLOW_STATE_CHANGE, ISSUE_STATUS_CHANGE, ISSUE_RESOLVER_CHANGE, ISSUE_CONTENT_UPDATE, CONSTRUCTION_EXTERNAL_INSPECTION, CONSTRUCTION_INTERNAL_INSPECTION, REPORT_DAILY, REPORT_WEEKLY, SYSTEM_SERVICE_ACTIVITY, SYSTEM_TUTORIAL, MESSAGE_INTERNAL)
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|**Query**|**version** +
+__可选__|配置更新版本号|integer (int64)
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_57f27a13703d64f6ab75c9a7c745b406,JsonObjectResponseBody«NotificationConfigurationBasic»>>
+|**204**|No Content|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|===
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* notification-configuration-controller
+
+
+[[_updateusingpatch]]
+=== 更新通知配置
+....
+PATCH /orgs/{orgId}/projects/{projectId}/notification-configurations/{notificationType}
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**notificationType** +
+__可选__|通知类型|enum (MATERIAL_PURCHASE_REQUISITION_STATE_CHANGE, MATERIAL_CONTRACT_STATE_CHANGE, MATERIAL_DELIVERY_WORKFLOW_FINISH, MATERIAL_STOCKING_WORKFLOW_FINISH, DRAWING_CONFIGURATION_DETAILS, DRAWING_REVIEW_WORKFLOW_STATE_CHANGE, DRAWING_MODIFYING_WORKFLOW_STATE_CHANGE, ISSUE_STATUS_CHANGE, ISSUE_RESOLVER_CHANGE, ISSUE_CONTENT_UPDATE, CONSTRUCTION_EXTERNAL_INSPECTION, CONSTRUCTION_INTERNAL_INSPECTION, REPORT_DAILY, REPORT_WEEKLY, SYSTEM_SERVICE_ACTIVITY, SYSTEM_TUTORIAL, MESSAGE_INTERNAL)
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|**Query**|**version** +
+__可选__|通知配置更新版本号|integer (int64)
+|**Body**|**configurationDTO** +
+__必填__|configurationDTO|<<_notificationconfigurationpatchdto,NotificationConfigurationPatchDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_57f27a13703d64f6ab75c9a7c745b406,JsonObjectResponseBody«NotificationConfigurationBasic»>>
+|**204**|No Content|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* notification-configuration-controller
+
+
+[[_sendusingpost]]
+=== 发送通知
+....
+POST /orgs/{orgId}/projects/{projectId}/notifications
+....
+
+
+==== 说明
+该接口仅限内网访问，如要手动发送通知，需要通过其他服务提供接口。
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**orgId** +
+__可选__|组织 ID|string
+|**Path**|**projectId** +
+__可选__|项目 ID|string
+|**Query**|**通知类型** +
+__必填__|type|enum (MATERIAL_PURCHASE_REQUISITION_STATE_CHANGE, MATERIAL_CONTRACT_STATE_CHANGE, MATERIAL_DELIVERY_WORKFLOW_FINISH, MATERIAL_STOCKING_WORKFLOW_FINISH, DRAWING_CONFIGURATION_DETAILS, DRAWING_REVIEW_WORKFLOW_STATE_CHANGE, DRAWING_MODIFYING_WORKFLOW_STATE_CHANGE, ISSUE_STATUS_CHANGE, ISSUE_RESOLVER_CHANGE, ISSUE_CONTENT_UPDATE, CONSTRUCTION_EXTERNAL_INSPECTION, CONSTRUCTION_INTERNAL_INSPECTION, REPORT_DAILY, REPORT_WEEKLY, SYSTEM_SERVICE_ACTIVITY, SYSTEM_TUTORIAL, MESSAGE_INTERNAL)
+|**Body**|**notificationDTO** +
+__必填__|notificationDTO|<<_notificationpostdto,NotificationPostDTO>>
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_4e5e3bd43208b290d7b34cc22829179b,JsonObjectResponseBody«NotificationBatch»>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* notification-controller
+
+
+[[_listusingget_1]]
+=== 查询用户的通知
+....
+GET /users/{userId}/notifications
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**userId** +
+__可选__|用户 ID|string
+|**Query**|**fetchAll** +
+__可选__|是否取得所有数据（默认：否）|boolean
+|**Query**|**orgId** +
+__可选__|组织 ID（可选）|string
+|**Query**|**page.no** +
+__可选__|页号（从 1 开始）|integer (int32)
+|**Query**|**page.size** +
+__可选__|分页大小（取值范围：1~100；默认：20）|integer (int32)
+|**Query**|**projectId** +
+__可选__|项目 ID（可选）|string
+|**Query**|**read** +
+__可选__|是否已读（可选）|boolean
+|**Query**|**sort** +
+__可选__|排序字段，格式为字段名加升降序，如 <code>id:desc</code>|< string > array(multi)
+|**Query**|**type** +
+__可选__|通知类型（可选）|enum (MATERIAL_PURCHASE_REQUISITION_STATE_CHANGE, MATERIAL_CONTRACT_STATE_CHANGE, MATERIAL_DELIVERY_WORKFLOW_FINISH, MATERIAL_STOCKING_WORKFLOW_FINISH, DRAWING_CONFIGURATION_DETAILS, DRAWING_REVIEW_WORKFLOW_STATE_CHANGE, DRAWING_MODIFYING_WORKFLOW_STATE_CHANGE, ISSUE_STATUS_CHANGE, ISSUE_RESOLVER_CHANGE, ISSUE_CONTENT_UPDATE, CONSTRUCTION_EXTERNAL_INSPECTION, CONSTRUCTION_INTERNAL_INSPECTION, REPORT_DAILY, REPORT_WEEKLY, SYSTEM_SERVICE_ACTIVITY, SYSTEM_TUTORIAL, MESSAGE_INTERNAL)
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_27a2fd3f0aedcb47eed4cef86f854e95,JsonListResponseBody«UserNotification»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* notification-controller
+
+
+[[_getusingget_1]]
+=== 取得通知详细信息
+....
+GET /users/{userId}/notifications/{notificationId}
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**notificationId** +
+__可选__|通知 ID|string
+|**Path**|**userId** +
+__可选__|用户 ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_03589b6237da1c74c1f3d762ed51ed95,JsonObjectResponseBody«Notification»>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* notification-controller
+
+
+[[_setasreadusingput]]
+=== 将通知设置为已读
+....
+PUT /users/{userId}/notifications/{notificationId}/read
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**notificationId** +
+__可选__|通知 ID|string
+|**Path**|**userId** +
+__可选__|用户 ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_jsonresponsebody,JsonResponseBody>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+==== 消耗
+
+* `application/json`
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* notification-controller
+
+
+[[_setasunreadusingdelete]]
+=== 将通知设置为未读
+....
+DELETE /users/{userId}/notifications/{notificationId}/read
+....
+
+
+==== 参数
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|类型|名称|说明|类型
+|**Path**|**notificationId** +
+__可选__|通知 ID|string
+|**Path**|**userId** +
+__可选__|用户 ID|string
+|===
+
+
+==== 响应
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_jsonresponsebody,JsonResponseBody>>
+|**204**|No Content|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|===
+
+
+==== 生成
+
+* `application/json`
+
+
+==== 标签
+
+* notification-controller
+
+
+

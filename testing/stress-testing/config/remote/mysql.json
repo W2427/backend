@@ -1,0 +1,9 @@
+{
+  "host": "oseoffshoremarinemysqlserver.mysql.database.chinacloudapi.cn",
+  "port": 3306,
+  "user": "oseadmin@oseoffshoremarinemysqlserver",
+  "password": "Oseadmin*1234",
+  "ssl": {
+    "rejectUnauthorized": false
+  }
+}

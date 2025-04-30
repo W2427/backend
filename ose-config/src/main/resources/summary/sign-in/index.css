@@ -1,0 +1,119 @@
+@charset "UTF-8";
+
+* {
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+  color: inherit;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -webkit-text-size-adjust: none;
+  -webkit-overflow-scrolling: touch;
+  text-shadow: inherit;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+html {
+  font-size: 12px;
+  font-family: "Menlo", "Consolas", "Microsoft YaHei UI", "Microsoft YaHei", "PingFang SC", "monospace";
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  color: #000000;
+  background: #3F3F3F;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 4em 1em 3em 1em;
+  height: 100%;
+  overflow: hidden;
+  color: #000000;
+  background: #0F0F0F;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+body.not-compatible {
+  padding: 2em;
+}
+
+body.not-compatible > p {
+  font-size: 1.33em;
+  font-family: "Verdana", "Tahoma", "Helvetica Neue", "Microsoft YaHei UI", "Microsoft YaHei", "PingFang SC", "sans-serif";
+  margin: 1em 0 1em 0;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+header {
+  color: #BFBFBF;
+  font-family: "Verdana", "Tahoma", "Helvetica Neue", "Helvetica", "Microsoft YaHei UI", "Microsoft YaHei", "PingFang SC", "sans-serif";
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  margin: 0 0 1em 0;
+}
+
+footer {
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin: 0;
+  width: 100%;
+  height: 3em;
+  line-height: 3em;
+  text-align: center;
+  color: #9F9F9F;
+  text-shadow: 0 -1px #1F1F1F;
+}
+
+h1 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="button"] {
+  -webkit-appearance: none;
+  margin: 0.25em 0 0.25em 0;
+  padding: 0 0.5em 0 0.5em;
+  height: 2em;
+  line-height: 2em;
+  border: none;
+  -webkit-border-radius: 0.25em;
+  border-radius: 0.25em;
+}
+
+input[type="text"],
+input[type="password"] {
+}
+
+input[type="button"] {
+  min-width: 5em;
+  color: #FFFFFF;
+  text-shadow: 0 -1px #005FDF;
+  background: #007FFF;
+  cursor: pointer;
+}
+
+input[type="button"]:hover {
+  background: #3F9FFF;
+}
+
+input[type="button"]:active {
+  color: #7FBFFF;
+  text-shadow: none;
+  background: #003F7F;
+}
+
+#message {
+  color: #FF7F7F;
+}

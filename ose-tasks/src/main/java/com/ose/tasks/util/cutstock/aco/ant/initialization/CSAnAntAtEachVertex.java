@@ -1,0 +1,52 @@
+package com.ose.tasks.util.cutstock.aco.ant.initialization;
+
+import com.ose.tasks.util.cutstock.aco.CSMaxMinAntSystem;
+
+import static com.google.common.base.Preconditions.checkArgument;
+
+/**
+ * This class positions each ant in a vertex sequentially. If the number of ants
+ * is greater than the number of nodes, a circular position is used.
+ *
+ * @author Thiago N. Ferreira
+ * @version 1.0.0
+ */
+public class CSAnAntAtEachVertex extends AbstractAntInitialization {
+
+    /**
+     * The ant's positions
+     */
+    protected int[] positions;
+
+    /**
+     * Constructor
+     *
+     * @param aco The ant colony optimization used
+     */
+    public CSAnAntAtEachVertex(CSMaxMinAntSystem aco) {
+        super(aco);
+
+        checkArgument(aco.getNumberOfAnts() >= 1, "The number of ants should be greater or equal than 1");
+
+        this.positions = new int[aco.getNumberOfAnts()];
+        int maxCutPosition = aco.getProblem().getNumberOfNodes() - aco.getProblem().getNumberOfMaterial() - 1;
+        for (int i = 0; i < positions.length; i++) {
+            positions[i] = maxCutPosition;
+        }
+    }
+
+    @Override
+    public int getPosition(int antId) {
+
+        checkArgument(antId >= 0, "The ant's id should be greater or equal than 0");
+        checkArgument(antId < aco.getNumberOfAnts(), "The ant's id should be less than the number of ants");
+        int maxCutPosition = aco.getProblem().getNumberOfNodes() - aco.getProblem().getNumberOfMaterial() - 1;
+
+        return maxCutPosition;
+    }
+
+    @Override
+    public String toString() {
+        return CSAnAntAtEachVertex.class.getSimpleName();
+    }
+}

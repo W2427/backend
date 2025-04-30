@@ -1,0 +1,593 @@
+
+[[_definitions]]
+== 定义
+
+[[_fielderror]]
+=== FieldError
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**message** +
+__可选__|错误描述|string
+|**name** +
+__可选__|发生错误的字段|string
+|**type** +
+__可选__|错误类型|string
+|===
+
+
+[[_filebasicviewes]]
+=== FileBasicViewES
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**bizType** +
+__可选__|业务类型|string
+|**categories** +
+__可选__|文件类型|< enum (FILE, TEXT, IMAGE, AUDIO, VIDEO, DOCUMENT, WORKBOOK, PRESENTATION, ARCHIVE, HTML, XML, JSON, CSV, PNG, JPEG, BMP, SVG, PDF, WORD, EXCEL, POWERPOINT, PAGES, NUMBERS, KEYNOTE) > array
+|**committedAt** +
+__可选__|提交时间 ID|string
+|**committedBy** +
+__可选__|提交者 ID|<<_referencedata,ReferenceData>>
+|**companyId** +
+__可选__|公司 ID|string
+|**id** +
+__可选__|文档 ID|string
+|**matchedText** +
+__可选__|匹配的文本|string
+|**name** +
+__可选__|文件名|string
+|**orgId** +
+__可选__|组织 ID|string
+|**subType** +
+__可选__|MIME 子类型|string
+|**type** +
+__可选__|MIME 主类型|string
+|**uris** +
+__可选__|文件 URI|<<_fileuris,FileURIs>>
+|===
+
+
+[[_filees]]
+=== FileES
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**categories** +
+__可选__|文件类型|< enum (FILE, TEXT, IMAGE, AUDIO, VIDEO, DOCUMENT, WORKBOOK, PRESENTATION, ARCHIVE, HTML, XML, JSON, CSV, PNG, JPEG, BMP, SVG, PDF, WORD, EXCEL, POWERPOINT, PAGES, NUMBERS, KEYNOTE) > array
+|**committedAt** +
+__可选__|提交时间 ID|string (date-time)
+|**committedBy** +
+__可选__|提交者 ID|string
+|**companyId** +
+__可选__|公司 ID|string
+|**id** +
+__可选__|文档 ID|string
+|**keywords** +
+__可选__|关键字列表|< string > array
+|**name** +
+__可选__|文件名|string
+|**orgId** +
+__可选__|组织 ID|string
+|**remarks** +
+__可选__|备注|string
+|**subType** +
+__可选__|MIME 子类型|string
+|**tags** +
+__可选__|标签列表|< string > array
+|**type** +
+__可选__|MIME 主类型|string
+|**uris** +
+__可选__|文件 URI|<<_fileuris,FileURIs>>
+|===
+
+
+[[_filepostdto]]
+=== FilePostDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**description** +
+__可选__|描述|string
+|**keywords** +
+__可选__|关键字列表|< string > array
+|**remarks** +
+__可选__|备注|string
+|**tags** +
+__可选__|标签列表|< string > array
+|**visibility** +
+__可选__|可见性|< string > array
+|===
+
+
+[[_fileuris]]
+=== FileURIs
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**original** +
+__可选__|原文件 URI|string
+|**path** +
+__可选__|文件 URI|string
+|**thumbnail** +
+__可选__|缩略图 URI|string
+|===
+
+
+[[_fileviewes]]
+=== FileViewES
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**bizType** +
+__可选__|业务类型|string
+|**categories** +
+__可选__|文件类型|< enum (FILE, TEXT, IMAGE, AUDIO, VIDEO, DOCUMENT, WORKBOOK, PRESENTATION, ARCHIVE, HTML, XML, JSON, CSV, PNG, JPEG, BMP, SVG, PDF, WORD, EXCEL, POWERPOINT, PAGES, NUMBERS, KEYNOTE) > array
+|**committedAt** +
+__可选__|提交时间 ID|string
+|**committedBy** +
+__可选__||<<_referencedata,ReferenceData>>
+|**companyId** +
+__可选__|公司 ID|string
+|**id** +
+__可选__|文档 ID|string
+|**keywords** +
+__可选__|关键字列表|< string > array
+|**matchedText** +
+__可选__|匹配的文本|string
+|**name** +
+__可选__|文件名|string
+|**orgId** +
+__可选__|组织 ID|string
+|**remarks** +
+__可选__|备注|string
+|**subType** +
+__可选__|MIME 子类型|string
+|**tags** +
+__可选__|标签列表|< string > array
+|**type** +
+__可选__|MIME 主类型|string
+|**uris** +
+__可选__|文件 URI|<<_fileuris,FileURIs>>
+|===
+
+
+[[_hierarchyes]]
+=== HierarchyES
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**categories** +
+__可选__|文件类型|< enum (FILE, TEXT, IMAGE, AUDIO, VIDEO, DOCUMENT, WORKBOOK, PRESENTATION, ARCHIVE, HTML, XML, JSON, CSV, PNG, JPEG, BMP, SVG, PDF, WORD, EXCEL, POWERPOINT, PAGES, NUMBERS, KEYNOTE) > array
+|**committedAt** +
+__可选__|提交时间 ID|string (date-time)
+|**committedBy** +
+__可选__|提交者 ID|string
+|**companyId** +
+__可选__|公司 ID|string
+|**content** +
+__可选__|文件内容|string
+|**id** +
+__可选__|文档 ID|string
+|**keywords** +
+__可选__|关键字列表|< string > array
+|**name** +
+__可选__|文件名|string
+|**nodeId** +
+__可选__|项目层级结构节点 ID|string
+|**orgId** +
+__可选__|组织 ID|string
+|**projectId** +
+__可选__|项目 ID|string
+|**remarks** +
+__可选__|备注|string
+|**subType** +
+__可选__|MIME 子类型|string
+|**tags** +
+__可选__|标签列表|< string > array
+|**type** +
+__可选__|MIME 主类型|string
+|**uris** +
+__可选__|文件 URI|<<_fileuris,FileURIs>>
+|===
+
+
+[[_inputstream]]
+=== InputStream
+__类型__ : object
+
+
+[[_761caf4018ad1b9f3d49ca7bdd487260]]
+=== JsonListResponseBody«FileBasicViewES»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_filebasicviewes,FileBasicViewES>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_8c595dc8007392ac898b0539e8312297]]
+=== JsonListResponseBody«HierarchyES»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_hierarchyes,HierarchyES>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_cbd13b872d450a796979b4731f53a937]]
+=== JsonListResponseBody«ProjectDocumentES»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_projectdocumentes,ProjectDocumentES>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_721f63edf7c8659e2698b1ee7ae3b12d]]
+=== JsonListResponseBody«WBSEntitiesES»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_wbsentitieses,WBSEntitiesES>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_74ecd1dbd24b929fb5f42c3c7a17cdaf]]
+=== JsonObjectResponseBody«FileES»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_filees,FileES>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_c67ac9e13956dae03a8d43e86512babb]]
+=== JsonObjectResponseBody«FileViewES»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_fileviewes,FileViewES>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_d060b9e7ceb7f3338ae1863088737270]]
+=== JsonObjectResponseBody«HierarchyES»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_hierarchyes,HierarchyES>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_1a178b879f339a15e92ef9708797898d]]
+=== JsonObjectResponseBody«ProjectDocumentES»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_projectdocumentes,ProjectDocumentES>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_889dccdb19320f1871fc372a9ca98349]]
+=== JsonObjectResponseBody«TemporaryFileDTO»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_temporaryfiledto,TemporaryFileDTO>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_1e4dc163bf7b8d17d1456a61c4111dbb]]
+=== JsonObjectResponseBody«WBSEntitiesES»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_wbsentitieses,WBSEntitiesES>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_jsonresponseerror]]
+=== JsonResponseError
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**code** +
+__可选__|错误代码|string
+|**errors** +
+__可选__|错误列表|< <<_jsonresponseerror,JsonResponseError>> > array
+|**fields** +
+__可选__|发生校验错误的字段的列表|< <<_fielderror,FieldError>> > array
+|**message** +
+__可选__|错误消息|string
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|===
+
+
+[[_meta]]
+=== Meta
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**count** +
+__可选__|数据总数|integer (int64)
+|**hasNextPage** +
+__可选__|是否存在下一页|boolean
+|**hasPreviousPage** +
+__可选__|是否存在上一页|boolean
+|**isFirstPage** +
+__可选__||boolean
+|**isLastPage** +
+__可选__||boolean
+|**pageNo** +
+__可选__|当前页号|integer (int32)
+|**pageSize** +
+__可选__|分页大小|integer (int32)
+|**pages** +
+__可选__|数据总页数|integer (int32)
+|===
+
+
+[[_projectdocumentes]]
+=== ProjectDocumentES
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**categories** +
+__可选__|文件类型|< enum (FILE, TEXT, IMAGE, AUDIO, VIDEO, DOCUMENT, WORKBOOK, PRESENTATION, ARCHIVE, HTML, XML, JSON, CSV, PNG, JPEG, BMP, SVG, PDF, WORD, EXCEL, POWERPOINT, PAGES, NUMBERS, KEYNOTE) > array
+|**committedAt** +
+__可选__|提交时间 ID|string (date-time)
+|**committedBy** +
+__可选__|提交者 ID|string
+|**companyId** +
+__可选__|公司 ID|string
+|**content** +
+__可选__|文件内容|string
+|**id** +
+__可选__|文档 ID|string
+|**keywords** +
+__可选__|关键字列表|< string > array
+|**name** +
+__可选__|文件名|string
+|**nodeId** +
+__可选__|项目层级结构节点 ID|string
+|**orgId** +
+__可选__|组织 ID|string
+|**projectId** +
+__可选__|项目 ID|string
+|**remarks** +
+__可选__|备注|string
+|**subType** +
+__可选__|MIME 子类型|string
+|**tags** +
+__可选__|标签列表|< string > array
+|**type** +
+__可选__|MIME 主类型|string
+|**uris** +
+__可选__|文件 URI|<<_fileuris,FileURIs>>
+|===
+
+
+[[_referencedata]]
+=== ReferenceData
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**$ref** +
+__可选__|引用目标数据实体 ID|string
+|===
+
+
+[[_temporaryfiledto]]
+=== TemporaryFileDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**name** +
+__可选__|临时文件名|string
+|===
+
+
+[[_wbsentitieses]]
+=== WBSEntitiesES
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**categories** +
+__可选__|文件类型|< enum (FILE, TEXT, IMAGE, AUDIO, VIDEO, DOCUMENT, WORKBOOK, PRESENTATION, ARCHIVE, HTML, XML, JSON, CSV, PNG, JPEG, BMP, SVG, PDF, WORD, EXCEL, POWERPOINT, PAGES, NUMBERS, KEYNOTE) > array
+|**committedAt** +
+__可选__|提交时间 ID|string (date-time)
+|**committedBy** +
+__可选__|提交者 ID|string
+|**companyId** +
+__可选__|公司 ID|string
+|**content** +
+__可选__|文件内容|string
+|**id** +
+__可选__|文档 ID|string
+|**keywords** +
+__可选__|关键字列表|< string > array
+|**name** +
+__可选__|文件名|string
+|**nodeId** +
+__可选__|项目层级结构节点 ID|string
+|**orgId** +
+__可选__|组织 ID|string
+|**projectId** +
+__可选__|项目 ID|string
+|**remarks** +
+__可选__|备注|string
+|**subType** +
+__可选__|MIME 子类型|string
+|**tags** +
+__可选__|标签列表|< string > array
+|**type** +
+__可选__|MIME 主类型|string
+|**uris** +
+__可选__|文件 URI|<<_fileuris,FileURIs>>
+|===
+
+
+

@@ -1,0 +1,3718 @@
+
+[[_definitions]]
+== 定义
+
+[[_applicationforinspectiondto]]
+=== ApplicationForInspectionDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**applicantName** +
+__可选__|string
+|**applicantTel** +
+__可选__|string
+|**applyingDate** +
+__可选__|string (date-time)
+|**createdBy** +
+__可选__|string
+|**exportType** +
+__可选__|enum (PDF, MS_WORD, MS_EXCEL)
+|**inspectionContents** +
+__可选__|string
+|**inspectionDate** +
+__可选__|string (date-time)
+|**inspectionLocation** +
+__可选__|string
+|**orgId** +
+__可选__|string
+|**otherDisplayFlg** +
+__可选__|boolean
+|**ownerDisplayFlg** +
+__可选__|boolean
+|**projectId** +
+__可选__|string
+|**projectName** +
+__可选__|string
+|**reportId** +
+__可选__|string
+|**reportName** +
+__可选__|string
+|**reportNo** +
+__可选__|string
+|**reportNoPrefix** +
+__可选__|string
+|**serialNo** +
+__可选__|string
+|**templateNo** +
+__可选__|string
+|**thirdPartyDisplayFlg** +
+__可选__|boolean
+|===
+
+
+[[_applicationforinspectionexternaldto]]
+=== ApplicationForInspectionExternalDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**applyingDate** +
+__可选__|申请日期|string (date-time)
+|**createdBy** +
+__可选__||string
+|**exportType** +
+__可选__||enum (PDF, MS_WORD, MS_EXCEL)
+|**inspectionContents** +
+__可选__|报检项目|string
+|**inspectionDate** +
+__可选__|检验日期|string (date-time)
+|**inspectionLocation** +
+__可选__|检验地点|string
+|**orgId** +
+__可选__||string
+|**otherDisplayFlg** +
+__可选__||boolean
+|**ownerDisplayFlg** +
+__可选__||boolean
+|**projectId** +
+__可选__||string
+|**projectName** +
+__可选__|项目名称|string
+|**reportId** +
+__可选__||string
+|**reportName** +
+__可选__||string
+|**reportNo** +
+__可选__|申请单号|string
+|**reportNoPrefix** +
+__可选__||string
+|**serialNo** +
+__可选__||string
+|**templateNo** +
+__可选__|模板编号|string
+|**thirdPartyDisplayFlg** +
+__可选__||boolean
+|===
+
+
+[[_archivedatabase]]
+=== ArchiveDataBase
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**groupDay** +
+__可选__|聚合对象期间（日）|integer (int32)
+|**groupMonth** +
+__可选__|聚合对象期间（月）|integer (int32)
+|**groupWeek** +
+__可选__|聚合对象期间（周）|integer (int32)
+|**groupYear** +
+__可选__|聚合对象期间（年）|integer (int32)
+|===
+
+
+[[_archivedatagroupkeydto]]
+=== ArchiveDataGroupKeyDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**type** +
+__可选__|聚合 KEY 类型|string
+|**values** +
+__可选__|值列表|< string > array
+|===
+
+
+[[_archivedataperioddatadto]]
+=== ArchiveDataPeriodDataDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accumulation** +
+__可选__|所选期间之前的累计值|<<_archivedatabase,ArchiveDataBase>>
+|**periods** +
+__可选__|期间列表|< <<_archivedatabase,ArchiveDataBase>> > array
+|**sum** +
+__可选__|总和|<<_archivedatabase,ArchiveDataBase>>
+|===
+
+
+[[_archivedataperiodsdto]]
+=== ArchiveDataPeriodsDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**keys** +
+__可选__|聚合值列表|< <<_archivedatagroupkeydto,ArchiveDataGroupKeyDTO>> > array
+|**periods** +
+__可选__|对象数据期间列表|< <<_archivetimedto,ArchiveTimeDTO>> > array
+|===
+
+
+[[_archivetimedto]]
+=== ArchiveTimeDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**day** +
+__可选__|日|integer (int32)
+|**month** +
+__可选__|月|integer (int32)
+|**scheduleType** +
+__可选__|归档时间期间类型|enum (DAILY, WEEKLY, MONTHLY, ANNUALLY)
+|**week** +
+__可选__|周|integer (int32)
+|**year** +
+__可选__|年|integer (int32)
+|===
+
+
+[[_basedto]]
+=== BaseDTO
+__类型__ : object
+
+
+[[_checklist]]
+=== Checklist
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**headerTemplate** +
+__可选__||<<_referencedata,ReferenceData>>
+|**id** +
+__可选__|实体 ID|string
+|**name** +
+__可选__||string
+|**orgId** +
+__可选__||string
+|**previewFile** +
+__可选__||string
+|**projectId** +
+__可选__||string
+|**serial** +
+__可选__||string
+|**signatureTemplate** +
+__可选__||<<_referencedata,ReferenceData>>
+|**title** +
+__可选__||string
+|===
+
+
+[[_checklistdto]]
+=== ChecklistDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**headerTemplate** +
+__可选__|string
+|**name** +
+__可选__|string
+|**serial** +
+__可选__|string
+|**signatureTemplate** +
+__可选__|string
+|**title** +
+__可选__|string
+|===
+
+
+[[_checklistinfodto]]
+=== ChecklistInfoDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**cpNo** +
+__可选__|string
+|**dwgNo** +
+__可选__|string
+|**location** +
+__可选__|string
+|**subSysDesc** +
+__可选__|string
+|**sysNo** +
+__可选__|string
+|**tagDesc** +
+__可选__|string
+|**tagNo** +
+__可选__|string
+|===
+
+
+[[_checklistitem]]
+=== ChecklistItem
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**checklistId** +
+__可选__||string
+|**createdAt** +
+__可选__|创建时间|string
+|**description** +
+__可选__||string
+|**id** +
+__可选__|实体 ID|string
+|**itemNo** +
+__可选__||string
+|**lastModifiedAt** +
+__可选__|最后更新时间|string
+|**status** +
+__可选__|数据实体状态|enum (ACTIVE, DISABLED, DELETED, REJECTED, APPROVED, PENDING, FINISHED, CLOSED)
+|===
+
+
+[[_checklistitembatchimportdto]]
+=== ChecklistItemBatchImportDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**checklistItems** +
+__可选__|< <<_checklistitemimportdto,ChecklistItemImportDTO>> > array
+|===
+
+
+[[_checklistitemdto]]
+=== ChecklistItemDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**checklistId** +
+__可选__|string
+|**description** +
+__可选__|string
+|**itemNo** +
+__可选__|string
+|===
+
+
+[[_checklistitemimportdto]]
+=== ChecklistItemImportDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**description** +
+__可选__|string
+|**errors** +
+__可选__|< string, string > map
+|**itemNo** +
+__可选__|string
+|**serial** +
+__可选__|string
+|===
+
+
+[[_checklistsimulation]]
+=== ChecklistSimulation
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**checklistId** +
+__可选__||<<_referencedata,ReferenceData>>
+|**generatedFile** +
+__可选__||string
+|**id** +
+__可选__|实体 ID|string
+|**name** +
+__可选__||string
+|**orgId** +
+__可选__||string
+|**projectId** +
+__可选__||string
+|**simulationData** +
+__可选__||string
+|===
+
+
+[[_checklistsimulationdto]]
+=== ChecklistSimulationDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**checklistId** +
+__可选__|string
+|**name** +
+__可选__|string
+|**simulationData** +
+__可选__|<<_checklistinfodto,ChecklistInfoDTO>>
+|===
+
+
+[[_designchangereviewformdto]]
+=== DesignChangeReviewFormDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**actionList** +
+__可选__|string
+|**createdBy** +
+__可选__|string
+|**designChangeTitle** +
+__可选__|string
+|**exportType** +
+__可选__|enum (PDF, MS_WORD, MS_EXCEL)
+|**modificationCause** +
+__可选__|string
+|**orgId** +
+__可选__|string
+|**otherDisplayFlg** +
+__可选__|boolean
+|**ownerDisplayFlg** +
+__可选__|boolean
+|**pipeManhour** +
+__可选__|string
+|**pipeMaterial** +
+__可选__|string
+|**projectId** +
+__可选__|string
+|**projectName** +
+__可选__|string
+|**raisedDate** +
+__可选__|string (date-time)
+|**raisedPerson** +
+__可选__|string
+|**reportId** +
+__可选__|string
+|**reportName** +
+__可选__|string
+|**reportNo** +
+__可选__|string
+|**reportNoPrefix** +
+__可选__|string
+|**serialNo** +
+__可选__|string
+|**templateNo** +
+__可选__|string
+|**thirdPartyDisplayFlg** +
+__可选__|boolean
+|**totalManhour** +
+__可选__|string
+|===
+
+
+[[_documenttransmittalitemdto]]
+=== DocumentTransmittalItemDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**documentDesc** +
+__可选__|文件名称|string
+|**documentNo** +
+__可选__|文件编号|string
+|**remark** +
+__可选__|备注|string
+|**revision** +
+__可选__|版本|string
+|===
+
+
+[[_documenttransmittalrecorddto]]
+=== DocumentTransmittalRecordDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**createdBy** +
+__可选__||string
+|**date** +
+__可选__|发放日期|string (date-time)
+|**department** +
+__可选__|发放部门|string
+|**discipline** +
+__可选__|所属专业|string
+|**exportType** +
+__可选__||enum (PDF, MS_WORD, MS_EXCEL)
+|**items** +
+__可选__||< <<_documenttransmittalitemdto,DocumentTransmittalItemDTO>> > array
+|**orgId** +
+__可选__||string
+|**otherDisplayFlg** +
+__可选__||boolean
+|**ownerDisplayFlg** +
+__可选__||boolean
+|**projectId** +
+__可选__||string
+|**projectName** +
+__可选__|项目名称|string
+|**projectNo** +
+__可选__|项目编号|string
+|**reportId** +
+__可选__||string
+|**reportName** +
+__可选__||string
+|**reportNo** +
+__可选__||string
+|**reportNoPrefix** +
+__可选__||string
+|**serialNo** +
+__可选__||string
+|**templateNo** +
+__可选__||string
+|**thirdPartyDisplayFlg** +
+__可选__||boolean
+|**transmittalNo** +
+__可选__|传送单编号|string
+|===
+
+
+[[_drawsubpipedto]]
+=== DrawSubPipeDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**createdBy** +
+__可选__|string
+|**drawNumber** +
+__可选__|string
+|**exportType** +
+__可选__|enum (PDF, MS_WORD, MS_EXCEL)
+|**items** +
+__可选__|< <<_drawsubpipelistdto,DrawSubPipeListDTO>> > array
+|**orgId** +
+__可选__|string
+|**otherDisplayFlg** +
+__可选__|boolean
+|**ownerDisplayFlg** +
+__可选__|boolean
+|**projectId** +
+__可选__|string
+|**projectName** +
+__可选__|string
+|**reportId** +
+__可选__|string
+|**reportName** +
+__可选__|string
+|**reportNo** +
+__可选__|string
+|**reportNoPrefix** +
+__可选__|string
+|**serialNo** +
+__可选__|string
+|**templateNo** +
+__可选__|string
+|**thirdPartyDisplayFlg** +
+__可选__|boolean
+|**title** +
+__可选__|string
+|===
+
+
+[[_drawsubpipelistdto]]
+=== DrawSubPipeListDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**isoVersion** +
+__可选__|string
+|**pageInfo** +
+__可选__|string
+|**seq** +
+__可选__|string
+|**subDrawNo** +
+__可选__|string
+|===
+
+
+[[_drawsubpipesupportdto]]
+=== DrawSubPipeSupportDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**createdBy** +
+__可选__|string
+|**drawNumber** +
+__可选__|string
+|**exportType** +
+__可选__|enum (PDF, MS_WORD, MS_EXCEL)
+|**items** +
+__可选__|< <<_drawsubpipesupportlistdto,DrawSubPipeSupportListDTO>> > array
+|**orgId** +
+__可选__|string
+|**otherDisplayFlg** +
+__可选__|boolean
+|**ownerDisplayFlg** +
+__可选__|boolean
+|**projectId** +
+__可选__|string
+|**projectName** +
+__可选__|string
+|**reportId** +
+__可选__|string
+|**reportName** +
+__可选__|string
+|**reportNo** +
+__可选__|string
+|**reportNoPrefix** +
+__可选__|string
+|**serialNo** +
+__可选__|string
+|**templateNo** +
+__可选__|string
+|**thirdPartyDisplayFlg** +
+__可选__|boolean
+|**title** +
+__可选__|string
+|===
+
+
+[[_drawsubpipesupportlistdto]]
+=== DrawSubPipeSupportListDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**count** +
+__可选__|string
+|**createdBy** +
+__可选__|string
+|**exportType** +
+__可选__|enum (PDF, MS_WORD, MS_EXCEL)
+|**material** +
+__可选__|string
+|**orgId** +
+__可选__|string
+|**otherDisplayFlg** +
+__可选__|boolean
+|**ownerDisplayFlg** +
+__可选__|boolean
+|**projectId** +
+__可选__|string
+|**reportId** +
+__可选__|string
+|**reportName** +
+__可选__|string
+|**reportNo** +
+__可选__|string
+|**reportNoPrefix** +
+__可选__|string
+|**seq** +
+__可选__|string
+|**serialNo** +
+__可选__|string
+|**specifications** +
+__可选__|string
+|**supportNo** +
+__可选__|string
+|**templateNo** +
+__可选__|string
+|**thirdPartyDisplayFlg** +
+__可选__|boolean
+|**unit** +
+__可选__|string
+|===
+
+
+[[_drawsubpipesupportoveralldto]]
+=== DrawSubPipeSupportOverallDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**createdBy** +
+__可选__|string
+|**drawNumber** +
+__可选__|string
+|**exportType** +
+__可选__|enum (PDF, MS_WORD, MS_EXCEL)
+|**items** +
+__可选__|< <<_drawsubpipesupportoveralllistdto,DrawSubPipeSupportOverallListDto>> > array
+|**orgId** +
+__可选__|string
+|**otherDisplayFlg** +
+__可选__|boolean
+|**ownerDisplayFlg** +
+__可选__|boolean
+|**projectId** +
+__可选__|string
+|**projectName** +
+__可选__|string
+|**reportId** +
+__可选__|string
+|**reportName** +
+__可选__|string
+|**reportNo** +
+__可选__|string
+|**reportNoPrefix** +
+__可选__|string
+|**serialNo** +
+__可选__|string
+|**templateNo** +
+__可选__|string
+|**thirdPartyDisplayFlg** +
+__可选__|boolean
+|**title** +
+__可选__|string
+|===
+
+
+[[_drawsubpipesupportoveralllistdto]]
+=== DrawSubPipeSupportOverallListDto
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**count** +
+__可选__|string
+|**createdBy** +
+__可选__|string
+|**exportType** +
+__可选__|enum (PDF, MS_WORD, MS_EXCEL)
+|**material** +
+__可选__|string
+|**materialNO** +
+__可选__|string
+|**orgId** +
+__可选__|string
+|**otherDisplayFlg** +
+__可选__|boolean
+|**ownerDisplayFlg** +
+__可选__|boolean
+|**projectId** +
+__可选__|string
+|**reportId** +
+__可选__|string
+|**reportName** +
+__可选__|string
+|**reportNo** +
+__可选__|string
+|**reportNoPrefix** +
+__可选__|string
+|**seq** +
+__可选__|string
+|**serialNo** +
+__可选__|string
+|**specifications** +
+__可选__|string
+|**templateNo** +
+__可选__|string
+|**thirdPartyDisplayFlg** +
+__可选__|boolean
+|**unit** +
+__可选__|string
+|===
+
+
+[[_externalinspectionitemdto]]
+=== ExternalInspectionItemDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**drawingNo** +
+__可选__|图号|string
+|**inspectionDate** +
+__可选__|检验日期|string (date-time)
+|**inspectionItemNo** +
+__可选__|外检对象编号|string
+|**inspectionResult** +
+__可选__|检验结果|string
+|**remark** +
+__可选__|备注|string
+|===
+
+
+[[_externalinspectionitemlistdto]]
+=== ExternalInspectionItemListDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**createdBy** +
+__可选__||string
+|**exportType** +
+__可选__||enum (PDF, MS_WORD, MS_EXCEL)
+|**items** +
+__可选__||< <<_externalinspectionitemdto,ExternalInspectionItemDTO>> > array
+|**orgId** +
+__可选__||string
+|**otherDisplayFlg** +
+__可选__||boolean
+|**ownerDisplayFlg** +
+__可选__||boolean
+|**procedure** +
+__可选__|外检流程|string
+|**projectId** +
+__可选__||string
+|**projectName** +
+__可选__|项目名称|string
+|**reportId** +
+__可选__||string
+|**reportName** +
+__可选__||string
+|**reportNo** +
+__可选__|报告编号|string
+|**reportNoPrefix** +
+__可选__||string
+|**serialNo** +
+__可选__||string
+|**templateNo** +
+__可选__||string
+|**thirdPartyDisplayFlg** +
+__可选__||boolean
+|===
+
+
+[[_fielderror]]
+=== FieldError
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**message** +
+__可选__|错误描述|string
+|**name** +
+__可选__|发生错误的字段|string
+|**type** +
+__可选__|错误类型|string
+|===
+
+
+[[_finalinspectionitemdto]]
+=== FinalInspectionItemDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**areaNo** +
+__可选__|区域号|string
+|**componentType1** +
+__可选__|管/构件1名称|string
+|**componentType2** +
+__可选__|管/构件2名称|string
+|**demensionCheck** +
+__可选__|尺寸检验|string
+|**heatBatchNo1** +
+__可选__|管/构件1炉批号|string
+|**heatBatchNo2** +
+__可选__|管/构件2炉批号|string
+|**pieceNo** +
+__可选__|管件号|string
+|**shopField** +
+__可选__|预制/现场|string
+|**size** +
+__可选__|寸径|string
+|**vt** +
+__可选__|外观检验|string
+|**weldNo** +
+__可选__|焊口号|string
+|**welderNo** +
+__可选__|焊工编号|string
+|**wps** +
+__可选__|wps|string
+|===
+
+
+[[_finalinspectionrecordforpipingprefabricationdto]]
+=== FinalInspectionRecordForPipingPreFabricationDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**createdBy** +
+__可选__||string
+|**date** +
+__可选__|日期|string (date-time)
+|**exportType** +
+__可选__||enum (PDF, MS_WORD, MS_EXCEL)
+|**items** +
+__可选__||< <<_finalinspectionitemdto,FinalInspectionItemDTO>> > array
+|**orgId** +
+__可选__||string
+|**otherDisplayFlg** +
+__可选__||boolean
+|**ownerDisplayFlg** +
+__可选__||boolean
+|**projectId** +
+__可选__||string
+|**projectName** +
+__可选__|项目名称|string
+|**reportId** +
+__可选__||string
+|**reportName** +
+__可选__||string
+|**reportNo** +
+__可选__|报告编号|string
+|**reportNoPrefix** +
+__可选__||string
+|**serialNo** +
+__可选__||string
+|**templateNo** +
+__可选__|模板编号|string
+|**thirdPartyDisplayFlg** +
+__可选__||boolean
+|===
+
+
+[[_galvanizationpartsinspectionitemdto]]
+=== GalvanizationPartsInspectionItemDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**drawingNo** +
+__可选__|图号|string
+|**partName** +
+__可选__|构件名称/件号|string
+|**thickness1** +
+__可选__|镀锌层厚度测试1|string
+|**thickness2** +
+__可选__|镀锌层厚度测试2|string
+|**thickness3** +
+__可选__|镀锌层厚度测试3|string
+|**thickness4** +
+__可选__|镀锌层厚度测试4|string
+|**thickness5** +
+__可选__|镀锌层厚度测试5|string
+|**visualInspection** +
+__可选__|外观检查|string
+|===
+
+
+[[_galvanizationpartsinspectionreportdto]]
+=== GalvanizationPartsInspectionReportDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**createdBy** +
+__可选__||string
+|**exportType** +
+__可选__||enum (PDF, MS_WORD, MS_EXCEL)
+|**inspectionSite** +
+__可选__|检验地点|string
+|**items** +
+__可选__||< <<_galvanizationpartsinspectionitemdto,GalvanizationPartsInspectionItemDTO>> > array
+|**orgId** +
+__可选__||string
+|**otherDisplayFlg** +
+__可选__||boolean
+|**ownerDisplayFlg** +
+__可选__||boolean
+|**projectId** +
+__可选__||string
+|**projectName** +
+__可选__|项目名称|string
+|**projectNo** +
+__可选__|项目编号|string
+|**reportId** +
+__可选__||string
+|**reportName** +
+__可选__||string
+|**reportNo** +
+__可选__|报告编号|string
+|**reportNoPrefix** +
+__可选__||string
+|**serialNo** +
+__可选__||string
+|**supplierName** +
+__可选__|加工厂名称|string
+|**templateNo** +
+__可选__||string
+|**thirdPartyDisplayFlg** +
+__可选__||boolean
+|===
+
+
+[[_galvanizechecklistdto]]
+=== GalvanizeChecklistDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**constructor** +
+__可选__|string
+|**createdBy** +
+__可选__|string
+|**date** +
+__可选__|string (date-time)
+|**exportType** +
+__可选__|enum (PDF, MS_WORD, MS_EXCEL)
+|**inspector** +
+__可选__|string
+|**orgId** +
+__可选__|string
+|**otherDisplayFlg** +
+__可选__|boolean
+|**ownerDisplayFlg** +
+__可选__|boolean
+|**partName** +
+__可选__|string
+|**projectId** +
+__可选__|string
+|**projectName** +
+__可选__|string
+|**reportId** +
+__可选__|string
+|**reportName** +
+__可选__|string
+|**reportNo** +
+__可选__|string
+|**reportNoPrefix** +
+__可选__|string
+|**serialNo** +
+__可选__|string
+|**templateNo** +
+__可选__|string
+|**thirdPartyDisplayFlg** +
+__可选__|boolean
+|**workstep** +
+__可选__|string
+|===
+
+
+[[_galvanizeinspectionitemdto]]
+=== GalvanizeInspectionItemDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**drawingNo** +
+__可选__|图纸号|string
+|**lineNo** +
+__可选__|管线号|string
+|**remark** +
+__可选__|备注|string
+|===
+
+
+[[_galvanizeinspectionreportdto]]
+=== GalvanizeInspectionReportDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**createdBy** +
+__可选__||string
+|**exportType** +
+__可选__||enum (PDF, MS_WORD, MS_EXCEL)
+|**items** +
+__可选__||< <<_galvanizeinspectionitemdto,GalvanizeInspectionItemDTO>> > array
+|**orgId** +
+__可选__||string
+|**otherDisplayFlg** +
+__可选__||boolean
+|**ownerDisplayFlg** +
+__可选__||boolean
+|**projectId** +
+__可选__||string
+|**reportId** +
+__可选__||string
+|**reportName** +
+__可选__||string
+|**reportNo** +
+__可选__|报告号|string
+|**reportNoPrefix** +
+__可选__||string
+|**serialNo** +
+__可选__||string
+|**templateNo** +
+__可选__||string
+|**thirdPartyDisplayFlg** +
+__可选__||boolean
+|===
+
+
+[[_incomingmaterialinspectionitemdto]]
+=== IncomingMaterialInspectionItemDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**appearanceOrDimension** +
+__可选__|外观尺寸|string
+|**heatNo** +
+__可选__|炉批号|string
+|**inspectionPercentage** +
+__可选__|抽检比例|string
+|**materialDescription** +
+__可选__|材料描述|string
+|**materialName** +
+__可选__|材料名称|string
+|**otherInspection** +
+__可选__|其他检验项|string
+|**quantity** +
+__可选__|到货数量|string
+|**quantityInspected** +
+__可选__|抽检数量|string
+|**sampleNo** +
+__可选__|样件编号|string
+|**unit** +
+__可选__|单位|string
+|===
+
+
+[[_incomingmaterialinspectionrecorddto]]
+=== IncomingMaterialInspectionRecordDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**createdBy** +
+__可选__||string
+|**exportType** +
+__可选__||enum (PDF, MS_WORD, MS_EXCEL)
+|**items** +
+__可选__||< <<_incomingmaterialinspectionitemdto,IncomingMaterialInspectionItemDTO>> > array
+|**orgId** +
+__可选__||string
+|**otherDisplayFlg** +
+__可选__||boolean
+|**ownerDisplayFlg** +
+__可选__||boolean
+|**projectId** +
+__可选__||string
+|**reportId** +
+__可选__||string
+|**reportName** +
+__可选__||string
+|**reportNo** +
+__可选__|报告编号|string
+|**reportNoPrefix** +
+__可选__||string
+|**serialNo** +
+__可选__||string
+|**templateNo** +
+__可选__||string
+|**thirdPartyDisplayFlg** +
+__可选__||boolean
+|===
+
+
+[[_inspectionreleaseformdto]]
+=== InspectionReleaseFormDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**createdBy** +
+__可选__|string
+|**date** +
+__可选__|string (date-time)
+|**exportType** +
+__可选__|enum (PDF, MS_WORD, MS_EXCEL)
+|**orgId** +
+__可选__|string
+|**otherDisplayFlg** +
+__可选__|boolean
+|**ownerDisplayFlg** +
+__可选__|boolean
+|**projectId** +
+__可选__|string
+|**projectName** +
+__可选__|string
+|**reportId** +
+__可选__|string
+|**reportName** +
+__可选__|string
+|**reportNo** +
+__可选__|string
+|**reportNoPrefix** +
+__可选__|string
+|**serialNo** +
+__可选__|string
+|**systemNo** +
+__可选__|string
+|**templateNo** +
+__可选__|string
+|**thirdPartyDisplayFlg** +
+__可选__|boolean
+|===
+
+
+[[_4068288c5af69b6582b48b2defcb7b17]]
+=== JsonListResponseBody«ArchiveTimeDTO»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_archivetimedto,ArchiveTimeDTO>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_8156606d2e358dd1adc454b961f2ad1f]]
+=== JsonListResponseBody«ChecklistItemImportDTO»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_checklistitemimportdto,ChecklistItemImportDTO>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_20c9d955b54e6a37f2950c00b074314f]]
+=== JsonListResponseBody«ChecklistItem»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_checklistitem,ChecklistItem>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_ca8a2623472aa00eef7692e2fecf7829]]
+=== JsonListResponseBody«ChecklistSimulation»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_checklistsimulation,ChecklistSimulation>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_0122af95216a5408b075a0658ed7e9eb]]
+=== JsonListResponseBody«Checklist»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_checklist,Checklist>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_8112ccf8ada3115d4dc4476b5e25ecef]]
+=== JsonListResponseBody«Template»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_template,Template>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_jsonobjectresponsebody]]
+=== JsonObjectResponseBody
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_basedto,BaseDTO>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_311e69977cdb6f89482b7b764db53d5d]]
+=== JsonObjectResponseBody«ArchiveDataPeriodDataDTO»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_archivedataperioddatadto,ArchiveDataPeriodDataDTO>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_4ca3edc351aff86a9e0dd61ac6bfe363]]
+=== JsonObjectResponseBody«ArchiveDataPeriodsDTO»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_archivedataperiodsdto,ArchiveDataPeriodsDTO>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_2dc208ac1c49bb1c24ec8fe1239587da]]
+=== JsonObjectResponseBody«ChecklistItem»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_checklistitem,ChecklistItem>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_f53ba84b57451446f543ef1b32a9f54e]]
+=== JsonObjectResponseBody«ChecklistSimulation»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_checklistsimulation,ChecklistSimulation>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_b43a33c9d66b88c68a0143e06fede361]]
+=== JsonObjectResponseBody«Checklist»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_checklist,Checklist>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_cb7d88d9276faaab147c8d26afbeb270]]
+=== JsonObjectResponseBody«ReportHistory»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_reporthistory,ReportHistory>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_18570033f9539ccee951af1856b797d0]]
+=== JsonObjectResponseBody«Template»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_template,Template>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_jsonresponsebody]]
+=== JsonResponseBody
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_jsonresponseerror]]
+=== JsonResponseError
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**code** +
+__可选__|错误代码|string
+|**errors** +
+__可选__|错误列表|< <<_jsonresponseerror,JsonResponseError>> > array
+|**fields** +
+__可选__|发生校验错误的字段的列表|< <<_fielderror,FieldError>> > array
+|**message** +
+__可选__|错误消息|string
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|===
+
+
+[[_magneticparticleinspectionitmedto]]
+=== MagneticParticleInspectionItmeDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**date** +
+__可选__|检测日期|string (date-time)
+|**defectIdentifiy** +
+__可选__|D.I|string
+|**defectLength** +
+__可选__|D.L|string
+|**defectPos** +
+__可选__|D.P|string
+|**judge** +
+__可选__|意见|string
+|**repairReportNo** +
+__可选__|返修报告号|string
+|**size** +
+__可选__|工件规格|string
+|**weldLength** +
+__可选__|W.L|string
+|**weldNo** +
+__可选__|焊口号|string
+|**welderNo** +
+__可选__|焊工号|string
+|===
+
+
+[[_magneticparticleinspectionreportdto]]
+=== MagneticParticleInspectionReportDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**acceptCriteria** +
+__可选__|认可标准|string
+|**contrast** +
+__可选__|反差剂|string
+|**createdBy** +
+__可选__||string
+|**detectionScale** +
+__可选__|检测比例|string
+|**drawingNo** +
+__可选__|图纸号|string
+|**exportType** +
+__可选__||enum (PDF, MS_WORD, MS_EXCEL)
+|**itemName** +
+__可选__|结构名称|string
+|**items** +
+__可选__||< <<_magneticparticleinspectionitmedto,MagneticParticleInspectionItmeDTO>> > array
+|**liftingForce** +
+__可选__|提升力|string
+|**magnezingTime** +
+__可选__|磁化时间|string
+|**material** +
+__可选__|材料|string
+|**method** +
+__可选__|方法|string
+|**mtdOfParAppl** +
+__可选__|磁悬液施加时间|string
+|**orgId** +
+__可选__||string
+|**otherDisplayFlg** +
+__可选__||boolean
+|**ownerDisplayFlg** +
+__可选__||boolean
+|**projectId** +
+__可选__||string
+|**projectName** +
+__可选__|项目名称|string
+|**projectNo** +
+__可选__|项目号|string
+|**reportId** +
+__可选__||string
+|**reportName** +
+__可选__||string
+|**reportNo** +
+__可选__|报告编号|string
+|**reportNoPrefix** +
+__可选__||string
+|**sensitivityBlock** +
+__可选__|试片类型|string
+|**serialNo** +
+__可选__||string
+|**surfacePrep** +
+__可选__|表面处理|string
+|**templateNo** +
+__可选__|模板编号|string
+|**testInstrumentType** +
+__可选__|实验仪器类型|string
+|**thirdPartyDisplayFlg** +
+__可选__||boolean
+|**wetParticles** +
+__可选__|磁粉|string
+|===
+
+
+[[_materialapplicationitemdto]]
+=== MaterialApplicationItemDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**materialDesc** +
+__可选__|材料描述|string
+|**purpose** +
+__可选__|用途|string
+|**quantity** +
+__可选__|数量|string
+|**remark** +
+__可选__|备注|string
+|**tagNum** +
+__可选__|材料编码|string
+|**unit** +
+__可选__|单位|string
+|**warehouseType** +
+__可选__|库存类型|string
+|===
+
+
+[[_materialapplicationlistdto]]
+=== MaterialApplicationListDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**createdBy** +
+__可选__||string
+|**date** +
+__可选__|使用日期|string (date-time)
+|**exportType** +
+__可选__||enum (PDF, MS_WORD, MS_EXCEL)
+|**items** +
+__可选__||< <<_materialapplicationitemdto,MaterialApplicationItemDTO>> > array
+|**materialApplicationNo** +
+__可选__|领料单号|string
+|**orgId** +
+__可选__||string
+|**otherDisplayFlg** +
+__可选__||boolean
+|**ownerDisplayFlg** +
+__可选__||boolean
+|**projectId** +
+__可选__||string
+|**projectName** +
+__可选__|项目名称|string
+|**reportId** +
+__可选__||string
+|**reportName** +
+__可选__||string
+|**reportNo** +
+__可选__||string
+|**reportNoPrefix** +
+__可选__||string
+|**serialNo** +
+__可选__||string
+|**templateNo** +
+__可选__||string
+|**thirdPartyDisplayFlg** +
+__可选__||boolean
+|===
+
+
+[[_materialrequirementitemdto]]
+=== MaterialRequirementItemDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**cert** +
+__可选__|证书要求|string
+|**check** +
+__可选__|审核量|string
+|**material** +
+__可选__|材质|string
+|**materialName** +
+__可选__|材料名称|string
+|**parameter** +
+__可选__|规格/参数|string
+|**position** +
+__可选__|使用部位|string
+|**remark** +
+__可选__|备注|string
+|**requireQuantity** +
+__可选__|需用数量|string
+|**requiredDate** +
+__可选__|需用日期|string (date-time)
+|**standard** +
+__可选__|标准/等级|string
+|**trayNo** +
+__可选__|托盘号|string
+|**unit** +
+__可选__|单位|string
+|===
+
+
+[[_materialrequirementplandto]]
+=== MaterialRequirementPlanDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**createdBy** +
+__可选__||string
+|**discipline** +
+__可选__|专业|string
+|**exportType** +
+__可选__||enum (PDF, MS_WORD, MS_EXCEL)
+|**items** +
+__可选__||< <<_materialrequirementitemdto,MaterialRequirementItemDTO>> > array
+|**materialRequirementPlan** +
+__可选__|周用料计划单编号|string
+|**orgId** +
+__可选__||string
+|**otherDisplayFlg** +
+__可选__||boolean
+|**ownerDisplayFlg** +
+__可选__||boolean
+|**projectId** +
+__可选__||string
+|**projectName** +
+__可选__|项目名称|string
+|**reportId** +
+__可选__||string
+|**reportName** +
+__可选__||string
+|**reportNo** +
+__可选__||string
+|**reportNoPrefix** +
+__可选__||string
+|**serialNo** +
+__可选__||string
+|**templateNo** +
+__可选__||string
+|**thirdPartyDisplayFlg** +
+__可选__||boolean
+|===
+
+
+[[_materialreturnitemdto]]
+=== MaterialReturnItemDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**ident** +
+__可选__|ident|string
+|**materialDesc** +
+__可选__|材料描述|string
+|**quantity** +
+__可选__|数量|string
+|**remark** +
+__可选__|备注|string
+|**tagNum** +
+__可选__|材料编码|string
+|**unit** +
+__可选__|单位|string
+|===
+
+
+[[_materialreturnstockdto]]
+=== MaterialReturnStockDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**createdBy** +
+__可选__||string
+|**date** +
+__可选__|使用日期|string (date-time)
+|**exportType** +
+__可选__||enum (PDF, MS_WORD, MS_EXCEL)
+|**items** +
+__可选__||< <<_materialreturnitemdto,MaterialReturnItemDTO>> > array
+|**materialApplicationNo** +
+__可选__|领料单编号|string
+|**materialIssueNo** +
+__可选__|出库单号|string
+|**materialReturnNo** +
+__可选__|退库编号|string
+|**orgId** +
+__可选__||string
+|**otherDisplayFlg** +
+__可选__||boolean
+|**ownerDisplayFlg** +
+__可选__||boolean
+|**projectId** +
+__可选__||string
+|**projectName** +
+__可选__|项目名称|string
+|**reportId** +
+__可选__||string
+|**reportName** +
+__可选__||string
+|**reportNo** +
+__可选__||string
+|**reportNoPrefix** +
+__可选__||string
+|**serialNo** +
+__可选__||string
+|**subContractor** +
+__可选__|分包商|string
+|**templateNo** +
+__可选__||string
+|**thirdPartyDisplayFlg** +
+__可选__||boolean
+|===
+
+
+[[_meta]]
+=== Meta
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**count** +
+__可选__|数据总数|integer (int64)
+|**hasNextPage** +
+__可选__|是否存在下一页|boolean
+|**hasPreviousPage** +
+__可选__|是否存在上一页|boolean
+|**isFirstPage** +
+__可选__||boolean
+|**isLastPage** +
+__可选__||boolean
+|**pageNo** +
+__可选__|当前页号|integer (int32)
+|**pageSize** +
+__可选__|分页大小|integer (int32)
+|**pages** +
+__可选__|数据总页数|integer (int32)
+|===
+
+
+[[_outsouringapplicationformdto]]
+=== OutSouringApplicationFormDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**applicationNo** +
+__可选__|报告编号|string
+|**createdBy** +
+__可选__||string
+|**department** +
+__可选__|部门|string
+|**exportType** +
+__可选__||enum (PDF, MS_WORD, MS_EXCEL)
+|**items** +
+__可选__||< <<_outsouringapplicationitemdto,OutSouringApplicationItemDTO>> > array
+|**orgId** +
+__可选__||string
+|**otherDisplayFlg** +
+__可选__||boolean
+|**ownerDisplayFlg** +
+__可选__||boolean
+|**projectId** +
+__可选__||string
+|**projectName** +
+__可选__|项目名称|string
+|**reportId** +
+__可选__||string
+|**reportName** +
+__可选__||string
+|**reportNo** +
+__可选__||string
+|**reportNoPrefix** +
+__可选__||string
+|**serialNo** +
+__可选__||string
+|**templateNo** +
+__可选__||string
+|**thirdPartyDisplayFlg** +
+__可选__||boolean
+|===
+
+
+[[_outsouringapplicationitemdto]]
+=== OutSouringApplicationItemDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**companentName** +
+__可选__|构件名称|string
+|**componentNo** +
+__可选__|构件号|string
+|**process** +
+__可选__|加工类型|string
+|**quantity** +
+__可选__|数量|string
+|**remark** +
+__可选__|备注|string
+|**requiredDate** +
+__可选__|需用日期|string (date-time)
+|**specification** +
+__可选__|规格型号|string
+|**subsectionNo** +
+__可选__|图号|string
+|**totalWeight** +
+__可选__|总重|string
+|**unit** +
+__可选__|单位|string
+|**weight** +
+__可选__|单重|string
+|===
+
+
+[[_paintingchecklistdto]]
+=== PaintingChecklistDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**constructor** +
+__可选__|string
+|**createdBy** +
+__可选__|string
+|**date** +
+__可选__|string (date-time)
+|**exportType** +
+__可选__|enum (PDF, MS_WORD, MS_EXCEL)
+|**inspector** +
+__可选__|string
+|**orgId** +
+__可选__|string
+|**otherDisplayFlg** +
+__可选__|boolean
+|**ownerDisplayFlg** +
+__可选__|boolean
+|**partName** +
+__可选__|string
+|**projectId** +
+__可选__|string
+|**projectName** +
+__可选__|string
+|**reportId** +
+__可选__|string
+|**reportName** +
+__可选__|string
+|**reportNo** +
+__可选__|string
+|**reportNoPrefix** +
+__可选__|string
+|**serialNo** +
+__可选__|string
+|**templateNo** +
+__可选__|string
+|**thirdPartyDisplayFlg** +
+__可选__|boolean
+|**workstep** +
+__可选__|string
+|===
+
+
+[[_paintinghandoverformdto]]
+=== PaintingHandoverFormDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**applicationNo** +
+__可选__|报告编号|string
+|**createdBy** +
+__可选__||string
+|**exportType** +
+__可选__||enum (PDF, MS_WORD, MS_EXCEL)
+|**items** +
+__可选__||< <<_paintinghandoveritemdto,PaintingHandoverItemDTO>> > array
+|**orgId** +
+__可选__||string
+|**otherDisplayFlg** +
+__可选__||boolean
+|**ownerDisplayFlg** +
+__可选__||boolean
+|**discipline** +
+__可选__|专业|string
+|**projectId** +
+__可选__||string
+|**projectName** +
+__可选__|项目名称|string
+|**reportId** +
+__可选__||string
+|**reportName** +
+__可选__||string
+|**reportNo** +
+__可选__||string
+|**reportNoPrefix** +
+__可选__||string
+|**serialNo** +
+__可选__||string
+|**templateNo** +
+__可选__||string
+|**thirdPartyDisplayFlg** +
+__可选__||boolean
+|===
+
+
+[[_paintinghandoveritemdto]]
+=== PaintingHandoverItemDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**companentName** +
+__可选__|构件名称|string
+|**componentNo** +
+__可选__|构件号|string
+|**process** +
+__可选__|加工类型|string
+|**quantity** +
+__可选__|数量|string
+|**remark** +
+__可选__|备注|string
+|**requiredDate** +
+__可选__|需用日期|string (date-time)
+|**specification** +
+__可选__|规格型号|string
+|**subsectionNo** +
+__可选__|图号|string
+|**unit** +
+__可选__|单位|string
+|===
+
+
+[[_pelininginspectionchecklistdto]]
+=== PeLiningInspectionChecklistDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**constructor** +
+__可选__|string
+|**createdBy** +
+__可选__|string
+|**date** +
+__可选__|string (date-time)
+|**exportType** +
+__可选__|enum (PDF, MS_WORD, MS_EXCEL)
+|**inspector** +
+__可选__|string
+|**orgId** +
+__可选__|string
+|**otherDisplayFlg** +
+__可选__|boolean
+|**ownerDisplayFlg** +
+__可选__|boolean
+|**partName** +
+__可选__|string
+|**projectId** +
+__可选__|string
+|**projectName** +
+__可选__|string
+|**reportId** +
+__可选__|string
+|**reportName** +
+__可选__|string
+|**reportNo** +
+__可选__|string
+|**reportNoPrefix** +
+__可选__|string
+|**serialNo** +
+__可选__|string
+|**templateNo** +
+__可选__|string
+|**thirdPartyDisplayFlg** +
+__可选__|boolean
+|**workstep** +
+__可选__|string
+|===
+
+
+[[_pelininginspectionitemdto]]
+=== PeLiningInspectionItemDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**drawingNo** +
+__可选__|图纸号|string
+|**lineNo** +
+__可选__|管线号|string
+|**remark** +
+__可选__|备注|string
+|===
+
+
+[[_pelininginspectionreportdto]]
+=== PeLiningInspectionReportDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**createdBy** +
+__可选__||string
+|**exportType** +
+__可选__||enum (PDF, MS_WORD, MS_EXCEL)
+|**items** +
+__可选__||< <<_pelininginspectionitemdto,PeLiningInspectionItemDTO>> > array
+|**orgId** +
+__可选__||string
+|**otherDisplayFlg** +
+__可选__||boolean
+|**ownerDisplayFlg** +
+__可选__||boolean
+|**projectId** +
+__可选__||string
+|**reportId** +
+__可选__||string
+|**reportName** +
+__可选__||string
+|**reportNo** +
+__可选__|报告编号|string
+|**reportNoPrefix** +
+__可选__||string
+|**serialNo** +
+__可选__||string
+|**templateNo** +
+__可选__||string
+|**thirdPartyDisplayFlg** +
+__可选__||boolean
+|===
+
+
+[[_penetrationinspectionitemdto]]
+=== PenetrationInspectionItemDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**defectIdentifiy** +
+__可选__|DI|string
+|**defectLength** +
+__可选__|DL|string
+|**defectPos** +
+__可选__|DP|string
+|**judge** +
+__可选__|意见|string
+|**lineNo** +
+__可选__|管线号|string
+|**material** +
+__可选__|材料|string
+|**repairReportNo** +
+__可选__|返修报告号|string
+|**size** +
+__可选__|工件规格|string
+|**weldNo** +
+__可选__|焊口号|string
+|**welderNo** +
+__可选__|焊工号|string
+|===
+
+
+[[_penetrationinspectionreportdto]]
+=== PenetrationInspectionReportDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**acceptCriteria** +
+__可选__|认可标准|string
+|**areaNo** +
+__可选__|区域号|string
+|**createdBy** +
+__可选__||string
+|**developer** +
+__可选__|显像剂型号|string
+|**displayTime** +
+__可选__|显像时间|string
+|**drawingNo** +
+__可选__|图号|string
+|**examinationScale** +
+__可选__|检测比例|string
+|**exportType** +
+__可选__||enum (PDF, MS_WORD, MS_EXCEL)
+|**intermediateCleaning** +
+__可选__|清洗剂型号|string
+|**items** +
+__可选__||< <<_penetrationinspectionitemdto,PenetrationInspectionItemDTO>> > array
+|**orgId** +
+__可选__||string
+|**otherDisplayFlg** +
+__可选__||boolean
+|**ownerDisplayFlg** +
+__可选__||boolean
+|**penetrationMedium** +
+__可选__|渗透剂型号|string
+|**penetrationTime** +
+__可选__|渗透时间|string
+|**projectId** +
+__可选__||string
+|**projectName** +
+__可选__|项目名称|string
+|**removeMethod** +
+__可选__|去除方法|string
+|**reportId** +
+__可选__||string
+|**reportName** +
+__可选__||string
+|**reportNo** +
+__可选__|报告编号|string
+|**reportNoPrefix** +
+__可选__||string
+|**serialNo** +
+__可选__||string
+|**surfacePrep** +
+__可选__|表面处理|string
+|**templateNo** +
+__可选__|模板编号|string
+|**thirdPartyDisplayFlg** +
+__可选__||boolean
+|**workPieceTemp** +
+__可选__|工作温度|string
+|===
+
+
+[[_picklingchecklistdto]]
+=== PicklingChecklistDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**constructor** +
+__可选__|string
+|**createdBy** +
+__可选__|string
+|**date** +
+__可选__|string (date-time)
+|**exportType** +
+__可选__|enum (PDF, MS_WORD, MS_EXCEL)
+|**inspector** +
+__可选__|string
+|**orgId** +
+__可选__|string
+|**otherDisplayFlg** +
+__可选__|boolean
+|**ownerDisplayFlg** +
+__可选__|boolean
+|**partName** +
+__可选__|string
+|**projectId** +
+__可选__|string
+|**projectName** +
+__可选__|string
+|**reportId** +
+__可选__|string
+|**reportName** +
+__可选__|string
+|**reportNo** +
+__可选__|string
+|**reportNoPrefix** +
+__可选__|string
+|**serialNo** +
+__可选__|string
+|**templateNo** +
+__可选__|string
+|**thirdPartyDisplayFlg** +
+__可选__|boolean
+|**workstep** +
+__可选__|string
+|===
+
+
+[[_pipefittinginspectionitemdto]]
+=== PipeFittingInspectionItemDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**batchNo** +
+__可选__|批号|string
+|**certificationNo** +
+__可选__|证书号|string
+|**checkDate** +
+__可选__|验收日期|string (date-time)
+|**description** +
+__可选__|规格描述|string
+|**factory** +
+__可选__|生产厂家|string
+|**heatNo** +
+__可选__|炉号|string
+|**name** +
+__可选__|名称|string
+|**page** +
+__可选__|页码|string
+|**quantity** +
+__可选__|数量|string
+|**result** +
+__可选__|结果|string
+|**size** +
+__可选__|规格|string
+|**tagNo** +
+__可选__|位号|string
+|===
+
+
+[[_pipefittinginspectionreportdto]]
+=== PipeFittingInspectionReportDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**createdBy** +
+__可选__||string
+|**exportType** +
+__可选__||enum (PDF, MS_WORD, MS_EXCEL)
+|**items** +
+__可选__||< <<_pipefittinginspectionitemdto,PipeFittingInspectionItemDTO>> > array
+|**orgId** +
+__可选__||string
+|**otherDisplayFlg** +
+__可选__||boolean
+|**ownerDisplayFlg** +
+__可选__||boolean
+|**projectId** +
+__可选__||string
+|**projectName** +
+__可选__|项目名称|string
+|**reportId** +
+__可选__||string
+|**reportName** +
+__可选__||string
+|**reportNo** +
+__可选__|报告编号|string
+|**reportNoPrefix** +
+__可选__||string
+|**serialNo** +
+__可选__||string
+|**templateNo** +
+__可选__|模板编号|string
+|**thirdPartyDisplayFlg** +
+__可选__||boolean
+|===
+
+
+[[_pipematerialinspectionitemdto]]
+=== PipeMaterialInspectionItemDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**batchNo** +
+__可选__|批号|string
+|**certificationNo** +
+__可选__|证书号|string
+|**checkDate** +
+__可选__|验收日期|string (date-time)
+|**factory** +
+__可选__|生产厂家|string
+|**grade** +
+__可选__|材质|string
+|**heatNo** +
+__可选__|炉号|string
+|**name** +
+__可选__|名称|string
+|**page** +
+__可选__|页码|string
+|**quantity** +
+__可选__|数量|string
+|**result** +
+__可选__|结果|string
+|**size** +
+__可选__|规格|string
+|===
+
+
+[[_pipematerialinspectionreportdto]]
+=== PipeMaterialInspectionReportDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**createdBy** +
+__可选__||string
+|**exportType** +
+__可选__||enum (PDF, MS_WORD, MS_EXCEL)
+|**items** +
+__可选__||< <<_pipematerialinspectionitemdto,PipeMaterialInspectionItemDTO>> > array
+|**orgId** +
+__可选__||string
+|**otherDisplayFlg** +
+__可选__||boolean
+|**ownerDisplayFlg** +
+__可选__||boolean
+|**projectId** +
+__可选__||string
+|**projectName** +
+__可选__|项目名称|string
+|**reportId** +
+__可选__||string
+|**reportName** +
+__可选__||string
+|**reportNo** +
+__可选__|报告编号|string
+|**reportNoPrefix** +
+__可选__||string
+|**serialNo** +
+__可选__||string
+|**templateNo** +
+__可选__|模板编号|string
+|**thirdPartyDisplayFlg** +
+__可选__||boolean
+|===
+
+
+[[_pipematerialtraceabilityitemdto]]
+=== PipeMaterialTraceabilityItemDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**batchNo** +
+__可选__|批号|string
+|**drawingNo** +
+__可选__|图号|string
+|**heatNo** +
+__可选__|炉号|string
+|**material** +
+__可选__|材质|string
+|**pipeNo** +
+__可选__|管件号|string
+|**quantity** +
+__可选__|数量|string
+|**remark** +
+__可选__|备注|string
+|**reportNo** +
+__可选__|材料检验报告号|string
+|**specification** +
+__可选__|规格|string
+|===
+
+
+[[_pipematerialtraceabilityreportdto]]
+=== PipeMaterialTraceabilityReportDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**createdBy** +
+__可选__||string
+|**exportType** +
+__可选__||enum (PDF, MS_WORD, MS_EXCEL)
+|**items** +
+__可选__||< <<_pipematerialtraceabilityitemdto,PipeMaterialTraceabilityItemDTO>> > array
+|**orgId** +
+__可选__||string
+|**otherDisplayFlg** +
+__可选__||boolean
+|**ownerDisplayFlg** +
+__可选__||boolean
+|**projectId** +
+__可选__||string
+|**projectName** +
+__可选__|项目名称|string
+|**reportId** +
+__可选__||string
+|**reportName** +
+__可选__||string
+|**reportNo** +
+__可选__|报告编号|string
+|**reportNoPrefix** +
+__可选__||string
+|**serialNo** +
+__可选__||string
+|**templateNo** +
+__可选__||string
+|**thirdPartyDisplayFlg** +
+__可选__||boolean
+|===
+
+
+[[_pipelinefitupinspectionapplicationpostdto]]
+=== PipelineFitUpInspectionApplicationPostDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**applicantName** +
+__可选__|string
+|**applicantTel** +
+__可选__|string
+|**applyingDate** +
+__可选__|string (date-time)
+|**createdBy** +
+__可选__|string
+|**exportType** +
+__可选__|enum (PDF, MS_WORD, MS_EXCEL)
+|**inspectionContents** +
+__可选__|string
+|**inspectionDate** +
+__可选__|string (date-time)
+|**inspectionLocation** +
+__可选__|string
+|**orgId** +
+__可选__|string
+|**otherDisplayFlg** +
+__可选__|boolean
+|**ownerDisplayFlg** +
+__可选__|boolean
+|**projectId** +
+__可选__|string
+|**projectName** +
+__可选__|string
+|**reportId** +
+__可选__|string
+|**reportName** +
+__可选__|string
+|**reportNo** +
+__可选__|string
+|**reportNoPrefix** +
+__可选__|string
+|**serialNo** +
+__可选__|string
+|**templateNo** +
+__可选__|string
+|**thirdPartyDisplayFlg** +
+__可选__|boolean
+|===
+
+
+[[_pipelinefitupinspectionreportapplicationformitemdto]]
+=== PipelineFitUpInspectionReportApplicationFormItemDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**dateTime** +
+__可选__|string (date-time)
+|**inspectionDate** +
+__可选__|string (date-time)
+|**inspectionItem** +
+__可选__|string
+|**location** +
+__可选__|string
+|**no** +
+__可选__|string
+|**qcName** +
+__可选__|string
+|**remark** +
+__可选__|string
+|**specialty** +
+__可选__|string
+|===
+
+
+[[_pipelinefitupinspectionreportapplicationformpostdto]]
+=== PipelineFitUpInspectionReportApplicationFormPostDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**createdBy** +
+__可选__|string
+|**date** +
+__可选__|string (date-time)
+|**exportType** +
+__可选__|enum (PDF, MS_WORD, MS_EXCEL)
+|**items** +
+__可选__|< <<_pipelinefitupinspectionreportapplicationformitemdto,PipelineFitUpInspectionReportApplicationFormItemDTO>> > array
+|**orgId** +
+__可选__|string
+|**otherDisplayFlg** +
+__可选__|boolean
+|**ownerDisplayFlg** +
+__可选__|boolean
+|**partName** +
+__可选__|string
+|**projectId** +
+__可选__|string
+|**projectName** +
+__可选__|string
+|**reportId** +
+__可选__|string
+|**reportName** +
+__可选__|string
+|**reportNo** +
+__可选__|string
+|**reportNoPrefix** +
+__可选__|string
+|**serialNo** +
+__可选__|string
+|**submitTo** +
+__可选__|string
+|**templateNo** +
+__可选__|string
+|**thirdPartyDisplayFlg** +
+__可选__|boolean
+|===
+
+
+[[_pipelinefitupinspectionreportitemdto]]
+=== PipelineFitUpInspectionReportItemDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**areaNo** +
+__可选__|区域号|string
+|**componentType1** +
+__可选__|管/构件1名称|string
+|**componentType2** +
+__可选__|管/构件2名称|string
+|**demensionCheck** +
+__可选__|尺寸检验|string
+|**heatBatchNo1** +
+__可选__|管/构件1炉批号|string
+|**heatBatchNo2** +
+__可选__|管/构件2炉批号|string
+|**pieceNo** +
+__可选__|管件号|string
+|**shopField** +
+__可选__|预制/现场|string
+|**size** +
+__可选__|寸径|string
+|**vt** +
+__可选__|外观检验|string
+|**weldNo** +
+__可选__|焊口号|string
+|===
+
+
+[[_pipelinefitupinspectionreportpostdto]]
+=== PipelineFitUpInspectionReportPostDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**createdBy** +
+__可选__||string
+|**date** +
+__可选__||string (date-time)
+|**exportType** +
+__可选__||enum (PDF, MS_WORD, MS_EXCEL)
+|**items** +
+__可选__||< <<_pipelinefitupinspectionreportitemdto,PipelineFitUpInspectionReportItemDTO>> > array
+|**orgId** +
+__可选__||string
+|**otherDisplayFlg** +
+__可选__||boolean
+|**ownerDisplayFlg** +
+__可选__||boolean
+|**partName** +
+__可选__||string
+|**projectId** +
+__可选__||string
+|**projectName** +
+__可选__||string
+|**reportId** +
+__可选__||string
+|**reportName** +
+__可选__||string
+|**reportNo** +
+__可选__|报告号|string
+|**reportNoPrefix** +
+__可选__||string
+|**serialNo** +
+__可选__||string
+|**templateNo** +
+__可选__|模板编号|string
+|**thirdPartyDisplayFlg** +
+__可选__||boolean
+|===
+
+
+[[_pipinginstallationitemdto]]
+=== PipingInstallationItemDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**drawingNo** +
+__可选__|图号|string
+|**inspectionDate** +
+__可选__|检验日期|string (date-time)
+|**pidNo** +
+__可选__|原理图|string
+|**pipelineNo** +
+__可选__|管系号|string
+|**remark** +
+__可选__|备注|string
+|===
+
+
+[[_pipinginstallationreportdto]]
+=== PipingInstallationReportDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**createdBy** +
+__可选__||string
+|**exportType** +
+__可选__||enum (PDF, MS_WORD, MS_EXCEL)
+|**items** +
+__可选__||< <<_pipinginstallationitemdto,PipingInstallationItemDTO>> > array
+|**orgId** +
+__可选__||string
+|**otherDisplayFlg** +
+__可选__||boolean
+|**ownerDisplayFlg** +
+__可选__||boolean
+|**projectId** +
+__可选__||string
+|**projectName** +
+__可选__|项目名称|string
+|**reportId** +
+__可选__||string
+|**reportName** +
+__可选__||string
+|**reportNo** +
+__可选__|报告编号|string
+|**reportNoPrefix** +
+__可选__||string
+|**serialNo** +
+__可选__||string
+|**templateNo** +
+__可选__||string
+|**thirdPartyDisplayFlg** +
+__可选__||boolean
+|===
+
+
+[[_positivematerialidentificationitemdto]]
+=== PositiveMaterialIdentificationItemDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**areaNo** +
+__可选__|string
+|**cr** +
+__可选__|string
+|**drawingNo** +
+__可选__|string
+|**jointNo** +
+__可选__|string
+|**material** +
+__可选__|string
+|**mo** +
+__可选__|string
+|**ni** +
+__可选__|string
+|**result** +
+__可选__|string
+|===
+
+
+[[_positivematerialidentificationreportdto]]
+=== PositiveMaterialIdentificationReportDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**createdBy** +
+__可选__||string
+|**exportType** +
+__可选__||enum (PDF, MS_WORD, MS_EXCEL)
+|**instrumentType** +
+__可选__|设备名称|string
+|**items** +
+__可选__||< <<_positivematerialidentificationitemdto,PositiveMaterialIdentificationItemDTO>> > array
+|**orgId** +
+__可选__||string
+|**otherDisplayFlg** +
+__可选__||boolean
+|**ownerDisplayFlg** +
+__可选__||boolean
+|**projectId** +
+__可选__||string
+|**projectName** +
+__可选__|项目名称|string
+|**remark** +
+__可选__|备注|string
+|**reportId** +
+__可选__||string
+|**reportName** +
+__可选__||string
+|**reportNo** +
+__可选__|报告编号|string
+|**reportNoPrefix** +
+__可选__||string
+|**serialNo** +
+__可选__||string
+|**templateNo** +
+__可选__|模板编号|string
+|**thirdPartyDisplayFlg** +
+__可选__||boolean
+|===
+
+
+[[_postweldheattreatmentitemdto]]
+=== PostWeldHeatTreatmentItemDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**drawingNo** +
+__可选__|图纸号|string
+|**lineNo** +
+__可选__|管线号|string
+|**material** +
+__可选__|母材|string
+|**process** +
+__可选__|焊接方法|string
+|**thickness** +
+__可选__|厚度|string
+|**weld** +
+__可选__|焊口|string
+|**wps** +
+__可选__|焊接工艺规程|string
+|===
+
+
+[[_postweldheattreatmentrecorddto]]
+=== PostWeldHeatTreatmentRecordDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**createdBy** +
+__可选__||string
+|**date** +
+__可选__|日期|string (date-time)
+|**exportType** +
+__可选__||enum (PDF, MS_WORD, MS_EXCEL)
+|**items** +
+__可选__||< <<_postweldheattreatmentitemdto,PostWeldHeatTreatmentItemDTO>> > array
+|**orgId** +
+__可选__||string
+|**otherDisplayFlg** +
+__可选__||boolean
+|**ownerDisplayFlg** +
+__可选__||boolean
+|**projectId** +
+__可选__||string
+|**projectName** +
+__可选__|项目名称|string
+|**reportId** +
+__可选__||string
+|**reportName** +
+__可选__||string
+|**reportNo** +
+__可选__|报告号|string
+|**reportNoPrefix** +
+__可选__||string
+|**serialNo** +
+__可选__||string
+|**templateNo** +
+__可选__||string
+|**thirdPartyDisplayFlg** +
+__可选__||boolean
+|===
+
+
+[[_prefabricatepipingreleasereportbeforecoatingdto]]
+=== PrefabricatePipingReleaseReportBeforeCoatingDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**createdBy** +
+__可选__||string
+|**exportType** +
+__可选__||enum (PDF, MS_WORD, MS_EXCEL)
+|**items** +
+__可选__||< <<_prefabricatepipingreleasereportbeforecoatingitemdto,PrefabricatePipingReleaseReportBeforeCoatingItemDTO>> > array
+|**memo** +
+__可选__|系统填写|string
+|**orgId** +
+__可选__||string
+|**otherDisplayFlg** +
+__可选__||boolean
+|**ownerDisplayFlg** +
+__可选__||boolean
+|**projectId** +
+__可选__||string
+|**projectName** +
+__可选__|项目名称|string
+|**releaseDate** +
+__可选__|放行日期|string (date-time)
+|**releaseReportNo** +
+__可选__|放行单号|string
+|**reportId** +
+__可选__||string
+|**reportName** +
+__可选__||string
+|**reportNo** +
+__可选__|报告编号|string
+|**reportNoPrefix** +
+__可选__||string
+|**serialNo** +
+__可选__||string
+|**templateNo** +
+__可选__|模板编号|string
+|**thirdPartyDisplayFlg** +
+__可选__||boolean
+|===
+
+
+[[_prefabricatepipingreleasereportbeforecoatingitemdto]]
+=== PrefabricatePipingReleaseReportBeforeCoatingItemDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**afterWelding** +
+__可选__|焊后|string
+|**clean** +
+__可选__|清洁|string
+|**jointQuantity** +
+__可选__|焊口数|string
+|**ndt** +
+__可选__|无损检测|string
+|**paintCode** +
+__可选__|油漆类型|string
+|**pmi** +
+__可选__|光谱|string
+|**pressureTest** +
+__可选__|压力|string
+|**pwht** +
+__可选__|热处理|string
+|**remark** +
+__可选__|备注|string
+|**revision** +
+__可选__|版次|string
+|**spoolNo** +
+__可选__|管线号|string
+|**weldCount** +
+__可选__|焊口数量|integer (int32)
+|===
+
+
+[[_pressuretightnesstestitemdto]]
+=== PressureTightnessTestItemDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**drawingNo** +
+__可选__|图纸号|string
+|**lineNo** +
+__可选__|管线号|string
+|**remark** +
+__可选__|备注|string
+|===
+
+
+[[_pressuretightnesstestreportdto]]
+=== PressureTightnessTestReportDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**ambientTemp** +
+__可选__|环境温度|string
+|**createdBy** +
+__可选__||string
+|**date** +
+__可选__|实验日期|string (date-time)
+|**equipmentNo1** +
+__可选__|仪器1编号|string
+|**equipmentNo2** +
+__可选__|仪器2编号|string
+|**equipmentRange1** +
+__可选__|仪器1量程|string
+|**equipmentRange2** +
+__可选__|仪器2量程|string
+|**exportType** +
+__可选__||enum (PDF, MS_WORD, MS_EXCEL)
+|**items** +
+__可选__||< <<_pressuretightnesstestitemdto,PressureTightnessTestItemDTO>> > array
+|**mediumTemp** +
+__可选__|介质温度|string
+|**orgId** +
+__可选__||string
+|**otherDisplayFlg** +
+__可选__||boolean
+|**ownerDisplayFlg** +
+__可选__||boolean
+|**projectId** +
+__可选__||string
+|**projectName** +
+__可选__|项目名称|string
+|**reportId** +
+__可选__||string
+|**reportName** +
+__可选__||string
+|**reportNo** +
+__可选__|报告号|string
+|**reportNoPrefix** +
+__可选__||string
+|**serialNo** +
+__可选__||string
+|**templateNo** +
+__可选__|模板编号|string
+|**testMedium** +
+__可选__|试验介质|string
+|**thirdPartyDisplayFlg** +
+__可选__||boolean
+|**validDate1** +
+__可选__|鉴定有效期1|string (date-time)
+|**validDate2** +
+__可选__|鉴定有效期2|string (date-time)
+|===
+
+
+[[_pwhtandhardnesstestitemdto]]
+=== PwhtAndHardnessTestItemDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**baseTestValue** +
+__可选__||string
+|**drawingNo** +
+__可选__|图纸号|string
+|**hazTestValue** +
+__可选__||string
+|**material** +
+__可选__|母材|string
+|**required** +
+__可选__||string
+|**result** +
+__可选__|结果|string
+|**size** +
+__可选__|尺寸|string
+|**thk** +
+__可选__||string
+|**weldNo** +
+__可选__|焊口|string
+|**weldTestValue** +
+__可选__||string
+|===
+
+
+[[_pwhtandhardnesstestreportdto]]
+=== PwhtAndHardnessTestReportDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**actualCoolingRate** +
+__可选__|实际冷却速率|string
+|**actualHeatingRate** +
+__可选__|实际升温速率|string
+|**actualHoldingTemp** +
+__可选__|实际保温温度|string
+|**actualHoldingTime** +
+__可选__|实际保温时间|string
+|**calibrationDate** +
+__可选__|校验日期|string (date-time)
+|**chartSpeed** +
+__可选__|进卡速度|string
+|**createdBy** +
+__可选__||string
+|**date** +
+__可选__|日期|string (date-time)
+|**equipmentDescription** +
+__可选__|设备描述|string
+|**exportType** +
+__可选__||enum (PDF, MS_WORD, MS_EXCEL)
+|**hardnessTestCalibrationDate** +
+__可选__|硬度测试校验日期|string (date-time)
+|**hardnessTestMethod** +
+__可选__|硬度测试方法|string
+|**hardnessTester** +
+__可选__|硬度测试仪类型|string
+|**items** +
+__可选__||< <<_pwhtandhardnesstestitemdto,PwhtAndHardnessTestItemDTO>> > array
+|**orgId** +
+__可选__||string
+|**otherDisplayFlg** +
+__可选__||boolean
+|**ownerDisplayFlg** +
+__可选__||boolean
+|**projectId** +
+__可选__||string
+|**projectName** +
+__可选__|项目名称|string
+|**recorderNo** +
+__可选__|记录单号|string
+|**reportId** +
+__可选__||string
+|**reportName** +
+__可选__||string
+|**reportNo** +
+__可选__|报告号|string
+|**reportNoPrefix** +
+__可选__||string
+|**requiredCoolingRate** +
+__可选__|需求冷却速率|string
+|**requiredHeatingRate** +
+__可选__|需求升温速率|string
+|**requiredHoldingTemp** +
+__可选__|需求保温温度|string
+|**requiredHoldingTime** +
+__可选__|需求保温时间|string
+|**serialNo** +
+__可选__|硬度测试序列号|string
+|**sheet** +
+__可选__|工作表|string
+|**templateNo** +
+__可选__|模板编号|string
+|**thirdPartyDisplayFlg** +
+__可选__||boolean
+|**unitOrArea** +
+__可选__|单位/区域|string
+|===
+
+
+[[_radiographictestitemdto]]
+=== RadiographicTestItemDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**date** +
+__可选__|结果判定日期|string (date-time)
+|**defectLength** +
+__可选__|缺陷长度|string
+|**defectType** +
+__可选__|缺陷类型|string
+|**density** +
+__可选__|黑度|string
+|**diaOrThk** +
+__可选__|直径/厚度|string
+|**filmNo** +
+__可选__|片位号|string
+|**iqi** +
+__可选__|渗透剂指数|string
+|**jointNo** +
+__可选__|焊接节点号|string
+|**judge** +
+__可选__|结果判定|string
+|**material** +
+__可选__|材质|string
+|**partNo** +
+__可选__|构件号|string
+|**process** +
+__可选__|焊接方法|string
+|**repairReportNo** +
+__可选__|返修报告号|string
+|**welderNo** +
+__可选__|焊工号|string
+|**wl** +
+__可选__|W.L|string
+|===
+
+
+[[_radiographictestreportdto]]
+=== RadiographicTestReportDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**acceptCriteria** +
+__可选__|认可标准|string
+|**createdBy** +
+__可选__||string
+|**developCondition** +
+__可选__|显影条件|string
+|**drawingNo** +
+__可选__|图号|string
+|**exportType** +
+__可选__||enum (PDF, MS_WORD, MS_EXCEL)
+|**exposureTime** +
+__可选__|曝光时间|string
+|**filmType** +
+__可选__|胶片类型|string
+|**instrumentType** +
+__可选__|仪器型号|string
+|**intensifyScreen** +
+__可选__|增感方式|string
+|**items** +
+__可选__||< <<_radiographictestitemdto,RadiographicTestItemDTO>> > array
+|**moduleName** +
+__可选__|模块号|string
+|**noFilmInHolder** +
+__可选__|片盒底片数|string
+|**orgId** +
+__可选__||string
+|**otherDisplayFlg** +
+__可选__||boolean
+|**ownerDisplayFlg** +
+__可选__||boolean
+|**projectId** +
+__可选__||string
+|**projectName** +
+__可选__|项目名称|string
+|**radioTechnique** +
+__可选__|拍片方式|string
+|**reportId** +
+__可选__||string
+|**reportName** +
+__可选__||string
+|**reportNo** +
+__可选__|报告号|string
+|**reportNoPrefix** +
+__可选__||string
+|**serialNo** +
+__可选__||string
+|**sfd** +
+__可选__|焦距|string
+|**sourceSize** +
+__可选__|源尺寸|string
+|**sourceType** +
+__可选__|源类型|string
+|**templateNo** +
+__可选__|模板编号|string
+|**thirdPartyDisplayFlg** +
+__可选__||boolean
+|**xTubeCurrent** +
+__可选__|X-管电流|string
+|**xTubeVoltage** +
+__可选__|X-管电压|string
+|===
+
+
+[[_referencedata]]
+=== ReferenceData
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**$ref** +
+__可选__|引用目标数据实体 ID|string
+|===
+
+
+[[_reporthistory]]
+=== ReportHistory
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**createdAt** +
+__可选__|创建时间|string
+|**createdBy** +
+__可选__|创建者信息|<<_referencedata,ReferenceData>>
+|**dataType** +
+__可选__||string
+|**deleted** +
+__可选__|是否已被删除|boolean
+|**deletedAt** +
+__可选__|删除时间|string
+|**deletedBy** +
+__可选__|删除者信息|<<_referencedata,ReferenceData>>
+|**fileId** +
+__可选__||string
+|**filePath** +
+__可选__||string
+|**id** +
+__可选__|实体 ID|string
+|**lastModifiedAt** +
+__可选__|最后更新时间|string
+|**lastModifiedBy** +
+__可选__|最后更新者信息|<<_referencedata,ReferenceData>>
+|**orgId** +
+__可选__||string
+|**projectId** +
+__可选__||string
+|**reportId** +
+__可选__||string
+|**reportName** +
+__可选__||string
+|**reportNo** +
+__可选__||string
+|**status** +
+__可选__|数据实体状态|enum (ACTIVE, DISABLED, DELETED, REJECTED, APPROVED, PENDING, FINISHED, CLOSED)
+|**templateName** +
+__可选__||string
+|**version** +
+__可选__|更新版本（手动乐观锁）|integer (int64)
+|===
+
+
+[[_template]]
+=== Template
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**domain** +
+__可选__||enum (CHECKLIST, WEEKLY)
+|**fixedHeight** +
+__可选__||integer (int32)
+|**id** +
+__可选__|实体 ID|string
+|**name** +
+__可选__||string
+|**position** +
+__可选__||enum (HEADER, TITLE, DETAIL, SUMMARY, SIGNATURE, FOOTER)
+|**templateFile** +
+__可选__||string
+|===
+
+
+[[_templatedto]]
+=== TemplateDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**domain** +
+__可选__|enum (CHECKLIST, WEEKLY)
+|**fixedHeight** +
+__可选__|integer (int32)
+|**name** +
+__可选__|string
+|**position** +
+__可选__|enum (HEADER, TITLE, DETAIL, SUMMARY, SIGNATURE, FOOTER)
+|**templateFile** +
+__可选__|string
+|===
+
+
+[[_ultrasonictestitemdto]]
+=== UltrasonicTestItemDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**d** +
+__可选__||string
+|**date** +
+__可选__|检测日期|string (date-time)
+|**defectNo** +
+__可选__|缺陷号|string
+|**judge** +
+__可选__|意见|string
+|**l** +
+__可选__||string
+|**probeAngle** +
+__可选__|探头角度|string
+|**range** +
+__可选__|范围|string
+|**referencePoint** +
+__可选__|参考点|string
+|**repairReportNo** +
+__可选__|返修报告号|string
+|**thickness** +
+__可选__|构厚度件号|string
+|**w** +
+__可选__||string
+|**weldNo** +
+__可选__|焊缝节点号|string
+|**welderNo** +
+__可选__|焊工号|string
+|**wl** +
+__可选__|焊缝长度|string
+|**x** +
+__可选__||string
+|**y** +
+__可选__||string
+|===
+
+
+[[_ultrasonictestreportdto]]
+=== UltrasonicTestReportDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**acceptCriteria** +
+__可选__|合格标准|string
+|**beamAngle** +
+__可选__|探头角度|string
+|**beamIndex** +
+__可选__|入射点|string
+|**couplant** +
+__可选__|耦合剂|string
+|**createdBy** +
+__可选__||string
+|**drawingNo** +
+__可选__|图号|string
+|**exportType** +
+__可选__||enum (PDF, MS_WORD, MS_EXCEL)
+|**instrumentType** +
+__可选__|仪器型号/编号|string
+|**items** +
+__可选__||< <<_ultrasonictestitemdto,UltrasonicTestItemDTO>> > array
+|**material** +
+__可选__|材料|string
+|**ndtDrawing** +
+__可选__|NDT图号|string
+|**orgId** +
+__可选__||string
+|**otherDisplayFlg** +
+__可选__||boolean
+|**ownerDisplayFlg** +
+__可选__||boolean
+|**partName** +
+__可选__|工件名称|string
+|**partNo** +
+__可选__|工件编号|string
+|**probeType** +
+__可选__|探头类型|string
+|**projectId** +
+__可选__||string
+|**projectName** +
+__可选__|项目名称|string
+|**referenceSensitivity** +
+__可选__|标准灵敏度|string
+|**reportId** +
+__可选__||string
+|**reportName** +
+__可选__||string
+|**reportNo** +
+__可选__|报告号|string
+|**reportNoPrefix** +
+__可选__||string
+|**sensitivityBlock** +
+__可选__|试块形式|string
+|**serialNo** +
+__可选__||string
+|**surfacePrep** +
+__可选__|表面处理|string
+|**templateNo** +
+__可选__|模板编号|string
+|**testSensitivity** +
+__可选__|检验灵敏度|string
+|**thirdPartyDisplayFlg** +
+__可选__||boolean
+|===
+
+
+[[_valveinspectionitemdto]]
+=== ValveInspectionItemDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**certificationNo** +
+__可选__|证书号|string
+|**checkDate** +
+__可选__|验收日期|string (date-time)
+|**description** +
+__可选__|规格描述|string
+|**factory** +
+__可选__|生产厂家|string
+|**name** +
+__可选__|名称|string
+|**page** +
+__可选__|页码|string
+|**quantity** +
+__可选__|数量|string
+|**result** +
+__可选__|结果|string
+|**size** +
+__可选__|规格|string
+|**tagNo** +
+__可选__|位号|string
+|===
+
+
+[[_valveinspectionreportdto]]
+=== ValveInspectionReportDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**createdBy** +
+__可选__||string
+|**exportType** +
+__可选__||enum (PDF, MS_WORD, MS_EXCEL)
+|**items** +
+__可选__||< <<_valveinspectionitemdto,ValveInspectionItemDTO>> > array
+|**orgId** +
+__可选__||string
+|**otherDisplayFlg** +
+__可选__||boolean
+|**ownerDisplayFlg** +
+__可选__||boolean
+|**projectId** +
+__可选__||string
+|**projectName** +
+__可选__|项目名称|string
+|**reportId** +
+__可选__||string
+|**reportName** +
+__可选__||string
+|**reportNo** +
+__可选__|报告编号|string
+|**reportNoPrefix** +
+__可选__||string
+|**serialNo** +
+__可选__||string
+|**templateNo** +
+__可选__|模板编号|string
+|**thirdPartyDisplayFlg** +
+__可选__||boolean
+|===
+
+
+[[_weldhardnesstestitemdto]]
+=== WeldHardnessTestItemDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**averageValue** +
+__可选__|平均值|string
+|**evaluation** +
+__可选__|评估|string
+|**material** +
+__可选__|母材|string
+|**remark** +
+__可选__|备注|string
+|**standardValue** +
+__可选__|标准值|string
+|**testPoint1** +
+__可选__|测试点1|string
+|**testPoint2** +
+__可选__|测试点2|string
+|**testPoint3** +
+__可选__|测试点3|string
+|**testPoint4** +
+__可选__|测试点4|string
+|**testPoint5** +
+__可选__|测试点5|string
+|**testPoint6** +
+__可选__|测试点6|string
+|**weldNo** +
+__可选__|焊口|string
+|===
+
+
+[[_weldhardnesstestreportdto]]
+=== WeldHardnessTestReportDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**createdBy** +
+__可选__||string
+|**exportType** +
+__可选__||enum (PDF, MS_WORD, MS_EXCEL)
+|**items** +
+__可选__||< <<_weldhardnesstestitemdto,WeldHardnessTestItemDTO>> > array
+|**ndtDrawingNo** +
+__可选__|NDT图号|string
+|**orgId** +
+__可选__||string
+|**otherDisplayFlg** +
+__可选__||boolean
+|**ownerDisplayFlg** +
+__可选__||boolean
+|**projectId** +
+__可选__||string
+|**projectName** +
+__可选__|项目名称|string
+|**reportId** +
+__可选__||string
+|**reportName** +
+__可选__||string
+|**reportNo** +
+__可选__|报告号|string
+|**reportNoPrefix** +
+__可选__||string
+|**serialNo** +
+__可选__||string
+|**structureName** +
+__可选__|构结构名称件号|string
+|**templateNo** +
+__可选__||string
+|**thirdPartyDisplayFlg** +
+__可选__||boolean
+|===
+
+
+[[_weldercertificatedto]]
+=== WelderCertificateDTO
+
+[options="header", cols=".^3,.^4"]
+|===
+|名称|类型
+|**actualBacking** +
+__可选__|boolean
+|**actualBaseMetal** +
+__可选__|string
+|**actualDia** +
+__可选__|string
+|**actualElectrode** +
+__可选__|string
+|**actualFillerMetalClass** +
+__可选__|string
+|**actualFillerMetalFNo** +
+__可选__|string
+|**actualFillerMetalSpecNo** +
+__可选__|string
+|**actualGasOrFluxType** +
+__可选__|string
+|**actualPolarity** +
+__可选__|string
+|**actualPosition** +
+__可选__|string
+|**actualProcess** +
+__可选__|string
+|**actualThickness** +
+__可选__|string
+|**appearance** +
+__可选__|string
+|**approvedBy** +
+__可选__|string
+|**approvedDate** +
+__可选__|string (date-time)
+|**createdBy** +
+__可选__|string
+|**diaFilletChecked** +
+__可选__|boolean
+|**diaGrooveChecked** +
+__可选__|boolean
+|**exportType** +
+__可选__|enum (PDF, MS_WORD, MS_EXCEL)
+|**filletSize** +
+__可选__|string
+|**filletTestDate** +
+__可选__|string (date-time)
+|**filletTestNo** +
+__可选__|string
+|**fractureTest** +
+__可选__|string
+|**idCard** +
+__可选__|string
+|**inspector** +
+__可选__|string
+|**macroetch** +
+__可选__|string
+|**manufacturer** +
+__可选__|string
+|**name** +
+__可选__|string
+|**orgId** +
+__可选__|string
+|**organization** +
+__可选__|string
+|**otherDisplayFlg** +
+__可选__|boolean
+|**ownerDisplayFlg** +
+__可选__|boolean
+|**photo** +
+__可选__|string
+|**planBacking** +
+__可选__|boolean
+|**planBaseMetal** +
+__可选__|string
+|**planDia** +
+__可选__|string
+|**planElectrode** +
+__可选__|string
+|**planPolarity** +
+__可选__|string
+|**planPosition** +
+__可选__|string
+|**planProcess** +
+__可选__|string
+|**planThickness** +
+__可选__|string
+|**prepareBy** +
+__可选__|string
+|**prepareDate** +
+__可选__|string (date-time)
+|**projectId** +
+__可选__|string
+|**radioReportNo** +
+__可选__|string
+|**radioReportResult** +
+__可选__|string
+|**reportId** +
+__可选__|string
+|**reportName** +
+__可选__|string
+|**reportNo** +
+__可选__|string
+|**reportNoPrefix** +
+__可选__|string
+|**reviewBy** +
+__可选__|string
+|**reviewDate** +
+__可选__|string (date-time)
+|**serialNo** +
+__可选__|string
+|**templateNo** +
+__可选__|string
+|**testDate** +
+__可选__|string (date-time)
+|**thicknessFilletChecked** +
+__可选__|boolean
+|**thicknessGrooveChecked** +
+__可选__|boolean
+|**thicknessPipeChecked** +
+__可选__|boolean
+|**thicknessPlateChecked** +
+__可选__|boolean
+|**thirdPartyDisplayFlg** +
+__可选__|boolean
+|**visualAcceptable** +
+__可选__|boolean
+|**welderNo** +
+__可选__|string
+|**welderType** +
+__可选__|string
+|**wpsNo** +
+__可选__|string
+|===
+
+
+

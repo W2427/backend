@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="pageHead" pageWidth="762" pageHeight="125" whenNoDataType="AllSectionsNoDetail" columnWidth="762"
+              leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="78fec0e2-164b-4140-9082-1f647479616e">
+    <summary>
+        <band height="125">
+            <property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+            <textField>
+                <reportElement stretchType="ContainerBottom" x="0" y="0" width="238" height="45"
+                               uuid="b8afffef-cd82-47c0-8423-9571bba8e8aa">
+                    <property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+                    <property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+                </reportElement>
+                <box>
+                    <pen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Top">
+                    <font fontName="微软雅黑" size="16" isBold="true"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Construction\r\n施工方"]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement stretchType="ContainerBottom" x="238" y="0" width="263" height="45"
+                               uuid="c83bb924-b9b0-4abd-b125-73915508e4a3">
+                    <property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+                    <property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+                </reportElement>
+                <box>
+                    <pen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Top">
+                    <font fontName="微软雅黑" size="16" isBold="true"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA["QC/QA Dept."]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement stretchType="ContainerBottom" x="501" y="0" width="261" height="45"
+                               uuid="d74f0757-3d56-446e-bea6-2e467b431de5">
+                    <property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+                    <property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+                </reportElement>
+                <box>
+                    <pen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Top">
+                    <font fontName="微软雅黑" size="16" isBold="true"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA["NPC/WEL"]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement stretchType="ContainerBottom" x="238" y="45" width="263" height="40"
+                               uuid="577adef8-06da-4c53-b26b-19894d8dce65">
+                    <property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+                    <property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+                </reportElement>
+                <box>
+                    <pen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font fontName="微软雅黑" size="9" isBold="true"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA["SIGN:\r\n签字:"]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement stretchType="ContainerBottom" x="501" y="45" width="261" height="40"
+                               uuid="7b02691c-0d3c-4b60-8845-e45556d5373e">
+                    <property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+                    <property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+                </reportElement>
+                <box>
+                    <pen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font fontName="微软雅黑" size="9" isBold="true"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA["SIGN:\r\n签字:"]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement stretchType="ContainerBottom" x="0" y="45" width="238" height="40"
+                               uuid="22d04465-6d7d-4452-9406-df9e8c9379e9">
+                    <property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+                    <property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+                </reportElement>
+                <box>
+                    <pen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font fontName="微软雅黑" size="9" isBold="true"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA["SIGN:\r\n签字:"]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement stretchType="ContainerBottom" x="238" y="85" width="263" height="40"
+                               uuid="35f2cd60-4d50-480e-8fd1-b9f54c267b8f">
+                    <property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+                    <property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+                </reportElement>
+                <box>
+                    <pen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font fontName="微软雅黑" size="9" isBold="true"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA["DATE:\r\n日期:"]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement stretchType="ContainerBottom" x="501" y="85" width="261" height="40"
+                               uuid="e1078e78-2700-436c-820f-59bedfcbf6d5">
+                    <property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+                    <property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+                </reportElement>
+                <box>
+                    <pen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font fontName="微软雅黑" size="9" isBold="true"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA["DATE:\r\n日期:"]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement stretchType="ContainerBottom" x="0" y="85" width="238" height="40"
+                               uuid="adf9e0c4-7095-4e88-b026-908d1009cff0">
+                    <property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+                    <property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+                </reportElement>
+                <box>
+                    <pen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font fontName="微软雅黑" size="9" isBold="true"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA["DATE:\r\n日期:"]]></textFieldExpression>
+            </textField>
+        </band>
+    </summary>
+</jasperReport>

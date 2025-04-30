@@ -1,0 +1,986 @@
+
+[[_definitions]]
+== 定义
+
+[[_experience]]
+=== Experience
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**attachment** +
+__可选__|附件 ID|string
+|**createdAt** +
+__可选__|创建时间|string
+|**createdBy** +
+__可选__|创建者信息|<<_referencedata,ReferenceData>>
+|**deleted** +
+__可选__|是否已被删除|boolean
+|**deletedAt** +
+__可选__|删除时间|string
+|**deletedBy** +
+__可选__|删除者信息|<<_referencedata,ReferenceData>>
+|**description** +
+__可选__|描述|string
+|**id** +
+__可选__|实体 ID|string
+|**lastModifiedAt** +
+__可选__|最后更新时间|string
+|**lastModifiedBy** +
+__可选__|最后更新者信息|<<_referencedata,ReferenceData>>
+|**no** +
+__可选__|遗留问题编号|string
+|**orgId** +
+__可选__|组织 ID|string
+|**projectId** +
+__可选__|项目 ID|string
+|**properties** +
+__可选__|自定义属性|< <<_issueproperty,IssueProperty>> > array
+|**props** +
+__可选__|自定义属性列表|string
+|**status** +
+__可选__|数据实体状态|enum (ACTIVE, DISABLED, DELETED, REJECTED, APPROVED, PENDING, FINISHED, CLOSED)
+|**title** +
+__可选__|标题|string
+|**type** +
+__可选__|问题类型|enum (ISSUE, EXPERIENCE)
+|**version** +
+__可选__|更新版本（手动乐观锁）|integer (int64)
+|===
+
+
+[[_experiencecreatedto]]
+=== ExperienceCreateDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**attachment** +
+__可选__|附件|string
+|**description** +
+__可选__|经验教训描述|string
+|**no** +
+__可选__|编号|string
+|**properties** +
+__可选__|自定义属性列表|< <<_propertydto,PropertyDTO>> > array
+|**title** +
+__可选__|经验教训标题|string
+|===
+
+
+[[_experienceupdatedto]]
+=== ExperienceUpdateDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**attachment** +
+__可选__|附件|string
+|**description** +
+__可选__|经验教训描述|string
+|**no** +
+__可选__|编号|string
+|**properties** +
+__可选__|自定义属性列表|< <<_propertydto,PropertyDTO>> > array
+|**title** +
+__可选__|经验教训标题|string
+|===
+
+
+[[_fielderror]]
+=== FieldError
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**message** +
+__可选__|错误描述|string
+|**name** +
+__可选__|发生错误的字段|string
+|**type** +
+__可选__|错误类型|string
+|===
+
+
+[[_issue]]
+=== Issue
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**area** +
+__可选__|区域|string
+|**attachment** +
+__可选__|附件 ID|string
+|**batchNo** +
+__可选__|导入批次编号|string
+|**cleanPackage** +
+__可选__|清洁包|string
+|**createdAt** +
+__可选__|创建时间|string
+|**createdBy** +
+__可选__|创建者信息|<<_referencedata,ReferenceData>>
+|**deleted** +
+__可选__|是否已被删除|boolean
+|**deletedAt** +
+__可选__|删除时间|string
+|**deletedBy** +
+__可选__|删除者信息|<<_referencedata,ReferenceData>>
+|**department** +
+__可选__|责任部门|<<_referencedata,ReferenceData>>
+|**description** +
+__可选__|描述|string
+|**entities** +
+__可选__|实体|string
+|**externalInspectNo** +
+__可选__|外检编号|string
+|**id** +
+__可选__|实体 ID|string
+|**inspectionRecord** +
+__可选__|报验单|string
+|**lastModifiedAt** +
+__可选__|最后更新时间|string
+|**lastModifiedBy** +
+__可选__|最后更新者信息|<<_referencedata,ReferenceData>>
+|**layer** +
+__可选__|层|string
+|**leader** +
+__可选__|责任人|<<_referencedata,ReferenceData>>
+|**level** +
+__可选__|意见等级|enum (A, B, C)
+|**members** +
+__可选__|整改人|< <<_referencedata,ReferenceData>> > array
+|**no** +
+__可选__|遗留问题编号|string
+|**orgId** +
+__可选__|组织 ID|string
+|**owner** +
+__可选__||<<_referencedata,ReferenceData>>
+|**planFinishTime** +
+__可选__|计划完成时间|string (date-time)
+|**pressureTestPackage** +
+__可选__|试压包|string
+|**priority** +
+__可选__|优先级|enum (LOW, MEDIUM, HIGH)
+|**process** +
+__可选__|工序|string
+|**projectId** +
+__可选__|项目 ID|string
+|**properties** +
+__可选__|自定义属性|< <<_issueproperty,IssueProperty>> > array
+|**props** +
+__可选__|自定义属性列表|string
+|**source** +
+__可选__|来源|enum (QC, OWNER, THIRD_PARTY)
+|**status** +
+__可选__|数据实体状态|enum (ACTIVE, DISABLED, DELETED, REJECTED, APPROVED, PENDING, FINISHED, CLOSED)
+|**subSystem** +
+__可选__|子系统|string
+|**title** +
+__可选__|标题|string
+|**type** +
+__可选__|问题类型|enum (ISSUE, EXPERIENCE)
+|**version** +
+__可选__|更新版本（手动乐观锁）|integer (int64)
+|===
+
+
+[[_issuecomment]]
+=== IssueComment
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**comment** +
+__可选__||string
+|**createdAt** +
+__可选__|创建时间|string
+|**createdBy** +
+__可选__|创建者信息|<<_referencedata,ReferenceData>>
+|**deleted** +
+__可选__|是否已被删除|boolean
+|**deletedAt** +
+__可选__|删除时间|string
+|**deletedBy** +
+__可选__|删除者信息|<<_referencedata,ReferenceData>>
+|**id** +
+__可选__|实体 ID|string
+|**issueId** +
+__可选__||string
+|**lastModifiedAt** +
+__可选__|最后更新时间|string
+|**lastModifiedBy** +
+__可选__|最后更新者信息|<<_referencedata,ReferenceData>>
+|**status** +
+__可选__|数据实体状态|enum (ACTIVE, DISABLED, DELETED, REJECTED, APPROVED, PENDING, FINISHED, CLOSED)
+|**version** +
+__可选__|更新版本（手动乐观锁）|integer (int64)
+|===
+
+
+[[_issuecommentcreatedto]]
+=== IssueCommentCreateDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**comment** +
+__可选__|评论|string
+|===
+
+
+[[_issuecommentupdatedto]]
+=== IssueCommentUpdateDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**comment** +
+__可选__|评论|string
+|===
+
+
+[[_issuecreatedto]]
+=== IssueCreateDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**area** +
+__可选__|区域|string
+|**attachment** +
+__可选__|附件|string
+|**cleanPackage** +
+__可选__|清洁包|string
+|**department** +
+__可选__|整改人所在部门|string
+|**description** +
+__可选__|经验教训描述|string
+|**entities** +
+__可选__|实体|string
+|**externalInspectNo** +
+__可选__|外检编号|string
+|**inspectionRecord** +
+__可选__|报验单|string
+|**layer** +
+__可选__|层|string
+|**leader** +
+__可选__|负责人|string
+|**level** +
+__可选__|意见等级|enum (A, B, C)
+|**members** +
+__可选__|整改人|< string > array
+|**no** +
+__可选__|编号|string
+|**owner** +
+__可选__|提出人|string
+|**planFinishTime** +
+__可选__|预计完成日期|string (date-time)
+|**pressureTestPackage** +
+__可选__|试压包|string
+|**priority** +
+__可选__|优先级|enum (LOW, MEDIUM, HIGH)
+|**process** +
+__可选__|工序|string
+|**properties** +
+__可选__|自定义属性列表|< <<_propertydto,PropertyDTO>> > array
+|**source** +
+__可选__|来源|enum (QC, OWNER, THIRD_PARTY)
+|**status** +
+__可选__|状态|enum (ACTIVE, DISABLED, DELETED, REJECTED, APPROVED, PENDING, FINISHED, CLOSED)
+|**subSystem** +
+__可选__|子系统|string
+|**title** +
+__可选__|经验教训标题|string
+|===
+
+
+[[_issuecriteriadto]]
+=== IssueCriteriaDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**createdAtEndTime** +
+__可选__|创建结束日期|string (date-time)
+|**createdAtStartTime** +
+__可选__|创建开始日期|string (date-time)
+|**creatorId** +
+__可选__|创建者 ID|string
+|**finishedEndTime** +
+__可选__|完成结束时间|string (date-time)
+|**finishedStartTime** +
+__可选__|完成日开始时间|string (date-time)
+|**issueIDs** +
+__可选__|问题 ID 列表|< string > array
+|**keyword** +
+__可选__|关键字|string
+|**leaderId** +
+__可选__|责任人ID|string
+|**participantId** +
+__可选__|参与者 ID|string
+|**props** +
+__可选__|自定义字段查询条件（属性 ID:值）|string
+|**source** +
+__可选__|问题来源|< enum (QC, OWNER, THIRD_PARTY) > array
+|**status** +
+__可选__|状态|< enum (ACTIVE, DISABLED, DELETED, REJECTED, APPROVED, PENDING, FINISHED, CLOSED) > array
+|===
+
+
+[[_issueimportdto]]
+=== IssueImportDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**fileName** +
+__可选__|临时文件名|string
+|===
+
+
+[[_issueimporttemplate]]
+=== IssueImportTemplate
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**createdAt** +
+__可选__|创建时间|string
+|**createdBy** +
+__可选__|创建者信息|<<_referencedata,ReferenceData>>
+|**deleted** +
+__可选__|是否已被删除|boolean
+|**deletedAt** +
+__可选__|删除时间|string
+|**deletedBy** +
+__可选__|删除者信息|<<_referencedata,ReferenceData>>
+|**fileId** +
+__可选__|导入文件 ID|string
+|**id** +
+__可选__|实体 ID|string
+|**issueType** +
+__可选__|问题类型|enum (ISSUE, EXPERIENCE)
+|**lastModifiedAt** +
+__可选__|最后更新时间|string
+|**lastModifiedBy** +
+__可选__|最后更新者信息|<<_referencedata,ReferenceData>>
+|**projectId** +
+__可选__|项目 ID|string
+|**propertyNames** +
+__可选__|导入文件 ID|string
+|**status** +
+__可选__|数据实体状态|enum (ACTIVE, DISABLED, DELETED, REJECTED, APPROVED, PENDING, FINISHED, CLOSED)
+|**version** +
+__可选__|更新版本（手动乐观锁）|integer (int64)
+|===
+
+
+[[_issueproperty]]
+=== IssueProperty
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**createdAt** +
+__可选__|创建时间|string
+|**id** +
+__可选__|实体 ID|string
+|**issueId** +
+__可选__|问题 ID|string
+|**lastModifiedAt** +
+__可选__|最后更新时间|string
+|**propertyId** +
+__可选__|属性 ID|string
+|**propertyName** +
+__可选__|属性名称|string
+|**propertyType** +
+__可选__|属性类型|enum (TEXT, OPTIONS_SINGLE, OPTIONS_MULTIPLE)
+|**status** +
+__可选__|数据实体状态|enum (ACTIVE, DISABLED, DELETED, REJECTED, APPROVED, PENDING, FINISHED, CLOSED)
+|**values** +
+__可选__|属性值|string
+|===
+
+
+[[_issuepropertydefinition]]
+=== IssuePropertyDefinition
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**createdAt** +
+__可选__|创建时间|string
+|**createdBy** +
+__可选__|创建者信息|<<_referencedata,ReferenceData>>
+|**deleted** +
+__可选__|是否已被删除|boolean
+|**deletedAt** +
+__可选__|删除时间|string
+|**deletedBy** +
+__可选__|删除者信息|<<_referencedata,ReferenceData>>
+|**id** +
+__可选__|实体 ID|string
+|**issueType** +
+__可选__|问题类型|enum (ISSUE, EXPERIENCE)
+|**lastModifiedAt** +
+__可选__|最后更新时间|string
+|**lastModifiedBy** +
+__可选__|最后更新者信息|<<_referencedata,ReferenceData>>
+|**name** +
+__可选__|属性名称|string
+|**options** +
+__可选__||< string > array
+|**orgId** +
+__可选__|组织 ID|string
+|**projectId** +
+__可选__|项目 ID|string
+|**propertyType** +
+__可选__|类型|enum (TEXT, OPTIONS_SINGLE, OPTIONS_MULTIPLE)
+|**status** +
+__可选__|数据实体状态|enum (ACTIVE, DISABLED, DELETED, REJECTED, APPROVED, PENDING, FINISHED, CLOSED)
+|**version** +
+__可选__|更新版本（手动乐观锁）|integer (int64)
+|===
+
+
+[[_issuerecord]]
+=== IssueRecord
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**content** +
+__可选__||string
+|**createdAt** +
+__可选__|创建时间|string
+|**createdBy** +
+__可选__|创建者信息|<<_referencedata,ReferenceData>>
+|**deleted** +
+__可选__|是否已被删除|boolean
+|**deletedAt** +
+__可选__|删除时间|string
+|**deletedBy** +
+__可选__|删除者信息|<<_referencedata,ReferenceData>>
+|**id** +
+__可选__|实体 ID|string
+|**issueId** +
+__可选__||string
+|**lastModifiedAt** +
+__可选__|最后更新时间|string
+|**lastModifiedBy** +
+__可选__|最后更新者信息|<<_referencedata,ReferenceData>>
+|**status** +
+__可选__|数据实体状态|enum (ACTIVE, DISABLED, DELETED, REJECTED, APPROVED, PENDING, FINISHED, CLOSED)
+|**version** +
+__可选__|更新版本（手动乐观锁）|integer (int64)
+|===
+
+
+[[_issuetransferdto]]
+=== IssueTransferDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**comment** +
+__可选__|移交原因|string
+|**issues** +
+__可选__|问题列表|< string > array
+|**leader** +
+__可选__|负责人|string
+|===
+
+
+[[_issueupdatedto]]
+=== IssueUpdateDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**area** +
+__可选__|区域|string
+|**attachment** +
+__可选__|附件|string
+|**cleanPackage** +
+__可选__|清洁包|string
+|**department** +
+__可选__|整改人所在部门|string
+|**description** +
+__可选__|经验教训描述|string
+|**entities** +
+__可选__|实体|string
+|**externalInspectNo** +
+__可选__|外检编号|string
+|**inspectionRecord** +
+__可选__|报验单|string
+|**layer** +
+__可选__|层|string
+|**leader** +
+__可选__|负责人|string
+|**level** +
+__可选__|意见等级|enum (A, B, C)
+|**members** +
+__可选__|成员|< string > array
+|**no** +
+__可选__|编号|string
+|**planFinishTime** +
+__可选__|预计完成日期|string (date-time)
+|**pressureTestPackage** +
+__可选__|试压包|string
+|**priority** +
+__可选__|优先级|enum (LOW, MEDIUM, HIGH)
+|**process** +
+__可选__|工序|string
+|**properties** +
+__可选__|自定义属性列表|< <<_propertydto,PropertyDTO>> > array
+|**source** +
+__可选__|来源|enum (QC, OWNER, THIRD_PARTY)
+|**status** +
+__可选__|状态|enum (ACTIVE, DISABLED, DELETED, REJECTED, APPROVED, PENDING, FINISHED, CLOSED)
+|**subSystem** +
+__可选__|子系统|string
+|**title** +
+__可选__|经验教训标题|string
+|===
+
+
+[[_564fee211732356619c19d6a8927fffd]]
+=== JsonListResponseBody«Experience»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_experience,Experience>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_bc450650c4b8d858841908021a845c55]]
+=== JsonListResponseBody«IssueComment»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_issuecomment,IssueComment>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_7f1d908f4e741fe122a7fdc0138e5ed2]]
+=== JsonListResponseBody«IssuePropertyDefinition»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_issuepropertydefinition,IssuePropertyDefinition>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_4026f248be9a608a4a02dd0dc8785db5]]
+=== JsonListResponseBody«IssueRecord»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_issuerecord,IssueRecord>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_fc6c69b7da795532036133b5c16a279a]]
+=== JsonListResponseBody«Issue»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_issue,Issue>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_ef6734cee470c090630595108aa11b3f]]
+=== JsonListResponseBody«Tag»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|查询结果|< <<_tag,Tag>> > array
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**meta** +
+__可选__|查询元数据|<<_meta,Meta>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_8a6a00a07a71421b0af69792728600e0]]
+=== JsonObjectResponseBody«Experience»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_experience,Experience>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_47973baee6a15241860ca101e31626c9]]
+=== JsonObjectResponseBody«IssueImportTemplate»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_issueimporttemplate,IssueImportTemplate>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_9852716760d1d97f92289d3f6f4e7405]]
+=== JsonObjectResponseBody«IssuePropertyDefinition»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_issuepropertydefinition,IssuePropertyDefinition>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_59a56d380051efdcd3f4053977fb3ee1]]
+=== JsonObjectResponseBody«Issue»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_issue,Issue>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_bfc54503dd173b2df218d212222ed81e]]
+=== JsonObjectResponseBody«Tag»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**data** +
+__可选__|返回数据|<<_tag,Tag>>
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**included** +
+__可选__|引用数据|object
+|**links** +
+__可选__|相关链接|< string, string > map
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_jsonresponsebody]]
+=== JsonResponseBody
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**accessToken** +
+__可选__|用户访问令牌|string
+|**error** +
+__可选__|错误信息|<<_jsonresponseerror,JsonResponseError>>
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|**success** +
+__可选__|处理是否成功|boolean
+|===
+
+
+[[_jsonresponseerror]]
+=== JsonResponseError
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**code** +
+__可选__|错误代码|string
+|**errors** +
+__可选__|错误列表|< <<_jsonresponseerror,JsonResponseError>> > array
+|**fields** +
+__可选__|发生校验错误的字段的列表|< <<_fielderror,FieldError>> > array
+|**message** +
+__可选__|错误消息|string
+|**status** +
+__可选__|HTTP 状态码|integer (int32)
+|===
+
+
+[[_meta]]
+=== Meta
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**count** +
+__可选__|数据总数|integer (int64)
+|**hasNextPage** +
+__可选__|是否存在下一页|boolean
+|**hasPreviousPage** +
+__可选__|是否存在上一页|boolean
+|**isFirstPage** +
+__可选__||boolean
+|**isLastPage** +
+__可选__||boolean
+|**pageNo** +
+__可选__|当前页号|integer (int32)
+|**pageSize** +
+__可选__|分页大小|integer (int32)
+|**pages** +
+__可选__|数据总页数|integer (int32)
+|===
+
+
+[[_propertydto]]
+=== PropertyDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**propertyDefinitionId** +
+__可选__|自定义属性定义 ID|string
+|**values** +
+__可选__|设置的属性值|< string > array
+|===
+
+
+[[_propertydefinitioncreatedto]]
+=== PropertyDefinitionCreateDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**issueType** +
+__可选__|问题类型|enum (ISSUE, EXPERIENCE)
+|**name** +
+__可选__|属性名称|string
+|**options** +
+__可选__|可选值（属性类型为 OPTIONS_SINGLE 或 OPTIONS_MULTIPLE 时）|< string > array
+|**propertyType** +
+__可选__|属性类型|enum (TEXT, OPTIONS_SINGLE, OPTIONS_MULTIPLE)
+|===
+
+
+[[_propertydefinitionupdatedto]]
+=== PropertyDefinitionUpdateDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**issueType** +
+__可选__|问题类型|enum (ISSUE, EXPERIENCE)
+|**name** +
+__可选__|属性名称|string
+|**options** +
+__可选__|可选值（属性类型为 OPTIONS_SINGLE 或 OPTIONS_MULTIPLE 时）|< string > array
+|**propertyType** +
+__可选__|属性类型|enum (TEXT, OPTIONS_SINGLE, OPTIONS_MULTIPLE)
+|===
+
+
+[[_referencedata]]
+=== ReferenceData
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**$ref** +
+__可选__|引用目标数据实体 ID|string
+|===
+
+
+[[_tag]]
+=== Tag
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**children** +
+__可选__||string
+|**createdAt** +
+__可选__|创建时间|string
+|**createdBy** +
+__可选__|创建者信息|<<_referencedata,ReferenceData>>
+|**deleted** +
+__可选__|是否已被删除|boolean
+|**deletedAt** +
+__可选__|删除时间|string
+|**deletedBy** +
+__可选__|删除者信息|<<_referencedata,ReferenceData>>
+|**id** +
+__可选__|实体 ID|string
+|**lastModifiedAt** +
+__可选__|最后更新时间|string
+|**lastModifiedBy** +
+__可选__|最后更新者信息|<<_referencedata,ReferenceData>>
+|**parentId** +
+__可选__||string
+|**projectId** +
+__可选__||string
+|**status** +
+__可选__|数据实体状态|enum (ACTIVE, DISABLED, DELETED, REJECTED, APPROVED, PENDING, FINISHED, CLOSED)
+|**targetId** +
+__可选__||string
+|**text** +
+__可选__||string
+|**version** +
+__可选__|更新版本（手动乐观锁）|integer (int64)
+|===
+
+
+[[_tagcreatedto]]
+=== TagCreateDTO
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**parentId** +
+__可选__|上级 ID|string
+|**targetId** +
+__可选__|目标 ID|string
+|**text** +
+__可选__|文本名称|string
+|===
+
+
+

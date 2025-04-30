@@ -1,0 +1,1 @@
+DELETE FROM `user_organization_relations` WHERE `id` LIKE ?;

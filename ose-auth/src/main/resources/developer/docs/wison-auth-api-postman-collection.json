@@ -1,0 +1,162 @@
+{
+	"variables": [],
+	"info": {
+		"name": "ose",
+		"_postman_id": "b59ba892-2606-c6f8-5321-81abd4830ebd",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "010 登录授权",
+			"description": "",
+			"item": [
+				{
+					"name": "登录",
+					"request": {
+						"url": "127.0.0.1:8810/authorizations",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"karlkim@163.com\",\n\t\"password\": \"rd1234\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "注销",
+					"request": {
+						"url": "127.0.0.1:8810/authorizations/eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJCTUIzUFVHTUUwMVdFNTc3XG5CTUIzUE5LNDlRVkJUUjJHXG5zeXN0ZW1cblxuU3VwZXJcbmppbGlkb2pzXG43RjAwMDAwMVxuQk1CM1BSTE5GSzNZUzI1MCJ9.sRKeKy0jx_rMSxavoq9L2mCo0TzAPz8r2n4sg1YsChsuxeVHhfhfbUsE1vnm83pS",
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "020 用户",
+			"description": "",
+			"item": [
+				{
+					"name": "登录用户信息",
+					"request": {
+						"url": "127.0.0.1:8810/users/current",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJCTUVEWUxTR0lVSjE5R0dNXG5CTUVEWUhKQjIxVUxXM0FZXG5zeXN0ZW1cblxuU3VwZXJcbmppcjB6aXU4XG43RjAwMDAwMVxuQk1FRFlKNVMxRFk1UFBRSCJ9.nYWIrFhWfW8UNJ2-lakOD_BB7ioR9nBhNa3TbTAfHXBYb8h5EycCj_zQGrYnPKpd",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "查询用户",
+					"request": {
+						"url": "127.0.0.1:8810/users?page.no=1&page.size=20&sort=id:desc",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJCTUhZUk1DMTdQQVAyNjdGXG5CTUhZUjdMMFNXNEhPWVc1XG5zeXN0ZW1cblxuU3VwZXJcbmppeDFiZnQ0XG43RjAwMDAwMVxuQk1IWVJNNEwxMVdES0ZWNyJ9.PGBfXpZ_iLOWPdB4MvjZXo1XuqHu-3Rr2QrwUE44xW6dcrAsihJliz8cC8YnJ-Wl",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "创建用户",
+					"request": {
+						"url": "127.0.0.1:8810/users",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJCTUkxTk4zT1BWNkhEOTJCXG5CTUkxTkVLTlpGRVdGTUI2XG5zeXN0ZW1cblxuU3VwZXJcbmppeDY2ZnlvXG43RjAwMDAwMVxuQk1JMU5NV0VTVjFTNEhSUyJ9.uH-S9yv1uyL2IMKJBeqR97ZhKnT3eP5T7lXpxWLcCfWrgHSWWhQ7TfKiqjLpIM8_",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Karl KIM\",\n\t\"email\": \"karlkim@163.com\",\n\t\"username\": \"karlkim\",\n\t\"password\": \"rd1234\",\n\t\"type\": \"user\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "030 重置密码",
+			"description": "",
+			"item": [
+				{
+					"name": "获取图形验证码",
+					"request": {
+						"url": "127.0.0.1:8810/captcha",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "发送验证码",
+					"request": {
+						"url": "127.0.0.1:8810/users/karlkim%40163.com/verifications",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"purpose\": \"RESET_PASSWORD\",\n\t\"captcha\": {\n\t\t\"text\": \"ywck\",\n\t\t\"encryptedData\": \"JDJhJDA2JHVIdVpjZHlYdE9RRzNqTG5lUXRaME83SVZJU3RENHZIckhLbmxGeWZ4blhldWxLUFUyYXBTJEJNSUlOUUpSWldDT0ZNWkwkSklYWVhEMjM=\"\n\t}\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

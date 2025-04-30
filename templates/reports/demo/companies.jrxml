@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="companies" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="515" leftMargin="40" rightMargin="40" topMargin="40" bottomMargin="20" isFloatColumnFooter="true" uuid="bea662ca-e920-46bc-b19a-880da2447f6a">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="CompanyFactory"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="235"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="754"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="449"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="537"/>
+	<parameter name="ASSETS_DIR" class="java.lang.String">
+		<parameterDescription><![CDATA[静态资源路径]]></parameterDescription>
+		<defaultValueExpression><![CDATA["/var/www/ose/resources/templates/reports/assets"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="REPORT_ID" class="java.lang.String">
+		<parameterDescription><![CDATA[报表 ID]]></parameterDescription>
+		<defaultValueExpression><![CDATA["0000000000000002"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="REPORT_NAME" class="java.lang.String">
+		<parameterDescription><![CDATA[报表名称]]></parameterDescription>
+		<defaultValueExpression><![CDATA["子报表示例"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[名称]]></fieldDescription>
+	</field>
+	<field name="address" class="java.lang.String">
+		<fieldDescription><![CDATA[地址]]></fieldDescription>
+	</field>
+	<field name="employees" class="java.util.List">
+		<fieldDescription><![CDATA[职员列表]]></fieldDescription>
+	</field>
+	<title>
+		<band height="40" splitType="Prevent">
+			<subreport isUsingCache="false" runToBottom="false" overflowType="NoStretch">
+				<reportElement isPrintRepeatedValues="false" x="0" y="0" width="515" height="40" uuid="9d510c67-0d46-4307-87a8-f58b0edb1815"/>
+				<subreportParameter name="ASSETS_DIR">
+					<subreportParameterExpression><![CDATA[$P{ASSETS_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="REPORT_ID">
+					<subreportParameterExpression><![CDATA[$P{REPORT_ID}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="REPORT_NAME">
+					<subreportParameterExpression><![CDATA[$P{REPORT_NAME}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["/var/www/ose/backend/templates/reports/demo/companies-header.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="30">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="80" height="30" backcolor="#DFDFDF" uuid="3d0bedf9-d8f4-40a9-87f1-5bbd216791b2"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="80" y="0" width="115" height="30" backcolor="#DFDFDF" uuid="ddf26ba6-0946-476a-8cc0-c2920bc6e538"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="195" y="0" width="320" height="30" backcolor="#DFDFDF" uuid="3a6af154-60e0-4d61-9e55-1226293074bb"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Employees]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="60">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<frame>
+				<reportElement x="0" y="0" width="515" height="60" uuid="f6db0c25-97e8-42a2-8f15-a12078bbd486">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="ShowOutOfBoundContent" value="false"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textField>
+					<reportElement stretchType="ContainerHeight" x="0" y="0" width="80" height="60" isPrintWhenDetailOverflows="true" uuid="4ec53161-652e-4ad8-a9a7-2799379ea656"/>
+					<box>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement stretchType="ContainerHeight" x="80" y="0" width="115" height="60" isPrintWhenDetailOverflows="true" uuid="4ebde5bc-0556-4fa3-bcfa-5f49d4ffcdff"/>
+					<box>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+				</textField>
+				<subreport>
+					<reportElement stretchType="ContainerHeight" x="195" y="0" width="320" height="60" uuid="9c629d94-7714-4872-83bf-bc38c0fe6611">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<subreportParameter name="ASSETS_DIR">
+						<subreportParameterExpression><![CDATA[$P{ASSETS_DIR}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="REPORT_ID">
+						<subreportParameterExpression><![CDATA[$P{REPORT_ID}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="REPORT_NAME">
+						<subreportParameterExpression><![CDATA[$P{REPORT_NAME}]]></subreportParameterExpression>
+					</subreportParameter>
+					<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{employees})]]></dataSourceExpression>
+					<subreportExpression><![CDATA["/var/www/ose/backend/templates/reports/demo/companies-employees.jasper"]]></subreportExpression>
+				</subreport>
+			</frame>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<textField>
+				<reportElement x="0" y="0" width="475" height="30" uuid="684394e8-964d-4061-8518-0b1d2a821cb6">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER} + " of "]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="475" y="0" width="40" height="30" uuid="af30b5f6-fb8e-47dd-9ca0-6c089bc2f4e7"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

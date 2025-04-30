@@ -1,0 +1,1 @@
+DELETE FROM `user_role_relations` WHERE `id` LIKE ?;

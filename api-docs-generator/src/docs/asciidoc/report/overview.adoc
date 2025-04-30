@@ -1,0 +1,67 @@
+= 报表服务系统
+
+
+[[_overview]]
+== 概览
+提供报表模板管理、报表生成及管理的服务。
+
+
+=== 版本信息
+[%hardbreaks]
+__版本__ : v0.0.1
+
+
+=== URI scheme
+[%hardbreaks]
+__域名__ : rpt.ose.com
+__基础路径__ : /
+
+
+=== 标签
+
+* application-for-inspection-controller : 生成外检确认单
+* application-for-inspection-external-controller : 生成外检确认单
+* archive-data-controller : 归档数据查询接口
+* checklist-controller : 检查单接口
+* checklist-item-controller : 检查单项目接口
+* checklist-simulation-controller : 模拟检查单接口
+* design-change-review-form-controller : 生成设计变更申请单
+* document-transmittal-record-controller : 生成文件传送单
+* draw-construction-report-controller : 管线组对检验报告单接口
+* external-inspection-item-list-controller : 生成外检报验清单
+* final-inspection-record-for-piping-pre-fabrication-controller : 生成管道预制终检记录
+* galvanization-parts-inspection-report-controller : 生成镀锌件检查记录
+* galvanize-checklist-controller : 生成镀锌检查单
+* galvanize-inspection-report-controller : 生成镀锌检查记录
+* incoming-material-inspection-record-controller : 生成进厂物料检查记录单
+* inspection-release-form-controller : 生成管道检验放行单
+* magnetic-particle-inspection-report-controller : 生成磁粉探伤报告
+* material-application-list-controller : 生成材料领用单
+* material-requirement-plan-controller : 生成用料计划
+* material-return-stock-controller : 生成退库单
+* out-souring-application-form-controller : 生成外协加工申请单
+* painting-checklist-controller : 生成涂装检查单
+* painting-handover-form-controller : 生成涂装交接报告
+* pe-lining-inspection-checklist-controller : 生成镀塑检验单
+* pe-lining-inspection-report-controller : 生成镀塑检验报告
+* penetration-inspection-report-controller : 生成渗透探伤报告
+* pickling-checklist-controller : 生成酸洗磷化检查单
+* pipe-fitting-inspection-report-controller : 生成管附件验收报告
+* pipe-material-inspection-report-controller : 生成管材料验收报告
+* pipe-material-traceability-report-controller : 生成管材料跟踪报告
+* pipeline-fit-up-report-controller : 管线组对检验报告单接口
+* piping-installation-report-controller : 生成管线安装报告
+* positive-material-identification-report-controller : 生成材料PMI材质分析测试报告
+* post-weld-heat-treatment-record-controller : 生成焊后热处理报告
+* prefabricate-piping-release-report-before-coating : 生成预制管道放行单(涂装前)
+* pressure-tightness-test-report-controller : 生成压力/密性实验报告
+* pwht-and-hardness-test-report-controller : 生成PWHT&硬度测试报告
+* radiographic-test-report-controller : 生成射线检验报告
+* report-template-controller : 报表模板接口
+* ultrasonic-test-report-controller : 生成超声波检验报告
+* valve-inspection-report-controller : 生成阀件验收报告
+* weld-hardness-test-report-controller : 生成焊缝硬度测试报告
+* welder-certificate-controller : 生成焊工证书
+
+
+

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="header" pageWidth="515" pageHeight="50" whenNoDataType="AllSectionsNoDetail" columnWidth="515" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="f98ca485-0e9a-4914-a6c2-945fdd043528">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<style name="Default" isDefault="true" pattern="" isBlankWhenNull="true" fontName="微软雅黑" fontSize="9"/>
+	<parameter name="ASSETS_DIR" class="java.lang.String">
+		<parameterDescription><![CDATA[静态资源路径]]></parameterDescription>
+		<defaultValueExpression><![CDATA["/var/www/ose/resources/templates/reports/assets"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="REPORT_ID" class="java.lang.String">
+		<parameterDescription><![CDATA[报告 ID]]></parameterDescription>
+		<defaultValueExpression><![CDATA["NULL"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="REPORT_NAME" class="java.lang.String">
+		<parameterDescription><![CDATA[报告名称]]></parameterDescription>
+		<defaultValueExpression><![CDATA["无标题"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="TEMPLATE_NO" class="java.lang.String">
+		<parameterDescription><![CDATA[模板编号]]></parameterDescription>
+	</parameter>
+	<parameter name="SERIAL_NO" class="java.lang.String">
+		<parameterDescription><![CDATA[模板编号]]></parameterDescription>
+	</parameter>
+	<parameter name="CLIENT_LOGO_DIR" class="java.lang.String">
+		<parameterDescription><![CDATA[静态资源路径]]></parameterDescription>
+	</parameter>
+	<parameter name="CONTRACTOR_LOGO_DIR" class="java.lang.String">
+		<parameterDescription><![CDATA[静态资源路径]]></parameterDescription>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<title>
+		<band height="50" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<image>
+				<reportElement x="10" y="2" width="100" height="46" uuid="853f450c-72f1-4c9c-893e-73f545308349">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[$P{CLIENT_LOGO_DIR} != "false"]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA[$P{CLIENT_LOGO_DIR} + "/images/logos/logo.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="137" y="0" width="240" height="50" uuid="def11d48-abad-484d-bf30-19ebcb901efb">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{REPORT_NAME}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="388" y="0" width="72" height="40" uuid="877000e9-313a-4bde-a252-5de4652ec59c">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[$P{CONTRACTOR_LOGO_DIR} != "false"]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA[$P{CONTRACTOR_LOGO_DIR} + "/images/logos/ose.png"]]></imageExpression>
+			</image>
+			<componentElement>
+				<reportElement x="465" y="0" width="50" height="50" uuid="04bb1bfe-a34a-40ba-9816-02126adf0779">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.margin" value="pixel"/>
+				</reportElement>
+				<jr:QRCode xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" margin="2">
+					<jr:codeExpression><![CDATA[$P{REPORT_ID}]]></jr:codeExpression>
+				</jr:QRCode>
+			</componentElement>
+			<textField>
+				<reportElement x="0" y="-20" width="240" height="20" uuid="858f023e-9dcb-40f3-85d9-7c51d137a23c"/>
+				<box leftPadding="0" bottomPadding="0"/>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[$P{TEMPLATE_NO}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="460" y="-12" width="55" height="12" uuid="e5263ca9-5951-4f29-a99a-6c472b502944"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{SERIAL_NO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+</jasperReport>

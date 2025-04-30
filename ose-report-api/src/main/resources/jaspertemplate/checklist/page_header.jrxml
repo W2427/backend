@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="pageHead" pageWidth="515" pageHeight="40" whenNoDataType="AllSectionsNoDetail" columnWidth="515"
+              leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="78fec0e2-164b-4140-9082-1f647479616e">
+    <summary>
+        <band height="40">
+            <property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+            <line>
+                <reportElement x="0" y="39" width="515" height="1" forecolor="#030303"
+                               uuid="e448a227-20c9-4a58-ab0a-bdb0574dde54">
+                    <property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+                </reportElement>
+                <graphicElement>
+                    <pen lineWidth="1.0" lineStyle="Solid"/>
+                </graphicElement>
+            </line>
+            <image>
+                <reportElement x="40" y="0" width="50" height="37" uuid="1cb97e61-2f55-4811-a819-ad9d00bddcf4"/>
+                <imageExpression><![CDATA["images/EXMAR_LOGO.png"]]></imageExpression>
+            </image>
+            <image>
+                <reportElement x="370" y="4" width="96" height="28" uuid="d3cbda18-0d62-4b4b-ac2b-97a9831b7c19"/>
+                <imageExpression><![CDATA["images/ose_Logo.gif"]]></imageExpression>
+            </image>
+            <componentElement>
+                <reportElement x="469" y="0" width="46" height="40" uuid="255cec1a-1173-485b-99a8-5d9335c272fd"/>
+                <jr:QRCode xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components"
+                           xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+                    <jr:codeExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}.get( "reportNo" )]]></jr:codeExpression>
+                </jr:QRCode>
+            </componentElement>
+            <textField>
+                <reportElement x="109" y="7" width="191" height="23" uuid="984fc959-6587-483d-b7f0-445e2d1ca6f1"/>
+                <textElement textAlignment="Center">
+                    <font size="16" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}.get( "project" )]]></textFieldExpression>
+            </textField>
+        </band>
+    </summary>
+</jasperReport>

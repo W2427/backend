@@ -1,0 +1,1 @@
+DELETE FROM `entity_pipe_piece` WHERE `id` LIKE ?;

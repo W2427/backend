@@ -1,0 +1,114 @@
+= 任务管理系统
+
+
+[[_overview]]
+== 概览
+提供项目管理业务服务。
+
+
+=== 版本信息
+[%hardbreaks]
+__版本__ : v0.0.1
+
+
+=== URI scheme
+[%hardbreaks]
+__域名__ : task.imos.com
+__基础路径__ : /
+
+
+=== 标签
+
+* activity-model-controller : 流程模型管理
+* activity-task-controller : 流程实例管理接口
+* batch-task-controller : 批处理任务管理接口
+* biz-code-controller : 业务代码参照表
+* clean-package-entity-controller : 清洁包实体管理接口
+* component-entity-controller : 管件实体管理接口
+* construction-change-controller : 建造变更申请单接口
+* cutting-controller : 下料管理接口
+* delivery-controller : 交接单接口
+* detail-design-list-controller : 详细设计图纸清单接口
+* drawing-category-controller : 图纸类型管理接口
+* drawing-list-controller : 生产设计图纸清单接口
+* drawing-task-controller : 图纸流程任务接口
+* entity-category-controller : 实体类型接口
+* entity-category-rule-controller : 实体类型设置规则 接口
+* entity-category-type-controller : 实体类型分类接口
+* extenal-inspection-task-controller : 外检流程任务管理接口
+* f-material-external-inspection-controller : 外部检验接口
+* f-material-inspection-report-controller : 检验报告接口
+* f-material-internal-inspection-controller : 内部检验接口
+* f-material-issue-receipt-controller : 出库清单接口
+* f-material-open-box-controller : 开箱检验接口
+* f-material-prepare-controller : 材料准备接口
+* f-material-receive-receipt-controller : 入库单接口
+* f-material-requisition-controller : 领料单接口
+* f-material-return-receipt-controller : 退库单接口
+* f-material-return-receipt-inspection-controller : 退库检验单接口
+* f-material-stocktake-controller : 材料盘点接口
+* f-material-transfers-controller : 配送单接口
+* fitem-controller : 材料接口
+* flaring-inspection-controller : 焊口扩口接口
+* hierarchy-controller : 项目层级结构管理接口
+* inspection-issue-controller : 内检意见接口
+* iso-entity-controller : 管线实体管理接口
+* itp-controller : 质量检验计划接口
+* material-code-alias-group-controller : 材料代码别称与材料分组关系 管理接口
+* material-coding-controller : 材料编码接口
+* modification-controller : 图纸修改评审单接口
+* ndt-inspector-controller : NDT检查人员接口
+* ndt-spot-check-controller : NDT抽样检测接口
+* notification-controller : 通知管理接口
+* nps-controller : nps壁厚管理接口
+* pipe-piece-entity-controller : 管段实体管理接口
+* piping-drawing-list-controller : 管道生产设计图纸清单接口
+* piping-sub-drawing-controller : 管道生产设计子图纸清单接口
+* plan-controller : 项目计划管理接口
+* pmi-spot-check-controller : PMI抽样检测接口
+* pqr-controller : PQR接口
+* pressure-test-package-entity-controller : 试压包实体管理接口
+* print-config-controller : 打印机管理接口
+* process-category-controller : 工序分类管理接口
+* process-controller : 工序接口
+* process-stage-controller : 工序阶段接口
+* project-controller : 项目管理接口
+* project-working-hour-controller : 工时接口
+* project-working-hour-history-controller : 工时履历接口
+* project-working-hour-large-category-controller : 工时类型(小分类)接口
+* project-working-hour-small-category-controller : 工时类型(小分类)接口
+* qc-report-controller : QC报告管理接口
+* qr-code-controller : 二维码代码接口
+* qr-code-search-controller : 交接单接口
+* quality-control-controller : 实体质量检测
+* rated-time-controller : 定额工时接口
+* rated-time-criterion-controller : 定额工时查询条件查询条件接口
+* release-note-activity-controller : 放行单的工作流管理接口
+* release-note-controller : 放行单查询接口
+* release-note-quality-certificate-controller : 材料质量证明书接口
+* scheduled-task-log-controller : 定时任务执行记录管理接口
+* spm-plan-release-note-controller : SPM 计划放行单 接口
+* spool-entity-controller : 单管实体管理接口
+* sub-system-entity-controller : 子系统实体管理接口
+* subcon-controller : 分包商接口
+* todo-task-controller : 流程任务管理接口
+* wbs-bundle-controller : 项目计划包管理接口
+* wbs-entity-controller : 实体管理接口
+* weld-entity-controller : 焊口实体管理接口
+* welder-certificate-controller : 焊工证书接口
+* welder-controller : 焊工管理接口
+* task-package-category-controller : 任务包类型接口
+* task-package-controller : 任务包接口
+* work-site-controller : 工作场地管理接口
+* wps-base-metal-controller : WPS母材接口
+* wps-base-metal-group-controller : WPS母材组别接口
+* wps-bevel-type-controller : 坡口类型接口
+* wps-controller : WPS接口
+* wps-detail-controller : WPS详情接口
+* wps-filler-metal-controller : WPS耗材接口
+* wps-joint-type-controller : 焊接方式接口
+* wps-position-controller : 焊接位置接口
+* wps-process-controller : 焊接工艺接口
+
+
+

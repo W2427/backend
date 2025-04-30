@@ -1,0 +1,285 @@
+@charset "UTF-8";
+
+* {
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+  color: inherit;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -webkit-text-size-adjust: none;
+  -webkit-overflow-scrolling: touch;
+  text-shadow: inherit;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+html {
+  font-size: 12px;
+  font-family: "Menlo", "Consolas", "Microsoft YaHei UI", "Microsoft YaHei", "PingFang SC", "monospace";
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  color: #000000;
+  background: #3F3F3F;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 4em 0 0 15em;
+  height: 100%;
+  overflow: hidden;
+  background: #0F0F0F;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+body.not-compatible {
+  padding: 2em;
+}
+
+body.not-compatible > p {
+  font-size: 1.33em;
+  font-family: "Verdana", "Tahoma", "Helvetica Neue", "Microsoft YaHei UI", "Microsoft YaHei", "PingFang SC", "sans-serif";
+  margin: 1em 0 1em 0;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+header, nav {
+  color: #BFBFBF;
+}
+
+header {
+  font-family: "Verdana", "Tahoma", "Helvetica Neue", "Helvetica", "Microsoft YaHei UI", "Microsoft YaHei", "PingFang SC", "sans-serif";
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  margin: 0 0 1em 0;
+}
+
+nav {
+  position: absolute;
+  top: 4em;
+  left: 0;
+  padding: 1em;
+  width: 15em;
+}
+
+#route-count {
+  color: #00FFFF;
+}
+
+#api-docs {
+  position: relative;
+  padding: 4em 0 0 0;
+  height: 100%;
+  overflow: hidden;
+  background: #3F3F3F;
+}
+
+#api-docs > div.head {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4em;
+  z-index: 2;
+  overflow: hidden;
+  border-bottom: solid 1px #7F7F7F;
+}
+
+#api-docs > div.content {
+  height: 100%;
+  overflow: auto;
+}
+
+#api-docs > div.content > div {
+  position: relative;
+  padding: 0 0 3em 0;
+  min-height: 100%;
+  z-index: 1;
+}
+
+#api-docs > div.content > div > table {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+footer {
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin: 0;
+  width: 100%;
+  height: 3em;
+  line-height: 3em;
+  text-align: center;
+  color: #9F9F9F;
+  text-shadow: 0 -1px #1F1F1F;
+}
+
+h1 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0;
+}
+
+label[for] {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: keep-all;
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: checkbox;
+}
+
+table {
+  table-layout: fixed;
+  border: solid 1px #BFBFBF;
+  border-collapse: collapse;
+}
+
+th, td {
+  margin: 0;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  height: 2em;
+  overflow: hidden;
+  line-height: 1.5em;
+  white-space: nowrap;
+  word-break: keep-all;
+  text-overflow: ellipsis;
+  border: solid 1px #BFBFBF;
+}
+
+th {
+  background: #DFDFDF;
+}
+
+table > tbody > tr > td {
+  border-bottom: none;
+}
+
+table > * > tr > *.route-count {
+  width: 3.5em;
+  min-width: 3.5em;
+  max-width: 3.5em;
+}
+
+table > * > tr > *.sub-system {
+  width: 15em;
+  min-width: 15em;
+  max-width: 15em;
+}
+
+table > * > tr > *.controller {
+  width: 15em;
+  min-width: 15em;
+  max-width: 15em;
+}
+
+table > * > tr > *.interface {
+  width: 20em;
+  min-width: 20em;
+  max-width: 20em;
+}
+
+table > * > tr > *.request-method {
+  width: 7em;
+  min-width: 7em;
+  max-width: 7em;
+}
+
+table > * > tr > *.request-url {
+  width: 45em;
+  min-width: 45em;
+  max-width: 45em;
+}
+
+table > tbody > tr > td.blank {
+  border-top: none;
+}
+
+table > * > tr > *.left {
+  text-align: left;
+}
+
+table > * > tr > *.center {
+  text-align: center;
+}
+
+table > * > tr > *.right {
+  text-align: right;
+}
+
+table > tbody > tr > td.odd {
+  background: #FFFFFF;
+}
+
+table > tbody > tr > td.even {
+  background: #F7F7F7;
+}
+
+table > tbody > tr:hover > td.odd {
+  background: #DFEFFF;
+}
+
+table > tbody > tr:hover > td.even {
+  background: #CFDFEF;
+}
+
+table > tbody > tr > td > a {
+  display: block;
+  text-decoration: none;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  word-break: keep-all;
+  text-overflow: ellipsis;
+}
+
+table > tbody > tr > td > a:hover {
+  color: #007FFF;
+}
+
+span.request-method {
+  display: inline-block;
+  width: 5em;
+  color: #FFFFFF;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+  -webkit-border-radius: 0.25em;
+  border-radius: 0.25em;
+}
+
+span.request-method.post {
+  background: #003F9F;
+}
+
+span.request-method.get {
+  background: #007F00;
+}
+
+span.request-method.patch {
+  background: #006F8F;
+}
+
+span.request-method.put {
+  background: #8F6F00;
+}
+
+span.request-method.delete {
+  background: #9F0000;
+}
+
+span.request-url > code {
+  color: #005FDF;
+}
